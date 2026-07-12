@@ -1,11 +1,13 @@
 :root {
   --Preto: #1e1e24;
+  --Branco: rgb(255, 255, 255);
   --Cinza: #66636a;
   --Vermelho: #e63946;
  --Marrom: #61442B;
   --VermelhoEscuro: #d83048;
-   --SombraVermelha: rgba(247, 43, 20, 0.581);  
+ --SombraVermelha: rgba(247, 43, 20, 0.581);  
   --CorCreme: #fffaf0;
+  --Amarelo: #faeecb;
   --CorFundo: linear-gradient(180deg, #fffefa 0%, #fff9ea 60%, #fff0c2 100%);
   --Sombra: 0 6px 18px rgba(45, 37, 21, 0.08);
   --LarguraConteudo: 1140px;
@@ -121,7 +123,7 @@ h3 {
 .Logotipo {
   width: 118px;
   height: 52px;
-  background-image: url(img/LogoSOSPet.png);
+  background-image: url(assets/logo.png);
 }
 
 .CampoBusca {
@@ -203,6 +205,8 @@ h3 {
   height: 42px;
   border-radius: 50%;
   background-color: #f6e8c4;
-  background-image: url(img/Vector.png);
-  background-size: 56%;
+  background-image: url(assets/avatar.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
