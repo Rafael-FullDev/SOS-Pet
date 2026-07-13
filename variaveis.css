@@ -1,0 +1,212 @@
+:root {
+  --Preto: #1e1e24;
+  --Branco: rgb(255, 255, 255);
+  --Cinza: #66636a;
+  --Vermelho: #e63946;
+ --Marrom: #61442B;
+  --VermelhoEscuro: #d83048;
+ --SombraVermelha: rgba(247, 43, 20, 0.581);  
+  --CorCreme: #fffaf0;
+  --Amarelo: #faeecb;
+  --CorFundo: linear-gradient(180deg, #fffefa 0%, #fff9ea 60%, #fff0c2 100%);
+  --Sombra: 0 6px 18px rgba(45, 37, 21, 0.08);
+  --LarguraConteudo: 1140px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  color: var(--Preto);
+  min-height: 100vh;
+  background: var(--CorFundo);
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+h1,
+h2,
+h3 {
+  line-height: 1.03;
+}
+
+.LimiteConteudo {
+  width: min(calc(100% - 40px), var(--LarguraConteudo));
+  margin-inline: auto;
+}
+
+.Midia {
+  display: block;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Botao {
+  display: inline-flex;
+  min-height: 42px;
+  padding: 0 22px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--Vermelho);
+  border-radius: 7px;
+  color: #fff;
+  background-color: var(--Vermelho);
+  font-weight: 800;
+  transition: 160ms ease;
+}
+
+.Botao:hover {
+  background-color: var(--Vermelho);
+  border-color: var(--Vermelho);
+  transform: translateY(-2px);
+}
+
+.BotaoContorno {
+  color: var(--Preto);
+  background-color: transparent;
+  border-color: var(--Preto);
+}
+
+.BotaoContorno:hover {
+  color: #fff;
+  background-color: var(--Preto);
+  border-color: var(--Preto);
+}
+
+.BotaoPequeno {
+  min-height: 23px;
+  padding: 0 25px;
+  border-radius: 100px;
+  font-size: 11px;
+}
+
+.Cabecalho {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  min-height: 58px;
+  border-bottom: 1px solid #eadfbd;
+  background-color: rgba(255, 253, 247);
+}
+
+.ConteudoCabecalho {
+  display: flex;
+  width: calc(100% - 24px);
+  max-width: none;
+  min-height: 58px;
+  gap: 18px;
+  align-items: center;
+}
+
+.Marca,
+.Logotipo {
+  background-size: contain;
+}
+
+.Marca {
+  display: block;
+}
+
+.Logotipo {
+  width: 118px;
+  height: 52px;
+  background-image: url(assets/logo.png);
+}
+
+.CampoBusca {
+  display: flex;
+  width: 225px;
+  height: 30px;
+  padding: 0 13px;
+  align-items: center;
+  border: 1px solid #e4d7aa;
+  border-radius: 100px;
+  background-color: #fff8df;
+  color: #8b8375;
+  font-size: 11px;
+}
+
+.CampoBusca input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 11px;
+}
+
+.MenuPrincipal {
+  display: flex;
+  height: 58px;
+  gap: 30px;
+  margin-left: 84px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.MenuPrincipal a {
+  background: linear-gradient(var(--Vermelho), var(--Vermelho));
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 0px 2px;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: 260ms ease, color 160ms ease;
+}
+
+.MenuPrincipal a:hover {
+  color: var(--Preto);
+  background-size: 100% 2px;
+}
+
+.AcoesCabecalho {
+  display: flex;
+  gap: 18px;
+  margin-left: auto;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.LinkEntrar {
+  display: inline-flex;
+  min-height: 23px;
+  padding: 0 18px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  color: var(--Vermelho);
+  font-size: 11px;
+  transition: 180ms ease;
+}
+
+.LinkEntrar:hover {
+  border-color: var(--Vermelho);
+  color: #fff;
+  background-color: var(--Vermelho);
+}
+
+.Usuario {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #f6e8c4;
+  background-image: url(assets/avatar.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "inter", sans-serif;
+  background-color: var(--CorFundo);
+  margin: 0;
+  min-height: 100vh;  
+  display: flex;
+  flex-direction: column;
+}
+
+.Cabecalho {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: var(--Branco);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 24px;
+  box-sizing: border-box;
+  margin-bottom: 24px; 
+  overflow: visible;
+box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);    /* atual */
+}
+
+.Logo {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100px; 
+  width: auto;
+  display: block;
+}
+
+.LembrarDeMim{
+  display: flex;
+  font-family: "inter",sans-serif;
+  font-weight: 350;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; 
+  margin-top: 10px;
+
+}
+
+.LembrarDeMim input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.LembrarDeMim label {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.PrincipalLogin{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px 32px;
+}
+
+.Topo{
+text-align: center;
+font-family: "poppins", sans-serif;
+color: var(--Marrom);
+
+}
+
+.Topo h1{
+  color: var(--Vermelho);
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 30px 60px 72px;
+  border-radius: 20px;
+  width: 450px;
+  border: 1px solid black;
+  box-shadow: 13px 7px 31px var(--SombraVermelha);
+  gap: 22px;
+
+}
+
+.Cartao{
+display: flex;
+flex-direction: column;
+justify-content: center;
+border-radius: 12px;
+font-family:"poppins" , sans-serif;
+font-size: medium;
+font-weight: 700;
+color: var(--Marrom);
+}
+
+.Conta{ 
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  font-family: "inter", sans-serif;
+  font-size: smaller;
+  font-weight: 400;
+  color: var(--Marrom);
+}
+
+.Span{
+  font-family: "inter", sans-serif;
+  font-size: smaller;
+  font-weight: 400;
+  color: var(--Marrom);
+}
+
+.GrupoCartao{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.Formulario{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.RedesSociais{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.RedesSociaisTitulo{
+  font-family: "poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--Marrom);
+}
+
+.RedesSociaisLista{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+}
+
+.RedesSociaisLista a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(97, 68, 43, 0.16);
+  color: var(--Marrom);
+  font-size: 20px;
+}
+
+.RedesSociaisLista i{
+  line-height: 1;
+}
+
+.BotaoLogin{
+  display: block;
+  margin: 6px auto 0;
+  padding: 10px 60px;
+  border-radius: 12px;
+  border-color: var(--Vermelho);
+  background-color: var(--Vermelho);
+  color: aliceblue;
+  font-family: "poppins", sans-serif;
+  font-weight: 700;
+  font-size: large;
+}
+
+.BotaoLogin + .Conta{
+  margin-top: 14px;
+}
+
+.Divisor {
+  border: none;
+  border-top: 1px solid var(--Preto);
+  width: 90%;
+  margin: 24px auto 0;
+}
+
+.RodaPé {
+  font-family: "inter", sans-serif;
+  text-align: center;
+  padding: 16px 0;
+}
