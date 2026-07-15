@@ -1,0 +1,749 @@
+:root {
+  --Preto: #1e1e24;
+  --Cinza: #66636a;
+  --Vermelho: #e63946;
+  --VermelhoEscuro: #d83048;
+  --CorCreme: #fffaf0;
+  --CorFundo: linear-gradient(180deg, #fffefa 0%, #fff9ea 60%, #fff0c2 100%);
+  --Sombra: 0 6px 18px rgba(45, 37, 21, 0.08);
+  --LarguraConteudo: 1140px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  color: var(--Preto);
+  min-height: 100vh;
+  background: var(--CorFundo);
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+h1,
+h2,
+h3 {
+  line-height: 1.03;
+}
+
+.LimiteConteudo {
+  width: min(calc(100% - 40px), var(--LarguraConteudo));
+  margin-inline: auto;
+}
+
+.Midia {
+  display: block;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Botao {
+  display: inline-flex;
+  min-height: 42px;
+  padding: 0 22px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--Vermelho);
+  border-radius: 7px;
+  color: #fff;
+  background-color: var(--Vermelho);
+  font-weight: 800;
+  transition: 160ms ease;
+}
+
+.Botao:hover {
+  background-color: var(--Vermelho);
+  border-color: var(--Vermelho);
+  transform: translateY(-2px);
+}
+
+.BotaoContorno {
+  color: var(--Preto);
+  background-color: transparent;
+  border-color: var(--Preto);
+}
+
+.BotaoContorno:hover {
+  color: #fff;
+  background-color: var(--Preto);
+  border-color: var(--Preto);
+}
+
+.BotaoPequeno {
+  min-height: 23px;
+  padding: 0 25px;
+  border-radius: 100px;
+  font-size: 11px;
+}
+
+.Cabecalho {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  min-height: 58px;
+  border-bottom: 1px solid #eadfbd;
+  background-color: rgba(255, 253, 247);
+}
+
+.ConteudoCabecalho {
+  display: flex;
+  width: calc(100% - 24px);
+  max-width: none;
+  min-height: 58px;
+  gap: 18px;
+  align-items: center;
+}
+
+.Marca,
+.Logotipo {
+  background-size: contain;
+}
+
+.Marca {
+  display: block;
+}
+
+.Logotipo {
+  width: 118px;
+  height: 52px;
+  background-image: url(img/LogoSOSPet.png);
+}
+
+.CampoBusca {
+  display: flex;
+  width: 225px;
+  height: 30px;
+  padding: 0 13px;
+  align-items: center;
+  border: 1px solid #e4d7aa;
+  border-radius: 100px;
+  background-color: #fff8df;
+  color: #8b8375;
+  font-size: 11px;
+}
+
+.CampoBusca input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 11px;
+}
+
+.MenuPrincipal {
+  display: flex;
+  height: 58px;
+  gap: 30px;
+  margin-left: 84px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.MenuPrincipal a {
+  background: linear-gradient(var(--Vermelho), var(--Vermelho));
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 0px 2px;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: 260ms ease, color 160ms ease;
+}
+
+.MenuPrincipal a:hover {
+  color: var(--Preto);
+  background-size: 100% 2px;
+}
+
+.AcoesCabecalho {
+  display: flex;
+  gap: 18px;
+  margin-left: auto;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.LinkEntrar {
+  display: inline-flex;
+  min-height: 23px;
+  padding: 0 18px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  color: var(--Vermelho);
+  font-size: 11px;
+  transition: 180ms ease;
+}
+
+.LinkEntrar:hover {
+  border-color: var(--Vermelho);
+  color: #fff;
+  background-color: var(--Vermelho);
+}
+
+.Usuario {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #f6e8c4;
+  background-image: url(img/Vector.png);
+  background-size: 56%;
+}
+
+.Inicio {
+  padding: 74px 0 34px;
+}
+
+.GradeInicio {
+  display: grid;
+  min-height: 360px;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.TextoInicio h1 {
+  margin-bottom: 10px;
+  font-size: 70px;
+  letter-spacing: -0.055em;
+}
+
+.ChamadaInicio {
+  margin-bottom: 12px;
+  color: var(--Vermelho);
+  font-size: 30px;
+  font-weight: 850;
+  letter-spacing: -0.03em;
+}
+
+.DescricaoInicio {
+  max-width: 550px;
+  margin-bottom: 22px;
+  color: #4e4b50;
+  font-size: 22px;
+  line-height: 1.16;
+}
+
+.AcoesInicio {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.ListaValores {
+  display: flex;
+  gap: 12px;
+  padding: 0 0 28px;
+  margin: 0;
+  list-style: none;
+}
+
+.ListaValores li {
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: #fff;
+  background: var(--Preto);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.VisualInicio {
+  position: relative;
+  height: 350px;
+}
+
+.CachorroInicio {
+  width: 92%;
+  height: 130%;
+  background-image: url(img/CachorroHome.png);
+}
+
+
+.DestaquesInicio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 6px;
+}
+
+.CartaoDestaque {
+  display: grid;
+  min-height: 166px;
+  padding: 20px 24px;
+  grid-template-columns: 145px 1fr;
+  gap: 22px;
+  align-items: center;
+  border: 2px solid #5f5b5f;
+  border-radius: 9px;
+  background: #fff9df;
+}
+
+.ImagemDestaque {
+  width: 145px;
+  height: 130px;
+  aspect-ratio: 1.1;
+  border: 0;
+  border-radius: 22px;
+}
+
+#GatoInicio{
+  background-image: url(img/GatoInicio.png);
+}
+
+#CachorroInicio{
+  background-image: url(img/CachorroInicio.png);
+}
+
+.CartaoDestaque h2 {
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+
+.CartaoDestaque .SubtituloDestaque {
+  margin-bottom: 12px;
+  color: var(--Vermelho);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.CartaoDestaque p:last-child {
+  margin-bottom: 0;
+  color: #4d494e;
+  font-size: 12px;
+  
+}
+
+.NotaInicio {
+  margin: 38px 0 0;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.FundoComPadrao {
+  position: relative;
+  background-color: #fff4c9;
+  background-image: url(img/FundoPatinhas.png);
+}
+
+.ComeceRapido {
+  padding: 28px 0 68px;
+  border-top: 1px solid #e6d9a8;
+  border-bottom: 1px solid #cfc29c;
+}
+
+.CabecalhoSecao h2 {
+  margin-bottom: 4px;
+  font-size: clamp(30px, 3.4vw, 42px);
+  letter-spacing: -0.035em;
+}
+
+.CabecalhoSecao p {
+  margin-bottom: 0;
+  color: var(--Cinza);
+}
+
+.CabecalhoComeceRapido {
+  display: flex;
+  width: fit-content;
+  gap: 40px;
+  margin: 0 auto 48px;
+  align-items: center;
+}
+
+.IconeComeceRapido {
+  width: 136px;
+  height: 136px;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 26px;
+  background-color: rgba(255, 255, 255, 0.84);
+}
+
+.GradeServicos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11%;
+}
+
+.CartaoServico {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #5e5a5d;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: var(--Sombra);
+}
+
+.ImagemServico {
+  width: 100%;
+  height: 170px;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.EtiquetaCartao {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  min-width: 86px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  color: #fff;
+  background: var(--Vermelho);
+  text-align: center;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.ConteudoServico {
+  min-height: 112px;
+  padding: 15px 18px 20px;
+}
+
+.ConteudoServico h3 {
+  margin-bottom: 6px;
+  font-size: 17px;
+}
+
+.ConteudoServico p {
+  margin-bottom: 0;
+  color: #4f4b50;
+  font-size: 12px;
+}
+
+
+
+#AnimaisPerdidos{
+  background-image: url(img/PerdidosServico.png);
+}
+
+#PedidosAjuda{
+  background-image: url(img/PedidosAjudaServico.png);
+}
+
+#Adocao{
+  background-image: url(img/FeedServico.png);
+}
+
+.ComoFunciona {
+  min-height: 1500px;
+  padding: 54px 0 96px;
+}
+
+.TextoCentralizado {
+  text-align: center;
+}
+
+.AreaEtapas {
+  position: relative;
+  max-width: 960px;
+  padding: 60px 0 40px;
+  margin: 0 auto;
+}
+
+.LinhaEtapas {
+  position: absolute;
+  top: 225px;
+  bottom: 202px;
+  left: 50%;
+  width: 3px;
+  background: var(--Vermelho);
+  transform: translateX(-50%);
+}
+
+.ListaEtapas {
+  position: relative;
+  display: grid;
+  min-height: 1300px;
+  padding: 0;
+  margin: 0;
+  grid-template-rows: repeat(4, 1fr);
+  list-style: none;
+}
+
+.Etapa {
+  position: relative;
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1fr);
+  align-items: center;
+}
+
+.CartaoEtapa {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 336px;
+  min-height: 268px;
+  padding: 28px 30px;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  align-items: start;
+  border: 2px solid #777176;
+  border-radius: 28px;
+  background: #fff;
+}
+
+.MarcadorLinhaTempo {
+  z-index: 2;
+  display: block;
+  width: 18px;
+  height: 18px;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  border: 3px solid var(--Vermelho);
+  border-radius: 50%;
+  background: #ffd452;
+}
+
+.EtapaEsquerda .CartaoEtapa {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+}
+
+.EtapaDireita .CartaoEtapa {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+}
+
+.Etapa:nth-child(1) {
+  grid-row: 1;
+}
+
+.Etapa:nth-child(2) {
+  grid-row: 2;
+}
+
+.Etapa:nth-child(3) {
+  grid-row: 3;
+}
+
+.Etapa:nth-child(4) {
+  grid-row: 4;
+}
+
+.NumeroEtapa {
+  font-size: 66px;
+  font-weight: 350;
+  letter-spacing: -0.07em;
+  line-height: 0.92;
+}
+
+.ConteudoEtapa {
+  padding-top: 4px;
+}
+
+.IconeEtapa {
+  width: 68px;
+  height: 58px;
+  margin-bottom: 12px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.Etapa h3 {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.Etapa p {
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+#Etapa1{
+  background-image: url(img/IconEtapa1.png);
+}
+
+#Etapa2{
+  background-image: url(img/IconEtapa2.png);
+}
+
+#Etapa3{
+  background-image: url(img/IconEtapa3.png);
+}
+
+#Etapa4{
+  background-image: url(img/IconEtapa4.png);
+}
+
+.Comunidade {
+  padding: 36px 0 74px;
+  border-top: 1px solid #e0d0a3;
+}
+
+.Comunidade .TextoCentralizado {
+  margin-bottom: 44px;
+}
+
+.GradeHistorias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8%;
+}
+
+.CartaoHistoria {
+  overflow: hidden;
+  border: 2px solid #5f5a5e;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: var(--Sombra);
+}
+
+.ImagemHistoria {
+  width: calc(100% - 20px);
+  height: 165px;
+  margin: 10px 10px 0;
+  border: 0;
+  border-radius: 15px;
+}
+
+#Historia1{
+  background-image: url(img/Historia1.png);
+}
+
+#Historia2{
+  background-image: url(img/Historia2.png);
+}
+
+#Historia3{
+  background-image: url(img/Historia3.png);
+}
+
+.ConteudoHistoria {
+  padding: 16px 18px 18px;
+}
+
+.ConteudoHistoria h3 {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.ConteudoHistoria p {
+  min-height: 54px;
+  margin-bottom: 18px;
+  color: #4f4b50;
+  font-size: 11px;
+}
+
+.ConteudoHistoria footer {
+  display: flex;
+  color: #777278;
+  font-size: 10px;
+  justify-content: space-between;
+}
+
+.Depoimentos {
+  padding: 58px 0 56px;
+  border-top: 1px solid #e6d79d;
+}
+
+.CabecalhoDepoimentos {
+  margin: 0 0 66px 8%;
+}
+
+.GradeDepoimentos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.CartaoDepoimento {
+  min-height: 160px;
+  padding: 20px;
+  margin: 0;
+  border: 1px solid #ded7ce;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.CabecalhoCartaoDepoimento {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 10px;
+  align-items: center;
+  font-size: 12px;
+}
+
+.FotoPerfil {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 50%;
+  background-image: url(img/Usuario.png);
+}
+
+.CartaoDepoimento p {
+  margin-bottom: 5px;
+  font-size: 10px;
+}
+
+.EstrelasDepoimento {
+  color: #ffc21d;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.ChamadaFinal {
+  display: grid;
+  max-width: 860px;
+  margin: 54px auto 0;
+  grid-template-columns: auto 1fr auto;
+  gap: 42px;
+  align-items: center;
+}
+
+.IconeChamada {
+  width: 76px;
+  height: 66px;
+  border: 0;
+  border-radius: 50% 50% 45% 45%;
+}
+
+.ChamadaFinal p {
+  margin-bottom: 0;
+  color: #888288;
+  font-size: 19px;
+  text-align: center;
+}
+
+.BotaoLargo {
+  min-width: 190px;
+}
+
+.Rodape {
+  padding: 42px 0 50px;
+  border-top: 1px solid #d7d0c6;
+  background: #fff;
+  color: #555157;
+  text-align: center;
+}
+
+.Rodape p {
+  margin-bottom: 4px;
+  font-size: 12px;
+}
