@@ -123,7 +123,7 @@ h3 {
 .Logotipo {
   width: 118px;
   height: 52px;
-  background-image: url(assets/logo.png);
+  background-image: url(../assets/images/shared/logo.png);
 }
 
 .CampoBusca {
@@ -205,7 +205,7 @@ h3 {
   height: 42px;
   border-radius: 50%;
   background-color: #f6e8c4;
-  background-image: url(assets/avatar.png);
+  background-image: url(../assets/images/home/Vector.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

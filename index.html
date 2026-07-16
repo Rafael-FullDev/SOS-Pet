@@ -8,14 +8,14 @@
       content="SOS Pet: uma rede de apoio para localizar, proteger e reencontrar animais."
     />
     <title>SOS Pet</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/home.css" />
   </head>
 
   <body>
     <header class="Cabecalho">
       <div class="LimiteConteudo ConteudoCabecalho">
         
-        <a class="Marca" href="#">
+        <a class="Marca" href="index.html">
           <span class="Midia Logotipo"></span>
         </a>
         <label class="CampoBusca">
@@ -24,18 +24,18 @@
         </label>
 
         <nav class="MenuPrincipal">
-          <a class="Ativo" href="#">Início</a>
-          <a href="#">Animais Perdidos</a>
-          <a href="#">Animais de Rua</a>
-          <a href="#">Adoção</a>
-          <a href="#">Pedidos</a>
-          <a href="#">Sobre nós</a>
+          <a class="Ativo" href="index.html#Inicio">Início</a>
+          <a href="index.html#AnimaisPerdidos">Animais Perdidos</a>
+          <a href="pages/animais-de-rua.html">Animais de Rua</a>
+          <a href="index.html#Adocao">Adoção</a>
+          <a href="pages/pedidos-de-ajuda.html">Pedidos</a>
+          <a href="pages/feed.html">Feed</a>
         </nav>
 
         <div class="AcoesCabecalho">
-          <a class="LinkEntrar" href="#">Entrar</a>
-          <a class="Botao BotaoPequeno" href="#">Criar conta</a>
-          <a class="Midia Usuario" href="#" aria-label="Perfil"></a>
+          <a class="LinkEntrar" href="pages/login.html">Entrar</a>
+          <a class="Botao BotaoPequeno" href="pages/cadastro.html">Criar conta</a>
+          <a class="Midia Usuario" href="pages/feed.html" aria-label="Perfil"></a>
         </div>
       </div>
     </header>
@@ -55,8 +55,8 @@
               </p>
 
               <div class="AcoesInicio">
-                <a class="Botao BotaoContorno" href="#">Perdi um Pet</a>
-                <a class="Botao" href="#">Quero Ajudar</a>
+                <a class="Botao BotaoContorno" href="#AnimaisPerdidos">Perdi um Pet</a>
+                <a class="Botao" href="pages/animais-de-rua.html">Quero Ajudar</a>
               </div>
 
               <ul class="ListaValores">
@@ -135,7 +135,7 @@
               <div class="Midia ImagemServico" id="PedidosAjuda"></div>
               <span class="EtiquetaCartao">Comunidade</span>
               <div class="ConteudoServico">
-                <h3>Pedidos de Ajuda</h3>
+                <h3><a href="pages/pedidos-de-ajuda.html">Pedidos de Ajuda</a></h3>
                 <p>
                   Encontre pedidos locais de ração, medicamentos, suporte para
                   transporte e lar temporário.
@@ -147,7 +147,7 @@
               <div class="Midia ImagemServico" id="Adocao"></div>
               <span class="EtiquetaCartao">Seguro</span>
               <div class="ConteudoServico">
-                <h3>Feed da Comunidade</h3>
+                <h3><a href="pages/feed.html">Feed da Comunidade</a></h3>
                 <p>
                   Fique por dentro de tudo o que a comunidade está
                   compartilhando: adoções, pedidos e notícias.
@@ -289,7 +289,7 @@
         </div>
       </section>
 
-      <section class="Depoimentos">
+      <section class="Depoimentos" id="SobreNos">
         <div class="LimiteConteudo">
           <header class="CabecalhoSecao CabecalhoDepoimentos">
             <h2>Amado por quem ama animais</h2>
@@ -348,7 +348,7 @@
               Pronto para proteger animais? Crie sua conta SOS Pet e comece a
               ajudar hoje.
             </p>
-            <a class="Botao BotaoLargo" href="#">Criar conta</a>
+            <a class="Botao BotaoLargo" href="pages/cadastro.html">Criar conta</a>
           </div>
         </div>
       </section>

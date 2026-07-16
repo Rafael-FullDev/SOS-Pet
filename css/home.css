@@ -119,7 +119,7 @@ h3 {
 .Logotipo {
   width: 118px;
   height: 52px;
-  background-image: url(img/LogoSOSPet.png);
+  background-image: url(../assets/images/home/LogoSOSPet.png);
 }
 
 .CampoBusca {
@@ -201,7 +201,7 @@ h3 {
   height: 42px;
   border-radius: 50%;
   background-color: #f6e8c4;
-  background-image: url(img/Vector.png);
+  background-image: url(../assets/images/home/Vector.png);
   background-size: 56%;
 }
 
@@ -270,7 +270,7 @@ h3 {
 .CachorroInicio {
   width: 92%;
   height: 130%;
-  background-image: url(img/CachorroHome.png);
+  background-image: url(../assets/images/home/CachorroHome.png);
 }
 
 
@@ -302,11 +302,11 @@ h3 {
 }
 
 #GatoInicio{
-  background-image: url(img/GatoInicio.png);
+  background-image: url(../assets/images/home/GatoInicio.png);
 }
 
 #CachorroInicio{
-  background-image: url(img/CachorroInicio.png);
+  background-image: url(../assets/images/home/CachorroInicio.png);
 }
 
 .CartaoDestaque h2 {
@@ -338,7 +338,7 @@ h3 {
 .FundoComPadrao {
   position: relative;
   background-color: #fff4c9;
-  background-image: url(img/FundoPatinhas.png);
+  background-image: url(../assets/images/home/FundoPatinhas.png);
 }
 
 .ComeceRapido {
@@ -432,15 +432,15 @@ h3 {
 
 
 #AnimaisPerdidos{
-  background-image: url(img/PerdidosServico.png);
+  background-image: url(../assets/images/home/PerdidosServico.png);
 }
 
 #PedidosAjuda{
-  background-image: url(img/PedidosAjudaServico.png);
+  background-image: url(../assets/images/home/PedidosAjudaServico.png);
 }
 
 #Adocao{
-  background-image: url(img/FeedServico.png);
+  background-image: url(../assets/images/home/FeedServico.png);
 }
 
 .ComoFunciona {
@@ -575,19 +575,19 @@ h3 {
 }
 
 #Etapa1{
-  background-image: url(img/IconEtapa1.png);
+  background-image: url(../assets/images/home/IconEtapa1.png);
 }
 
 #Etapa2{
-  background-image: url(img/IconEtapa2.png);
+  background-image: url(../assets/images/home/IconEtapa2.png);
 }
 
 #Etapa3{
-  background-image: url(img/IconEtapa3.png);
+  background-image: url(../assets/images/home/IconEtapa3.png);
 }
 
 #Etapa4{
-  background-image: url(img/IconEtapa4.png);
+  background-image: url(../assets/images/home/IconEtapa4.png);
 }
 
 .Comunidade {
@@ -622,15 +622,15 @@ h3 {
 }
 
 #Historia1{
-  background-image: url(img/Historia1.png);
+  background-image: url(../assets/images/home/Historia1.png);
 }
 
 #Historia2{
-  background-image: url(img/Historia2.png);
+  background-image: url(../assets/images/home/Historia2.png);
 }
 
 #Historia3{
-  background-image: url(img/Historia3.png);
+  background-image: url(../assets/images/home/Historia3.png);
 }
 
 .ConteudoHistoria {
@@ -694,7 +694,7 @@ h3 {
   flex: 0 0 auto;
   border: 0;
   border-radius: 50%;
-  background-image: url(img/Usuario.png);
+  background-image: url(../assets/images/home/Usuario.png);
 }
 
 .CartaoDepoimento p {
