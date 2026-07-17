@@ -1,0 +1,522 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #F9E9B7;
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    background-color: #FDFDFD;
+}
+
+.logo {
+    width: 70px;
+}
+
+.menu ul {
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.foto-perfil {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.titulo-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 80px 40px;
+}
+
+.texto-titulo h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.texto-titulo p {
+    font-size: 16px;
+}
+
+.titulo-pagina button {
+    background-color: #FF383C;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.titulo-pagina button:hover {
+    transform: scale(1.03);
+}
+
+.filtros {
+    display: flex;
+    margin: 0 80px 40px;
+}
+
+.filtro {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 10px 18px;
+    border: 1px solid #d9d9d9;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ativo {
+    background-color: #61442D;
+    color: #FFFFFF;
+    border: none;
+    font-size: 14px;
+    padding: 10px 18px;
+}
+
+.filtro-esquerda {
+    border-radius: 10px 0 0 10px;
+}
+
+.filtro-direita {
+    border-radius: 0 10px 10px 0;
+}
+
+.cards-pedidos{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.card-pedido{
+    width: 100%;
+    padding: 50px;
+    background-color: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 15px;
+}
+
+.cabecalho-card{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.foto-usuario{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.informacoes-usuario{
+    flex: 1;
+}
+
+.informacoes-usuario h2{
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.informacoes-usuario p{
+    font-size: 14px;
+}
+
+.status-urgente {
+    background-color: #FFD9D9;   
+    color: #FF0000;
+    padding: 6px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.card-pedido h3{
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.card-pedido p{
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.localizacao{
+    font-style: normal;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.midia-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.imagem-pet{
+    width: 60%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.acoes-card{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    right: 75px;
+}
+
+.btn-ajudar{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #FF383C;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.btn-ajudar:hover {
+    transform: scale(1.03);
+}
+
+.btn-compartilhar{
+    padding: 12px;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.btn-compartilhar:hover {
+    transform: scale(1.03);
+}
+
+nav[aria-label="paginação"]{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 40px 0;
+}
+
+nav[aria-label="paginação"] button{
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+nav[aria-label="paginação"] button:first-child{
+    background-color: #6B4A2E;
+    color: #FFFFFF;
+}
+
+nav[aria-label="paginação"] button:last-child{
+    background-color: #F4D56B;
+}
+
+.btn-pag:hover {
+    transform: scale(1.05);
+}
+
+.novo-pedido{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    padding: 25px 35px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.icone {
+    position: relative;
+    left: 160px;
+}
+
+.texto-novo-pedido h2{
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.texto-novo-pedido p{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+}
+
+.btn-criar-pedido{
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    background-color: #FF4A4A;
+    color: #FFFFFF;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+    right: 75px;
+}
+
+.btn-criar-pedido:hover{
+    transform: scale(1.03);
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    background-color: #F5F5F5;
+}
+
+footer img{
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+footer p{
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: #6F6F6F;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+footer p:last-child{
+    margin-bottom: 0;
+}
+
+
+
+/* Tablet */
+@media (max-width: 1024px) {
+     .cabecalho {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 15px 20px;
+    }
+
+    .menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .titulo-pagina {
+        margin: 40px 30px;
+    }
+
+    .filtros {
+        margin: 0 30px 30px;
+        flex-wrap: wrap;
+    }
+
+    .cards-pedidos,
+    .novo-pedido {
+        max-width: 90%;
+    }
+
+    .midia-card{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .imagem-pet{
+        width: 70%;
+    }
+
+    .acoes-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .btn-ajudar,
+    .btn-compartilhar {
+        width: 180px;
+        position: relative;
+        right: -90px;
+    }
+
+    .icone {
+        position: static;
+    }
+
+    .novo-pedido {
+        gap: 30px;
+    }
+}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .cabecalho {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .titulo-pagina {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 30px 20px;
+        gap: 20px;
+    }
+
+    .titulo-pagina h1 {
+        font-size: 28px;
+    }
+
+    .filtros {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        margin-left: 20px;
+    }
+
+    .cards-pedidos {
+        max-width: 95%;
+    }
+
+    .card-pedido {
+        padding: 24px;
+    }
+
+    .cabecalho-card {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .status-urgente {
+        margin-top: 10px;
+    }
+
+    .midia-card {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .imagem-pet {
+        width: 100%;
+        height: auto;
+    }
+
+    .acoes-card {
+        width: 100%;
+        align-items: center;
+    }
+
+    .btn-ajudar,
+    .btn-compartilhar {
+        width: 100%;
+        max-width: 300px;
+        margin-left: -30px;
+    }
+
+    .novo-pedido {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        max-width: 95%;
+        padding: 18px;
+    }
+
+    .icone {
+        position: static;
+        width: 45px;
+    }
+
+    .texto-novo-pedido h2 {
+    font-size: 24px;
+    }
+
+    .texto-novo-pedido p {
+        font-size: 14px;
+    }
+
+    .btn-criar-pedido {
+        position: static;
+        width: 120px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
