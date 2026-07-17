@@ -1,0 +1,404 @@
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ==================================================
+   CORES E FONTES DO PROJETO
+================================================== */
+
+:root {
+    --fundo: #fce9b8;
+    --branco: #ffffff;
+    --marrom: #6b4a34;
+    --marrom-escuro: #3b2a1a;
+    --vermelho: #ef3d4d;
+    --vermelho-escuro: #d62d3d;
+    --vermelho-claro: #ffd8dc;
+    --cinza: #7e7469;
+    --borda: #eadfc9;
+    --sombra: 0 10px 26px rgba(59, 42, 26, 0.09);
+    --fonte: "Nunito", Arial, sans-serif;
+}
+
+
+/* ==================================================
+   ESTILOS GERAIS
+================================================== */
+
+body {
+    min-width: 1180px;
+    color: var(--marrom-escuro);
+    background: var(--fundo);
+    font-family: var(--fonte);
+    line-height: 1.5;
+}
+
+.container {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   CABEÇALHO
+================================================== */
+
+.site-header {
+    background: var(--branco);
+    border-top: 1px solid #232323;
+    border-bottom: 1px solid var(--borda);
+    box-shadow: 0 2px 10px rgba(59, 42, 26, 0.04);
+}
+
+.header-inner {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 26px;
+    padding: 10px 0;
+}
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    width: 78px;
+    height: auto;
+}
+
+
+/* ==================================================
+   MENU DE NAVEGAÇÃO
+================================================== */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    flex: 1;
+}
+
+.nav-link {
+    position: relative;
+    color: var(--marrom);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* ==================================================
+   FOTO DO USUÁRIO
+================================================== */
+
+.user-avatar img {
+    width: 48px;
+    height: 48px;
+    border: 3px solid #f3e6cf;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* ==================================================
+   CONTEÚDO PRINCIPAL
+================================================== */
+
+.main-content {
+    padding: 78px 0 64px;
+}
+
+
+/* ==================================================
+   CABEÇALHO DO FEED
+================================================== */
+
+.feed-header {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.feed-title {
+    margin-bottom: 6px;
+    color: var(--marrom);
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.08;
+}
+
+.feed-subtitle {
+    color: var(--vermelho);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   BOTÃO NOVA PUBLICAÇÃO
+================================================== */
+
+.btn-primary {
+    min-width: 210px;
+    padding: 16px 24px;
+    border-radius: 18px;
+    color: var(--branco);
+    background: var(--vermelho);
+    box-shadow: 0 8px 18px rgba(239, 61, 77, 0.22);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+/* ==================================================
+   FILTROS
+================================================== */
+
+.filters {
+    margin-bottom: 58px;
+    display: flex;
+}
+
+.filter-tab {
+    min-height: 52px;
+    padding: 0 28px;
+    border: 1px solid #b9b9b9;
+    border-right: 0;
+    color: #222222;
+    background: var(--branco);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.filter-tab:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.filter-tab:last-child {
+    border-right: 1px solid #b9b9b9;
+    border-radius: 0 10px 10px 0;
+}
+
+.filter-tab.is-active {
+    color: var(--branco);
+    background: var(--marrom);
+}
+
+
+/* ==================================================
+   LISTA DE POSTS
+================================================== */
+
+.posts {
+    width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+
+/* ==================================================
+   CARD DE POST
+================================================== */
+
+.post {
+    padding: 30px 34px 24px;
+    border: 1px solid rgba(107, 74, 52, 0.05);
+    border-radius: 18px;
+    background: var(--branco);
+    box-shadow: var(--sombra);
+}
+
+/* ==================================================
+   CABEÇALHO DO POST
+================================================== */
+
+.post-header {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-user {
+    flex: 1;
+}
+
+.user-name {
+    color: #111111;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.post-meta {
+    margin-top: 2px;
+    color: #333333;
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   ETIQUETA URGENTE
+================================================== */
+
+.badge {
+    padding: 7px 14px;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.badge-urgent {
+    color: #d30018;
+    background: var(--vermelho-claro);
+}
+
+
+/* ==================================================
+   CONTEÚDO DO POST
+================================================== */
+
+.post-title {
+    margin-bottom: 10px;
+    color: #111111;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.post-text {
+    margin-bottom: 12px;
+    color: #262626;
+    font-size: 15px;
+}
+
+.post-location {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--cinza);
+    font-size: 12px;
+}
+
+.pin {
+    color: var(--vermelho);
+    font-size: 20px;
+}
+
+
+/* ==================================================
+   IMAGEM DO POST
+================================================== */
+
+.post-image {
+    height: 205px;
+    margin-bottom: 18px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #eeeeee;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==================================================
+   AÇÕES DO POST
+================================================== */
+
+.post-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.actions-left {
+    display: flex;
+    gap: 24px;
+}
+
+.action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.action span {
+    color: var(--vermelho);
+    font-size: 19px;
+}
+
+.action.share span {
+    color: #aaaaaa;
+}
+
+/* ==================================================
+   RODAPÉ
+================================================== */
+
+.site-footer {
+    margin-top: 40px;
+    padding: 22px 24px;
+    border-top: 1px solid var(--borda);
+    color: var(--marrom);
+    background: var(--branco);
+    text-align: center;
+    font-size: 12px;
+}
+
+.site-footer p + p {
+    margin-top: 4px;
+}
