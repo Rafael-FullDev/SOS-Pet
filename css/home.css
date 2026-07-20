@@ -23,13 +23,10 @@ body {
   line-height: 1.35;
 }
 
-
-
 a {
   color: inherit;
   text-decoration: none;
 }
-
 
 h1,
 h2,
@@ -161,7 +158,9 @@ h3 {
   font-size: 11px;
   font-weight: 800;
   white-space: nowrap;
-  transition: 260ms ease, color 160ms ease;
+  transition:
+    260ms ease,
+    color 160ms ease;
 }
 
 .MenuPrincipal a:hover {
@@ -273,7 +272,6 @@ h3 {
   background-image: url(../assets/images/home/CachorroHome.png);
 }
 
-
 .DestaquesInicio {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -301,11 +299,11 @@ h3 {
   border-radius: 22px;
 }
 
-#GatoInicio{
+#GatoInicio {
   background-image: url(../assets/images/home/GatoInicio.png);
 }
 
-#CachorroInicio{
+#CachorroInicio {
   background-image: url(../assets/images/home/CachorroInicio.png);
 }
 
@@ -325,7 +323,6 @@ h3 {
   margin-bottom: 0;
   color: #4d494e;
   font-size: 12px;
-  
 }
 
 .NotaInicio {
@@ -429,17 +426,15 @@ h3 {
   font-size: 12px;
 }
 
-
-
-#AnimaisPerdidos{
+#AnimaisPerdidos {
   background-image: url(../assets/images/home/PerdidosServico.png);
 }
 
-#PedidosAjuda{
+#PedidosAjuda {
   background-image: url(../assets/images/home/PedidosAjudaServico.png);
 }
 
-#Adocao{
+#Adocao {
   background-image: url(../assets/images/home/FeedServico.png);
 }
 
@@ -574,19 +569,19 @@ h3 {
   line-height: 1.25;
 }
 
-#Etapa1{
+#Etapa1 {
   background-image: url(../assets/images/home/IconEtapa1.png);
 }
 
-#Etapa2{
+#Etapa2 {
   background-image: url(../assets/images/home/IconEtapa2.png);
 }
 
-#Etapa3{
+#Etapa3 {
   background-image: url(../assets/images/home/IconEtapa3.png);
 }
 
-#Etapa4{
+#Etapa4 {
   background-image: url(../assets/images/home/IconEtapa4.png);
 }
 
@@ -621,15 +616,15 @@ h3 {
   border-radius: 15px;
 }
 
-#Historia1{
+#Historia1 {
   background-image: url(../assets/images/home/Historia1.png);
 }
 
-#Historia2{
+#Historia2 {
   background-image: url(../assets/images/home/Historia2.png);
 }
 
-#Historia3{
+#Historia3 {
   background-image: url(../assets/images/home/Historia3.png);
 }
 

@@ -1,178 +1,156 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-box-sizing: 0;
 }
-
 
 body {
-font-family: "inter", sans-serif;
-background-color: var(--CorFundo);
-margin: 0;
-  min-height: 100vh;  
-  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--CorFundo);
+  font-family: "Poppins", Arial, sans-serif;
 }
 
-.Cabecalho {
-  position: relative;
-  width: 100%;
-  height: 60px;
-  background-color: var(--Branco);
+.PrincipalCadastre-se {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 24px;
-  box-sizing: border-box;
-  margin-bottom: 24px; 
-  overflow: visible;
-box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);    /* atual */
-}
-
-.Logo {
-  position: absolute;
-  left: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 100px; 
-  width: auto;
-  display: block;
-}
-
-.PrincipalCadastre-se{
-  display: flex;
+  padding: 30px 16px 38px;
   align-items: center;
   justify-content: center;
-  padding: 24px 16px 32px;
 }
 
-.Titulo{
-text-align: center;
-font-family: "poppins", sans-serif;
-color: var(--Vermelho);
+.Titulo,
+.Subtitulo {
+  text-align: center;
 }
 
-.Subtitulo{
-text-align: center;
-font-family: "poppins", sans-serif;
-color: var(--Marrom);
+.Titulo {
+  color: var(--Vermelho);
 }
 
-.RedesSociais{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.RedesSociaisLista{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-}
-
-.RedesSociaisLista a{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  flex: 0 0 44px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 1px solid rgba(97, 68, 43, 0.16);
-  color: var(--Marrom);
-  font-size: 20px;
-}
-
-.RedesSociaisLista i{
-  line-height: 1;
-}
-
-
-.Span{
-  font-family: "inter", sans-serif;
-  font-size: smaller;
-  font-weight: 400;
+.Subtitulo {
+  margin-top: 6px;
   color: var(--Marrom);
 }
 
 .Container {
   display: flex;
+  width: min(100%, 470px);
+  padding: 30px 54px 42px;
   flex-direction: column;
-  background-color: white;
-  padding: 30px 60px 72px;
+  gap: 22px;
+  border: 1px solid rgba(30, 30, 36, 0.6);
   border-radius: 20px;
-  width: 450px;
-  border: 1px solid black;
-  box-shadow: 13px 7px 31px var(--SombraVermelha);
-  gap: 24px;
-
+  background: #fff;
+  box-shadow: 10px 8px 28px rgba(230, 57, 70, 0.2);
 }
 
-.GrupoCartao{
+.RedesSociais,
+.RedesSociaisLista {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.RedesSociaisLista {
+  gap: 14px;
+}
+
+.RedesSociaisLista a,
+.RedesSociaisLista button {
+  display: inline-flex;
+  padding: 0;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(97, 68, 43, 0.16);
+  border-radius: 50%;
+  color: var(--Marrom);
+  background: #fff;
+  font-size: 20px;
+}
+
+.GrupoCartao {
   display: flex;
   flex-direction: column;
-justify-content: center;
-gap: 12px;
+  gap: 13px;
 }
 
-.Cartao{
-display: flex;
-flex-direction: column;
-justify-content: center;
-border-radius: 12px;
-font-family:"poppins" , sans-serif;
-font-size: medium;
-font-weight: 700;
-color: var(--Marrom);
-}
-
-.LembrarDeMim{
+.Cartao {
   display: flex;
-  font-family: "inter",sans-serif;
-  font-weight: 350;
-  justify-content: center;
-  align-items: center;
-  gap: 8px; 
-  margin-top: 20px;
+  flex-direction: column;
+  color: var(--Marrom);
+  font-size: 14px;
+  font-weight: 700;
 }
 
-.LembrarDeMim input[type="checkbox"] {
+.Span {
+  margin-top: 4px;
+  color: var(--Marrom);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.LembrarDeMim {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.LembrarDeMim input {
   width: 18px;
   height: 18px;
-  cursor: pointer;
 }
 
 .LembrarDeMim label {
-  font-size: 14px;
-  color: #333;
-  cursor: pointer;
+  font-size: 13px;
 }
 
-.BotaoCadastro{
-  display: block;
-  padding: 10px 60px;
-  border-radius: 12px;
-  border-color: var(--Vermelho);
-  background-color: var(--Vermelho);
-  color: aliceblue;
-  font-family: "poppins", sans-serif;
+.BotaoCadastro {
+  min-height: 46px;
+  padding: 0 28px;
+  margin: 4px auto 0;
+  border: 0;
+  border-radius: 11px;
+  color: #fff;
+  background: var(--Vermelho);
+  font-size: 17px;
   font-weight: 700;
-  font-size: large;
-  margin: 0 auto;
-  cursor: pointer;
+  transition: 160ms ease;
+}
+
+.BotaoCadastro:hover {
+  transform: translateY(-2px);
 }
 
 .Divisor {
-  border: none;
-  border-top: 1px solid var(--Preto);
   width: 90%;
   margin: 24px auto 0;
+  border: 0;
+  border-top: 1px solid var(--Preto);
 }
 
 .RodaPé {
-  font-family: "inter", sans-serif;
+  padding: 16px;
   text-align: center;
-  padding: 16px 0;
+}
+
+@media (max-width: 560px) {
+  .PrincipalCadastre-se {
+    padding-inline: 12px;
+  }
+
+  .Container {
+    padding: 28px 22px 34px;
+    border-radius: 16px;
+  }
+
+  .BotaoCadastro {
+    width: 100%;
+  }
 }

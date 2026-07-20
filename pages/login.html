@@ -1,97 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="Entre na sua conta SOS Pet para publicar, comentar e oferecer ajuda."
+      name="description"
+    />
+    <title>Login</title>
+    <link href="../assets/images/shared/favicon.png" rel="icon" type="image/png" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alien+Block&family=Ole&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/login.css">
-</head>
-
-
-
-<body>
-<header class="Cabecalho">
-  <img src="../assets/images/shared/logo.png" alt="SOS Pet" class="Logo">
-</header>
-  <main class="PrincipalLogin">
-
-    <div class="Container">
-      <div class="Topo">
-        <h1>Faça seu Login</h1>
-        <p>Cuidar é salvar vidas</p>
-      </div>
-
-      <div class="RedesSociais" aria-label="Login com redes sociais">
-        <span class="RedesSociaisTitulo">Redes Sociais</span>
-
-        <div class="RedesSociaisLista">
-          <a href="#" aria-label="Entrar com Facebook">
-            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-          </a>
-
-          <a href="#" aria-label="Entrar com Google">
-            <i class="fa-brands fa-google" aria-hidden="true"></i>
-          </a>
-
-          <a href="#" aria-label="Entrar com Apple">
-            <i class="fa-brands fa-apple" aria-hidden="true"></i>
-          </a>
+    <link href="../css/global.css" rel="stylesheet" />
+    <link href="../css/login.css" rel="stylesheet" />
+    <link href="../css/navbar.css" rel="stylesheet" />
+    <link href="../css/interacoes.css" rel="stylesheet" />
+  </head>
+  <body data-page="login" data-root="../">
+    <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
+    <header class="Cabecalho">
+      <div class="LimiteConteudo ConteudoCabecalho">
+        <a class="Marca" href="../index.html"> <span class="Midia Logotipo"></span> </a
+        ><button
+          aria-controls="MenuPrincipal"
+          aria-expanded="false"
+          aria-label="Abrir menu de navegação"
+          class="BotaoMenuMobile"
+          type="button"
+        >
+          <span aria-hidden="true"></span><span aria-hidden="true"></span
+          ><span aria-hidden="true"></span>
+        </button>
+        <label class="CampoBusca">
+          <input
+            aria-label="Pesquisar no SOS Pet"
+            autocomplete="off"
+            class="BuscaGlobal"
+            placeholder="Pesquisar"
+            type="search"
+          />
+          <span aria-hidden="true">⌕</span>
+        </label>
+        <nav aria-label="Navegação principal" class="MenuPrincipal" id="MenuPrincipal">
+          <a href="../index.html#Inicio">Início</a>
+          <a href="pets-perdidos.html">Animais Perdidos</a>
+          <a href="animais-de-rua.html">Animais de Rua</a>
+          <a href="../index.html#Adocao">Adoção</a>
+          <a href="pedidos-de-ajuda.html">Pedidos</a>
+          <a href="feed.html">Feed</a>
+        </nav>
+        <div class="AcoesCabecalho">
+          <a class="LinkEntrar" data-auth="visitante" href="login.html">Entrar</a>
+          <a class="Botao BotaoPequeno" data-auth="visitante" href="cadastro.html">Criar conta</a>
+          <a
+            aria-label="Abrir perfil do usuário"
+            class="Midia Usuario"
+            data-auth="usuario"
+            href="perfil.html"
+            title="Abrir meu perfil"
+          ></a>
         </div>
       </div>
-
-      <form class="Formulario" action="#">
-        <div class="GrupoCartao">
-          <!-- Email -->
-          <div class="Cartao">
-            <label for="Email">E-mail</label>
-            <input id="Email" type="email" name="Email" placeholder="Digite seu E-mail" required>
-            <span class="Span">No mínimo 8 caracteres.</span>
-          </div>
-
-          <!-- Senha -->
-          <div class="Cartao">
-            <label for="Password">Senha</label>
-            <input id="Password" type="password" name="Password" placeholder="Digite sua senha" required>
-            <span class="Span">No mínimo 8 caracteres.</span>
-          </div>
-
-          <!-- lembrar de mim -->
-          <div class="LembrarDeMim">
-            <input type="checkbox" id="lembrar" name="lembrar" value="sim">
-            <label for="lembrar">Lembrar de mim neste dispositivo</label>
+    </header>
+    <main class="PrincipalLogin" id="conteudo-principal" tabindex="-1">
+      <div class="Container">
+        <div class="Topo">
+          <h1>Faça seu Login</h1>
+          <p>Cuidar é salvar vidas</p>
+        </div>
+        <div aria-label="Login com redes sociais" class="RedesSociais">
+          <span class="RedesSociaisTitulo">Redes Sociais</span>
+          <div class="RedesSociaisLista">
+            <button aria-label="Entrar com Facebook" data-provider="facebook" type="button">
+              <i aria-hidden="true" class="fa-brands fa-facebook-f"></i>
+            </button>
+            <button aria-label="Entrar com Google" data-provider="google" type="button">
+              <i aria-hidden="true" class="fa-brands fa-google"></i>
+            </button>
+            <button aria-label="Entrar com Apple" data-provider="apple" type="button">
+              <i aria-hidden="true" class="fa-brands fa-apple"></i>
+            </button>
           </div>
         </div>
+        <form action="#" class="Formulario" id="FormularioLogin" novalidate="">
+          <p aria-live="polite" class="MensagemFormulario"></p>
+          <div class="GrupoCartao">
+            <div class="Cartao">
+              <label for="Email">E-mail</label>
+              <input
+                autocomplete="email"
+                id="Email"
+                inputmode="email"
+                name="Email"
+                placeholder="Digite seu E-mail"
+                required=""
+                type="email"
+              />
+              <span class="Span">Use um e-mail válido.</span>
+            </div>
 
-        <button class="BotaoLogin" type="submit">Login</button>
+            <div class="Cartao">
+              <label for="Password">Senha</label>
+              <input
+                autocomplete="current-password"
+                id="Password"
+                minlength="8"
+                name="Password"
+                placeholder="Digite sua senha"
+                required=""
+                type="password"
+              />
+              <span class="Span">Use pelo menos 8 caracteres.</span>
+            </div>
 
-        <div class="Conta">
-          <a href="#">Esqueceu sua senha?</a>
-          <a href="cadastro.html">Não tem uma conta? Cadastre-se</a>
-        </div>
-      </form>
-    </div>
-  </main>
+            <div class="LembrarDeMim">
+              <input id="lembrar" name="lembrar" type="checkbox" value="sim" />
+              <label for="lembrar">Lembrar de mim neste dispositivo</label>
+            </div>
+          </div>
+          <button class="BotaoLogin" type="submit">Login</button>
+          <div class="Conta">
+            <a data-action="recuperar-senha" href="#recuperar-senha">Esqueceu sua senha?</a>
+            <a href="cadastro.html">Não tem uma conta? Cadastre-se</a>
+          </div>
+        </form>
+      </div>
+    </main>
+    <hr class="Divisor" />
 
-   <hr class="Divisor">
-    <!-- footer -->
-  <footer class="RodaPé">
-  
-    <p><small>@ 2026 SOS pet. Todos os direitos reservados.
-        <br>Privacidade • Termos • Acessibilidade.
-        <br>Precisa de ajuda? Contate suporte@sospet.exemplo</small></p>
-  </footer>
-</body>
-
+    <footer class="FooterPadrao">
+      <img alt="Logo SOS Pet" src="../assets/images/pedidos-de-ajuda/Logo.png" />
+      <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
+      <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
+    </footer>
+    <script defer="true" src="../js/dados.js"></script>
+    <script defer="true" src="../js/geral.js"></script>
+    <script defer="true" src="../js/conta.js"></script>
+  </body>
 </html>

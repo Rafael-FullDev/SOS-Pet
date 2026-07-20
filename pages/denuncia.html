@@ -1,0 +1,210 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="Envie uma denúncia de maus-tratos ou abandono de animais de forma identificada ou anônima."
+      name="description"
+    />
+    <title>Denúncia | SOS Pet</title>
+    <link href="../assets/images/shared/favicon.png" rel="icon" type="image/png" />
+    <link href="../css/global.css" rel="stylesheet" />
+    <link href="../css/navbar.css" rel="stylesheet" />
+    <link href="../css/interacoes.css" rel="stylesheet" />
+    <link href="../css/denuncia.css" rel="stylesheet" />
+  </head>
+  <body data-page="denuncia" data-root="../">
+    <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
+    <header class="Cabecalho">
+      <div class="LimiteConteudo ConteudoCabecalho">
+        <a class="Marca" href="../index.html"><span class="Midia Logotipo"></span></a>
+        <button
+          aria-controls="MenuPrincipal"
+          aria-expanded="false"
+          aria-label="Abrir menu de navegação"
+          class="BotaoMenuMobile"
+          type="button"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <label class="CampoBusca">
+          <input
+            aria-label="Pesquisar no SOS Pet"
+            autocomplete="off"
+            class="BuscaGlobal"
+            placeholder="Pesquisar"
+            type="search"
+          />
+          <span aria-hidden="true">⌕</span>
+        </label>
+        <nav aria-label="Navegação principal" class="MenuPrincipal" id="MenuPrincipal">
+          <a href="../index.html#Inicio">Início</a>
+          <a href="pets-perdidos.html">Animais Perdidos</a>
+          <a aria-current="page" class="Ativo" href="animais-de-rua.html">Animais de Rua</a>
+          <a href="../index.html#Adocao">Adoção</a>
+          <a href="pedidos-de-ajuda.html">Pedidos</a>
+          <a href="feed.html">Feed</a>
+        </nav>
+        <div class="AcoesCabecalho">
+          <a class="LinkEntrar" data-auth="visitante" href="login.html">Entrar</a>
+          <a class="Botao BotaoPequeno" data-auth="visitante" href="cadastro.html">Criar conta</a>
+          <a
+            aria-label="Abrir perfil do usuário"
+            class="Midia Usuario"
+            data-auth="usuario"
+            href="perfil.html"
+            title="Abrir meu perfil"
+          ></a>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo-principal" tabindex="-1">
+      <section class="PaginaDenuncia">
+        <div class="LimiteConteudo ConteudoDenuncia">
+          <a class="VoltarDenuncia" href="animais-de-rua.html">← Voltar para Animais de Rua</a>
+          <h1><span aria-hidden="true">🐾</span> Faça sua denúncia</h1>
+
+          <div class="BannerDenuncia">
+            <div aria-hidden="true" class="IconeBannerDenuncia">♥</div>
+            <div>
+              <h2>Faça a diferença!</h2>
+              <p>
+                Sua denúncia pode salvar uma vida. Preencha o formulário abaixo com o máximo de
+                detalhes possível. A denúncia também pode ser enviada de forma anônima.
+              </p>
+            </div>
+          </div>
+
+          <label class="OpcaoAnonima">
+            <input checked name="anonima" type="checkbox" />
+            <span>
+              <strong>Denúncia anônima</strong>
+              <small>Seus dados pessoais não serão incluídos no registro.</small>
+            </span>
+          </label>
+
+          <form class="FormularioDenuncia" id="FormularioDenuncia">
+            <fieldset class="DadosDenunciante">
+              <legend>Seus dados</legend>
+              <div class="LinhaFormularioDenuncia">
+                <label>
+                  Nome
+                  <input name="nome" placeholder="Seu nome completo" type="text" />
+                </label>
+                <label>
+                  Telefone
+                  <input name="telefone" placeholder="(00) 00000-0000" type="tel" />
+                </label>
+              </div>
+              <label>
+                E-mail
+                <input name="email" placeholder="seu@email.com" type="email" />
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Sobre o ocorrido</legend>
+              <div class="LinhaFormularioDenuncia">
+                <label>
+                  Tipo de animal
+                  <select name="animal" required>
+                    <option value="">Selecione</option>
+                    <option value="cachorro">Cachorro</option>
+                    <option value="gato">Gato</option>
+                    <option value="cavalo">Cavalo</option>
+                    <option value="passaro">Pássaro</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </label>
+                <label>
+                  Tipo de maus-tratos
+                  <select name="maustratos" required>
+                    <option value="">Selecione</option>
+                    <option value="abandono">Abandono</option>
+                    <option value="agressao">Agressão física</option>
+                    <option value="negligencia">Negligência</option>
+                    <option value="confinamento">Confinamento inadequado</option>
+                    <option value="veneno">Envenenamento</option>
+                    <option value="exploracao">Exploração</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </label>
+              </div>
+
+              <span class="RotuloUrgencia">Nível de urgência</span>
+              <div class="OpcoesUrgencia">
+                <label><input name="urgencia" required type="radio" value="baixo" />Baixo</label>
+                <label><input name="urgencia" type="radio" value="medio" />Médio</label>
+                <label><input name="urgencia" type="radio" value="alto" />Alto</label>
+                <label><input name="urgencia" type="radio" value="critico" />Crítico</label>
+              </div>
+
+              <label>
+                Descrição detalhada
+                <textarea
+                  maxlength="1200"
+                  name="descricao"
+                  placeholder="Descreva o que você presenciou ou tem conhecimento. Quanto mais detalhes, melhor para a investigação."
+                  required
+                ></textarea>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Localização</legend>
+              <label>
+                Endereço
+                <input name="endereco" placeholder="Rua, número e bairro" required type="text" />
+              </label>
+              <div class="LinhaFormularioDenuncia">
+                <label>
+                  Cidade
+                  <input name="cidade" placeholder="Nome da cidade" required type="text" />
+                </label>
+                <label>
+                  Estado
+                  <input maxlength="2" name="estado" placeholder="UF" required type="text" />
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Evidências opcionais</legend>
+              <label class="UploadDenuncia">
+                <strong>Anexar fotos</strong>
+                <span
+                  >Selecione imagens que possam ajudar na identificação do local ou do animal.</span
+                >
+                <input
+                  accept="image/png,image/jpeg,image/webp"
+                  multiple
+                  name="arquivos"
+                  type="file"
+                />
+              </label>
+              <div class="PreviaDenuncia"></div>
+            </fieldset>
+
+            <p aria-live="polite" class="ErroFormulario"></p>
+            <button class="EnviarDenuncia" type="submit">Enviar denúncia</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="FooterPadrao">
+      <img alt="Logo SOS Pet" src="../assets/images/pedidos-de-ajuda/Logo.png" />
+      <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
+      <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
+    </footer>
+
+    <script defer="true" src="../js/dados.js"></script>
+    <script defer="true" src="../js/geral.js"></script>
+    <script defer="true" src="../js/denuncia.js"></script>
+  </body>
+</html>

@@ -1,0 +1,353 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="Gerencie seu perfil, publicações, pedidos e atividades no SOS Pet."
+      name="description"
+    />
+    <title>Perfil - SOS PET</title>
+    <link href="../assets/images/shared/favicon.png" rel="icon" type="image/png" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="../css/variantes.css" rel="stylesheet" />
+    <link href="../css/perfil.css" rel="stylesheet" />
+    <link href="../css/navbar.css" rel="stylesheet" />
+    <link href="../css/interacoes.css" rel="stylesheet" />
+  </head>
+  <body data-page="perfil" data-root="../">
+    <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
+    <header class="Cabecalho">
+      <div class="LimiteConteudo ConteudoCabecalho">
+        <a class="Marca" href="../index.html"> <span class="Midia Logotipo"></span> </a
+        ><button
+          aria-controls="MenuPrincipal"
+          aria-expanded="false"
+          aria-label="Abrir menu de navegação"
+          class="BotaoMenuMobile"
+          type="button"
+        >
+          <span aria-hidden="true"></span><span aria-hidden="true"></span
+          ><span aria-hidden="true"></span>
+        </button>
+        <label class="CampoBusca">
+          <input
+            aria-label="Pesquisar no SOS Pet"
+            autocomplete="off"
+            class="BuscaGlobal"
+            placeholder="Pesquisar"
+            type="search"
+          />
+          <span aria-hidden="true">⌕</span>
+        </label>
+        <nav aria-label="Navegação principal" class="MenuPrincipal" id="MenuPrincipal">
+          <a href="../index.html#Inicio">Início</a>
+          <a href="pets-perdidos.html">Animais Perdidos</a>
+          <a href="animais-de-rua.html">Animais de Rua</a>
+          <a href="../index.html#Adocao">Adoção</a>
+          <a href="pedidos-de-ajuda.html">Pedidos</a>
+          <a href="feed.html">Feed</a>
+        </nav>
+        <div class="AcoesCabecalho">
+          <a class="LinkEntrar" data-auth="visitante" href="login.html">Entrar</a>
+          <a class="Botao BotaoPequeno" data-auth="visitante" href="cadastro.html">Criar conta</a>
+          <a
+            aria-label="Abrir perfil do usuário"
+            class="Midia Usuario"
+            data-auth="usuario"
+            href="perfil.html"
+            title="Abrir meu perfil"
+          ></a>
+        </div>
+      </div>
+    </header>
+    <main class="content-wrapper" id="conteudo-principal" tabindex="-1">
+      <h1>Meu Perfil</h1>
+      <p class="subtitle">Gerencie suas informações e acompanhe suas atividades.</p>
+      <section class="profile-card">
+        <div class="profile-avatar-container">
+          <img
+            alt="Foto de Juliana Silva"
+            class="avatar-large"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmbTQXD_Zmi0hUmpuvXvhjxw8RS-VBzRuXRak6WVYWbEqp2LvDDMRhsgEe&amp;s=10"
+          />
+        </div>
+        <div class="profile-info">
+          <h2 data-profile="nome">Juliana Silva</h2>
+          <h3 data-profile="email">juliana.silva@email.com</h3>
+          <p class="profile-phone" data-profile="telefone">📞 (11) 99999-9999</p>
+          <p class="profile-location" data-profile="cidade">📍 São Paulo (SP)</p>
+          <button class="btn-edit-profile" data-action="editar-perfil" type="button">
+            Editar perfil
+          </button>
+        </div>
+      </section>
+      <section class="AtalhosPerfil">
+        <button data-atalho="publicacao" type="button">
+          <span>＋</span><strong>Nova publicação</strong></button
+        ><button data-atalho="pedido" type="button">
+          <span>＋</span><strong>Criar pedido</strong></button
+        ><button data-atalho="atividades" type="button">
+          <span>☰</span><strong>Minhas atividades</strong>
+        </button>
+      </section>
+      <nav class="AbasPerfil">
+        <button data-secao=".my-pets-secao" type="button">Meus pets</button
+        ><button data-secao=".meus-pedidos-de-ajuda" type="button">Pedidos</button
+        ><button data-secao=".adocoes-section" type="button">Adoções</button
+        ><button data-secao="atividades" type="button">Atividades</button>
+      </nav>
+      <section class="card-estatisticas">
+        <div class="card-animais" role="button" tabindex="0" data-estatistica="0">
+          <span class="numero">12</span>
+          <p class="Animais">Animais Resgatados</p>
+        </div>
+
+        <div class="card-adocao" role="button" tabindex="0" data-estatistica="1">
+          <span class="numero">08</span>
+          <p class="processo">Em processo de adoção</p>
+        </div>
+
+        <div class="card-pedido" role="button" tabindex="0" data-estatistica="2">
+          <span class="numero">05</span>
+          <p class="ajuda">Pedidos de ajuda ativos</p>
+        </div>
+      </section>
+
+      <section class="my-pets-secao">
+        <div class="section-header">
+          <h2>Meus Pets</h2>
+          <button class="ver-todos-link" data-action="ver-todos" type="button">Ver todos</button>
+        </div>
+        <div class="pets-cards-container">
+          <div class="pet-card">
+            <div class="pet-image-wrapper">
+              <img
+                alt="Foto do Slinky"
+                class="pet-img"
+                src="../assets/images/perfil/coelho-slinky.jpg"
+              />
+            </div>
+            <div class="pet-card-info">
+              <h3>Slinky</h3>
+              <p>coelho - 7 meses</p>
+              <button class="btn-ver-detalhes" data-action="detalhes-pet" type="button">
+                Ver detalhes
+              </button>
+            </div>
+          </div>
+
+          <div class="pet-card">
+            <div class="pet-image-wrapper">
+              <img
+                alt="Foto da Mel"
+                class="pet-img"
+                src="../assets/images/perfil/caozinha-mel.jpg"
+              />
+            </div>
+            <div class="pet-card-info">
+              <h3>Mel</h3>
+              <p>cachorro - 2 anos</p>
+              <button class="btn-ver-detalhes" data-action="detalhes-pet" type="button">
+                Ver detalhes
+              </button>
+            </div>
+          </div>
+
+          <div class="pet-card">
+            <div class="pet-image-wrapper">
+              <img
+                alt="Foto do Brownie"
+                class="pet-img"
+                src="../assets/images/perfil/gatinha-brownie.jpg"
+              />
+            </div>
+            <div class="pet-card-info">
+              <h3>Brownie</h3>
+              <p>gato - 4 anos</p>
+              <button class="btn-ver-detalhes" data-action="detalhes-pet" type="button">
+                Ver detalhes
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="meus-pedidos-de-ajuda">
+        <div class="section-header">
+          <h2>Meus pedidos de ajuda</h2>
+          <button class="ver-todos" data-action="ver-todos" type="button">Ver todos</button>
+        </div>
+        <div class="list-container">
+          <div class="horizontal-card">
+            <img alt="Mel" class="card-img" src="../assets/images/perfil/gato-mel.jpg" />
+            <div class="card-main-info">
+              <h3>Procure minha Mel</h3>
+              <p class="card-meta">Perdido em 25/04/2026 • São Paulo, SP</p>
+            </div>
+            <div class="card-status-container">
+              <span class="status-ativo">Ativo</span>
+              <button
+                aria-label="Ver detalhes do pedido"
+                class="seta-btn"
+                data-action="detalhes-pedido"
+                type="button"
+              >
+                →
+              </button>
+            </div>
+          </div>
+
+          <div class="horizontal-card">
+            <img
+              alt="Ajuda para resgate"
+              class="card-img"
+              src="../assets/images/perfil/cachorro-ajuda.jpg"
+            />
+            <div class="card-main-info">
+              <h3>Ajuda para resgate</h3>
+              <p class="card-local">São Paulo, SP</p>
+            </div>
+            <div class="card-status-container">
+              <span class="status-em-andamento">Em andamento</span>
+              <button
+                aria-label="Ver detalhes do pedido"
+                class="seta-btn"
+                data-action="detalhes-pedido"
+                type="button"
+              >
+                →
+              </button>
+            </div>
+          </div>
+
+          <div class="horizontal-card">
+            <img
+              alt="Precisamos de ração"
+              class="card-img"
+              src="../assets/images/perfil/racao.png"
+            />
+            <div class="card-main-info">
+              <h3>Precisamos de ração</h3>
+              <p class="card-local">São Paulo, SP</p>
+            </div>
+            <div class="card-status-container">
+              <span class="status-concluido">Concluído</span>
+              <button
+                aria-label="Ver detalhes do pedido"
+                class="seta-btn"
+                data-action="detalhes-pedido"
+                type="button"
+              >
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="adocoes-section">
+        <div class="section-header">
+          <h2>Minhas Adoções</h2>
+        </div>
+        <div class="list-container">
+          <div class="horizontal-card">
+            <img alt="Bidu" class="card-img" src="../assets/images/perfil/caozinho-bidu.jpg" />
+            <div class="card-main-info">
+              <h3>Bidu</h3>
+              <p class="card-meta">Adotado em 11/02/2026</p>
+            </div>
+            <div class="card-status-container">
+              <span class="status-concluido">Concluído</span>
+            </div>
+          </div>
+
+          <div class="horizontal-card">
+            <img alt="Lola" class="card-img" src="../assets/images/perfil/gatinha-lola.jpg" />
+            <div class="card-main-info">
+              <h3>Lola</h3>
+              <p class="card-meta">Adotado em 19/10/2025</p>
+            </div>
+            <div class="card-status-container">
+              <span class="status-concluido">Concluído</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <article class="promo-banner">
+        <div class="banner-left">
+          <span class="icon-heart"> </span>
+          <div class="banner-text">
+            <h3>Quer fazer mais?</h3>
+            <p>Veja como você pode ajudar ainda mais os pets</p>
+          </div>
+        </div>
+        <button class="btn-quero-doar" data-action="doar" type="button">Quero doar</button>
+      </article>
+
+      <section class="actions-section">
+        <h2>Conecte-se com atitudes</h2>
+        <div class="grid-actions">
+          <button
+            aria-label="Abrir Encontre um pet"
+            class="acao-card"
+            data-action="encontrar-pet"
+            type="button"
+          >
+            <span class="acao-icon"> </span>
+            <h4>Encontre um pet</h4>
+            <p>Veja os pets que estão prontos</p>
+          </button>
+
+          <button
+            aria-label="Abrir Adoção temporária"
+            class="acao-card"
+            data-action="lar-temporario"
+            type="button"
+          >
+            <span class="acao-icon">🐕‍🦺</span>
+            <h4>Adoção temporária</h4>
+            <p>Dê um lar temporário</p>
+          </button>
+
+          <button
+            aria-label="Abrir Pedidos de ajuda"
+            class="acao-card"
+            data-action="pedidos"
+            type="button"
+          >
+            <span class="acao-icon">🐾</span>
+            <h4>Pedidos de ajuda</h4>
+            <p>Ajude quem precisa</p>
+          </button>
+
+          <button
+            aria-label="Abrir Dúvidas mais lidas"
+            class="acao-card"
+            data-action="duvidas"
+            type="button"
+          >
+            <span class="acao-icon">ℹ️</span>
+            <h4>Dúvidas mais lidas</h4>
+            <p>Tire dúvidas e leia novidades</p>
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="FooterPadrao">
+      <img alt="Logo SOS Pet" src="../assets/images/pedidos-de-ajuda/Logo.png" />
+      <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
+      <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
+    </footer>
+    <script defer="true" src="../js/dados.js"></script>
+    <script defer="true" src="../js/geral.js"></script>
+    <script defer="true" src="../js/perfil.js"></script>
+  </body>
+</html>

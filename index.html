@@ -1,220 +1,242 @@
 <!doctype html>
+
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta
-      name="description"
       content="SOS Pet: uma rede de apoio para localizar, proteger e reencontrar animais."
+      name="description"
     />
     <title>SOS Pet</title>
-    <link rel="stylesheet" href="css/home.css" />
+    <link href="assets/images/shared/favicon.png" rel="icon" type="image/png" />
+    <link href="css/home.css" rel="stylesheet" />
+    <link href="css/navbar.css" rel="stylesheet" />
+    <link href="css/interacoes.css" rel="stylesheet" />
   </head>
-
-  <body>
+  <body data-page="home" data-root="">
+    <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
     <header class="Cabecalho">
       <div class="LimiteConteudo ConteudoCabecalho">
-        
-        <a class="Marca" href="index.html">
-          <span class="Midia Logotipo"></span>
-        </a>
+        <a class="Marca" href="index.html"> <span class="Midia Logotipo"></span> </a
+        ><button
+          aria-controls="MenuPrincipal"
+          aria-expanded="false"
+          aria-label="Abrir menu de navegação"
+          class="BotaoMenuMobile"
+          type="button"
+        >
+          <span aria-hidden="true"></span><span aria-hidden="true"></span
+          ><span aria-hidden="true"></span>
+        </button>
         <label class="CampoBusca">
-          <input type="search" placeholder="Pesquisar" />
-          <span>⌕</span>
+          <input
+            aria-label="Pesquisar no SOS Pet"
+            autocomplete="off"
+            class="BuscaGlobal"
+            placeholder="Pesquisar"
+            type="search"
+          />
+          <span aria-hidden="true">⌕</span>
         </label>
-
-        <nav class="MenuPrincipal">
-          <a class="Ativo" href="index.html#Inicio">Início</a>
-          <a href="index.html#AnimaisPerdidos">Animais Perdidos</a>
+        <nav aria-label="Navegação principal" class="MenuPrincipal" id="MenuPrincipal">
+          <a aria-current="page" class="Ativo" href="index.html#Inicio">Início</a>
+          <a href="pages/pets-perdidos.html">Animais Perdidos</a>
           <a href="pages/animais-de-rua.html">Animais de Rua</a>
           <a href="index.html#Adocao">Adoção</a>
           <a href="pages/pedidos-de-ajuda.html">Pedidos</a>
           <a href="pages/feed.html">Feed</a>
         </nav>
-
         <div class="AcoesCabecalho">
-          <a class="LinkEntrar" href="pages/login.html">Entrar</a>
-          <a class="Botao BotaoPequeno" href="pages/cadastro.html">Criar conta</a>
-          <a class="Midia Usuario" href="pages/feed.html" aria-label="Perfil"></a>
+          <a class="LinkEntrar" data-auth="visitante" href="pages/login.html">Entrar</a>
+          <a class="Botao BotaoPequeno" data-auth="visitante" href="pages/cadastro.html"
+            >Criar conta</a
+          >
+          <a
+            aria-label="Abrir perfil do usuário"
+            class="Midia Usuario"
+            data-auth="usuario"
+            href="pages/perfil.html"
+            title="Abrir meu perfil"
+          ></a>
         </div>
       </div>
     </header>
-
-    <main>
+    <main id="conteudo-principal" tabindex="-1">
       <section class="Inicio" id="Inicio">
         <div class="LimiteConteudo">
           <div class="GradeInicio">
             <div class="TextoInicio">
               <h1>SOS Pet</h1>
-              <p class="ChamadaInicio">
-                A rede de socorro inteligente para a causa animal
-              </p>
+              <p class="ChamadaInicio">A rede de socorro inteligente para a causa animal</p>
               <p class="DescricaoInicio">
-                Tirando o caos dos grupos de redes sociais e centralizando
-                resgates, adoções e pedidos de ajuda em um só lugar.
+                Tirando o caos dos grupos de redes sociais e centralizando resgates, adoções e
+                pedidos de ajuda em um só lugar.
               </p>
-
               <div class="AcoesInicio">
-                <a class="Botao BotaoContorno" href="#AnimaisPerdidos">Perdi um Pet</a>
+                <a class="Botao BotaoContorno" href="pages/pets-perdidos.html">Perdi um Pet</a>
                 <a class="Botao" href="pages/animais-de-rua.html">Quero Ajudar</a>
               </div>
-
               <ul class="ListaValores">
                 <li>Comunidade</li>
                 <li>Segurança</li>
                 <li>Adoção</li>
               </ul>
             </div>
-
             <div class="VisualInicio">
               <div class="Midia CachorroInicio"></div>
             </div>
           </div>
-
           <div class="DestaquesInicio">
             <article class="CartaoDestaque">
-              <div class="Midia ImagemDestaque" id="GatoInicio"></div>
+              <div
+                aria-label="Gato que representa pets perdidos"
+                class="Midia ImagemDestaque"
+                id="GatoInicio"
+                role="img"
+              ></div>
               <div>
                 <h2>Encontre rapidamente pets perdidos</h2>
-                <p class="SubtituloDestaque">
-                  Alertas rápidos e alcance da comunidade
-                </p>
+                <p class="SubtituloDestaque">Alertas rápidos e alcance da comunidade</p>
                 <p>
-                  Publique um aviso de pet perdido com foto e localização. O SOS
-                  Pet ajuda você a alcançar quem está por perto.
+                  Publique um aviso de pet perdido com foto e localização. O SOS Pet ajuda você a
+                  alcançar quem está por perto.
                 </p>
               </div>
             </article>
-
             <article class="CartaoDestaque">
-              <div class="Midia ImagemDestaque" id="CachorroInicio"></div>
+              <div
+                aria-label="Cachorro representando a rede de proteção animal"
+                class="Midia ImagemDestaque"
+                id="CachorroInicio"
+                role="img"
+              ></div>
               <div>
                 <h2>Deixe os animais de rua mais seguros</h2>
                 <p class="SubtituloDestaque">Suporte voluntário</p>
                 <p>
-                  Peça comida, assistência médica, abrigo e transporte.
-                  Acompanhe o progresso e receba apoio.
+                  Peça comida, assistência médica, abrigo e transporte. Acompanhe o progresso e
+                  receba apoio.
                 </p>
               </div>
             </article>
           </div>
-
           <p class="NotaInicio">
-            Reporte animais perdidos, ajude animais de rua e coordene pedidos
-            urgentes com membros.
+            Reporte animais perdidos, ajude animais de rua e coordene pedidos urgentes com membros.
           </p>
         </div>
       </section>
-
       <section class="ComeceRapido FundoComPadrao">
         <div class="LimiteConteudo">
           <header class="CabecalhoSecao CabecalhoComeceRapido">
             <div class="Midia IconeComeceRapido"></div>
             <div>
               <h2>Comece em minutos</h2>
-              <p>
-                Escolha como quer ajudar e conecte-se a pessoas da sua região.
-              </p>
+              <p>Escolha como quer ajudar e conecte-se a pessoas da sua região.</p>
             </div>
           </header>
-
           <div class="GradeServicos">
-            <article class="CartaoServico" >
+            <article
+              aria-label="Abrir opção Animais Perdidos"
+              class="CartaoServico"
+              data-service="perdido"
+              role="button"
+              tabindex="0"
+            >
               <div class="Midia ImagemServico" id="AnimaisPerdidos"></div>
               <span class="EtiquetaCartao">Urgente</span>
               <div class="ConteudoServico">
                 <h3>Animais Perdidos</h3>
                 <p>
-                  Cadastre um pet sumido com filtros de bairro e cidade para
-                  acelerar o reencontro.
+                  Cadastre um pet sumido com filtros de bairro e cidade para acelerar o reencontro.
                 </p>
               </div>
             </article>
-
-            <article class="CartaoServico" >
+            <article
+              aria-label="Abrir opção Pedidos de Ajuda"
+              class="CartaoServico"
+              data-service="pedidos"
+              role="button"
+              tabindex="0"
+            >
               <div class="Midia ImagemServico" id="PedidosAjuda"></div>
               <span class="EtiquetaCartao">Comunidade</span>
               <div class="ConteudoServico">
                 <h3><a href="pages/pedidos-de-ajuda.html">Pedidos de Ajuda</a></h3>
                 <p>
-                  Encontre pedidos locais de ração, medicamentos, suporte para
-                  transporte e lar temporário.
+                  Encontre pedidos locais de ração, medicamentos, suporte para transporte e lar
+                  temporário.
                 </p>
               </div>
             </article>
-
-            <article class="CartaoServico" >
+            <article
+              aria-label="Abrir opção Feed da Comunidade"
+              class="CartaoServico"
+              data-service="feed"
+              role="button"
+              tabindex="0"
+            >
               <div class="Midia ImagemServico" id="Adocao"></div>
               <span class="EtiquetaCartao">Seguro</span>
               <div class="ConteudoServico">
                 <h3><a href="pages/feed.html">Feed da Comunidade</a></h3>
                 <p>
-                  Fique por dentro de tudo o que a comunidade está
-                  compartilhando: adoções, pedidos e notícias.
+                  Fique por dentro de tudo o que a comunidade está compartilhando: adoções, pedidos
+                  e notícias.
                 </p>
               </div>
             </article>
           </div>
         </div>
       </section>
-
       <section class="ComoFunciona">
         <div class="LimiteConteudo">
           <header class="CabecalhoSecao TextoCentralizado">
             <h2>Como Funciona o SOS Pet</h2>
-            <p>
-              Tudo o que você precisa para proteger animais e coordenar ajuda.
-            </p>
+            <p>Tudo o que você precisa para proteger animais e coordenar ajuda.</p>
           </header>
-
           <div class="AreaEtapas">
             <span class="LinhaEtapas"></span>
             <ol class="ListaEtapas">
               <li class="Etapa EtapaEsquerda">
-              <div class="CartaoEtapa">
-                <span class="NumeroEtapa">01</span>
-                <div class="ConteudoEtapa">
-                  <div class="Midia IconeEtapa" id="Etapa1"></div>
-                  <h3>Cadastre-se</h3>
-                  <p>
-                    Crie sua conta em segundos. Para ONGs, clínicas, protetores
-                    ou qualquer pessoa que ama animais.
-                  </p>
+                <div class="CartaoEtapa">
+                  <span class="NumeroEtapa">01</span>
+                  <div class="ConteudoEtapa">
+                    <div class="Midia IconeEtapa" id="Etapa1"></div>
+                    <h3>Cadastre-se</h3>
+                    <p>
+                      Crie sua conta em segundos. Para ONGs, clínicas, protetores ou qualquer pessoa
+                      que ama animais.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <span class="MarcadorLinhaTempo"></span>
+                <span class="MarcadorLinhaTempo"></span>
               </li>
-
               <li class="Etapa EtapaDireita">
-              <div class="CartaoEtapa">
-                <span class="NumeroEtapa">02</span>
-                <div class="ConteudoEtapa">
-                  <div class="Midia IconeEtapa" id="Etapa2"></div>
-                  <h3>Informe ou Busque</h3>
-                  <p>
-                    Cada pet cadastrado possui um histórico próprio de status e
-                    saúde.
-                  </p>
+                <div class="CartaoEtapa">
+                  <span class="NumeroEtapa">02</span>
+                  <div class="ConteudoEtapa">
+                    <div class="Midia IconeEtapa" id="Etapa2"></div>
+                    <h3>Informe ou Busque</h3>
+                    <p>Cada pet cadastrado possui um histórico próprio de status e saúde.</p>
+                  </div>
                 </div>
-              </div>
-              <span class="MarcadorLinhaTempo"></span>
+                <span class="MarcadorLinhaTempo"></span>
               </li>
-
               <li class="Etapa EtapaEsquerda">
-              <div class="CartaoEtapa">
-                <span class="NumeroEtapa">03</span>
-                <div class="ConteudoEtapa">
-                  <div class="Midia IconeEtapa" id="Etapa3"></div>
-                  <h3>Conexão</h3>
-                  <p>
-                    Comunicação direta entre tutores, voluntários e ONGs através
-                    do botão “Quero Ajudar”.
-                  </p>
+                <div class="CartaoEtapa">
+                  <span class="NumeroEtapa">03</span>
+                  <div class="ConteudoEtapa">
+                    <div class="Midia IconeEtapa" id="Etapa3"></div>
+                    <h3>Conexão</h3>
+                    <p>
+                      Comunicação direta entre tutores, voluntários e ONGs através do botão “Quero
+                      Ajudar”.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <span class="MarcadorLinhaTempo"></span>
+                <span class="MarcadorLinhaTempo"></span>
               </li>
-
               <li class="Etapa EtapaDireita">
                 <div class="CartaoEtapa">
                   <span class="NumeroEtapa">04</span>
@@ -222,7 +244,8 @@
                     <div class="Midia IconeEtapa" id="Etapa4"></div>
                     <h3>Reencontro</h3>
                     <p>
-                      Sistema com regras de cadastro seguras e dados auditáveis.
+                      Com a força da comunidade, o animal recebe ajuda e aumenta suas chances de
+                      voltar para casa.
                     </p>
                   </div>
                 </div>
@@ -232,81 +255,95 @@
           </div>
         </div>
       </section>
-
       <section class="Comunidade FundoComPadrao" id="AnimaisRua">
         <div class="LimiteConteudo">
           <header class="CabecalhoSecao TextoCentralizado">
             <h2>O que a comunidade está compartilhando</h2>
-            <p>
-              Histórias reais, pedidos verificados e acompanhamentos de membros
-              do SOS Pet.
-            </p>
+            <p>Histórias reais, pedidos verificados e acompanhamentos de membros do SOS Pet.</p>
           </header>
-
           <div class="GradeHistorias">
             <article class="CartaoHistoria">
-              <div class="Midia ImagemHistoria" id="Historia1"></div>
+              <div
+                aria-label="História de reencontro do Thor"
+                class="Midia ImagemHistoria"
+                id="Historia1"
+                role="img"
+              ></div>
               <div class="ConteudoHistoria">
                 <h3>Encontramos o Thor!</h3>
                 <p>
-                  Graças aos filtros por bairro, um vizinho viu a publicação e
-                  nos ligou. Ele já está em casa!
+                  Graças aos filtros por bairro, um vizinho viu a publicação e nos ligou. Ele já
+                  está em casa!
                 </p>
                 <footer>
-                  <span>Pet perdido • Sucesso</span><span>♡</span>
+                  <span>Pet perdido • Sucesso</span
+                  ><button aria-label="Curtir história" class="BotaoCurtirHistoria" type="button">
+                    ♡
+                  </button>
                 </footer>
               </div>
             </article>
-
             <article class="CartaoHistoria">
-              <div class="Midia ImagemHistoria" id="Historia2"></div>
+              <div
+                aria-label="História de cirurgia realizada com sucesso"
+                class="Midia ImagemHistoria"
+                id="Historia2"
+                role="img"
+              ></div>
               <div class="ConteudoHistoria">
                 <h3>Cirurgia realizada com sucesso</h3>
                 <p>
-                  Conseguimos arrecadar o valor para a cirurgia do Mel em menos
-                  de 24h. Obrigado a todos!
+                  Conseguimos arrecadar o valor para a cirurgia do Mel em menos de 24h. Obrigado a
+                  todos!
                 </p>
                 <footer>
-                  <span>Ajuda médica • Sucesso</span><span>♡</span>
+                  <span>Ajuda médica • Sucesso</span
+                  ><button aria-label="Curtir história" class="BotaoCurtirHistoria" type="button">
+                    ♡
+                  </button>
                 </footer>
               </div>
             </article>
-
             <article class="CartaoHistoria">
-              <div class="Midia ImagemHistoria" id="Historia3"></div>
+              <div
+                aria-label="História de lar temporário conseguido"
+                class="Midia ImagemHistoria"
+                id="Historia3"
+                role="img"
+              ></div>
               <div class="ConteudoHistoria">
                 <h3>Lar temporário conseguido</h3>
                 <p>
-                  Conseguimos arrecadar o valor para a cirurgia do Mel em menos
-                  de 24h. Obrigado a todos!
+                  Conseguimos arrecadar o valor para a cirurgia do Mel em menos de 24h. Obrigado a
+                  todos!
                 </p>
                 <footer>
-                  <span>Adoção • Lar temporário</span><span>♡</span>
+                  <span>Adoção • Lar temporário</span
+                  ><button aria-label="Curtir história" class="BotaoCurtirHistoria" type="button">
+                    ♡
+                  </button>
                 </footer>
               </div>
             </article>
           </div>
         </div>
       </section>
-
       <section class="Depoimentos" id="SobreNos">
         <div class="LimiteConteudo">
           <header class="CabecalhoSecao CabecalhoDepoimentos">
             <h2>Amado por quem ama animais</h2>
             <p>
-              Uma comunidade acolhedora que ajuda pets mais rápido, com
-              coordenação e transparência.
+              Uma comunidade acolhedora que ajuda pets mais rápido, com coordenação e transparência.
             </p>
           </header>
-
           <div class="GradeDepoimentos">
             <blockquote class="CartaoDepoimento">
               <header class="CabecalhoCartaoDepoimento">
                 <span class="Midia FotoPerfil"></span><strong>Membro</strong>
               </header>
               <p>
-                Publiquei o aviso do meu cão perdido e recebi pistas em minutos.
-                O sistema de localização funciona demais!
+                Publiquei o aviso do meu cão perdido e recebi pistas em minutos. O sistema de
+                localização funciona demais!
               </p>
               <footer class="EstrelasDepoimento">★★★★★</footer>
             </blockquote>
@@ -315,8 +352,8 @@
                 <span class="Midia FotoPerfil"></span><strong>Membro</strong>
               </header>
               <p>
-                Publiquei o aviso do meu cão perdido e recebi pistas em minutos.
-                O sistema de localização funciona demais!
+                Publiquei o aviso do meu cão perdido e recebi pistas em minutos. O sistema de
+                localização funciona demais!
               </p>
               <footer class="EstrelasDepoimento">★★★★★</footer>
             </blockquote>
@@ -325,8 +362,8 @@
                 <span class="Midia FotoPerfil"></span><strong>Membro</strong>
               </header>
               <p>
-                Publiquei o aviso do meu cão perdido e recebi pistas em minutos.
-                O sistema de localização funciona demais!
+                Publiquei o aviso do meu cão perdido e recebi pistas em minutos. O sistema de
+                localização funciona demais!
               </p>
               <footer class="EstrelasDepoimento">★★★★★</footer>
             </blockquote>
@@ -335,32 +372,27 @@
                 <span class="Midia FotoPerfil"></span><strong>Membro</strong>
               </header>
               <p>
-                Publiquei o aviso do meu cão perdido e recebi pistas em minutos.
-                O sistema de localização funciona demais!
+                Publiquei o aviso do meu cão perdido e recebi pistas em minutos. O sistema de
+                localização funciona demais!
               </p>
               <footer class="EstrelasDepoimento">★★★★★</footer>
             </blockquote>
           </div>
-
           <div class="ChamadaFinal" id="CriarConta">
             <div class="Midia IconeChamada"></div>
-            <p>
-              Pronto para proteger animais? Crie sua conta SOS Pet e comece a
-              ajudar hoje.
-            </p>
+            <p>Pronto para proteger animais? Crie sua conta SOS Pet e comece a ajudar hoje.</p>
             <a class="Botao BotaoLargo" href="pages/cadastro.html">Criar conta</a>
           </div>
         </div>
       </section>
     </main>
-
-    <footer class="Rodape">
-      <div class="LimiteConteudo">
-        <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
-        <p>
-          Contato: suporte@sospet.org • Comunidade global com voluntários locais
-        </p>
-      </div>
+    <footer class="FooterPadrao">
+      <img alt="Logo SOS Pet" src="assets/images/pedidos-de-ajuda/Logo.png" />
+      <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
+      <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
     </footer>
+    <script defer="true" src="js/dados.js"></script>
+    <script defer="true" src="js/geral.js"></script>
+    <script defer="true" src="js/home.js"></script>
   </body>
 </html>

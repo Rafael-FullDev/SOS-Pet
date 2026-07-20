@@ -1,0 +1,358 @@
+:root {
+  --Preto: #1e1e24;
+  --Vermelho: #e63946;
+  --AmareloNavbar: #fff8df;
+  --BordaNavbar: #eadfbd;
+}
+
+.Cabecalho,
+.Cabecalho * {
+  box-sizing: border-box;
+}
+
+.Cabecalho {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  min-height: 64px;
+  border-bottom: 1px solid var(--BordaNavbar);
+  background: rgba(255, 253, 247, 0.98);
+  box-shadow: 0 3px 12px rgba(45, 37, 21, 0.05);
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+.Cabecalho .LimiteConteudo {
+  width: min(calc(100% - 32px), 1440px);
+  max-width: none;
+  margin-inline: auto;
+}
+
+.ConteudoCabecalho {
+  position: relative;
+  display: flex;
+  min-height: 64px;
+  gap: 18px;
+  align-items: center;
+}
+
+.Cabecalho a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.Cabecalho .Midia {
+  display: block;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Marca {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.Logotipo {
+  width: 116px;
+  height: 54px;
+  background-image: url(../assets/images/home/LogoSOSPet.png);
+}
+
+.CampoBusca {
+  display: flex;
+  width: min(220px, 19vw);
+  min-width: 150px;
+  height: 34px;
+  padding: 0 13px;
+  flex: 0 1 220px;
+  align-items: center;
+  border: 1px solid #e4d7aa;
+  border-radius: 999px;
+  background: var(--AmareloNavbar);
+  color: #746c61;
+  font-size: 12px;
+}
+
+.CampoBusca:focus-within {
+  border-color: var(--Vermelho);
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.14);
+}
+
+.CampoBusca input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.MenuPrincipal {
+  display: flex;
+  min-width: 0;
+  height: 64px;
+  gap: clamp(12px, 1.6vw, 25px);
+  margin-left: clamp(0px, 1.2vw, 18px);
+  align-items: center;
+}
+
+.MenuPrincipal a {
+  padding: 22px 0 20px;
+  background: linear-gradient(var(--Vermelho), var(--Vermelho));
+  background-position: left bottom 15px;
+  background-repeat: no-repeat;
+  background-size: 0 2px;
+  color: var(--Preto);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition:
+    background-size 220ms ease,
+    color 160ms ease;
+}
+
+.MenuPrincipal a:hover,
+.MenuPrincipal a.Ativo,
+.MenuPrincipal a[aria-current="page"] {
+  background-size: 100% 2px;
+}
+
+.AcoesCabecalho {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  align-items: center;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.LinkEntrar,
+.AcoesCabecalho .BotaoPequeno {
+  display: inline-flex;
+  min-height: 34px;
+  padding: 0 15px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--Vermelho);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  transition: 160ms ease;
+}
+
+.LinkEntrar {
+  border-color: transparent;
+  color: var(--Vermelho);
+}
+
+.LinkEntrar:hover {
+  border-color: var(--Vermelho);
+  color: #fff;
+  background: var(--Vermelho);
+}
+
+.AcoesCabecalho .BotaoPequeno {
+  color: #fff;
+  background: var(--Vermelho);
+}
+
+.AcoesCabecalho .BotaoPequeno:hover {
+  transform: translateY(-2px);
+}
+
+.Usuario {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background-color: #f6e8c4;
+  background-image: url(../assets/images/home/Vector.png);
+  background-size: 56%;
+  transition: 160ms ease;
+}
+
+.Usuario:hover {
+  border-color: var(--Vermelho);
+  transform: translateY(-1px);
+}
+
+.BotaoMenuMobile {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  flex: 0 0 42px;
+  border: 1px solid #e4d7aa;
+  border-radius: 10px;
+  background: #fff8df;
+}
+
+.BotaoMenuMobile span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 4px 0;
+  border-radius: 2px;
+  background: var(--Preto);
+  transition: 180ms ease;
+}
+
+.BotaoMenuMobile[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.BotaoMenuMobile[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.BotaoMenuMobile[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.BotaoSairNavbar {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid #d8cdb2;
+  border-radius: 999px;
+  background: #fff;
+  color: #61442b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+@media (max-width: 1180px) {
+  .BotaoMenuMobile {
+    display: block;
+    order: 4;
+  }
+
+  .CampoBusca {
+    width: min(300px, 34vw);
+    flex-basis: 300px;
+  }
+
+  .MenuPrincipal {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    display: none;
+    width: min(360px, calc(100vw - 32px));
+    height: auto;
+    padding: 12px;
+    margin: 0;
+    flex-direction: column;
+    gap: 4px;
+    align-items: stretch;
+    border: 1px solid #eadfbd;
+    border-radius: 14px;
+    background: #fffdf7;
+    box-shadow: 0 18px 40px rgba(45, 37, 21, 0.16);
+  }
+
+  .MenuPrincipal.MenuAberto {
+    display: flex;
+  }
+
+  .MenuPrincipal a {
+    padding: 12px 14px;
+    border-radius: 8px;
+    background-position: left 14px bottom 7px;
+    font-size: 13px;
+  }
+
+  .MenuPrincipal a:hover,
+  .MenuPrincipal a.Ativo,
+  .MenuPrincipal a[aria-current="page"] {
+    background-color: #fff4d4;
+    background-size: calc(100% - 28px) 2px;
+  }
+}
+
+@media (max-width: 720px) {
+  .Cabecalho .LimiteConteudo {
+    width: min(calc(100% - 20px), 100%);
+  }
+
+  .ConteudoCabecalho {
+    min-height: 72px;
+    padding: 7px 0;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .Logotipo {
+    width: 96px;
+    height: 45px;
+  }
+
+  .BotaoMenuMobile {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .AcoesCabecalho {
+    order: 3;
+    margin-left: 0;
+  }
+
+  .CampoBusca {
+    order: 5;
+    width: 100%;
+    max-width: none;
+    flex: 1 0 100%;
+  }
+
+  .MenuPrincipal {
+    top: calc(100% + 6px);
+    right: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 470px) {
+  .AcoesCabecalho .BotaoPequeno {
+    padding: 0 10px;
+  }
+
+  .LinkEntrar {
+    padding: 0 8px;
+  }
+
+  .Usuario {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .BotaoSairNavbar {
+    display: none;
+  }
+}
+
+body > .FooterPadrao {
+  display: flex;
+  width: 100%;
+  padding: 22px 16px;
+  align-items: center;
+  flex-direction: column;
+  background: #f5f5f5;
+}
+
+body > .FooterPadrao img {
+  width: 100px;
+  margin-bottom: 8px;
+}
+
+body > .FooterPadrao p {
+  margin: 0;
+  color: #6f6f6f;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}

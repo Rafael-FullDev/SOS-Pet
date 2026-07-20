@@ -4,50 +4,23 @@
   box-sizing: border-box;
 }
 
-
 body {
   font-family: "inter", sans-serif;
   background-color: var(--CorFundo);
   margin: 0;
-  min-height: 100vh;  
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.Cabecalho {
-  position: relative;
-  width: 100%;
-  height: 60px;
-  background-color: var(--Branco);
+.LembrarDeMim {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 24px;
-  box-sizing: border-box;
-  margin-bottom: 24px; 
-  overflow: visible;
-box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);    /* atual */
-}
-
-.Logo {
-  position: absolute;
-  left: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 100px; 
-  width: auto;
-  display: block;
-}
-
-.LembrarDeMim{
-  display: flex;
-  font-family: "inter",sans-serif;
+  font-family: "inter", sans-serif;
   font-weight: 350;
   justify-content: center;
   align-items: center;
-  gap: 8px; 
+  gap: 8px;
   margin-top: 10px;
-
 }
 
 .LembrarDeMim input[type="checkbox"] {
@@ -62,21 +35,20 @@ box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);    /* atual */
   cursor: pointer;
 }
 
-.PrincipalLogin{
+.PrincipalLogin {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px 16px 32px;
 }
 
-.Topo{
-text-align: center;
-font-family: "poppins", sans-serif;
-color: var(--Marrom);
-
+.Topo {
+  text-align: center;
+  font-family: "poppins", sans-serif;
+  color: var(--Marrom);
 }
 
-.Topo h1{
+.Topo h1 {
   color: var(--Vermelho);
 }
 
@@ -90,21 +62,20 @@ color: var(--Marrom);
   border: 1px solid black;
   box-shadow: 13px 7px 31px var(--SombraVermelha);
   gap: 22px;
-
 }
 
-.Cartao{
-display: flex;
-flex-direction: column;
-justify-content: center;
-border-radius: 12px;
-font-family:"poppins" , sans-serif;
-font-size: medium;
-font-weight: 700;
-color: var(--Marrom);
+.Cartao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 12px;
+  font-family: "poppins", sans-serif;
+  font-size: medium;
+  font-weight: 700;
+  color: var(--Marrom);
 }
 
-.Conta{ 
+.Conta {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -115,49 +86,52 @@ color: var(--Marrom);
   color: var(--Marrom);
 }
 
-.Span{
+.Span {
   font-family: "inter", sans-serif;
   font-size: smaller;
   font-weight: 400;
   color: var(--Marrom);
 }
 
-.GrupoCartao{
+.GrupoCartao {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 18px;
 }
 
-.Formulario{
+.Formulario {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.RedesSociais{
+.RedesSociais {
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
 }
 
-.RedesSociaisTitulo{
+.RedesSociaisTitulo {
   font-family: "poppins", sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: var(--Marrom);
 }
 
-.RedesSociaisLista{
+.RedesSociaisLista {
   display: flex;
   gap: 14px;
   align-items: center;
   justify-content: center;
 }
 
-.RedesSociaisLista a{
+.RedesSociaisLista a,
+.RedesSociaisLista button {
   display: inline-flex;
+  padding: 0;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   width: 44px;
@@ -170,11 +144,11 @@ color: var(--Marrom);
   font-size: 20px;
 }
 
-.RedesSociaisLista i{
+.RedesSociaisLista i {
   line-height: 1;
 }
 
-.BotaoLogin{
+.BotaoLogin {
   display: block;
   margin: 6px auto 0;
   padding: 10px 60px;
@@ -187,7 +161,7 @@ color: var(--Marrom);
   font-size: large;
 }
 
-.BotaoLogin + .Conta{
+.BotaoLogin + .Conta {
   margin-top: 14px;
 }
 
@@ -202,4 +176,35 @@ color: var(--Marrom);
   font-family: "inter", sans-serif;
   text-align: center;
   padding: 16px 0;
+}
+
+.Formulario .Cartao input {
+  min-height: 42px;
+}
+
+.BotaoLogin {
+  border: 0;
+  cursor: pointer;
+  transition: 160ms ease;
+}
+
+.BotaoLogin:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 560px) {
+  .PrincipalLogin {
+    padding-inline: 12px;
+  }
+
+  .Container {
+    width: 100%;
+    padding: 28px 22px 38px;
+    border-radius: 16px;
+  }
+
+  .BotaoLogin {
+    width: 100%;
+    padding-inline: 20px;
+  }
 }
