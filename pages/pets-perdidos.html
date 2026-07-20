@@ -1,0 +1,249 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="Pesquise animais perdidos, filtre avisos próximos e compartilhe pistas para ajudar no reencontro."
+      name="description"
+    />
+    <title>Pets Perdidos | SOS Pet</title>
+    <link href="../assets/images/shared/favicon.png" rel="icon" type="image/png" />
+    <link href="../css/global.css" rel="stylesheet" />
+    <link href="../css/navbar.css" rel="stylesheet" />
+    <link href="../css/interacoes.css" rel="stylesheet" />
+    <link href="../css/pets-perdidos.css" rel="stylesheet" />
+  </head>
+  <body data-page="perdidos" data-root="../">
+    <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
+    <header class="Cabecalho">
+      <div class="LimiteConteudo ConteudoCabecalho">
+        <a class="Marca" href="../index.html"><span class="Midia Logotipo"></span></a>
+        <button
+          aria-controls="MenuPrincipal"
+          aria-expanded="false"
+          aria-label="Abrir menu de navegação"
+          class="BotaoMenuMobile"
+          type="button"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <label class="CampoBusca">
+          <input
+            aria-label="Pesquisar no SOS Pet"
+            autocomplete="off"
+            class="BuscaGlobal"
+            placeholder="Pesquisar"
+            type="search"
+          />
+          <span aria-hidden="true">⌕</span>
+        </label>
+        <nav aria-label="Navegação principal" class="MenuPrincipal" id="MenuPrincipal">
+          <a href="../index.html#Inicio">Início</a>
+          <a aria-current="page" class="Ativo" href="pets-perdidos.html">Animais Perdidos</a>
+          <a href="animais-de-rua.html">Animais de Rua</a>
+          <a href="../index.html#Adocao">Adoção</a>
+          <a href="pedidos-de-ajuda.html">Pedidos</a>
+          <a href="feed.html">Feed</a>
+        </nav>
+        <div class="AcoesCabecalho">
+          <a class="LinkEntrar" data-auth="visitante" href="login.html">Entrar</a>
+          <a class="Botao BotaoPequeno" data-auth="visitante" href="cadastro.html">Criar conta</a>
+          <a
+            aria-label="Abrir perfil do usuário"
+            class="Midia Usuario"
+            data-auth="usuario"
+            href="perfil.html"
+            title="Abrir meu perfil"
+          ></a>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo-principal" tabindex="-1">
+      <section class="HeroPerdidos">
+        <div class="LimiteConteudo GradeHeroPerdidos">
+          <div class="TextoHeroPerdidos">
+            <h1>Pets perdidos</h1>
+            <p>
+              Pesquise avistamentos próximos, filtre por status e veja detalhes rapidamente para que
+              as famílias se reencontrem mais cedo.
+            </p>
+            <label class="BuscaPrincipalPerdidos">
+              <span class="TextoApenasLeitor">Buscar pet, raça ou bairro</span>
+              <input class="BuscaPerdidos" placeholder="Buscar pet, raça ou bairro" type="search" />
+            </label>
+            <div class="AcoesHeroPerdidos">
+              <button class="Botao BotaoContorno EncontrarPet" type="button">Encontrar pet</button>
+              <button class="Botao ReportarPet" type="button">Reportar pet</button>
+            </div>
+          </div>
+          <img
+            alt="Cachorro branco caminhando em uma rua"
+            class="ImagemHeroPerdidos"
+            src="../assets/images/pets-perdidos/imagem-principal.jpg"
+          />
+        </div>
+      </section>
+
+      <section class="CentralFiltrosPerdidos" id="CentralFiltros">
+        <div class="LimiteConteudo">
+          <header class="CabecalhoPerdidos">
+            <h2>Central de Buscas e Filtros</h2>
+            <p>Refine sua busca para encontrar animais perdidos com mais facilidade.</p>
+          </header>
+          <form class="FormularioFiltrosPerdidos">
+            <div class="GradeFiltrosPerdidos">
+              <label>
+                Status
+                <select name="status">
+                  <option value="">Todos</option>
+                  <option value="desaparecido">Desaparecido</option>
+                  <option value="avistado">Avistado</option>
+                  <option value="encontrado">Encontrado</option>
+                </select>
+              </label>
+              <label>
+                Espécie
+                <select name="especie">
+                  <option value="">Todas</option>
+                  <option value="cao">Cão</option>
+                  <option value="gato">Gato</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </label>
+              <label>
+                Raça
+                <input name="raca" placeholder="Raça" type="text" />
+              </label>
+              <label>
+                Porte
+                <select name="porte">
+                  <option value="">Todos</option>
+                  <option value="pequeno">Pequeno</option>
+                  <option value="medio">Médio</option>
+                  <option value="grande">Grande</option>
+                </select>
+              </label>
+              <label class="CampoCidadePerdidos">
+                Cidade
+                <input name="cidade" placeholder="Sua cidade" type="text" />
+              </label>
+              <label class="CampoPeriodoPerdidos">
+                Período
+                <select name="periodo">
+                  <option value="">Qualquer período</option>
+                  <option value="48h">Últimas 48 horas</option>
+                  <option value="7d">Últimos 7 dias</option>
+                  <option value="30d">Últimos 30 dias</option>
+                </select>
+              </label>
+            </div>
+            <div aria-live="polite" class="FiltrosAtivosPerdidos"></div>
+            <div class="AcoesFiltrosPerdidos">
+              <button class="Botao BotaoContorno RedefinirFiltrosPerdidos" type="reset">
+                Redefinir
+              </button>
+              <button class="Botao BotaoMarrom" type="submit">Aplicar filtros</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="FiltrosRapidosPerdidos">
+        <div class="LimiteConteudo">
+          <header class="CabecalhoPerdidos CabecalhoFiltrosRapidos">
+            <h2>Filtros rápidos</h2>
+            <p>Um toque para refinar a busca.</p>
+          </header>
+          <div class="GradeFiltrosRapidos">
+            <button aria-pressed="false" data-rapido="perto" type="button">
+              <img alt="" aria-hidden="true" src="../assets/images/pets-perdidos/perto-de-mim.png" />
+              <strong>Perto de mim</strong>
+              <small>Raio: 5 km</small>
+            </button>
+            <button aria-pressed="false" data-rapido="recentes" type="button">
+              <img alt="" aria-hidden="true" src="../assets/images/pets-perdidos/recentes.png" />
+              <strong>Recentes</strong>
+              <small>Atualizado: &lt; 48h</small>
+            </button>
+            <button aria-pressed="false" data-rapido="foto" type="button">
+              <img alt="" aria-hidden="true" src="../assets/images/pets-perdidos/com-foto.png" />
+              <strong>Com foto</strong>
+              <small>Mídia: sim</small>
+            </button>
+            <button aria-pressed="false" data-rapido="urgente" type="button">
+              <img alt="" aria-hidden="true" src="../assets/images/pets-perdidos/urgente.png" />
+              <strong>Urgente</strong>
+              <small>Status: urgente</small>
+            </button>
+            <button aria-pressed="false" data-rapido="caes" type="button">
+              <img alt="" aria-hidden="true" src="../assets/images/pets-perdidos/caes.png" />
+              <strong>Cães</strong>
+              <small>Tipo: cachorro</small>
+            </button>
+            <button aria-pressed="false" data-rapido="gatos" type="button">
+              <img alt="" aria-hidden="true" src="../assets/images/pets-perdidos/gatos.png" />
+              <strong>Gatos</strong>
+              <small>Tipo: gato</small>
+            </button>
+            <button aria-pressed="false" data-rapido="verificado" type="button">
+              <img alt="" aria-hidden="true" src="../assets/images/pets-perdidos/local-verificado.png" />
+              <strong>Local verificado</strong>
+              <small>Local: confirmado</small>
+            </button>
+            <button aria-pressed="false" data-rapido="noturno" type="button">
+              <img alt="" aria-hidden="true" src="../assets/images/pets-perdidos/noturno.png" />
+              <strong>Avistamentos noturnos</strong>
+              <small>Horário: 18h–6h</small>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="ListaPetsPerdidos" id="ListaPetsPerdidos">
+        <div class="LimiteConteudo">
+          <header class="CabecalhoPerdidos">
+            <h2>Pets perdidos compatíveis</h2>
+            <p>
+              Navegue pelos cartões e abra os detalhes para ver localização, avistamento e contato.
+            </p>
+          </header>
+          <p aria-live="polite" class="ResumoPetsPerdidos"></p>
+          <div class="GradePetsPerdidos"></div>
+          <div class="SemPetsPerdidos" hidden>
+            <strong>Nenhum pet encontrado.</strong>
+            <span>Redefina os filtros ou faça uma nova busca.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="DetalhesCartaoPerdido">
+        <div class="LimiteConteudo GradeDetalhesPerdidos">
+          <div>
+            <h2>Detalhes do cartão do pet</h2>
+            <p>O cartão exibe foto, nome, cidade, último local, status e botão “Ver detalhes”.</p>
+            <div class="AvisoDetalhesPerdidos">
+              Dica: entre em contato pelo chat do app. Adicione uma descrição semelhante para
+              acelerar o reencontro.
+            </div>
+          </div>
+          <div class="CartoesDestaquePerdidos"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="FooterPadrao">
+      <img alt="Logo SOS Pet" src="../assets/images/pedidos-de-ajuda/Logo.png" />
+      <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
+      <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
+    </footer>
+
+    <script defer="true" src="../js/dados.js"></script>
+    <script defer="true" src="../js/geral.js"></script>
+    <script defer="true" src="../js/pets-perdidos.js"></script>
+  </body>
+</html>

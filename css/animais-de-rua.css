@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,25 +8,13 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-h1, h2, h3,
+h1,
+h2,
+h3,
 .Botao {
   font-family: "Poppins", sans-serif;
 }
 
-/* ===== Cabeçalho ===== */
-.MenuPrincipal a.Ativo {
-  color: var(--Vermelho);
-  background-size: 100% 2px;
-}
-
-/* Logo no mesmo tamanho da página de cadastro (100px), sem aumentar a barra */
-.Logotipo {
-  width: 100px;
-  height: 100px;
-  margin-block: -21px;
-}
-
-/* ===== Sessão 1: Hero ===== */
 .Sessao1 {
   background-color: var(--Amarelo);
   padding: 56px 0 64px;
@@ -100,7 +88,6 @@ h1, h2, h3,
   box-shadow: var(--Sombra);
 }
 
-/* ===== Sessão 2: Filtros ===== */
 .Sessao2 {
   background-color: var(--Branco);
   padding: 64px 0;
@@ -209,7 +196,6 @@ h1, h2, h3,
   border-color: var(--Preto);
 }
 
-/* ===== Sessão 3: Animais disponíveis ===== */
 .Sessao3 {
   background-color: var(--Amarelo);
   padding: 64px 0;
@@ -304,7 +290,6 @@ h1, h2, h3,
   margin: 0 14px 14px;
 }
 
-/* ===== Sessão 4: Prioridades ===== */
 .Sessao4 {
   background-color: var(--Branco);
   padding: 64px 0;
@@ -356,7 +341,6 @@ h1, h2, h3,
   color: var(--Cinza);
 }
 
-/* ===== Rodapé ===== */
 .Rodape {
   padding: 18px 16px;
   background-color: var(--Branco);
@@ -374,7 +358,6 @@ h1, h2, h3,
   text-decoration: underline;
 }
 
-/* ===== Responsivo ===== */
 @media (max-width: 900px) {
   .ConteudoHero,
   .ConteudoAnimais,
@@ -406,4 +389,9 @@ h1, h2, h3,
   .TextoAnimais h2 {
     font-size: 26px;
   }
+}
+
+.BotaoDenuncia {
+  width: fit-content;
+  margin-top: 16px;
 }

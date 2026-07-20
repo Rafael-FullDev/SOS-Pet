@@ -1,0 +1,1179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --sos-vermelho: #e63946;
+  --sos-marrom: #61442b;
+  --sos-amarelo: #f2cb51;
+  --sos-creme: #fae9b6;
+  --sos-preto: #1e1e24;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 3px solid var(--sos-vermelho);
+  outline-offset: 3px;
+}
+
+.PularConteudo {
+  position: fixed;
+  z-index: 5000;
+  top: 8px;
+  left: 8px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--sos-preto);
+  transform: translateY(-160%);
+  transition: 150ms ease;
+}
+
+.PularConteudo:focus {
+  transform: translateY(0);
+}
+
+.MensagemFormulario {
+  min-height: 22px;
+  margin: 0;
+  color: #b4232d;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.MensagemFormulario.Sucesso {
+  color: #217a42;
+}
+
+.LinkAlternativo {
+  margin-top: 14px;
+  color: #61442b;
+  font-size: 13px;
+  text-align: center;
+}
+
+.LinkAlternativo a,
+.Conta a {
+  color: #c92f3b;
+  font-weight: 700;
+}
+
+.DialogoSOS {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  width: min(560px, calc(100% - 28px));
+  max-height: min(86vh, 760px);
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(30, 30, 36, 0.28);
+  transform: translate(-50%, -50%);
+}
+
+.DialogoSOS::backdrop {
+  background: rgba(30, 30, 36, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.DialogoCabecalho {
+  display: flex;
+  padding: 20px 22px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee5d3;
+}
+
+.DialogoCabecalho h2 {
+  margin: 0;
+  color: var(--sos-marrom);
+  font-size: 22px;
+}
+
+.FecharDialogo {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #f8f2e5;
+  color: var(--sos-preto);
+  font-size: 22px;
+}
+
+.DialogoConteudo {
+  max-height: calc(86vh - 80px);
+  padding: 22px;
+  overflow-y: auto;
+}
+
+.FormularioModal {
+  display: grid;
+  gap: 15px;
+}
+
+.FormularioModal label {
+  display: grid;
+  gap: 6px;
+  color: var(--sos-marrom);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.FormularioModal input,
+.FormularioModal select,
+.FormularioModal textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #d9cfbc;
+  border-radius: 9px;
+  background: #fffefa;
+  color: var(--sos-preto);
+}
+
+.FormularioModal textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.BotaoModal {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--sos-vermelho);
+  color: #fff;
+  font-weight: 700;
+}
+
+.ListaResultadosBusca {
+  display: grid;
+  gap: 10px;
+}
+
+.ResultadoBusca {
+  display: block;
+  padding: 14px;
+  border: 1px solid #eadfca;
+  border-radius: 10px;
+  color: var(--sos-preto);
+  background: #fffdf7;
+}
+
+.ResultadoBusca strong,
+.ResultadoBusca span {
+  display: block;
+}
+
+.ResultadoBusca span {
+  margin-top: 3px;
+  color: #6f675f;
+  font-size: 12px;
+}
+
+.ToastSOS {
+  position: fixed;
+  z-index: 6000;
+  right: 20px;
+  bottom: 20px;
+  max-width: min(390px, calc(100% - 40px));
+  padding: 13px 16px;
+  border-radius: 10px;
+  color: #fff;
+  background: #1e1e24;
+  box-shadow: 0 12px 32px rgba(30, 30, 36, 0.24);
+  font-size: 13px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: 180ms ease;
+}
+
+.ToastSOS.Mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ToastSOS.Erro {
+  background: #a91f2b;
+}
+
+.CarrosselDepoimentos {
+  position: relative;
+  overflow: hidden;
+}
+
+.GradeDepoimentos.CarrosselAtivo {
+  display: flex;
+  gap: 12px;
+  transition: transform 300ms ease;
+}
+
+.GradeDepoimentos.CarrosselAtivo .CartaoDepoimento {
+  min-width: calc((100% - 36px) / 4);
+}
+
+.ControlesCarrossel {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.ControlesCarrossel button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #d9cfbc;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--sos-marrom);
+  font-size: 20px;
+}
+
+.IndicadorCarrossel {
+  min-width: 62px;
+  color: #6d655d;
+  font-size: 12px;
+  text-align: center;
+}
+
+.BotaoCurtirHistoria {
+  border: 0;
+  background: transparent;
+  color: var(--sos-vermelho);
+  font-size: 19px;
+}
+
+.BotaoCurtirHistoria.Curtido {
+  font-weight: 800;
+}
+
+.CartaoServico[role="button"] {
+  cursor: pointer;
+}
+
+.Categoria[aria-pressed="true"],
+.Botao1[aria-pressed="true"] {
+  border-color: var(--sos-vermelho) !important;
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.13);
+}
+
+.AcoesCartaoAnimal {
+  display: flex;
+  gap: 8px;
+  padding: 0 14px 14px;
+}
+
+.AcoesCartaoAnimal button {
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--sos-vermelho);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--sos-vermelho);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.AcoesCartaoAnimal .BotaoDetalhesAnimal {
+  color: #fff;
+  background: var(--sos-vermelho);
+}
+
+.ResumoResultados {
+  font-weight: 700;
+}
+
+.SemResultados {
+  padding: 24px;
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+}
+
+.btn-detalhes {
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid #61442b;
+  border-radius: 9px;
+  background: #fff;
+  color: #61442b;
+  font-weight: 600;
+}
+
+.btn-ajudar[aria-pressed="true"] {
+  background: #2e7d4b;
+}
+
+.acao-card {
+  cursor: pointer;
+}
+
+.Cartao input {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 5px;
+  padding: 0 12px;
+  border: 1px solid #cfc5b5;
+  border-radius: 8px;
+  background: #fffefa;
+}
+
+.Cartao input:invalid:not(:placeholder-shown) {
+  border-color: #d12e3b;
+}
+
+@media (max-width: 1000px) {
+  body[data-page="home"] .GradeInicio,
+  body[data-page="home"] .DestaquesInicio,
+  body[data-page="home"] .GradeServicos,
+  body[data-page="home"] .GradeHistorias {
+    gap: 24px;
+  }
+
+  body[data-page="home"] .GradeInicio {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="home"] .VisualInicio {
+    height: 300px;
+    order: -1;
+  }
+
+  body[data-page="home"] .CachorroInicio {
+    width: 100%;
+    height: 100%;
+  }
+
+  body[data-page="home"] .DestaquesInicio,
+  body[data-page="home"] .GradeServicos,
+  body[data-page="home"] .GradeHistorias {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .GradeDepoimentos.CarrosselAtivo .CartaoDepoimento {
+    min-width: calc((100% - 12px) / 2);
+  }
+
+  body[data-page="home"] .ChamadaFinal {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 680px) {
+  body[data-page="home"] .Inicio,
+  body[data-page="home"] .ComeceRapido,
+  body[data-page="home"] .ComoFunciona,
+  body[data-page="home"] .Comunidade,
+  body[data-page="home"] .Depoimentos {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  body[data-page="home"] .TextoInicio h1 {
+    font-size: clamp(48px, 18vw, 70px);
+  }
+
+  body[data-page="home"] .ChamadaInicio {
+    font-size: 24px;
+  }
+
+  body[data-page="home"] .DescricaoInicio {
+    font-size: 17px;
+  }
+
+  body[data-page="home"] .AcoesInicio,
+  body[data-page="home"] .ListaValores,
+  body[data-page="home"] .BotoesAnimais {
+    flex-wrap: wrap;
+  }
+
+  body[data-page="home"] .DestaquesInicio,
+  body[data-page="home"] .GradeServicos,
+  body[data-page="home"] .GradeHistorias {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="home"] .CartaoDestaque {
+    grid-template-columns: 100px 1fr;
+    padding: 16px;
+  }
+
+  body[data-page="home"] .ImagemDestaque {
+    width: 100px;
+    height: 100px;
+  }
+
+  body[data-page="home"] .AreaEtapas,
+  body[data-page="home"] .ListaEtapas {
+    display: block;
+  }
+
+  body[data-page="home"] .LinhaEtapas,
+  body[data-page="home"] .MarcadorLinhaTempo {
+    display: none;
+  }
+
+  body[data-page="home"] .Etapa {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  body[data-page="home"] .CartaoEtapa {
+    width: 100%;
+  }
+
+  .GradeDepoimentos.CarrosselAtivo .CartaoDepoimento {
+    min-width: 100%;
+  }
+
+  .DialogoConteudo {
+    padding: 18px;
+  }
+}
+
+body:not(.AutenticacaoPronta) [data-auth="usuario"] {
+  display: none;
+}
+
+.GradeDepoimentos,
+.CartaoDepoimento {
+  min-width: 0;
+}
+
+@media (max-width: 1000px) {
+  body[data-page="home"] .GradeDepoimentos:not(.CarrosselAtivo) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  body[data-page="home"] .GradeDepoimentos:not(.CarrosselAtivo) {
+    grid-template-columns: 1fr;
+  }
+}
+
+body[data-page="home"].AnimacoesHomeProntas .Etapa .CartaoEtapa,
+body[data-page="home"].AnimacoesHomeProntas .Etapa .MarcadorLinhaTempo {
+  opacity: 0;
+  transition:
+    opacity 650ms ease,
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body[data-page="home"].AnimacoesHomeProntas .EtapaEsquerda .CartaoEtapa {
+  transform: translate3d(-58px, 20px, 0) scale(0.97);
+}
+
+body[data-page="home"].AnimacoesHomeProntas .EtapaDireita .CartaoEtapa {
+  transform: translate3d(58px, 20px, 0) scale(0.97);
+}
+
+body[data-page="home"].AnimacoesHomeProntas .Etapa .MarcadorLinhaTempo {
+  transform: scale(0.25);
+  transition-delay: 160ms;
+}
+
+body[data-page="home"].AnimacoesHomeProntas .Etapa.EtapaVisivel .CartaoEtapa,
+body[data-page="home"].AnimacoesHomeProntas .Etapa.EtapaVisivel .MarcadorLinhaTempo {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
+  transform: translateX(-50%) scaleY(var(--ProgressoLinha, 0));
+  transform-origin: center top;
+  will-change: transform;
+}
+
+.GradeDepoimentos.CarrosselAtivo {
+  will-change: transform;
+}
+
+.GradeDepoimentos.CarrosselAtivo .CartaoDepoimento {
+  min-width: calc((100% - 24px) / 3);
+}
+
+.ControlesCarrossel button:not(:disabled):hover {
+  border-color: var(--sos-vermelho);
+  color: var(--sos-vermelho);
+  transform: translateY(-2px);
+}
+
+.ControlesCarrossel button {
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    opacity 180ms ease;
+}
+
+.ControlesCarrossel button:disabled {
+  opacity: 0.45;
+}
+
+@media (max-width: 1000px) {
+  .GradeDepoimentos.CarrosselAtivo .CartaoDepoimento {
+    min-width: calc((100% - 12px) / 2);
+  }
+}
+
+@media (max-width: 680px) {
+  body[data-page="home"].AnimacoesHomeProntas .EtapaEsquerda .CartaoEtapa,
+  body[data-page="home"].AnimacoesHomeProntas .EtapaDireita .CartaoEtapa {
+    transform: translate3d(0, 34px, 0) scale(0.98);
+  }
+
+  body[data-page="home"].AnimacoesHomeProntas .Etapa.EtapaVisivel .CartaoEtapa {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  .GradeDepoimentos.CarrosselAtivo .CartaoDepoimento {
+    min-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="home"].AnimacoesHomeProntas .Etapa .CartaoEtapa,
+  body[data-page="home"].AnimacoesHomeProntas .Etapa .MarcadorLinhaTempo,
+  .GradeDepoimentos.CarrosselAtivo,
+  .ControlesCarrossel button {
+    transition: none;
+  }
+}
+
+.ErroFormulario {
+  min-height: 18px;
+  margin: 0;
+  color: #b4232f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.LinhaCheckbox {
+  display: flex !important;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.LinhaCheckbox input {
+  width: auto;
+}
+
+.CampoArquivo small {
+  color: #756c64;
+  font-weight: 400;
+}
+
+.AreaPreviaImagem {
+  display: grid;
+  gap: 8px;
+}
+
+.PreviaImagem {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #f6f1e8;
+}
+
+.PreviaImagem.Vazia {
+  display: grid;
+  min-height: 90px;
+  place-items: center;
+  color: #756c64;
+  border: 1px dashed #cfc4b0;
+}
+
+.RemoverImagem,
+.BotaoSecundario,
+.BotaoPerigo,
+.ExcluirComentario {
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.RemoverImagem,
+.BotaoSecundario,
+.ExcluirComentario {
+  border: 1px solid #cbbfae;
+  background: #fff;
+  color: #61442b;
+}
+
+.BotaoPerigo {
+  border: 1px solid #b4232f;
+  background: #fff;
+  color: #b4232f;
+}
+
+.AcoesGerenciar {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.ImagemDetalhe {
+  width: 100%;
+  max-height: 310px;
+  margin-bottom: 16px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.DetalhesPedido {
+  display: grid;
+  gap: 8px;
+}
+
+.ListaComentarios,
+.ListaAtividades,
+.ListaPetsModal {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.Comentario,
+.ListaAtividades article,
+.ListaPetsModal article {
+  padding: 13px;
+  border: 1px solid #eadfca;
+  border-radius: 10px;
+  background: #fffdf8;
+}
+
+.Comentario div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Comentario small,
+.ListaAtividades small {
+  color: #756c64;
+}
+
+.Comentario p,
+.ListaAtividades p {
+  margin: 7px 0 0;
+}
+
+.ExcluirComentario {
+  min-height: 30px;
+  margin-top: 8px;
+  padding: 0 10px;
+  font-size: 11px;
+}
+
+.ListaPetsModal article {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.ListaPetsModal img {
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.EstadoVazioFeed,
+.EstadoVazioPedidos,
+.SemComentarios {
+  padding: 20px;
+  color: #6f675f;
+  text-align: center;
+}
+
+.ImagemPedidoVazia {
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  padding: 20px;
+  background: #f4eee3;
+  color: #756c64;
+  text-align: center;
+}
+
+.post[data-owner="true"] .post-title {
+  cursor: pointer;
+}
+
+.CampoBusca span[role="button"] {
+  cursor: pointer;
+  user-select: none;
+}
+
+.FundoMenuMobile {
+  position: fixed;
+  z-index: 900;
+  inset: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: rgba(30, 30, 36, 0.34);
+}
+
+.FundoMenuMobile.Mostrar {
+  display: block;
+}
+
+.MenuMobileAberto {
+  overflow: hidden;
+}
+
+.AcoesDetalhePublicacao {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.AcoesDetalhePublicacao > * {
+  flex: 1 1 150px;
+}
+
+.AvisoAcao,
+.AjudaFormulario,
+.AvisoLoginPendente {
+  padding: 12px 14px;
+  border: 1px solid #ead7a0;
+  border-radius: 10px;
+  color: #61442b;
+  background: #fff8df;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.AvisoLoginPendente {
+  width: min(100% - 28px, 440px);
+  margin: 0 auto 18px;
+  text-align: center;
+}
+
+.BarraResultadoFeed,
+.BarraResultadoPedidos {
+  display: flex;
+  gap: 14px;
+  margin: -26px 0 28px;
+  align-items: center;
+  justify-content: space-between;
+  color: #665d54;
+  font-size: 12px;
+}
+
+.BarraResultadoFeed p,
+.BarraResultadoPedidos p {
+  margin: 0;
+}
+
+.LimparFiltroFeed,
+.LimparFiltroPedidos {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid #d8cdb2;
+  border-radius: 999px;
+  background: #fff;
+  color: #61442b;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.SelosPublicacao,
+.SelosPedido {
+  display: flex;
+  gap: 7px;
+  margin-left: auto;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.StatusPublicacao,
+.StatusPedidoCard {
+  padding: 6px 9px;
+  border: 1px solid #e3d8c7;
+  border-radius: 999px;
+  color: #61442b;
+  background: #fffdf7;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.MenuPublicacao,
+.MenuPedido {
+  display: inline-grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid #e3d8c7;
+  border-radius: 50%;
+  background: #fff;
+  color: #61442b;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.MenuPublicacao:hover,
+.MenuPedido:hover {
+  border-color: var(--sos-vermelho);
+  color: var(--sos-vermelho);
+}
+
+.post-title[data-action="detalhes"],
+.post-image[data-action="detalhes"],
+.card-pedido h3[data-action="detalhes"] {
+  cursor: pointer;
+}
+
+.post-title[data-action="detalhes"]:hover,
+.card-pedido h3[data-action="detalhes"]:hover {
+  color: var(--sos-vermelho);
+}
+
+.post-actions .action {
+  border-radius: 8px;
+  transition:
+    background 150ms ease,
+    transform 150ms ease,
+    color 150ms ease;
+}
+
+.post-actions .action:hover {
+  background: #fff4f0;
+  transform: translateY(-1px);
+}
+
+.post-actions .action strong {
+  font-size: 12px;
+}
+
+.FormularioComPrevia {
+  gap: 16px;
+}
+
+.AreaPreviaPublicacao,
+.AreaPreviaPedido {
+  padding-top: 4px;
+  border-top: 1px solid #eee5d3;
+}
+
+.TituloPrevia {
+  margin: 0 0 8px;
+  color: #61442b;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.CartaoPrevia {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid #eadfca;
+  border-radius: 12px;
+  background: #fffdf8;
+}
+
+.CabecalhoPrevia {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.CabecalhoPrevia span {
+  padding: 4px 7px;
+  border-radius: 999px;
+  color: #b4232f;
+  background: #ffd8dc;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.CartaoPrevia small,
+.CartaoPrevia em {
+  color: #756c64;
+  font-size: 11px;
+  font-style: normal;
+}
+
+.CartaoPrevia p {
+  margin: 0;
+  color: #2d2925;
+  font-size: 12px;
+}
+
+.CartaoPrevia img {
+  width: 100%;
+  max-height: 210px;
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+.EstadoVazioFeed,
+.EstadoVazioPedidos,
+.EstadoVazioPerfil,
+.EstadoVazioModal,
+.SemComentarios {
+  display: grid;
+  gap: 5px;
+}
+
+.EstadoVazioFeed span,
+.EstadoVazioPedidos span,
+.SemComentarios span {
+  color: #756c64;
+  font-size: 12px;
+}
+
+.LinkComoBotao {
+  display: inline-flex;
+  margin-top: 16px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.BotaoFlutuanteMobile {
+  position: fixed;
+  z-index: 850;
+  right: 18px;
+  bottom: 18px;
+  display: none;
+  width: 54px;
+  height: 54px;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--sos-vermelho);
+  box-shadow: 0 12px 28px rgba(30, 30, 36, 0.25);
+  font-size: 30px;
+  line-height: 1;
+}
+
+.AtalhosPerfil {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  margin: 18px 0 12px;
+}
+
+.AtalhosPerfil button {
+  display: flex;
+  min-height: 54px;
+  gap: 9px;
+  padding: 10px 14px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e4d7aa;
+  border-radius: 11px;
+  color: #61442b;
+  background: #fffdf7;
+}
+
+.AtalhosPerfil button:hover {
+  border-color: var(--sos-vermelho);
+  color: var(--sos-vermelho);
+}
+
+.AtalhosPerfil span {
+  font-size: 20px;
+}
+
+.AbasPerfil {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 20px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.AbasPerfil button {
+  min-height: 38px;
+  padding: 0 14px;
+  flex: 0 0 auto;
+  border: 1px solid #d8cdb2;
+  border-radius: 999px;
+  color: #61442b;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.AbasPerfil button:hover {
+  border-color: var(--sos-vermelho);
+  color: var(--sos-vermelho);
+}
+
+.card-estatisticas > div[role="button"] {
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.card-estatisticas > div[role="button"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(30, 30, 36, 0.08);
+}
+
+.horizontal-card[role="button"] {
+  cursor: pointer;
+}
+
+.EstadoVazioPerfil {
+  padding: 18px;
+  border: 1px dashed #d8cdb2;
+  border-radius: 10px;
+  color: #61442b;
+  background: #fffdf7;
+  text-align: center;
+}
+
+.EstadoVazioPerfil p {
+  margin: 4px 0 0;
+  color: #756c64;
+  font-size: 12px;
+}
+
+.Cartao {
+  position: relative;
+}
+
+.Cartao input[type="password"],
+.Cartao input[type="text"]#Password,
+.Cartao input[type="text"]#ConfirmarSenha {
+  padding-right: 45px;
+}
+
+@media (max-width: 800px) {
+  .SelosPublicacao,
+  .SelosPedido {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .post-header,
+  .cabecalho-card {
+    flex-wrap: wrap;
+  }
+
+  .AtalhosPerfil {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  button,
+  a,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
+  .filters,
+  .filtros,
+  .ChipsHero,
+  .AbasPerfil {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-tab,
+  .filtro,
+  .Botao1,
+  .Categoria,
+  .action,
+  .btn-ajudar,
+  .btn-compartilhar,
+  .btn-detalhes,
+  .seta-btn {
+    min-height: 44px;
+  }
+
+  .BarraResultadoFeed,
+  .BarraResultadoPedidos {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .post-actions,
+  .actions-left {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .post-actions .action {
+    min-width: 44px;
+    padding: 5px 8px;
+  }
+
+  .post-actions .action span:nth-child(2) {
+    display: none;
+  }
+
+  .post-actions .action.share span:nth-child(2) {
+    display: inline;
+  }
+
+  .BotaoFlutuanteMobile {
+    display: grid;
+    place-items: center;
+  }
+
+  .DialogoSOS {
+    width: calc(100% - 16px);
+    max-height: 92vh;
+    border-radius: 14px;
+  }
+
+  .DialogoConteudo {
+    max-height: calc(92vh - 72px);
+  }
+
+  .AcoesDetalhePublicacao {
+    flex-direction: column-reverse;
+  }
+}
+
+.post-actions .action span:nth-child(2) {
+  color: inherit;
+  font-size: inherit;
+}

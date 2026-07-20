@@ -1,264 +1,416 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alien+Block&family=Ole&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/animais-de-rua.css">
-
-  <title>Animais de Rua</title>
-</head>
-<body>
-  <header class="Cabecalho">
-    <div class="ConteudoCabecalho LimiteConteudo">
-      <a class="Marca" href="../index.html" aria-label="SOS Pet">
-        <span class="Logotipo Midia"></span>
-      </a>
-      <form class="CampoBusca" role="search">
-        <input type="search" placeholder="Pesquisar">
-      </form>
-      <nav class="MenuPrincipal">
-        <a href="../index.html#Inicio">Início</a>
-        <a href="../index.html#AnimaisPerdidos">Animais Perdidos</a>
-        <a href="animais-de-rua.html" class="Ativo">Animais de Rua</a>
-        <a href="../index.html#Adocao">Adoção</a>
-        <a href="pedidos-de-ajuda.html">Pedidos</a>
-        <a href="feed.html">Feed</a>
-      </nav>
-      <div class="AcoesCabecalho">
-        <a href="feed.html" class="Usuario" aria-label="Perfil do usuário"></a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- Sessão 1: Hero -->
-    <section class="Sessao1">
-      <div class="LimiteConteudo ConteudoHero">
-        <div class="TextoHero">
-          <h1>Animais de rua</h1>
-          <p>Pesquise, filtre e veja pedidos urgentes para animais atualmente sob cuidado do SOS Pet.</p>
-
-          <input type="search" class="BuscaHero" placeholder="Buscar por nome, espécie, condição ou local">
-
-          <div class="ChipsHero">
-            <button class="Botao1">Todos</button>
-            <button class="Botao1">Precisando</button>
-            <button class="Botao1">Recuperados</button>
-            <button class="Botao1">Urgentes</button>
-          </div>
-        </div>
-
-        <img class="FotoHero" src="../assets/images/animais-de-rua/Imagem.png" alt="Filhotes de cachorro juntos na grama">
-      </div>
-    </section>
-
-    <!-- Sessão 2: Filtros -->
-    <section class="Sessao2">
-      <div class="LimiteConteudo">
-        <h2>Encontre um animal para ajudar</h2>
-        <p class="Subtitulo">Use os filtros para localizar rapidamente pets com condições urgentes de saúde e necessidades imediatas.</p>
-
-        <form class="FormFiltros">
-          <div class="GradeSelecoes">
-            <label class="Tipos">
-              Espécie
-              <select name="especie">
-                <option value="">Escolha</option>
-                <option value="cao">Cão</option>
-                <option value="gato">Gato</option>
-                <option value="outros">Outros</option>
-              </select>
-            </label>
-
-            <label class="Tipos">
-              Condição de saúde
-              <select name="condicao">
-                <option value="">Selecione a condição</option>
-                <option value="ferido">Ferido</option>
-                <option value="doente">Doente</option>
-                <option value="desidratado">Desidratado</option>
-                <option value="feridas-leves">Feridas leves</option>
-                <option value="saudavel">Saudável</option>
-              </select>
-            </label>
-
-            <label class="Tipos">
-              Necessidade principal
-              <select name="necessidade">
-                <option value="">Selecione a necessidade</option>
-                <option value="curativo">Curativo</option>
-                <option value="soro">Soro</option>
-                <option value="comida">Comida</option>
-                <option value="lar-temporario">Lar temporário</option>
-                <option value="transporte">Transporte</option>
-              </select>
-            </label>
-
-            <label class="Tipos">
-              Status atual
-              <select name="status">
-                <option value="">Selecione o status</option>
-                <option value="urgente">Urgente</option>
-                <option value="em-atendimento">Em atendimento</option>
-                <option value="recuperado">Recuperado</option>
-                <option value="pronto">Pronto para retirada</option>
-              </select>
-            </label>
-          </div>
-
-          <div class="GradeCategorias">
-            <button type="button" class="Categoria">
-              <img src="../assets/images/animais-de-rua/Dog.png" alt="">
-              <strong>Cães</strong>
-              <span>Prioridade de resgate</span>
-            </button>
-            <button type="button" class="Categoria">
-              <img src="../assets/images/animais-de-rua/Cat.png" alt="">
-              <strong>Gatos</strong>
-              <span>Apoio médico e lar temporário</span>
-            </button>
-            <button type="button" class="Categoria">
-              <img src="../assets/images/animais-de-rua/Bandage.png" alt="">
-              <strong>Feridos</strong>
-              <span>Precisa de curativo</span>
-            </button>
-            <button type="button" class="Categoria">
-              <img src="../assets/images/animais-de-rua/Plastic Bottle.png" alt="">
-              <strong>Desidratados</strong>
-              <span>Suporte de hidratação</span>
-            </button>
-            <button type="button" class="Categoria">
-              <img src="../assets/images/animais-de-rua/Heart with Pulse.png" alt="">
-              <strong>Doentes</strong>
-              <span>Tratamento em andamento</span>
-            </button>
-            <button type="button" class="Categoria">
-              <img src="../assets/images/animais-de-rua/Exterior.png" alt="">
-              <strong>Lar temporário</strong>
-              <span>Precisa de acolhimento</span>
-            </button>
-            <button type="button" class="Categoria">
-              <img src="../assets/images/animais-de-rua/Public Transportation.png" alt="">
-              <strong>Transporte</strong>
-              <span>Aguardando retirada</span>
-            </button>
-            <button type="button" class="Categoria">
-              <img src="../assets/images/animais-de-rua/Dog Bowl.png" alt="">
-              <strong>Comida</strong>
-              <span>Refeições para filhotes</span>
-            </button>
-          </div>
-
-          <div class="AcoesFiltros">
-            <button type="reset" class="Botao BotaoContorno">Redefinir</button>
-            <button type="submit" class="Botao BotaoMarrom">Aplicar filtros</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- Sessão 3: Animais disponíveis -->
-    <section class="Sessao3">
-      <div class="LimiteConteudo ConteudoAnimais">
-        <div class="TextoAnimais">
-          <h2>Animais disponíveis para ajuda</h2>
-          <p>Cartões arredondados com condição de saúde, necessidade principal e status atual — toque em “Ver detalhes” para saber como ajudar.</p>
-          <div class="BotoesAnimais">
-            <button class="Botao BotaoContorno">Compartilhar</button>
-            <button class="Botao">Ver detalhes</button>
-          </div>
-        </div>
-
-        <div class="GradeCartoes">
-          <a class="CartaoAnimal" href="#">
-            <span class="Selo">Urgente • Resgate hoje</span>
-            <img src="../assets/images/animais-de-rua/o-que-fazer-quando-meu-cachorro-esta-triste.webp" alt="Bob, cachorro filhote deitado">
-            <h3>Bob (filhote)</h3>
-            <p><strong>Saúde:</strong> ferido • <strong>Necessidade:</strong> curativo</p>
-          </a>
-
-          <a class="CartaoAnimal" href="#">
-            <span class="Selo">Alta prioridade</span>
-            <img src="../assets/images/animais-de-rua/cat.jpg" alt="Patrick, gatinho recebendo soro na clínica">
-            <h3>Patrick (gatinho)</h3>
-            <p><strong>Saúde:</strong> desidratado • <strong>Necessidade:</strong> soro</p>
-          </a>
-
-          <a class="CartaoAnimal" href="#">
-            <span class="Selo">Suporte médico</span>
-            <img src="../assets/images/animais-de-rua/dog2.jpg" alt="Rocky, cachorro enrolado em um cobertor">
-            <h3>Rocky (cão)</h3>
-            <p><strong>Saúde:</strong> doente • <strong>Necessidade:</strong> medicação</p>
-          </a>
-
-          <a class="CartaoAnimal" href="#">
-            <span class="Selo">Precisa de acolhimento</span>
-            <img src="../assets/images/animais-de-rua/cintya-marisa-3ffJg5D3RLo-unsplash.jpg" alt="Luna, gata deitada descansando">
-            <h3>Luna (gata)</h3>
-            <p><strong>Saúde:</strong> feridas leves • <strong>Necessidade:</strong> lar temporário</p>
-          </a>
-
-          <a class="CartaoAnimal" href="#">
-            <span class="Selo">Crítico</span>
-            <img src="../assets/images/animais-de-rua/dog.jpg" alt="Luffy, filhote de coleira vermelha">
-            <h3>Luffy (filhote)</h3>
-            <p><strong>Saúde:</strong> ferido • <strong>Necessidade:</strong> transporte</p>
-          </a>
-
-          <a class="CartaoAnimal" href="#">
-            <span class="Selo">Pronto para retirada</span>
-            <img src="../assets/images/animais-de-rua/cat2.jpg" alt="Pimenta, gatinho filhote sentado">
-            <h3>Pimenta (gatinho)</h3>
-            <p><strong>Saúde:</strong> doente • <strong>Necessidade:</strong> comida</p>
-          </a>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="Pesquise animais de rua que precisam de resgate, tratamento, transporte ou lar temporário."
+      name="description"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="../css/global.css" rel="stylesheet" />
+    <link href="../css/animais-de-rua.css" rel="stylesheet" />
+    <title>Animais de Rua</title>
+    <link href="../assets/images/shared/favicon.png" rel="icon" type="image/png" />
+    <link href="../css/navbar.css" rel="stylesheet" />
+    <link href="../css/interacoes.css" rel="stylesheet" />
+  </head>
+  <body data-page="animais" data-root="../">
+    <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
+    <header class="Cabecalho">
+      <div class="LimiteConteudo ConteudoCabecalho">
+        <a class="Marca" href="../index.html"> <span class="Midia Logotipo"></span> </a
+        ><button
+          aria-controls="MenuPrincipal"
+          aria-expanded="false"
+          aria-label="Abrir menu de navegação"
+          class="BotaoMenuMobile"
+          type="button"
+        >
+          <span aria-hidden="true"></span><span aria-hidden="true"></span
+          ><span aria-hidden="true"></span>
+        </button>
+        <label class="CampoBusca">
+          <input
+            aria-label="Pesquisar no SOS Pet"
+            autocomplete="off"
+            class="BuscaGlobal"
+            placeholder="Pesquisar"
+            type="search"
+          />
+          <span aria-hidden="true">⌕</span>
+        </label>
+        <nav aria-label="Navegação principal" class="MenuPrincipal" id="MenuPrincipal">
+          <a href="../index.html#Inicio">Início</a>
+          <a href="pets-perdidos.html">Animais Perdidos</a>
+          <a aria-current="page" class="Ativo" href="animais-de-rua.html">Animais de Rua</a>
+          <a href="../index.html#Adocao">Adoção</a>
+          <a href="pedidos-de-ajuda.html">Pedidos</a>
+          <a href="feed.html">Feed</a>
+        </nav>
+        <div class="AcoesCabecalho">
+          <a class="LinkEntrar" data-auth="visitante" href="login.html">Entrar</a>
+          <a class="Botao BotaoPequeno" data-auth="visitante" href="cadastro.html">Criar conta</a>
+          <a
+            aria-label="Abrir perfil do usuário"
+            class="Midia Usuario"
+            data-auth="usuario"
+            href="perfil.html"
+            title="Abrir meu perfil"
+          ></a>
         </div>
       </div>
-    </section>
-
-    <!-- Sessão 4: Como priorizamos -->
-    <section class="Sessao4">
-      <div class="LimiteConteudo">
-        <h2>Como o SOS Pet prioriza o cuidado</h2>
-        <p class="Subtitulo">Cada cartão mostra três sinais rápidos para ajudar você a decidir.</p>
-
-        <div class="GradePrioridades">
-          <article class="CartaoPrioridade">
-            <img src="../assets/images/animais-de-rua/dog3.png" alt="Cãozinho recebendo cuidados">
-            <div>
-              <h3>Condição de saúde</h3>
-              <p class="Destaque">O que está acontecendo</p>
-              <p>Ferido, doente, desidratado ou com feridas leves — do mais urgente ao estável.</p>
+    </header>
+    <main id="conteudo-principal" tabindex="-1">
+      <section class="Sessao1">
+        <div class="LimiteConteudo ConteudoHero">
+          <div class="TextoHero">
+            <h1>Animais de rua</h1>
+            <p>
+              Pesquise, filtre e veja pedidos urgentes para animais atualmente sob cuidado do SOS
+              Pet.
+            </p>
+            <input
+              aria-label="Buscar por nome, espécie, condição ou local"
+              class="BuscaHero"
+              placeholder="Buscar por nome, espécie, condição ou local"
+              type="search"
+            />
+            <div class="ChipsHero">
+              <button aria-pressed="true" class="Botao1" data-chip="todos" type="button">
+                Todos
+              </button>
+              <button aria-pressed="false" class="Botao1" data-chip="precisando" type="button">
+                Precisando
+              </button>
+              <button aria-pressed="false" class="Botao1" data-chip="recuperado" type="button">
+                Recuperados
+              </button>
+              <button aria-pressed="false" class="Botao1" data-chip="urgente" type="button">
+                Urgentes
+              </button>
             </div>
-          </article>
-
-          <article class="CartaoPrioridade">
-            <img src="../assets/images/animais-de-rua/itens.png" alt="Suprimentos para pets">
-            <div>
-              <h3>Necessidade principal</h3>
-              <p class="Destaque">O que ajuda agora</p>
-              <p>Suprimentos como curativos, antibióticos, comida, hidratação ou transporte.</p>
-            </div>
-          </article>
+            <a class="Botao BotaoDenuncia" href="denuncia.html">Denunciar maus-tratos</a>
+          </div>
+          <img
+            alt="Filhotes de cachorro juntos na grama"
+            class="FotoHero"
+            src="../assets/images/animais-de-rua/Imagem.png"
+          />
         </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
+      <section class="Sessao2">
+        <div class="LimiteConteudo">
+          <h2>Encontre um animal para ajudar</h2>
+          <p class="Subtitulo">
+            Use os filtros para localizar rapidamente pets com condições urgentes de saúde e
+            necessidades imediatas.
+          </p>
+          <form class="FormFiltros">
+            <div class="GradeSelecoes">
+              <label class="Tipos">
+                Espécie
+                <select name="especie">
+                  <option value="">Escolha</option>
+                  <option value="cao">Cão</option>
+                  <option value="gato">Gato</option>
+                  <option value="outros">Outros</option>
+                </select>
+              </label>
+              <label class="Tipos">
+                Condição de saúde
+                <select name="condicao">
+                  <option value="">Selecione a condição</option>
+                  <option value="ferido">Ferido</option>
+                  <option value="doente">Doente</option>
+                  <option value="desidratado">Desidratado</option>
+                  <option value="feridas-leves">Feridas leves</option>
+                  <option value="saudavel">Saudável</option>
+                </select>
+              </label>
+              <label class="Tipos">
+                Necessidade principal
+                <select name="necessidade">
+                  <option value="">Selecione a necessidade</option>
+                  <option value="curativo">Curativo</option>
+                  <option value="soro">Soro</option>
+                  <option value="comida">Comida</option>
+                  <option value="lar-temporario">Lar temporário</option>
+                  <option value="transporte">Transporte</option>
+                </select>
+              </label>
+              <label class="Tipos">
+                Status atual
+                <select name="status">
+                  <option value="">Selecione o status</option>
+                  <option value="urgente">Urgente</option>
+                  <option value="em-atendimento">Em atendimento</option>
+                  <option value="recuperado">Recuperado</option>
+                  <option value="pronto">Pronto para retirada</option>
+                </select>
+              </label>
+            </div>
+            <div class="GradeCategorias">
+              <button aria-pressed="false" class="Categoria" data-categoria="cao" type="button">
+                <img alt="" src="../assets/images/animais-de-rua/Dog.png" />
+                <strong>Cães</strong>
+                <span>Prioridade de resgate</span>
+              </button>
+              <button aria-pressed="false" class="Categoria" data-categoria="gato" type="button">
+                <img alt="" src="../assets/images/animais-de-rua/Cat.png" />
+                <strong>Gatos</strong>
+                <span>Apoio médico e lar temporário</span>
+              </button>
+              <button aria-pressed="false" class="Categoria" data-categoria="ferido" type="button">
+                <img alt="" src="../assets/images/animais-de-rua/Bandage.png" />
+                <strong>Feridos</strong>
+                <span>Precisa de curativo</span>
+              </button>
+              <button
+                aria-pressed="false"
+                class="Categoria"
+                data-categoria="desidratado"
+                type="button"
+              >
+                <img alt="" src="../assets/images/animais-de-rua/Plastic Bottle.png" />
+                <strong>Desidratados</strong>
+                <span>Suporte de hidratação</span>
+              </button>
+              <button aria-pressed="false" class="Categoria" data-categoria="doente" type="button">
+                <img alt="" src="../assets/images/animais-de-rua/Heart with Pulse.png" />
+                <strong>Doentes</strong>
+                <span>Tratamento em andamento</span>
+              </button>
+              <button
+                aria-pressed="false"
+                class="Categoria"
+                data-categoria="lar-temporario"
+                type="button"
+              >
+                <img alt="" src="../assets/images/animais-de-rua/Exterior.png" />
+                <strong>Lar temporário</strong>
+                <span>Precisa de acolhimento</span>
+              </button>
+              <button
+                aria-pressed="false"
+                class="Categoria"
+                data-categoria="transporte"
+                type="button"
+              >
+                <img alt="" src="../assets/images/animais-de-rua/Public Transportation.png" />
+                <strong>Transporte</strong>
+                <span>Aguardando retirada</span>
+              </button>
+              <button aria-pressed="false" class="Categoria" data-categoria="comida" type="button">
+                <img alt="" src="../assets/images/animais-de-rua/Dog Bowl.png" />
+                <strong>Comida</strong>
+                <span>Refeições para filhotes</span>
+              </button>
+            </div>
+            <div class="AcoesFiltros">
+              <button class="Botao BotaoContorno" type="reset">Redefinir</button>
+              <button class="Botao BotaoMarrom" type="submit">Aplicar filtros</button>
+            </div>
+          </form>
+        </div>
+      </section>
 
-  <footer class="Rodape">
-    <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
-    <p>Contato: <a href="mailto:suporte@sospet.org">suporte@sospet.org</a> • Comunidade global com voluntários locais</p>
-  </footer>
-</body>
+      <section class="Sessao3">
+        <div class="LimiteConteudo ConteudoAnimais">
+          <div class="TextoAnimais">
+            <h2>Animais disponíveis para ajuda</h2>
+            <p>
+              Cartões arredondados com condição de saúde, necessidade principal e status atual —
+              toque em “Ver detalhes” para saber como ajudar.
+            </p>
+            <div class="BotoesAnimais">
+              <button class="Botao BotaoContorno" type="button">Compartilhar</button>
+              <button class="Botao" type="button">Ver detalhes</button>
+            </div>
+            <p aria-live="polite" class="ResumoResultados">6 animais encontrados</p>
+            <div class="BarraFiltrosAnimais">
+              <p>Mostrando todos os animais</p>
+              <button type="button" hidden>Limpar filtros</button>
+            </div>
+          </div>
+          <div class="GradeCartoes">
+            <article
+              aria-label="Ver detalhes de Bob (filhote)"
+              class="CartaoAnimal"
+              data-condicao="ferido"
+              data-especie="cao"
+              data-necessidade="curativo"
+              data-status="urgente"
+            >
+              <span class="Selo">Urgente • Resgate hoje</span>
+              <img
+                alt="Bob, cachorro filhote deitado"
+                src="../assets/images/animais-de-rua/o-que-fazer-quando-meu-cachorro-esta-triste.webp"
+              />
+              <h3>Bob (filhote)</h3>
+              <p><strong>Saúde:</strong> ferido • <strong>Necessidade:</strong> curativo</p>
+              <div class="AcoesCartaoAnimal">
+                <button class="BotaoDetalhesAnimal" type="button">Ver detalhes</button
+                ><button class="BotaoCompartilharAnimal" type="button">Compartilhar</button>
+              </div>
+            </article>
+            <article
+              aria-label="Ver detalhes de Patrick (gatinho)"
+              class="CartaoAnimal"
+              data-condicao="desidratado"
+              data-especie="gato"
+              data-necessidade="soro"
+              data-status="urgente"
+            >
+              <span class="Selo">Alta prioridade</span>
+              <img
+                alt="Patrick, gatinho recebendo soro na clínica"
+                src="../assets/images/animais-de-rua/cat.jpg"
+              />
+              <h3>Patrick (gatinho)</h3>
+              <p><strong>Saúde:</strong> desidratado • <strong>Necessidade:</strong> soro</p>
+              <div class="AcoesCartaoAnimal">
+                <button class="BotaoDetalhesAnimal" type="button">Ver detalhes</button
+                ><button class="BotaoCompartilharAnimal" type="button">Compartilhar</button>
+              </div>
+            </article>
+            <article
+              aria-label="Ver detalhes de Rocky (cão)"
+              class="CartaoAnimal"
+              data-condicao="doente"
+              data-especie="cao"
+              data-necessidade="medicacao"
+              data-status="em-atendimento"
+            >
+              <span class="Selo">Suporte médico</span>
+              <img
+                alt="Rocky, cachorro enrolado em um cobertor"
+                src="../assets/images/animais-de-rua/dog2.jpg"
+              />
+              <h3>Rocky (cão)</h3>
+              <p><strong>Saúde:</strong> doente • <strong>Necessidade:</strong> medicação</p>
+              <div class="AcoesCartaoAnimal">
+                <button class="BotaoDetalhesAnimal" type="button">Ver detalhes</button
+                ><button class="BotaoCompartilharAnimal" type="button">Compartilhar</button>
+              </div>
+            </article>
+            <article
+              aria-label="Ver detalhes de Luna (gata)"
+              class="CartaoAnimal"
+              data-condicao="feridas-leves"
+              data-especie="gato"
+              data-necessidade="lar-temporario"
+              data-status="em-atendimento"
+            >
+              <span class="Selo">Precisa de acolhimento</span>
+              <img
+                alt="Luna, gata deitada descansando"
+                src="../assets/images/animais-de-rua/cintya-marisa-3ffJg5D3RLo-unsplash.jpg"
+              />
+              <h3>Luna (gata)</h3>
+              <p>
+                <strong>Saúde:</strong> feridas leves • <strong>Necessidade:</strong> lar temporário
+              </p>
+              <div class="AcoesCartaoAnimal">
+                <button class="BotaoDetalhesAnimal" type="button">Ver detalhes</button
+                ><button class="BotaoCompartilharAnimal" type="button">Compartilhar</button>
+              </div>
+            </article>
+            <article
+              aria-label="Ver detalhes de Luffy (filhote)"
+              class="CartaoAnimal"
+              data-condicao="ferido"
+              data-especie="cao"
+              data-necessidade="transporte"
+              data-status="urgente"
+            >
+              <span class="Selo">Crítico</span>
+              <img
+                alt="Luffy, filhote de coleira vermelha"
+                src="../assets/images/animais-de-rua/dog.jpg"
+              />
+              <h3>Luffy (filhote)</h3>
+              <p><strong>Saúde:</strong> ferido • <strong>Necessidade:</strong> transporte</p>
+              <div class="AcoesCartaoAnimal">
+                <button class="BotaoDetalhesAnimal" type="button">Ver detalhes</button
+                ><button class="BotaoCompartilharAnimal" type="button">Compartilhar</button>
+              </div>
+            </article>
+            <article
+              aria-label="Ver detalhes de Pimenta (gatinho)"
+              class="CartaoAnimal"
+              data-condicao="doente"
+              data-especie="gato"
+              data-necessidade="comida"
+              data-status="recuperado pronto"
+            >
+              <span class="Selo">Pronto para retirada</span>
+              <img
+                alt="Pimenta, gatinho filhote sentado"
+                src="../assets/images/animais-de-rua/cat2.jpg"
+              />
+              <h3>Pimenta (gatinho)</h3>
+              <p><strong>Saúde:</strong> doente • <strong>Necessidade:</strong> comida</p>
+              <div class="AcoesCartaoAnimal">
+                <button class="BotaoDetalhesAnimal" type="button">Ver detalhes</button
+                ><button class="BotaoCompartilharAnimal" type="button">Compartilhar</button>
+              </div>
+            </article>
+          </div>
+          <p aria-live="polite" class="SemResultados" hidden="">
+            Nenhum animal corresponde aos filtros escolhidos.
+          </p>
+        </div>
+      </section>
+
+      <section class="Sessao4">
+        <div class="LimiteConteudo">
+          <h2>Como o SOS Pet prioriza o cuidado</h2>
+          <p class="Subtitulo">
+            Cada cartão mostra três sinais rápidos para ajudar você a decidir.
+          </p>
+          <div class="GradePrioridades">
+            <article class="CartaoPrioridade">
+              <img
+                alt="Cãozinho recebendo cuidados"
+                src="../assets/images/animais-de-rua/dog3.png"
+              />
+              <div>
+                <h3>Condição de saúde</h3>
+                <p class="Destaque">O que está acontecendo</p>
+                <p>
+                  Ferido, doente, desidratado ou com feridas leves — do mais urgente ao estável.
+                </p>
+              </div>
+            </article>
+            <article class="CartaoPrioridade">
+              <img alt="Suprimentos para pets" src="../assets/images/animais-de-rua/itens.png" />
+              <div>
+                <h3>Necessidade principal</h3>
+                <p class="Destaque">O que ajuda agora</p>
+                <p>Suprimentos como curativos, antibióticos, comida, hidratação ou transporte.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="FooterPadrao">
+      <img alt="Logo SOS Pet" src="../assets/images/pedidos-de-ajuda/Logo.png" />
+      <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
+      <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
+    </footer>
+    <script defer="true" src="../js/dados.js"></script>
+    <script defer="true" src="../js/geral.js"></script>
+    <script defer="true" src="../js/animais.js"></script>
+  </body>
 </html>

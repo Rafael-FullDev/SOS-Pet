@@ -1,0 +1,37 @@
+:root {
+  --cor-01: #e5e5ea;
+  --cor-02: #fdfdfd;
+  --cor-03: #f2cb51;
+  --cor-04: #e63946;
+  --cor-05: #61442b;
+  --cor-06: #1e1e24;
+  --cor-07: #ff383c;
+  --cor-08: #fae9b6;
+  --fundo-01: #f9e9b7;
+  --fundo-02: #fae9b6;
+  --fundo-03: #ffffff;
+  --texto-escuro: #1e1e24;
+  --texto-cinza: #6f675f;
+  --vermelho-hover: #c92f3b;
+  --radius-botao: 8px;
+  --radius-card: 22px;
+  --radius-redondo: 19px;
+  --font-principal: "Poppins", sans-serif;
+  --font-titulo-pagina: 45px;
+  --font-titulo-secao: 22px;
+  --font-titulo-card: 18px;
+  --font-texto-normal: 16px;
+  --font-texto-miudo: 12px;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --espaco-interno-card: 24px;
+  --espaco-entre-cards: 20px;
+  --espaco-entre-secoes: 46px;
+  --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --sombra-card-horizontal: 0 2px 6px rgba(0, 0, 0, 0.04);
+  --fundo-gradiente-inicio: #f5c943;
+  --fundo-gradiente-fim: #ffffff;
+  --cor-borda-gradiente: #61442b;
+}

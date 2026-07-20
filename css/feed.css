@@ -1,404 +1,383 @@
-/* ==================================================
-   RESET
-================================================== */
-
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --fundo: #fce9b8;
+  --branco: #ffffff;
+  --marrom: #6b4a34;
+  --marrom-escuro: #3b2a1a;
+  --vermelho: #ef3d4d;
+  --vermelho-claro: #ffd8dc;
+  --cinza: #7e7469;
+  --borda: #eadfc9;
+  --sombra: 0 10px 26px rgba(59, 42, 26, 0.09);
 }
 
 html,
 body {
-    min-height: 100%;
+  min-height: 100%;
+}
+
+body {
+  color: var(--marrom-escuro);
+  background: var(--fundo);
+  font-family: "Poppins", Arial, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
 img {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 button {
-    border: 0;
-    background: none;
-    color: inherit;
-    font: inherit;
-    cursor: pointer;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
-}
-
-
-/* ==================================================
-   CORES E FONTES DO PROJETO
-================================================== */
-
-:root {
-    --fundo: #fce9b8;
-    --branco: #ffffff;
-    --marrom: #6b4a34;
-    --marrom-escuro: #3b2a1a;
-    --vermelho: #ef3d4d;
-    --vermelho-escuro: #d62d3d;
-    --vermelho-claro: #ffd8dc;
-    --cinza: #7e7469;
-    --borda: #eadfc9;
-    --sombra: 0 10px 26px rgba(59, 42, 26, 0.09);
-    --fonte: "Nunito", Arial, sans-serif;
-}
-
-
-/* ==================================================
-   ESTILOS GERAIS
-================================================== */
-
-body {
-    min-width: 1180px;
-    color: var(--marrom-escuro);
-    background: var(--fundo);
-    font-family: var(--fonte);
-    line-height: 1.5;
+  color: inherit;
+  text-decoration: none;
 }
 
 .container {
-    width: 1080px;
-    margin: 0 auto;
+  width: min(calc(100% - 32px), 1080px);
+  margin-inline: auto;
 }
-
-
-/* ==================================================
-   CABEÇALHO
-================================================== */
-
-.site-header {
-    background: var(--branco);
-    border-top: 1px solid #232323;
-    border-bottom: 1px solid var(--borda);
-    box-shadow: 0 2px 10px rgba(59, 42, 26, 0.04);
-}
-
-.header-inner {
-    min-height: 74px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 26px;
-    padding: 10px 0;
-}
-
-
-/* ==================================================
-   LOGO
-================================================== */
-
-.logo {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.logo-img {
-    width: 78px;
-    height: auto;
-}
-
-
-/* ==================================================
-   MENU DE NAVEGAÇÃO
-================================================== */
-
-.main-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 35px;
-    flex: 1;
-}
-
-.nav-link {
-    position: relative;
-    color: var(--marrom);
-    font-size: 14px;
-    font-weight: 700;
-}
-
-/* ==================================================
-   FOTO DO USUÁRIO
-================================================== */
-
-.user-avatar img {
-    width: 48px;
-    height: 48px;
-    border: 3px solid #f3e6cf;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-
-/* ==================================================
-   CONTEÚDO PRINCIPAL
-================================================== */
 
 .main-content {
-    padding: 78px 0 64px;
+  padding: 66px 0 56px;
 }
 
-
-/* ==================================================
-   CABEÇALHO DO FEED
-================================================== */
-
 .feed-header {
-    margin-bottom: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
+  display: flex;
+  gap: 28px;
+  margin-bottom: 38px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .feed-title {
-    margin-bottom: 6px;
-    color: var(--marrom);
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1.08;
+  margin-bottom: 6px;
+  color: var(--marrom);
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 800;
+  line-height: 1.08;
 }
 
 .feed-subtitle {
-    color: var(--vermelho);
-    font-size: 18px;
-    font-weight: 700;
+  color: var(--vermelho);
+  font-size: 17px;
+  font-weight: 700;
 }
-
-
-/* ==================================================
-   BOTÃO NOVA PUBLICAÇÃO
-================================================== */
 
 .btn-primary {
-    min-width: 210px;
-    padding: 16px 24px;
-    border-radius: 18px;
-    color: var(--branco);
-    background: var(--vermelho);
-    box-shadow: 0 8px 18px rgba(239, 61, 77, 0.22);
-    font-size: 16px;
-    font-weight: 800;
+  min-width: 205px;
+  padding: 15px 22px;
+  border-radius: 16px;
+  color: var(--branco);
+  background: var(--vermelho);
+  box-shadow: 0 8px 18px rgba(239, 61, 77, 0.22);
+  font-weight: 800;
+  transition: 160ms ease;
 }
 
-/* ==================================================
-   FILTROS
-================================================== */
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
 
 .filters {
-    margin-bottom: 58px;
-    display: flex;
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 42px;
+  overflow-x: auto;
+  border-radius: 10px;
 }
 
 .filter-tab {
-    min-height: 52px;
-    padding: 0 28px;
-    border: 1px solid #b9b9b9;
-    border-right: 0;
-    color: #222222;
-    background: var(--branco);
-    font-size: 16px;
-    font-weight: 700;
+  min-height: 50px;
+  padding: 0 24px;
+  flex: 0 0 auto;
+  border: 1px solid #b9b9b9;
+  border-right: 0;
+  color: #222;
+  background: var(--branco);
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .filter-tab:first-child {
-    border-radius: 10px 0 0 10px;
+  border-radius: 10px 0 0 10px;
 }
 
 .filter-tab:last-child {
-    border-right: 1px solid #b9b9b9;
-    border-radius: 0 10px 10px 0;
+  border-right: 1px solid #b9b9b9;
+  border-radius: 0 10px 10px 0;
 }
 
-.filter-tab.is-active {
-    color: var(--branco);
-    background: var(--marrom);
+.filter-tab.is-active,
+.filter-tab[aria-pressed="true"] {
+  color: var(--branco);
+  background: var(--marrom);
 }
-
-
-/* ==================================================
-   LISTA DE POSTS
-================================================== */
 
 .posts {
-    width: 820px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
+  width: min(100%, 820px);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
-
-
-/* ==================================================
-   CARD DE POST
-================================================== */
 
 .post {
-    padding: 30px 34px 24px;
-    border: 1px solid rgba(107, 74, 52, 0.05);
-    border-radius: 18px;
-    background: var(--branco);
-    box-shadow: var(--sombra);
+  padding: 28px 32px 22px;
+  border: 1px solid rgba(107, 74, 52, 0.06);
+  border-radius: 18px;
+  background: var(--branco);
+  box-shadow: var(--sombra);
 }
 
-/* ==================================================
-   CABEÇALHO DO POST
-================================================== */
-
 .post-header {
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+  display: flex;
+  gap: 14px;
+  margin-bottom: 22px;
+  align-items: center;
 }
 
 .avatar {
-    width: 64px;
-    height: 64px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 62px;
+  height: 62px;
+  flex: 0 0 62px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .post-user {
-    flex: 1;
+  min-width: 0;
+  flex: 1;
 }
 
 .user-name {
-    color: #111111;
-    font-size: 22px;
-    font-weight: 800;
+  color: #111;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .post-meta {
-    margin-top: 2px;
-    color: #333333;
-    font-size: 14px;
+  margin-top: 2px;
+  color: #333;
+  font-size: 13px;
 }
 
-
-/* ==================================================
-   ETIQUETA URGENTE
-================================================== */
-
 .badge {
-    padding: 7px 14px;
-    border-radius: 9px;
-    font-size: 12px;
-    font-weight: 800;
+  padding: 7px 13px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 800;
 }
 
 .badge-urgent {
-    color: #d30018;
-    background: var(--vermelho-claro);
+  color: #d30018;
+  background: var(--vermelho-claro);
 }
 
-
-/* ==================================================
-   CONTEÚDO DO POST
-================================================== */
-
 .post-title {
-    margin-bottom: 10px;
-    color: #111111;
-    font-size: 18px;
-    font-weight: 800;
+  margin-bottom: 9px;
+  color: #111;
+  font-size: 18px;
+  font-weight: 800;
 }
 
 .post-text {
-    margin-bottom: 12px;
-    color: #262626;
-    font-size: 15px;
+  margin-bottom: 12px;
+  color: #262626;
+  font-size: 14px;
 }
 
 .post-location {
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    color: var(--cinza);
-    font-size: 12px;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 17px;
+  align-items: center;
+  color: var(--cinza);
+  font-size: 12px;
 }
 
 .pin {
-    color: var(--vermelho);
-    font-size: 20px;
+  color: var(--vermelho);
+  font-size: 18px;
 }
 
-
-/* ==================================================
-   IMAGEM DO POST
-================================================== */
-
 .post-image {
-    height: 205px;
-    margin-bottom: 18px;
-    overflow: hidden;
-    border-radius: 15px;
-    background: #eeeeee;
+  height: clamp(210px, 36vw, 390px);
+  margin-bottom: 18px;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #eee;
 }
 
 .post-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* ==================================================
-   AÇÕES DO POST
-================================================== */
-
 .post-actions {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .actions-left {
-    display: flex;
-    gap: 24px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .action {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #222222;
-    font-size: 14px;
-    font-weight: 700;
+  display: inline-flex;
+  gap: 6px;
+  min-height: 36px;
+  align-items: center;
+  color: #222;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .action span {
-    color: var(--vermelho);
-    font-size: 19px;
+  color: var(--vermelho);
+  font-size: 18px;
 }
 
 .action.share span {
-    color: #aaaaaa;
+  color: #999;
 }
 
-/* ==================================================
-   RODAPÉ
-================================================== */
+.action[aria-pressed="true"] {
+  color: var(--vermelho);
+}
+
+.action[aria-pressed="true"] span {
+  font-weight: 900;
+}
 
 .site-footer {
-    margin-top: 40px;
-    padding: 22px 24px;
-    border-top: 1px solid var(--borda);
-    color: var(--marrom);
-    background: var(--branco);
-    text-align: center;
-    font-size: 12px;
+  margin-top: 36px;
+  padding: 22px 24px;
+  border-top: 1px solid var(--borda);
+  color: var(--marrom);
+  background: var(--branco);
+  text-align: center;
+  font-size: 12px;
 }
 
 .site-footer p + p {
-    margin-top: 4px;
+  margin-top: 4px;
+}
+
+@media (max-width: 720px) {
+  .main-content {
+    padding-top: 42px;
+  }
+
+  .feed-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  .filters {
+    width: 100%;
+  }
+
+  .filter-tab {
+    min-width: max-content;
+    flex: 1 0 auto;
+  }
+
+  .post {
+    padding: 22px 18px 18px;
+  }
+
+  .post-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .actions-left {
+    width: 100%;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .action.share {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 460px) {
+  .post-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .avatar {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+  }
+
+  .badge {
+    margin-left: 66px;
+  }
+
+  .actions-left {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  .filter-tab,
+  .filter-tab:first-child,
+  .filter-tab:last-child {
+    width: 100%;
+    min-width: 0;
+    padding: 0 8px;
+    border: 1px solid #b9b9b9;
+    border-radius: 0;
+  }
+
+  .filter-tab:first-child {
+    border-radius: 10px 0 0 0;
+  }
+
+  .filter-tab:nth-child(2) {
+    border-radius: 0 10px 0 0;
+  }
+
+  .filter-tab:nth-child(3) {
+    border-radius: 0 0 0 10px;
+  }
+
+  .filter-tab:last-child {
+    border-radius: 0 0 10px 0;
+  }
 }
