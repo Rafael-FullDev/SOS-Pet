@@ -4,22 +4,18 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="#df3342" name="theme-color" />
     <meta
       content="Gerencie seu perfil, publicações, pedidos e atividades no SOS Pet."
       name="description"
     />
     <title>Perfil - SOS PET</title>
     <link href="../assets/images/shared/favicon.png" rel="icon" type="image/png" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link href="../css/variantes.css" rel="stylesheet" />
     <link href="../css/perfil.css" rel="stylesheet" />
     <link href="../css/navbar.css" rel="stylesheet" />
     <link href="../css/interacoes.css" rel="stylesheet" />
+    <link href="../css/animacoes.css" rel="stylesheet" />
+    <link href="../css/profissional.css" rel="stylesheet" />
   </head>
   <body data-page="perfil" data-root="../">
     <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -50,8 +46,9 @@
           <a href="../index.html#Inicio">Início</a>
           <a href="pets-perdidos.html">Animais Perdidos</a>
           <a href="animais-de-rua.html">Animais de Rua</a>
-          <a href="../index.html#Adocao">Adoção</a>
+          <a href="adocao.html">Adoção</a>
           <a href="pedidos-de-ajuda.html">Pedidos</a>
+          <a href="denuncia.html">Denúncias</a>
           <a href="feed.html">Feed</a>
         </nav>
         <div class="AcoesCabecalho">
@@ -75,7 +72,7 @@
           <img
             alt="Foto de Juliana Silva"
             class="avatar-large"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmbTQXD_Zmi0hUmpuvXvhjxw8RS-VBzRuXRak6WVYWbEqp2LvDDMRhsgEe&amp;s=10"
+            src="../assets/images/perfil/avatar-mulher.png"
           />
         </div>
         <div class="profile-info">
@@ -231,7 +228,7 @@
             <img
               alt="Precisamos de ração"
               class="card-img"
-              src="../assets/images/perfil/racao.png"
+              src="../assets/images/perfil/racao.jpg"
             />
             <div class="card-main-info">
               <h3>Precisamos de ração</h3>
@@ -283,7 +280,7 @@
 
       <article class="promo-banner">
         <div class="banner-left">
-          <span class="icon-heart"> </span>
+          <span aria-hidden="true" class="icon-heart icon-heart-imagem"></span>
           <div class="banner-text">
             <h3>Quer fazer mais?</h3>
             <p>Veja como você pode ajudar ainda mais os pets</p>
@@ -301,7 +298,7 @@
             data-action="encontrar-pet"
             type="button"
           >
-            <span class="acao-icon"> </span>
+            <span aria-hidden="true" class="acao-icon icone-encontre"></span>
             <h4>Encontre um pet</h4>
             <p>Veja os pets que estão prontos</p>
           </button>
@@ -312,7 +309,7 @@
             data-action="lar-temporario"
             type="button"
           >
-            <span class="acao-icon">🐕‍🦺</span>
+            <span aria-hidden="true" class="acao-icon icone-adocao"></span>
             <h4>Adoção temporária</h4>
             <p>Dê um lar temporário</p>
           </button>
@@ -323,7 +320,7 @@
             data-action="pedidos"
             type="button"
           >
-            <span class="acao-icon">🐾</span>
+            <span aria-hidden="true" class="acao-icon icone-pedidos"></span>
             <h4>Pedidos de ajuda</h4>
             <p>Ajude quem precisa</p>
           </button>
@@ -334,7 +331,7 @@
             data-action="duvidas"
             type="button"
           >
-            <span class="acao-icon">ℹ️</span>
+            <span aria-hidden="true" class="acao-icon icone-duvidas"></span>
             <h4>Dúvidas mais lidas</h4>
             <p>Tire dúvidas e leia novidades</p>
           </button>
@@ -346,8 +343,9 @@
       <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
       <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
     </footer>
-    <script defer="true" src="../js/dados.js"></script>
-    <script defer="true" src="../js/geral.js"></script>
-    <script defer="true" src="../js/perfil.js"></script>
+    <script defer src="../js/dados.js"></script>
+    <script defer src="../js/geral.js"></script>
+    <script defer src="../js/perfil.js"></script>
+    <script defer src="../js/animacoes.js"></script>
   </body>
 </html>

@@ -376,25 +376,8 @@ body {
   height: 126px;
 }
 
-.RodapePerdidos {
-  padding: 32px 20px 38px;
-  border-top: 1px solid #ded7cb;
-  background: #fff;
-  text-align: center;
-}
 
-.RodapePerdidos img {
-  width: 160px;
-  height: 66px;
-  margin-bottom: 12px;
-  object-fit: contain;
-}
 
-.RodapePerdidos p {
-  margin: 4px 0;
-  color: #555157;
-  font-size: 12px;
-}
 
 .DetalhePetModal {
   display: grid;

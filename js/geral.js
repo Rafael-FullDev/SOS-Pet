@@ -1,4 +1,11 @@
 var raiz = document.body.getAttribute("data-root") || "";
+var avatarPadrao = "assets/images/perfil/avatar-mulher.png";
+var fotosAntigas = [
+  "assets/images/pedidos-de-ajuda/Ellipse 5.png",
+  "assets/images/pedidos-de-ajuda/Ellipse 5 (1).png",
+  "assets/images/pedidos-de-ajuda/Ellipse 6.png",
+  "assets/images/home/Usuario.png",
+];
 
 function pegar(seletor, area) {
   return (area || document).querySelector(seletor);
@@ -13,9 +20,13 @@ function campo(formulario, nome) {
 }
 
 function ler(chave, padrao) {
-  var valor = localStorage.getItem(chave);
+  try {
+    var valor = localStorage.getItem(chave);
 
-  return valor ? JSON.parse(valor) : padrao;
+    return valor ? JSON.parse(valor) : padrao;
+  } catch (erro) {
+    return padrao;
+  }
 }
 
 function salvar(chave, valor) {
@@ -63,6 +74,12 @@ function urlImagem(caminho) {
   return raiz + caminho.replace(/^\.\//, "");
 }
 
+function precisaTrocarFoto(foto) {
+  var caminho = String(foto || "").replace(/^\.\//, "");
+
+  return !caminho || fotosAntigas.indexOf(caminho) !== -1;
+}
+
 function agora() {
   return new Date().toISOString();
 }
@@ -85,10 +102,64 @@ function tempo(data) {
 function iniciarDados() {
   var posts = ler("sosPetPosts", null);
 
-  if (!Array.isArray(posts) || !posts.length) salvar("sosPetPosts", PostsIniciais);
+  if (!Array.isArray(posts) || !posts.length) {
+    salvar("sosPetPosts", PostsIniciais);
+  } else {
+    var iniciaisPorId = {};
+    var atualizouPosts = false;
+
+    PostsIniciais.forEach(function (post) {
+      iniciaisPorId[post.id] = post;
+    });
+
+    posts.forEach(function (post) {
+      var inicial = iniciaisPorId[post.id];
+
+      if (!inicial) return;
+
+      if (/^https?:/.test(post.avatar || "")) {
+        post.avatar = inicial.avatar;
+        atualizouPosts = true;
+      }
+
+      if (/^https?:/.test(post.imagem || "")) {
+        post.imagem = inicial.imagem;
+        atualizouPosts = true;
+      }
+    });
+
+    if (atualizouPosts) salvar("sosPetPosts", posts);
+  }
   var pedidos = ler("sosPetPedidos", null);
 
-  if (!Array.isArray(pedidos) || !pedidos.length) salvar("sosPetPedidos", PedidosIniciais);
+  if (!Array.isArray(pedidos) || !pedidos.length) {
+    salvar("sosPetPedidos", PedidosIniciais);
+    pedidos = PedidosIniciais;
+  }
+
+  var conta = obterConta();
+
+  if (conta && conta.foto) {
+    var atualizouMeusPosts = false;
+    var atualizouMeusPedidos = false;
+
+    for (var p = 0; p < posts.length; p++) {
+      if (ehDono(posts[p]) && precisaTrocarFoto(posts[p].avatar)) {
+        posts[p].avatar = conta.foto;
+        atualizouMeusPosts = true;
+      }
+    }
+
+    for (var q = 0; q < pedidos.length; q++) {
+      if (ehDono(pedidos[q]) && precisaTrocarFoto(pedidos[q].avatar)) {
+        pedidos[q].avatar = conta.foto;
+        atualizouMeusPedidos = true;
+      }
+    }
+
+    if (atualizouMeusPosts) salvar("sosPetPosts", posts);
+    if (atualizouMeusPedidos) salvar("sosPetPedidos", pedidos);
+  }
 
   if (!Array.isArray(ler("sosPetAtividades", null))) salvar("sosPetAtividades", []);
 
@@ -104,7 +175,16 @@ function obterPedidos() {
 }
 
 function obterConta() {
-  return ler("sosPetConta", null);
+  var conta = ler("sosPetConta", null);
+
+  if (!conta) return null;
+
+  if (precisaTrocarFoto(conta.foto)) {
+    conta.foto = avatarPadrao;
+    salvar("sosPetConta", conta);
+  }
+
+  return conta;
 }
 
 function salvarConta(conta) {
@@ -122,7 +202,7 @@ function usuarioAtual() {
       email: "",
       telefone: "",
       cidade: "",
-      foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmbTQXD_Zmi0hUmpuvXvhjxw8RS-VBzRuXRak6WVYWbEqp2LvDDMRhsgEe&s=10",
+      foto: avatarPadrao,
     }
   );
 }
@@ -535,7 +615,7 @@ function configurarBusca() {
       ["Animais Perdidos", "Pets desaparecidos", raiz + "pages/pets-perdidos.html"],
       ["Animais de Rua", "Animais que precisam de ajuda", raiz + "pages/animais-de-rua.html"],
       ["Denúncia", "Denunciar maus-tratos ou abandono", raiz + "pages/denuncia.html"],
-      ["Adoção", "Adoção e lar temporário", raiz + "index.html#Adocao"],
+      ["Adoção", "Adoção e lar temporário", raiz + "pages/adocao.html"],
       ["Pedidos de Ajuda", "Pedidos da comunidade", raiz + "pages/pedidos-de-ajuda.html"],
       ["Feed", "Publicações da comunidade", raiz + "pages/feed.html"],
     ];

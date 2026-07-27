@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="#df3342" name="theme-color" />
     <meta
       content="Acompanhe publicações de animais perdidos, adoções e pedidos de ajuda da comunidade SOS Pet."
       name="description"
@@ -11,14 +12,10 @@
     <title>SOS Pet — Feed da Comunidade</title>
     <link href="../assets/images/shared/favicon.png" rel="icon" type="image/png" />
     <link href="../css/feed.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap"
-      rel="stylesheet"
-    />
     <link href="../css/navbar.css" rel="stylesheet" />
     <link href="../css/interacoes.css" rel="stylesheet" />
+    <link href="../css/animacoes.css" rel="stylesheet" />
+    <link href="../css/profissional.css" rel="stylesheet" />
   </head>
   <body data-page="feed" data-root="../">
     <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -50,8 +47,9 @@
           <a href="../index.html#Inicio">Início</a>
           <a href="pets-perdidos.html">Animais Perdidos</a>
           <a href="animais-de-rua.html">Animais de Rua</a>
-          <a href="../index.html#Adocao">Adoção</a>
+          <a href="adocao.html">Adoção</a>
           <a href="pedidos-de-ajuda.html">Pedidos</a>
+          <a href="denuncia.html">Denúncias</a>
           <a aria-current="page" class="Ativo" href="feed.html">Feed</a>
         </nav>
         <div class="AcoesCabecalho">
@@ -98,166 +96,7 @@
         <button class="LimparFiltroFeed" type="button">Limpar filtro</button>
       </div>
 
-      <section class="posts">
-        <article class="post" data-category="perdidos">
-          <header class="post-header">
-            <img
-              alt="Ana Machado"
-              class="avatar"
-              src="https://images.pexels.com/photos/34943067/pexels-photo-34943067.png"
-            />
-            <div class="post-user">
-              <h3 class="user-name">Ana Machado</h3>
-              <p class="post-meta">Perdeu um pet · Há 2h</p>
-            </div>
-            <span class="badge badge-urgent">! Urgente</span>
-          </header>
-          <h2 class="post-title">Meu gato desapareceu</h2>
-          <p class="post-text">
-            O Flocos desapareceu na região do parque Ibirapuera, ele é dócil e atende pelo nome.
-          </p>
-          <p class="post-location"><span class="pin">📍</span> São Paulo, SP</p>
-          <div class="post-image">
-            <img
-              alt="Gato desaparecido"
-              src="https://images.pexels.com/photos/27638232/pexels-photo-27638232.jpeg?_gl=1*1vgll4z*_ga*NzcxNzAzMjg0LjE3ODM5ODMyNjM.*_ga_8JE65Q40S6*czE3ODM5OTQ3NDckbzIkZzEkdDE3ODM5OTU1NDIkajMxJGwwJGgw"
-            />
-          </div>
-          <footer class="post-actions">
-            <div class="actions-left">
-              <button aria-pressed="false" class="action" data-action="curtir" type="button">
-                <span>♡</span> 24
-              </button>
-              <button class="action" data-action="comentar" type="button">
-                <span>💬</span> 12
-              </button>
-              <button aria-pressed="false" class="action" data-action="apoiar" type="button">
-                <span>↗</span> 46
-              </button>
-            </div>
-            <button class="action share" data-action="compartilhar" type="button">
-              <span>↗</span> Compartilhar
-            </button>
-          </footer>
-        </article>
-
-        <article class="post" data-category="adocao">
-          <header class="post-header">
-            <img
-              alt="Rafael Lima"
-              class="avatar"
-              src="https://images.pexels.com/photos/15241165/pexels-photo-15241165.jpeg"
-            />
-            <div class="post-user">
-              <h3 class="user-name">Rafael Lima</h3>
-              <p class="post-meta">Adoção · Há 4h</p>
-            </div>
-          </header>
-          <h2 class="post-title">Filhote procurando um lar</h2>
-          <p class="post-text">
-            Este é Luke! Ele tem 3 meses, já tomou a primeira vacina e é muito brincalhão.
-          </p>
-          <p class="post-location"><span class="pin">📍</span> São Paulo, SP</p>
-          <div class="post-image">
-            <img
-              alt="Filhote para adoção"
-              src="https://images.pexels.com/photos/12849463/pexels-photo-12849463.jpeg"
-            />
-          </div>
-          <footer class="post-actions">
-            <div class="actions-left">
-              <button aria-pressed="false" class="action" data-action="curtir" type="button">
-                <span>♡</span> 14
-              </button>
-              <button class="action" data-action="comentar" type="button"><span>💬</span> 8</button>
-              <button aria-pressed="false" class="action" data-action="apoiar" type="button">
-                <span>↗</span> 36
-              </button>
-            </div>
-            <button class="action share" data-action="compartilhar" type="button">
-              <span>↗</span> Compartilhar
-            </button>
-          </footer>
-        </article>
-
-        <article class="post" data-category="ajuda">
-          <header class="post-header">
-            <img
-              alt="Projeto Patinhas"
-              class="avatar"
-              src="https://thumbs.dreamstime.com/z/patas-para-animais-de-estima%C3%A7%C3%A3o-pata-tigre-e-esqueleto-peixe-banner-pegada-gatinhos-c%C3%A3es-p%C3%A9s-pernas-desenho-animado-borda-sem-248934320.jpg"
-            />
-            <div class="post-user">
-              <h3 class="user-name">Projeto Patinhas</h3>
-              <p class="post-meta">Pedidos de Ajuda · Há 6h</p>
-            </div>
-          </header>
-          <h2 class="post-title">Precisamos de ração!</h2>
-          <p class="post-text">
-            Nossa ONG está com estoque baixo de ração. Toda ajuda é bem-vinda!
-          </p>
-          <p class="post-location"><span class="pin">📍</span> São Paulo, SP</p>
-          <div class="post-image">
-            <img
-              alt="Cachorro e ração"
-              src="https://agenciadenoticias.uniceub.br/wp-content/uploads/2022/10/animais-fauna-e-flora.jpg"
-            />
-          </div>
-          <footer class="post-actions">
-            <div class="actions-left">
-              <button aria-pressed="false" class="action" data-action="curtir" type="button">
-                <span>♡</span> 31
-              </button>
-              <button class="action" data-action="comentar" type="button"><span>💬</span> 9</button>
-              <button aria-pressed="false" class="action" data-action="apoiar" type="button">
-                <span>↗</span> 27
-              </button>
-            </div>
-            <button class="action share" data-action="compartilhar" type="button">
-              <span>↗</span> Compartilhar
-            </button>
-          </footer>
-        </article>
-
-        <article class="post" data-category="ajuda">
-          <header class="post-header">
-            <img
-              alt="Roberta Silva"
-              class="avatar"
-              src="https://images.pexels.com/photos/18644578/pexels-photo-18644578.jpeg"
-            />
-            <div class="post-user">
-              <h3 class="user-name">Roberta Silva</h3>
-              <p class="post-meta">Pedidos de Ajuda · Há 3h</p>
-            </div>
-          </header>
-          <h2 class="post-title">Tratamento de Clarêncio</h2>
-          <p class="post-text">
-            Preciso de dinheiro para tratamento do meu passarinho. Toda ajuda é bem-vinda!
-          </p>
-          <p class="post-location"><span class="pin">📍</span> São Paulo, SP</p>
-          <div class="post-image">
-            <img
-              alt="Passarinho"
-              src="https://images.unsplash.com/photo-1522858547137-f1dcec554f55?w=1200&amp;q=80"
-            />
-          </div>
-          <footer class="post-actions">
-            <div class="actions-left">
-              <button aria-pressed="false" class="action" data-action="curtir" type="button">
-                <span>♡</span> 31
-              </button>
-              <button class="action" data-action="comentar" type="button"><span>💬</span> 9</button>
-              <button aria-pressed="false" class="action" data-action="apoiar" type="button">
-                <span>↗</span> 27
-              </button>
-            </div>
-            <button class="action share" data-action="compartilhar" type="button">
-              <span>↗</span> Compartilhar
-            </button>
-          </footer>
-        </article>
-      </section>
+      <section class="posts" aria-live="polite"></section>
       <div class="EstadoVazioFeed" aria-live="polite" hidden>
         <strong>Nenhuma publicação encontrada.</strong
         ><span>Tente outra categoria ou crie uma publicação.</span>
@@ -270,8 +109,9 @@
       <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
       <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
     </footer>
-    <script defer="true" src="../js/dados.js"></script>
-    <script defer="true" src="../js/geral.js"></script>
-    <script defer="true" src="../js/feed.js"></script>
+    <script defer src="../js/dados.js"></script>
+    <script defer src="../js/geral.js"></script>
+    <script defer src="../js/feed.js"></script>
+    <script defer src="../js/animacoes.js"></script>
   </body>
 </html>

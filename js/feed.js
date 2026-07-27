@@ -37,7 +37,7 @@ function iniciarFeed() {
       post.categoria +
       '">' +
       '<header class="post-header"><img class="avatar" src="' +
-      escapar(urlImagem(post.avatar || "assets/images/home/Usuario.png")) +
+      escapar(urlImagem(post.avatar || "assets/images/perfil/avatar-mulher.png")) +
       '" alt="' +
       escapar(post.autor) +
       '"><div class="post-user"><h3 class="user-name">' +
@@ -69,7 +69,7 @@ function iniciarFeed() {
       textoCurtida +
       "</span><strong>" +
       Number(post.curtidas || 0) +
-      '</strong></button><button class="action" data-action="comentar" type="button"><span>💬</span><span>Comentários</span><strong>' +
+      '</strong></button><button class="action" data-action="comentar" type="button"><span>💬</span><span>Comentar</span><strong>' +
       comentarios +
       '</strong></button><button class="action" data-action="apoiar" type="button" aria-pressed="' +
       Boolean(post.apoiado) +
@@ -449,6 +449,8 @@ function iniciarFeed() {
     if (!artigo || !botao) return;
     var post = procurarPorId(obterPosts(), artigo.getAttribute("data-id"));
     var acao = botao.getAttribute("data-action");
+
+    if (!post) return;
 
     if (acao === "detalhes") abrirDetalhes(post);
 

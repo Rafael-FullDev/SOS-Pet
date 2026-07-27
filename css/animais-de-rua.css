@@ -341,22 +341,8 @@ h3,
   color: var(--Cinza);
 }
 
-.Rodape {
-  padding: 18px 16px;
-  background-color: var(--Branco);
-  color: var(--Marrom);
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-}
 
-.Rodape p + p {
-  margin-top: 4px;
-}
 
-.Rodape a:hover {
-  text-decoration: underline;
-}
 
 @media (max-width: 900px) {
   .ConteudoHero,

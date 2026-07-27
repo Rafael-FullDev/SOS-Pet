@@ -1,0 +1,504 @@
+:root {
+  --FundoAdocao: #fae9b6;
+  --MarromAdocao: #61442b;
+  --VermelhoAdocao: #e63946;
+  --AmareloAdocao: #f2cb51;
+  --TextoSuaveAdocao: #6f675f;
+}
+
+.TextoApenasLeitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body {
+  background: linear-gradient(180deg, #fffdfa 0%, #fff7df 58%, #fae9b6 100%);
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+.HeroAdocao {
+  padding: 74px 0 58px;
+  background:
+    radial-gradient(circle at 85% 30%, rgba(230, 57, 70, 0.11), transparent 24%),
+    radial-gradient(circle at 15% 85%, rgba(97, 68, 43, 0.1), transparent 23%),
+    var(--FundoAdocao);
+}
+
+.HeroAdocao .LimiteConteudo {
+  max-width: 980px;
+  text-align: center;
+}
+
+.EtiquetaHeroAdocao {
+  display: inline-flex;
+  padding: 7px 13px;
+  border-radius: 999px;
+  color: var(--MarromAdocao);
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.HeroAdocao h1 {
+  margin: 18px 0 12px;
+  color: #1e1e24;
+  font-size: clamp(38px, 6vw, 62px);
+  letter-spacing: -0.045em;
+}
+
+.HeroAdocao p {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #534c45;
+  font-size: clamp(17px, 2vw, 21px);
+}
+
+.AreaBuscaAdocao {
+  position: relative;
+  z-index: 2;
+  margin-top: -24px;
+}
+
+.BarraPesquisaAdocao {
+  display: flex;
+  min-height: 64px;
+  padding: 8px 8px 8px 19px;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #eadfc8;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 16px 38px rgba(71, 55, 32, 0.12);
+}
+
+.IconeBuscaAdocao {
+  color: #7b7268;
+  font-size: 24px;
+}
+
+.BarraPesquisaAdocao input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  color: #1e1e24;
+  background: transparent;
+  font-size: 16px;
+}
+
+.BarraPesquisaAdocao button,
+.VerPerfilAdocao,
+.BotaoDicasAdocao {
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--VermelhoAdocao);
+  font-weight: 800;
+  transition: 160ms ease;
+}
+
+.BarraPesquisaAdocao button {
+  min-height: 48px;
+  padding: 0 24px;
+}
+
+.BarraPesquisaAdocao button:hover,
+.VerPerfilAdocao:hover,
+.BotaoDicasAdocao:hover {
+  background: #cf2f3c;
+  transform: translateY(-2px);
+}
+
+.LinhaFiltrosAdocao {
+  display: flex;
+  margin-top: 22px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.CategoriasAdocao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.CategoriasAdocao button,
+.BotaoAbrirFiltros,
+.LimparFiltrosAdocao,
+.PaginacaoAdocao button {
+  border: 1px solid #e9ddc5;
+  border-radius: 10px;
+  color: #302b27;
+  background: #fff;
+  font-weight: 700;
+  transition: 150ms ease;
+}
+
+.CategoriasAdocao button {
+  min-height: 44px;
+  padding: 0 24px;
+}
+
+.CategoriasAdocao button:hover,
+.CategoriasAdocao button.Ativo {
+  border-color: var(--MarromAdocao);
+  color: #fff;
+  background: var(--MarromAdocao);
+}
+
+.BotaoAbrirFiltros {
+  min-height: 44px;
+  padding: 0 20px;
+  background: #f7d46a;
+  border-color: #f1ca4c;
+}
+
+.BotaoAbrirFiltros:hover,
+.BotaoAbrirFiltros[aria-expanded="true"] {
+  background: #efc447;
+}
+
+.FiltrosAdocao {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr)) auto;
+  margin-top: 16px;
+  padding: 18px;
+  align-items: end;
+  gap: 16px;
+  border: 1px solid #eadfc8;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.FiltrosAdocao label {
+  display: grid;
+  gap: 7px;
+  color: var(--MarromAdocao);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.FiltrosAdocao select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid #ddd1bb;
+  border-radius: 9px;
+  background: #fffefa;
+}
+
+.LimparFiltrosAdocao {
+  min-height: 44px;
+  padding: 0 18px;
+}
+
+.SecaoListaAdocao {
+  padding: 58px 0 72px;
+}
+
+.CabecalhoListaAdocao {
+  display: flex;
+  margin-bottom: 26px;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.CabecalhoListaAdocao h2 {
+  margin: 0 0 8px;
+  color: var(--MarromAdocao);
+  font-size: clamp(28px, 4vw, 38px);
+}
+
+.CabecalhoListaAdocao p {
+  margin: 0;
+  color: var(--TextoSuaveAdocao);
+}
+
+.ResumoAdocao {
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ListaPetsAdocao {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.CardAdocao {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+  min-height: 250px;
+  overflow: hidden;
+  border: 1px solid #eee3d1;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(61, 47, 28, 0.09);
+  transition: 180ms ease;
+}
+
+.CardAdocao:hover {
+  box-shadow: 0 16px 38px rgba(61, 47, 28, 0.15);
+  transform: translateY(-4px);
+}
+
+.CardAdocao > img {
+  width: 190px;
+  height: 100%;
+  min-height: 250px;
+  grid-row: 1 / 3;
+  object-fit: cover;
+  background: #f6ecd6;
+}
+
+.InformacoesAdocao {
+  padding: 23px 22px 8px;
+}
+
+.TituloPetAdocao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.TituloPetAdocao h3 {
+  margin: 0;
+  color: #1e1e24;
+  font-size: 27px;
+}
+
+.TituloPetAdocao span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--MarromAdocao);
+  background: #fae9b6;
+  font-weight: 800;
+}
+
+.InformacoesAdocao p {
+  margin: 12px 0 0;
+  color: var(--TextoSuaveAdocao);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.StatusAdocao {
+  display: inline-flex;
+  margin-top: 16px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  color: #217a42;
+  background: #def5e4;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.StatusAdocao.StatusNeutro {
+  color: #76521e;
+  background: #fff0c8;
+}
+
+.VerPerfilAdocao {
+  min-height: 44px;
+  margin: 8px 22px 22px;
+}
+
+.SemResultadosAdocao {
+  display: grid;
+  min-height: 180px;
+  margin-top: 20px;
+  place-content: center;
+  gap: 6px;
+  border: 1px dashed #d8c7a5;
+  border-radius: 16px;
+  color: var(--TextoSuaveAdocao);
+  text-align: center;
+}
+
+.SemResultadosAdocao strong {
+  color: var(--MarromAdocao);
+  font-size: 20px;
+}
+
+.PaginacaoAdocao {
+  display: flex;
+  margin-top: 36px;
+  justify-content: center;
+  gap: 9px;
+}
+
+.PaginacaoAdocao button {
+  width: 42px;
+  height: 42px;
+}
+
+.PaginacaoAdocao button:hover,
+.PaginacaoAdocao button.Ativo {
+  border-color: var(--MarromAdocao);
+  color: #fff;
+  background: var(--MarromAdocao);
+}
+
+.BannerDicasAdocao {
+  padding: 0 0 64px;
+}
+
+.ConteudoBannerAdocao {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding: 28px 34px;
+  align-items: center;
+  gap: 22px;
+  border: 1px solid #eadfc8;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(61, 47, 28, 0.08);
+}
+
+.CoracaoBannerAdocao {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--VermelhoAdocao);
+  background: #ffe5e7;
+  font-size: 38px;
+}
+
+.ConteudoBannerAdocao h2 {
+  margin: 0 0 7px;
+  color: var(--MarromAdocao);
+  font-size: 25px;
+}
+
+.ConteudoBannerAdocao p {
+  margin: 0;
+  color: var(--TextoSuaveAdocao);
+}
+
+.BotaoDicasAdocao {
+  display: inline-flex;
+  min-height: 46px;
+  padding: 0 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.PerfilPetModal {
+  display: grid;
+  gap: 16px;
+}
+
+.PerfilPetModal img {
+  width: 100%;
+  max-height: 290px;
+  border-radius: 13px;
+  object-fit: cover;
+}
+
+.PerfilPetModal p {
+  margin: 0;
+  color: #625a52;
+  line-height: 1.6;
+}
+
+.PerfilPetModal .BotaoInteresseAdocao {
+  min-height: 46px;
+  border: 0;
+  border-radius: 9px;
+  color: #fff;
+  background: var(--VermelhoAdocao);
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .ListaPetsAdocao {
+    grid-template-columns: 1fr;
+  }
+
+  .FiltrosAdocao {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .LimparFiltrosAdocao {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 680px) {
+  .HeroAdocao {
+    padding: 55px 0 48px;
+  }
+
+  .BarraPesquisaAdocao {
+    min-height: auto;
+    padding: 12px;
+    flex-wrap: wrap;
+  }
+
+  .IconeBuscaAdocao {
+    display: none;
+  }
+
+  .BarraPesquisaAdocao input {
+    flex-basis: 100%;
+    min-height: 42px;
+    padding: 0 8px;
+  }
+
+  .BarraPesquisaAdocao button {
+    width: 100%;
+  }
+
+  .LinhaFiltrosAdocao,
+  .CabecalhoListaAdocao {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .BotaoAbrirFiltros {
+    width: 100%;
+  }
+
+  .FiltrosAdocao {
+    grid-template-columns: 1fr;
+  }
+
+  .CardAdocao {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .CardAdocao > img {
+    width: 100%;
+    height: 240px;
+    min-height: 0;
+    grid-row: auto;
+  }
+
+  .ConteudoBannerAdocao {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .CoracaoBannerAdocao {
+    margin: 0 auto;
+  }
+}

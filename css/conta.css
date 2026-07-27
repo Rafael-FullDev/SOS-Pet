@@ -1,0 +1,215 @@
+/* Login e cadastro */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body[data-page="login"],
+body[data-page="cadastro"] {
+  min-height: 100vh;
+  background: var(--CorFundo);
+}
+
+.PrincipalLogin,
+.PrincipalCadastre-se {
+  display: flex;
+  padding: 30px 16px 38px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Container {
+  display: flex;
+  width: min(100%, 470px);
+  padding: 30px 54px 42px;
+  flex-direction: column;
+  gap: 22px;
+  border: 1px solid rgba(30, 30, 36, 0.6);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 10px 8px 28px rgba(230, 57, 70, 0.2);
+}
+
+body[data-page="login"] .Container {
+  width: min(100%, 450px);
+  padding-bottom: 72px;
+  border-color: #000;
+  box-shadow: 13px 7px 31px var(--SombraVermelha);
+}
+
+.Topo,
+.Titulo,
+.Subtitulo {
+  color: var(--Marrom);
+  text-align: center;
+}
+
+.Topo h1,
+.Titulo {
+  color: var(--Vermelho);
+}
+
+.Subtitulo {
+  margin-top: 6px;
+}
+
+.Formulario,
+.GrupoCartao,
+.Cartao,
+.Conta,
+.RedesSociais {
+  display: flex;
+  flex-direction: column;
+}
+
+.Formulario,
+.GrupoCartao {
+  gap: 18px;
+}
+
+body[data-page="cadastro"] .GrupoCartao {
+  gap: 13px;
+}
+
+.Cartao {
+  position: relative;
+  color: var(--Marrom);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.Formulario .Cartao input {
+  min-height: 42px;
+}
+
+.Span {
+  margin-top: 4px;
+  color: var(--Marrom);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.Conta {
+  gap: 8px;
+  color: var(--Marrom);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.RedesSociais {
+  gap: 10px;
+  align-items: center;
+}
+
+.RedesSociaisTitulo {
+  color: var(--Marrom);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.RedesSociaisLista {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+}
+
+.RedesSociaisLista button {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  flex: 0 0 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(97, 68, 43, 0.16);
+  border-radius: 50%;
+  color: var(--Marrom);
+  background: #fff;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.LembrarDeMim {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.LembrarDeMim input {
+  width: 18px;
+  height: 18px;
+}
+
+.LembrarDeMim label {
+  color: #333;
+  font-size: 13px;
+}
+
+.BotaoLogin,
+.BotaoCadastro {
+  min-height: 46px;
+  padding: 0 28px;
+  margin: 4px auto 0;
+  border: 0;
+  border-radius: 11px;
+  color: #fff;
+  background: var(--Vermelho);
+  font-size: 17px;
+  font-weight: 700;
+  transition: transform 160ms ease;
+}
+
+.BotaoLogin:hover,
+.BotaoCadastro:hover {
+  transform: translateY(-2px);
+}
+
+.BotaoLogin + .Conta {
+  margin-top: 14px;
+}
+
+.Divisor {
+  width: 90%;
+  margin: 24px auto 0;
+  border: 0;
+  border-top: 1px solid var(--Preto);
+}
+
+.MostrarSenha {
+  position: absolute;
+  right: 8px;
+  bottom: 25px;
+  padding: 4px 7px;
+  border: 0;
+  background: transparent;
+  color: var(--Marrom);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+@media (max-width: 560px) {
+  .PrincipalLogin,
+  .PrincipalCadastre-se {
+    padding-inline: 12px;
+  }
+
+  .Container,
+  body[data-page="login"] .Container {
+    width: 100%;
+    padding: 28px 22px 38px;
+    border-radius: 16px;
+  }
+
+  .BotaoLogin,
+  .BotaoCadastro {
+    width: 100%;
+  }
+}
