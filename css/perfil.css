@@ -1,3 +1,41 @@
+:root {
+  --cor-01: #e5e5ea;
+  --cor-02: #fdfdfd;
+  --cor-03: #f2cb51;
+  --cor-04: #e63946;
+  --cor-05: #61442b;
+  --cor-06: #1e1e24;
+  --cor-07: #ff383c;
+  --cor-08: #fae9b6;
+  --fundo-01: #f9e9b7;
+  --fundo-02: #fae9b6;
+  --fundo-03: #ffffff;
+  --texto-escuro: #1e1e24;
+  --texto-cinza: #6f675f;
+  --vermelho-hover: #c92f3b;
+  --radius-botao: 8px;
+  --radius-card: 22px;
+  --radius-redondo: 19px;
+  --font-principal: "Poppins", sans-serif;
+  --font-titulo-pagina: 45px;
+  --font-titulo-secao: 22px;
+  --font-titulo-card: 18px;
+  --font-texto-normal: 16px;
+  --font-texto-miudo: 12px;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --espaco-interno-card: 24px;
+  --espaco-entre-cards: 20px;
+  --espaco-entre-secoes: 46px;
+  --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --sombra-card-horizontal: 0 2px 6px rgba(0, 0, 0, 0.04);
+  --fundo-gradiente-inicio: #f5c943;
+  --fundo-gradiente-fim: #ffffff;
+  --cor-borda-gradiente: #61442b;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -303,10 +341,15 @@ a {
   align-items: center;
 }
 
-.icon-heart::before {
-  content: "♥";
-  color: var(--cor-04);
-  font-size: 34px;
+.icon-heart {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+}
+
+.icon-heart-imagem {
+  background: center / contain no-repeat url(../assets/images/perfil/icone-heart.png);
 }
 
 .banner-text h3 {
@@ -353,8 +396,28 @@ a {
 
 .acao-icon {
   display: block;
-  min-height: 36px;
-  font-size: 30px;
+  width: 42px;
+  height: 42px;
+  min-height: 42px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icone-encontre {
+  background-image: url(../assets/images/perfil/icone-cat-footprint.png);
+}
+
+.icone-adocao {
+  background-image: url(../assets/images/perfil/icone-dog-training.png);
+}
+
+.icone-pedidos {
+  background-image: url(../assets/images/perfil/icone-favorite.png);
+}
+
+.icone-duvidas {
+  background-image: url(../assets/images/perfil/icone-brake-warning.png);
 }
 
 .acao-card h4 {
@@ -368,26 +431,9 @@ a {
   font-size: 12px;
 }
 
-.main-footer {
-  padding: 26px 16px;
-  background: #fff;
-  text-align: center;
-}
 
-.footer-logo img {
-  width: 110px;
-  margin: 0 auto 10px;
-}
 
-.footer-copyright,
-.footer-subtext {
-  color: var(--texto-cinza);
-  font-size: 12px;
-}
 
-.footer-subtext {
-  margin-top: 5px;
-}
 
 @media (max-width: 900px) {
   .pets-cards-container {

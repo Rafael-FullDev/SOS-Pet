@@ -63,7 +63,7 @@ function iniciarConta() {
         cidade: cidade,
         telefone: "",
         senha: senha,
-        foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmbTQXD_Zmi0hUmpuvXvhjxw8RS-VBzRuXRak6WVYWbEqp2LvDDMRhsgEe&s=10",
+        foto: "assets/images/perfil/avatar-mulher.png",
       });
     };
   }
@@ -80,7 +80,7 @@ function iniciarConta() {
         cidade: "São Paulo (SP)",
         telefone: "",
         senha: "acesso-social",
-        foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmbTQXD_Zmi0hUmpuvXvhjxw8RS-VBzRuXRak6WVYWbEqp2LvDDMRhsgEe&s=10",
+        foto: "assets/images/perfil/avatar-mulher.png",
       });
     };
   }

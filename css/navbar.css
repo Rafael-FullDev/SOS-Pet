@@ -171,8 +171,10 @@
   border: 2px solid transparent;
   border-radius: 50%;
   background-color: #f6e8c4;
-  background-image: url(../assets/images/home/Vector.png);
-  background-size: 56%;
+  background-image: url(../assets/images/perfil/avatar-mulher.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   transition: 160ms ease;
 }
 

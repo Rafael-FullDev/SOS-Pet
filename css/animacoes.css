@@ -1,0 +1,226 @@
+:root {
+  --tempo-rapido: 160ms;
+  --tempo-suave: 420ms;
+  --movimento-suave: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body {
+  animation: entradaPagina 460ms var(--movimento-suave) both;
+}
+
+:where(a, button, input, select, textarea, .Botao, .Midia) {
+  transition-duration: var(--tempo-rapido);
+  transition-timing-function: ease;
+}
+
+:where(a, button, .Botao) {
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+}
+
+:where(input, select, textarea) {
+  transition-property: border-color, box-shadow, background-color;
+}
+
+:where(.Midia, img) {
+  transition: transform 260ms var(--movimento-suave), filter 260ms ease;
+}
+
+:where(button:not(:disabled), a.Botao, a.LinkComoBotao):active {
+  transform: scale(0.98);
+}
+
+:where(
+    .CartaoDestaque,
+    .CartaoServico,
+    .Cartao,
+    .CartaoAnimal,
+    .CartaoDepoimento,
+    .CartaoEtapa,
+    .CartaoHistoria,
+    .CartaoPrioridade,
+    .CardAdocao,
+    .card-adocao,
+    .card-animais,
+    .card-pedido,
+    .pet-card,
+    .horizontal-card,
+    .post,
+    .profile-card,
+    .ResultadoBusca
+  ) {
+  transition: transform 260ms var(--movimento-suave), box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+@media (hover: hover) {
+  :where(
+      .CartaoDestaque,
+      .CartaoServico,
+      .Cartao,
+      .CartaoAnimal,
+      .CartaoDepoimento,
+      .CartaoEtapa,
+      .CartaoHistoria,
+      .CartaoPrioridade,
+      .CardAdocao,
+      .card-adocao,
+      .card-animais,
+      .card-pedido,
+      .pet-card,
+      .horizontal-card,
+      .post,
+      .profile-card,
+      .ResultadoBusca
+    ):hover {
+    transform: translateY(-4px);
+  }
+
+  :where(
+      .CartaoDestaque,
+      .CartaoServico,
+      .CartaoAnimal,
+      .CardAdocao,
+      .card-adocao,
+      .card-animais,
+      .card-pedido,
+      .pet-card,
+      .horizontal-card,
+      .post
+    ):hover :where(img, .Midia) {
+    transform: scale(1.015);
+  }
+}
+
+.ComAnimacao .RevelarSuave {
+  opacity: 0;
+  translate: 0 18px;
+  transition: opacity var(--tempo-suave) var(--movimento-suave),
+    translate var(--tempo-suave) var(--movimento-suave);
+  transition-delay: var(--atraso-animacao, 0ms);
+}
+
+.ComAnimacao .RevelarSuave.Apareceu {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.AnimacaoNova {
+  animation: entradaItem 360ms var(--movimento-suave) both;
+}
+
+.DialogoSOS[open] {
+  animation: abrirDialogo 260ms var(--movimento-suave) both;
+}
+
+.DialogoSOS[open]::backdrop {
+  animation: mostrarFundo 220ms ease both;
+}
+
+.ToastSOS.Mostrar {
+  animation: mostrarAviso 300ms var(--movimento-suave) both;
+}
+
+@media (max-width: 1180px) {
+  .MenuPrincipal {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px) scale(0.98);
+    transform-origin: top right;
+    transition: opacity 200ms ease, transform 240ms var(--movimento-suave), visibility 200ms;
+  }
+
+  .MenuPrincipal.MenuAberto {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .FundoMenuMobile {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease, visibility 200ms;
+  }
+
+  .FundoMenuMobile.Mostrar {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@keyframes entradaPagina {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes entradaItem {
+  from {
+    opacity: 0;
+    translate: 0 12px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes abrirDialogo {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 18px)) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes mostrarFundo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mostrarAviso {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .ComAnimacao .RevelarSuave {
+    opacity: 1;
+    translate: none;
+  }
+}

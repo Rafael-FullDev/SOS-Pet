@@ -1,24 +1,21 @@
 <!doctype html>
 
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="#df3342" name="theme-color" />
     <meta
       content="Encontre e publique pedidos de ajuda para animais na comunidade SOS Pet."
       name="description"
     />
     <title>Pedidos de ajuda</title>
     <link href="../assets/images/shared/favicon.png" rel="icon" type="image/png" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700&amp;display=swap"
-      rel="stylesheet"
-    />
     <link href="../css/pedidos-de-ajuda.css" rel="stylesheet" />
     <link href="../css/navbar.css" rel="stylesheet" />
     <link href="../css/interacoes.css" rel="stylesheet" />
+    <link href="../css/animacoes.css" rel="stylesheet" />
+    <link href="../css/profissional.css" rel="stylesheet" />
   </head>
   <body data-page="pedidos" data-root="../">
     <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -49,7 +46,7 @@
           <a href="../index.html#Inicio">Início</a>
           <a href="pets-perdidos.html">Animais Perdidos</a>
           <a href="animais-de-rua.html">Animais de Rua</a>
-          <a href="../index.html#Adocao">Adoção</a>
+          <a href="adocao.html">Adoção</a>
           <a aria-current="page" class="Ativo" href="pedidos-de-ajuda.html">Pedidos</a>
           <a href="feed.html">Feed</a>
         </nav>
@@ -102,134 +99,12 @@
         <p aria-live="polite"></p>
         <button class="LimparFiltroPedidos" type="button">Limpar filtro</button>
       </div>
-      <section class="cards-pedidos">
-        <article
-          class="card-pedido"
-          data-category="adocao"
-          data-title="Precisamos de um lar temporário"
-        >
-          <header class="cabecalho-card">
-            <img
-              alt="foto de matheus souza"
-              class="foto-usuario"
-              src="../assets/images/pedidos-de-ajuda/Ellipse 5.png"
-            />
-            <div class="informacoes-usuario">
-              <h2>Matheus Souza</h2>
-              <p>Emergência - há 5h</p>
-            </div>
-            <span class="status-urgente"> Urgente </span>
-          </header>
-          <h3>Precisamos de um lar temporário</h3>
-          <p>
-            Temos 4 filhotes que foram resgatados e precisam de um lar temporário até serem
-            adotados.
-          </p>
-          <address class="localizacao">São Paulo, SP</address>
-          <div class="midia-card">
-            <img
-              alt="filhotes resgatados"
-              class="imagem-pet"
-              src="../assets/images/pedidos-de-ajuda/lesya-tyutrina-andrey-biyanov-V_8XBgvMyEo-unsplash.jpg"
-            />
-            <div class="acoes-card">
-              <button aria-pressed="false" class="btn-ajudar" data-action="ajudar" type="button">
-                Quero Ajudar!
-              </button>
-              <button class="btn-compartilhar" data-action="compartilhar" type="button">
-                Compartilhar
-              </button>
-              <button class="btn-detalhes" data-action="detalhes" type="button">
-                Ver detalhes
-              </button>
-            </div>
-          </div>
-        </article>
-        <article class="card-pedido" data-category="ajuda" data-title="Precisamos de ração">
-          <header class="cabecalho-card">
-            <img
-              alt="foto de joao victor"
-              class="foto-usuario"
-              src="../assets/images/pedidos-de-ajuda/Ellipse 6.png"
-            />
-            <div class="informacoes-usuario">
-              <h2>João Victor</h2>
-              <p>Doação - há 3h</p>
-            </div>
-          </header>
-          <h3>Precisamos de ração</h3>
-          <p>
-            Nossa ONG está com estoque baixo de ração entre cães e gatos. Toda doação é bem-vinda!
-          </p>
-          <address class="localizacao">São Paulo, SP</address>
-          <div class="midia-card">
-            <img
-              alt="racao para caes"
-              class="imagem-pet"
-              src="../assets/images/pedidos-de-ajuda/david-d-angelo-xWKBOhVXBQ4-unsplash.jpg"
-            />
-            <div class="acoes-card">
-              <button aria-pressed="false" class="btn-ajudar" data-action="ajudar" type="button">
-                Quero Ajudar!
-              </button>
-              <button class="btn-compartilhar" data-action="compartilhar" type="button">
-                Compartilhar
-              </button>
-              <button class="btn-detalhes" data-action="detalhes" type="button">
-                Ver detalhes
-              </button>
-            </div>
-          </div>
-        </article>
-        <article class="card-pedido" data-category="perdidos" data-title="Cachorro preso no bueiro">
-          <header class="cabecalho-card">
-            <img
-              alt="foto de patricia mendes"
-              class="foto-usuario"
-              src="../assets/images/pedidos-de-ajuda/Ellipse 5 (1).png"
-            />
-            <div class="informacoes-usuario">
-              <h2>Patrícia Mendes</h2>
-              <p>Resgate - há 5h</p>
-            </div>
-          </header>
-          <h3>Cachorro preso no bueiro</h3>
-          <p>
-            Um cachorro caiu em um bueiro na região da Vila Mariana e precisa de ajuda para ser
-            resgatado.
-          </p>
-          <address class="localizacao">São Paulo, SP</address>
-          <div class="midia-card">
-            <img
-              alt="cachorro preso no bueiro"
-              class="imagem-pet"
-              src="../assets/images/pedidos-de-ajuda/crt_74023_59_687e4db8312b3.jpeg"
-            />
-            <div class="acoes-card">
-              <button aria-pressed="false" class="btn-ajudar" data-action="ajudar" type="button">
-                Quero Ajudar!
-              </button>
-              <button class="btn-compartilhar" data-action="compartilhar" type="button">
-                Compartilhar
-              </button>
-              <button class="btn-detalhes" data-action="detalhes" type="button">
-                Ver detalhes
-              </button>
-            </div>
-          </div>
-        </article>
-      </section>
+      <section class="cards-pedidos" aria-live="polite"></section>
       <div class="EstadoVazioPedidos" aria-live="polite" hidden>
         <strong>Nenhum pedido encontrado.</strong
         ><span>Tente outra categoria ou crie um pedido.</span>
       </div>
-      <nav aria-label="paginação">
-        <button aria-current="page" class="btn-pag" data-page="1" type="button">1</button>
-        <button class="btn-pag" data-page="2" type="button">2</button>
-        <button class="btn-pag" data-page="3" type="button">3</button>
-        <button class="btn-pag" data-page="4" type="button">4</button>
-        <button class="btn-pag" data-page="next" type="button">&gt;</button>
-      </nav>
+      <nav aria-label="paginação"></nav>
       <section class="novo-pedido">
         <img alt="icone-sino" class="icone" src="../assets/images/pedidos-de-ajuda/Bell.svg" />
         <div class="texto-novo-pedido">
@@ -247,8 +122,9 @@
       <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
       <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
     </footer>
-    <script defer="true" src="../js/dados.js"></script>
-    <script defer="true" src="../js/geral.js"></script>
-    <script defer="true" src="../js/pedidos.js"></script>
+    <script defer src="../js/dados.js"></script>
+    <script defer src="../js/geral.js"></script>
+    <script defer src="../js/pedidos.js"></script>
+    <script defer src="../js/animacoes.js"></script>
   </body>
 </html>

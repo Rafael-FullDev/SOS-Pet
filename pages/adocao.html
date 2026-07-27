@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="#df3342" name="theme-color" />
+    <meta
+      content="Encontre cães, gatos e outros animais disponíveis para adoção responsável no SOS Pet."
+      name="description"
+    />
+    <title>Adoção responsável | SOS Pet</title>
+    <link href="../assets/images/shared/favicon.png" rel="icon" type="image/png" />
+    <link href="../css/global.css" rel="stylesheet" />
+    <link href="../css/navbar.css" rel="stylesheet" />
+    <link href="../css/interacoes.css" rel="stylesheet" />
+    <link href="../css/adocao.css" rel="stylesheet" />
+    <link href="../css/animacoes.css" rel="stylesheet" />
+    <link href="../css/profissional.css" rel="stylesheet" />
+  </head>
+  <body data-page="adocao" data-root="../">
+    <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+    <header class="Cabecalho">
+      <div class="LimiteConteudo ConteudoCabecalho">
+        <a aria-label="Página inicial do SOS Pet" class="Marca" href="../index.html">
+          <span class="Midia Logotipo"></span>
+        </a>
+        <button
+          aria-controls="MenuPrincipal"
+          aria-expanded="false"
+          aria-label="Abrir menu de navegação"
+          class="BotaoMenuMobile"
+          type="button"
+        >
+          <span aria-hidden="true"></span><span aria-hidden="true"></span
+          ><span aria-hidden="true"></span>
+        </button>
+        <label class="CampoBusca">
+          <input
+            aria-label="Pesquisar no SOS Pet"
+            autocomplete="off"
+            class="BuscaGlobal"
+            placeholder="Pesquisar"
+            type="search"
+          />
+          <span aria-hidden="true">⌕</span>
+        </label>
+        <nav aria-label="Navegação principal" class="MenuPrincipal" id="MenuPrincipal">
+          <a href="../index.html#Inicio">Início</a>
+          <a href="pets-perdidos.html">Animais Perdidos</a>
+          <a href="animais-de-rua.html">Animais de Rua</a>
+          <a aria-current="page" class="Ativo" href="adocao.html">Adoção</a>
+          <a href="pedidos-de-ajuda.html">Pedidos</a>
+          <a href="denuncia.html">Denúncias</a>
+          <a href="feed.html">Feed</a>
+        </nav>
+        <div class="AcoesCabecalho">
+          <a class="LinkEntrar" data-auth="visitante" href="login.html">Entrar</a>
+          <a class="Botao BotaoPequeno" data-auth="visitante" href="cadastro.html">Criar conta</a>
+          <a
+            aria-label="Abrir perfil do usuário"
+            class="Midia Usuario"
+            data-auth="usuario"
+            href="perfil.html"
+            title="Abrir meu perfil"
+          ></a>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo-principal" tabindex="-1">
+      <section class="HeroAdocao">
+        <div class="LimiteConteudo">
+          <span class="EtiquetaHeroAdocao">Um lar muda tudo</span>
+          <h1>Adoção responsável</h1>
+          <p>Encontre seu novo melhor amigo e prepare-se para uma amizade para toda a vida.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="titulo-busca-adocao" class="AreaBuscaAdocao">
+        <div class="LimiteConteudo">
+          <h2 class="TextoApenasLeitor" id="titulo-busca-adocao">Buscar animais para adoção</h2>
+          <form class="BarraPesquisaAdocao" role="search">
+            <label class="TextoApenasLeitor" for="BuscaAdocao">Buscar animal</label>
+            <span aria-hidden="true" class="IconeBuscaAdocao">⌕</span>
+            <input
+              autocomplete="off"
+              id="BuscaAdocao"
+              placeholder="Buscar por nome, espécie ou raça..."
+              type="search"
+            />
+            <button type="submit">Buscar</button>
+          </form>
+
+          <div class="LinhaFiltrosAdocao">
+            <div aria-label="Filtrar por espécie" class="CategoriasAdocao" role="group">
+              <button aria-pressed="true" class="Ativo" data-categoria="todos" type="button">
+                Todos
+              </button>
+              <button aria-pressed="false" data-categoria="caes" type="button">Cães</button>
+              <button aria-pressed="false" data-categoria="gatos" type="button">Gatos</button>
+              <button aria-pressed="false" data-categoria="outros" type="button">Outros</button>
+            </div>
+            <button
+              aria-controls="FiltrosAdocao"
+              aria-expanded="false"
+              class="BotaoAbrirFiltros"
+              type="button"
+            >
+              Filtros <span aria-hidden="true">⚙</span>
+            </button>
+          </div>
+
+          <div class="FiltrosAdocao" hidden id="FiltrosAdocao">
+            <label>
+              Vacinação
+              <select id="FiltroVacinacao">
+                <option value="todos">Todos</option>
+                <option value="sim">Vacinados</option>
+                <option value="nao">Não informado</option>
+              </select>
+            </label>
+            <label>
+              Ordenar por
+              <select id="OrdenacaoAdocao">
+                <option value="padrao">Mais recentes</option>
+                <option value="nome">Nome</option>
+                <option value="idade">Menor idade</option>
+              </select>
+            </label>
+            <button class="LimparFiltrosAdocao" type="button">Limpar filtros</button>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="titulo-lista-adocao" class="SecaoListaAdocao">
+        <div class="LimiteConteudo">
+          <div class="CabecalhoListaAdocao">
+            <div>
+              <h2 id="titulo-lista-adocao">Animais esperando por uma família</h2>
+              <p>Conheça os pets disponíveis e abra o perfil para ver mais detalhes.</p>
+            </div>
+            <p aria-live="polite" class="ResumoAdocao"></p>
+          </div>
+
+          <div class="ListaPetsAdocao">
+            <article
+              class="CardAdocao"
+              data-categoria="caes"
+              data-idade="2"
+              data-pet="Luke"
+              data-vacinado="sim"
+            >
+              <img alt="Luke, cachorro disponível para adoção" src="../assets/images/home/CachorroInicio.png" />
+              <div class="InformacoesAdocao">
+                <div class="TituloPetAdocao"><h3>Luke</h3><span>♂</span></div>
+                <p>Cachorro • Sem raça definida • 2 meses</p>
+                <span class="StatusAdocao">✓ Vacinado</span>
+              </div>
+              <button class="VerPerfilAdocao" type="button">Ver perfil</button>
+            </article>
+
+            <article
+              class="CardAdocao"
+              data-categoria="gatos"
+              data-idade="12"
+              data-pet="Nina"
+              data-vacinado="sim"
+            >
+              <img alt="Nina, gata disponível para adoção" src="../assets/images/pets-perdidos/chico.jpg" />
+              <div class="InformacoesAdocao">
+                <div class="TituloPetAdocao"><h3>Nina</h3><span>♀</span></div>
+                <p>Gato • Sem raça definida • 1 ano</p>
+                <span class="StatusAdocao">✓ Vacinada</span>
+              </div>
+              <button class="VerPerfilAdocao" type="button">Ver perfil</button>
+            </article>
+
+            <article
+              class="CardAdocao"
+              data-categoria="gatos"
+              data-idade="24"
+              data-pet="Tom"
+              data-vacinado="sim"
+            >
+              <img alt="Tom, gato disponível para adoção" src="../assets/images/animais-de-rua/cat2.jpg" />
+              <div class="InformacoesAdocao">
+                <div class="TituloPetAdocao"><h3>Tom</h3><span>♂</span></div>
+                <p>Gato • Sem raça definida • 2 anos</p>
+                <span class="StatusAdocao">✓ Vacinado</span>
+              </div>
+              <button class="VerPerfilAdocao" type="button">Ver perfil</button>
+            </article>
+
+            <article
+              class="CardAdocao"
+              data-categoria="outros"
+              data-idade="5"
+              data-pet="Chico"
+              data-vacinado="nao"
+            >
+              <img alt="Imagem ilustrativa do pet Chico" src="../assets/images/perfil/coelho-slinky.jpg" />
+              <div class="InformacoesAdocao">
+                <div class="TituloPetAdocao"><h3>Chico</h3><span>♂</span></div>
+                <p>Agapornis • 5 meses</p>
+                <span class="StatusAdocao StatusNeutro">Saúde acompanhada</span>
+              </div>
+              <button class="VerPerfilAdocao" type="button">Ver perfil</button>
+            </article>
+
+            <article
+              class="CardAdocao"
+              data-categoria="outros"
+              data-idade="7"
+              data-pet="Lola"
+              data-vacinado="nao"
+            >
+              <img alt="Imagem ilustrativa do pet Lola" src="../assets/images/perfil/gatinha-lola.jpg" />
+              <div class="InformacoesAdocao">
+                <div class="TituloPetAdocao"><h3>Lola</h3><span>♀</span></div>
+                <p>Porquinho-da-Índia • 7 meses</p>
+                <span class="StatusAdocao StatusNeutro">Saúde acompanhada</span>
+              </div>
+              <button class="VerPerfilAdocao" type="button">Ver perfil</button>
+            </article>
+
+            <article
+              class="CardAdocao"
+              data-categoria="outros"
+              data-idade="8"
+              data-pet="Donatelo"
+              data-vacinado="nao"
+            >
+              <img alt="Imagem ilustrativa do pet Donatelo" src="../assets/images/pets-perdidos/snow.jpg" />
+              <div class="InformacoesAdocao">
+                <div class="TituloPetAdocao"><h3>Donatelo</h3><span>♂</span></div>
+                <p>Jabuti-tinga • 8 meses</p>
+                <span class="StatusAdocao StatusNeutro">Saúde acompanhada</span>
+              </div>
+              <button class="VerPerfilAdocao" type="button">Ver perfil</button>
+            </article>
+
+            <article
+              class="CardAdocao"
+              data-categoria="caes"
+              data-idade="3"
+              data-pet="Thor"
+              data-vacinado="sim"
+            >
+              <img alt="Thor, cachorro disponível para adoção" src="../assets/images/animais-de-rua/dog.jpg" />
+              <div class="InformacoesAdocao">
+                <div class="TituloPetAdocao"><h3>Thor</h3><span>♂</span></div>
+                <p>Cachorro • Sem raça definida • 3 meses</p>
+                <span class="StatusAdocao">✓ Vacinado</span>
+              </div>
+              <button class="VerPerfilAdocao" type="button">Ver perfil</button>
+            </article>
+
+            <article
+              class="CardAdocao"
+              data-categoria="caes"
+              data-idade="36"
+              data-pet="Meg"
+              data-vacinado="sim"
+            >
+              <img alt="Meg, cachorra disponível para adoção" src="../assets/images/pets-perdidos/poppy.jpg" />
+              <div class="InformacoesAdocao">
+                <div class="TituloPetAdocao"><h3>Meg</h3><span>♀</span></div>
+                <p>Cachorro • Sem raça definida • 3 anos</p>
+                <span class="StatusAdocao">✓ Vacinada</span>
+              </div>
+              <button class="VerPerfilAdocao" type="button">Ver perfil</button>
+            </article>
+          </div>
+
+          <div class="SemResultadosAdocao" hidden>
+            <strong>Nenhum animal encontrado.</strong>
+            <span>Tente outro nome ou redefina os filtros.</span>
+          </div>
+          <nav aria-label="Paginação dos animais" class="PaginacaoAdocao"></nav>
+        </div>
+      </section>
+
+      <section class="BannerDicasAdocao">
+        <div class="LimiteConteudo ConteudoBannerAdocao">
+          <span aria-hidden="true" class="CoracaoBannerAdocao">♡</span>
+          <div>
+            <h2>Antes de adotar, leia nossas dicas</h2>
+            <p>A adoção responsável é um ato de amor e compromisso para toda a vida.</p>
+          </div>
+          <a class="BotaoDicasAdocao" href="feed.html">Saiba mais</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="FooterPadrao">
+      <img alt="Logo SOS Pet" src="../assets/images/pedidos-de-ajuda/Logo.png" />
+      <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
+      <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
+    </footer>
+
+    <script defer src="../js/dados.js"></script>
+    <script defer src="../js/geral.js"></script>
+    <script defer src="../js/adocao.js"></script>
+    <script defer src="../js/animacoes.js"></script>
+  </body>
+</html>

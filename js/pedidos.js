@@ -45,7 +45,7 @@ function iniciarPedidos() {
       '" data-category="' +
       pedido.categoria +
       '"><header class="cabecalho-card"><img class="foto-usuario" src="' +
-      escapar(urlImagem(pedido.avatar || "assets/images/home/Usuario.png")) +
+      escapar(urlImagem(pedido.avatar || "assets/images/perfil/avatar-mulher.png")) +
       '" alt="Foto de ' +
       escapar(pedido.autor) +
       '"><div class="informacoes-usuario"><h2>' +
