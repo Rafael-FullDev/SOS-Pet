@@ -53,8 +53,7 @@ body {
   font-family: var(--font-principal);
 }
 
-button,
-a {
+button, a {
   font: inherit;
 }
 
@@ -92,6 +91,9 @@ a {
 
 .profile-avatar-container {
   display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -101,6 +103,16 @@ a {
   border: 5px solid #fae9b6;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-phone, .profile-location {
+  display: inline-flex;
 }
 
 .profile-info h2 {
@@ -120,10 +132,7 @@ a {
   font-size: 14px;
 }
 
-.btn-edit-profile,
-.btn-ver-detalhes,
-.btn-quero-doar,
-.seta-btn {
+.btn-edit-profile, .btn-change-photo, .btn-ver-detalhes, .btn-quero-doar, .seta-btn {
   border: 0;
   border-radius: var(--radius-botao);
   font-weight: 700;
@@ -131,6 +140,9 @@ a {
 }
 
 .btn-edit-profile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 42px;
   padding: 0 20px;
   margin-top: 18px;
@@ -138,10 +150,21 @@ a {
   background: var(--cor-04);
 }
 
-.btn-edit-profile:hover,
-.btn-ver-detalhes:hover,
-.btn-quero-doar:hover,
-.seta-btn:hover {
+.btn-change-photo {
+  min-height: 36px;
+  padding: 0 15px;
+  border: 1px solid var(--cor-04);
+  color: var(--cor-04);
+  background: #fff;
+  cursor: pointer;
+}
+
+.btn-change-photo:hover {
+  color: #fff;
+  background: var(--cor-04);
+}
+
+.btn-edit-profile:hover, .btn-change-photo:hover, .btn-ver-detalhes:hover, .btn-quero-doar:hover, .seta-btn:hover {
   transform: translateY(-2px);
 }
 
@@ -173,10 +196,7 @@ a {
   font-size: 13px;
 }
 
-.my-pets-secao,
-.meus-pedidos-de-ajuda,
-.adocoes-section,
-.actions-section {
+.my-pets-secao, .meus-pedidos-de-ajuda, .adocoes-section, .actions-section {
   margin-top: var(--espaco-entre-secoes);
 }
 
@@ -188,14 +208,12 @@ a {
   justify-content: space-between;
 }
 
-.section-header h2,
-.actions-section > h2 {
+.section-header h2, .actions-section > h2 {
   color: var(--cor-05);
   font-size: 24px;
 }
 
-.ver-todos-link,
-.ver-todos {
+.ver-todos-link, .ver-todos {
   border: 0;
   padding: 0;
   background: transparent;
@@ -292,9 +310,7 @@ a {
   align-items: center;
 }
 
-.status-ativo,
-.status-em-andamento,
-.status-concluido {
+.status-ativo, .status-em-andamento, .status-concluido {
   padding: 6px 11px;
   border-radius: 999px;
   font-size: 11px;
@@ -431,10 +447,6 @@ a {
   font-size: 12px;
 }
 
-
-
-
-
 @media (max-width: 900px) {
   .pets-cards-container {
     grid-template-columns: repeat(2, 1fr);
@@ -455,9 +467,7 @@ a {
     text-align: center;
   }
 
-  .card-estatisticas,
-  .pets-cards-container,
-  .grid-actions {
+  .card-estatisticas, .pets-cards-container, .grid-actions {
     grid-template-columns: 1fr;
   }
 

@@ -18,9 +18,7 @@ body {
   border: 0;
 }
 
-.HeroPerdidos,
-.FiltrosRapidosPerdidos,
-.DetalhesCartaoPerdido {
+.HeroPerdidos, .FiltrosRapidosPerdidos, .DetalhesCartaoPerdido {
   background: #fae9b6;
 }
 
@@ -39,9 +37,7 @@ body {
   max-width: 430px;
 }
 
-.TextoHeroPerdidos h1,
-.CabecalhoPerdidos h2,
-.DetalhesCartaoPerdido h2 {
+.TextoHeroPerdidos h1, .CabecalhoPerdidos h2, .DetalhesCartaoPerdido h2 {
   color: #1e1e24;
   font-weight: 800;
   letter-spacing: -0.04em;
@@ -75,8 +71,7 @@ body {
   font-size: 16px;
 }
 
-.AcoesHeroPerdidos,
-.AcoesFiltrosPerdidos {
+.AcoesHeroPerdidos, .AcoesFiltrosPerdidos {
   display: flex;
   gap: 22px;
   margin-top: 18px;
@@ -90,8 +85,7 @@ body {
   border-radius: 18px;
 }
 
-.CentralFiltrosPerdidos,
-.ListaPetsPerdidos {
+.CentralFiltrosPerdidos, .ListaPetsPerdidos {
   padding: 78px 0;
   background: #fff;
 }
@@ -130,8 +124,7 @@ body {
   font-weight: 700;
 }
 
-.GradeFiltrosPerdidos input,
-.GradeFiltrosPerdidos select {
+.GradeFiltrosPerdidos input, .GradeFiltrosPerdidos select {
   width: 100%;
   min-height: 44px;
   padding: 0 13px;
@@ -141,8 +134,7 @@ body {
   color: #6e665f;
 }
 
-.CampoCidadePerdidos,
-.CampoPeriodoPerdidos {
+.CampoCidadePerdidos, .CampoPeriodoPerdidos {
   grid-column: span 2;
 }
 
@@ -206,8 +198,7 @@ body {
   transition: 160ms ease;
 }
 
-.GradeFiltrosRapidos button:hover,
-.GradeFiltrosRapidos button[aria-pressed="true"] {
+.GradeFiltrosRapidos button:hover, .GradeFiltrosRapidos button[aria-pressed="true"] {
   background: rgba(255, 255, 255, 0.55);
   transform: translateY(-3px);
 }
@@ -262,8 +253,7 @@ body {
   transition: 160ms ease;
 }
 
-.CartaoPetPerdido:hover,
-.CartaoPetPerdido:focus-visible {
+.CartaoPetPerdido:hover, .CartaoPetPerdido:focus-visible {
   box-shadow: 0 10px 24px rgba(30, 30, 36, 0.16);
   transform: translateY(-4px);
 }
@@ -376,9 +366,6 @@ body {
   height: 126px;
 }
 
-
-
-
 .DetalhePetModal {
   display: grid;
   gap: 16px;
@@ -409,8 +396,7 @@ body {
 }
 
 @media (max-width: 900px) {
-  .GradeHeroPerdidos,
-  .GradeDetalhesPerdidos {
+  .GradeHeroPerdidos, .GradeDetalhesPerdidos {
     grid-template-columns: 1fr;
     gap: 38px;
   }
@@ -424,8 +410,7 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 
-  .CampoCidadePerdidos,
-  .CampoPeriodoPerdidos {
+  .CampoCidadePerdidos, .CampoPeriodoPerdidos {
     grid-column: auto;
   }
 
@@ -435,9 +420,7 @@ body {
 }
 
 @media (max-width: 680px) {
-  .HeroPerdidos,
-  .CentralFiltrosPerdidos,
-  .ListaPetsPerdidos {
+  .HeroPerdidos, .CentralFiltrosPerdidos, .ListaPetsPerdidos {
     padding: 48px 0;
   }
 
@@ -450,9 +433,7 @@ body {
     height: 240px;
   }
 
-  .GradeFiltrosPerdidos,
-  .GradePetsPerdidos,
-  .CartoesDestaquePerdidos {
+  .GradeFiltrosPerdidos, .GradePetsPerdidos, .CartoesDestaquePerdidos {
     grid-template-columns: 1fr;
   }
 
@@ -461,19 +442,16 @@ body {
     gap: 30px 14px;
   }
 
-  .AcoesHeroPerdidos,
-  .AcoesFiltrosPerdidos {
+  .AcoesHeroPerdidos, .AcoesFiltrosPerdidos {
     align-items: stretch;
     flex-direction: column;
   }
 
-  .AcoesHeroPerdidos .Botao,
-  .AcoesFiltrosPerdidos .Botao {
+  .AcoesHeroPerdidos .Botao, .AcoesFiltrosPerdidos .Botao {
     width: 100%;
   }
 
-  .CartaoPetPerdido img,
-  .CartoesDestaquePerdidos .CartaoPetPerdido img {
+  .CartaoPetPerdido img, .CartoesDestaquePerdidos .CartaoPetPerdido img {
     height: 210px;
   }
 }

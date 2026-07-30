@@ -1,0 +1,233 @@
+.IconeSite {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.IconeSite.Grande {
+  width: 24px;
+  height: 24px;
+  flex-basis: 24px;
+}
+
+.IconeTitulo, .TextoComIcone, .TextoComIconeInline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.TextoComIconeInline {
+  gap: 6px;
+}
+
+.IconeCoracao {
+  background-image: url(../assets/images/shared/icons/heart.png);
+}
+
+.IconeComentario {
+  background-image: url(../assets/images/shared/icons/chat.png);
+}
+
+.IconeCompartilhar {
+  background-image: url(../assets/images/shared/icons/forward-arrow.png);
+}
+
+.IconeLocal {
+  background-image: url(../assets/images/shared/icons/address.png);
+}
+
+.IconeTelefone {
+  background-image: url(../assets/images/shared/icons/phone.svg);
+}
+
+.IconeFiltro {
+  background-image: url(../assets/images/shared/icons/filter.svg);
+}
+
+.IconePata {
+  background-image: url(../assets/images/shared/icons/paw.svg);
+}
+
+.IconeDenunciaTitulo {
+  background-image: url(../assets/images/shared/icons/denuncia-titulo.png);
+}
+
+.IconeMacho {
+  background-image: url(../assets/images/shared/icons/male.svg);
+}
+
+.IconeFemea {
+  background-image: url(../assets/images/shared/icons/female.svg);
+}
+
+.IconeCheck {
+  background-image: url(../assets/images/shared/icons/check.svg);
+}
+
+.IconeApoio {
+  background-image: url(../assets/images/shared/icons/support.svg);
+}
+
+.IconeApoioFeed {
+  background-image: url(../assets/images/shared/icons/apoio-feed.png);
+}
+
+.IconeCoracaoBanner {
+  background-image: url(../assets/images/shared/icons/heart-white.svg);
+}
+
+.IconeCurtida {
+  background-image: url(../assets/images/shared/icons/likes.svg);
+}
+
+.IconeMenuLinhas {
+  position: relative;
+  width: 18px;
+  height: 14px;
+}
+
+.IconeMenuLinhas::before, .IconeMenuLinhas::after, .IconeMenuLinhas span {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.IconeMenuLinhas::before {
+  top: 0;
+}
+
+.IconeMenuLinhas span {
+  top: 6px;
+}
+
+.IconeMenuLinhas::after {
+  bottom: 0;
+}
+
+.BotaoCurtirHistoria .IconeSite {
+  width: 20px;
+  height: 20px;
+}
+
+.BotaoCurtirHistoria.Curtido {
+  transform: scale(1.05);
+}
+
+.post-location .IconeSite, .profile-phone .IconeSite, .profile-location .IconeSite, .localizacao .IconeSite, .CardMetaComIcone .IconeSite, .CardLocalComIcone .IconeSite, .DetalhesPreviewLocal .IconeSite {
+  width: 16px;
+  height: 16px;
+  flex-basis: 16px;
+}
+
+.action .IconeSite, .btn-ajudar .IconeSite, .btn-compartilhar .IconeSite, .BotaoModal .IconeSite, .BotaoSecundario .IconeSite, .QueroAjudarAnimal .IconeSite, .BotaoAbrirFiltros .IconeSite, .StatusAdocao .IconeSite, .TituloPetAdocao .IconeSite, .CoracaoBannerAdocao .IconeSite, .IconeBannerDenuncia .IconeSite, .AtalhosPerfil .IconeSite {
+  width: 18px;
+  height: 18px;
+  flex-basis: 18px;
+}
+
+.IconeBannerDenuncia .IconeSite, .CoracaoBannerAdocao .IconeSite, .TituloIcone .IconeSite, .IconePata.Grande {
+  width: 28px;
+  height: 28px;
+  flex-basis: 28px;
+}
+
+.TituloPetAdocao .SexoPetAdocao, .TituloPetAdocao .SexoPetAdocao {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: #fae9b6;
+}
+
+.StatusAdocao {
+  gap: 7px;
+  align-items: center;
+}
+
+.UploadDenuncia input[type="file"] {
+  display: block;
+}
+
+.BotaoAbrirFiltros, .IconeBannerDenuncia, .CoracaoBannerAdocao, .TituloIcone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.IconeBannerDenuncia, .CoracaoBannerAdocao {
+  line-height: 1;
+}
+
+.btn-ajudar, .btn-compartilhar, .BotaoModal.TextoComIconeInline, .BotaoSecundario.TextoComIconeInline, .QueroAjudarAnimal, .action, .post-location, .localizacao, .profile-phone, .profile-location {
+  align-items: center;
+}
+
+.IconeBannerDenuncia .IconeCoracao, .CoracaoBannerAdocao .IconeCoracao {
+  width: 24px;
+  height: 24px;
+  flex-basis: 24px;
+}
+
+.IconeDenunciaTitulo.Grande {
+  width: 26px;
+  height: 26px;
+  flex-basis: 26px;
+}
+
+.IconeBannerDenuncia {
+  display: grid;
+  place-items: center;
+}
+
+.btn-ajudar, .BotaoModal.TextoComIconeInline, .QueroAjudarAnimal {
+  display: inline-flex;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.btn-ajudar, .BotaoModal.TextoComIconeInline, .QueroAjudarAnimal, .action {
+  align-items: center;
+}
+
+.action[data-action="apoiar"] .IconeSite {
+  width: 22px;
+  height: 22px;
+  flex-basis: 22px;
+}
+
+.IconeBannerDenuncia {
+  width: 112px !important;
+  height: 112px !important;
+}
+
+.IconeBannerDenuncia .IconeCoracaoBanner {
+  width: 96px !important;
+  height: 96px !important;
+  flex-basis: 96px !important;
+  background-size: contain !important;
+}
+
+@media (max-width: 640px) {
+  .IconeBannerDenuncia {
+    width: 96px !important;
+    height: 96px !important;
+  }
+
+  .IconeBannerDenuncia .IconeCoracaoBanner {
+    width: 84px !important;
+    height: 84px !important;
+    flex-basis: 84px !important;
+  }
+}

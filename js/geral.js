@@ -104,6 +104,7 @@ function iniciarDados() {
 
   if (!Array.isArray(posts) || !posts.length) {
     salvar("sosPetPosts", PostsIniciais);
+    posts = PostsIniciais;
   } else {
     var iniciaisPorId = {};
     var atualizouPosts = false;
@@ -122,7 +123,17 @@ function iniciarDados() {
         atualizouPosts = true;
       }
 
-      if (/^https?:/.test(post.imagem || "")) {
+      if (post.id >= 101 && post.id <= 104) {
+        if (post.avatar !== inicial.avatar) {
+          post.avatar = inicial.avatar;
+          atualizouPosts = true;
+        }
+
+        if (post.imagem !== inicial.imagem) {
+          post.imagem = inicial.imagem;
+          atualizouPosts = true;
+        }
+      } else if (/^https?:/.test(post.imagem || "")) {
         post.imagem = inicial.imagem;
         atualizouPosts = true;
       }

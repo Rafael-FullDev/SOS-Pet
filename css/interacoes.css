@@ -14,10 +14,7 @@ body {
   font-family: "Poppins", Arial, sans-serif;
 }
 
-button,
-input,
-select,
-textarea {
+button, input, select, textarea {
   font: inherit;
 }
 
@@ -71,8 +68,7 @@ button:not(:disabled) {
   text-align: center;
 }
 
-.LinkAlternativo a,
-.Conta a {
+.LinkAlternativo a, .Conta a {
   color: #c92f3b;
   font-weight: 700;
 }
@@ -140,9 +136,7 @@ button:not(:disabled) {
   font-weight: 700;
 }
 
-.FormularioModal input,
-.FormularioModal select,
-.FormularioModal textarea {
+.FormularioModal input, .FormularioModal select, .FormularioModal textarea {
   width: 100%;
   padding: 11px 12px;
   border: 1px solid #d9cfbc;
@@ -180,8 +174,7 @@ button:not(:disabled) {
   background: #fffdf7;
 }
 
-.ResultadoBusca strong,
-.ResultadoBusca span {
+.ResultadoBusca strong, .ResultadoBusca span {
   display: block;
 }
 
@@ -233,8 +226,6 @@ button:not(:disabled) {
   min-width: calc((100% - 24px) / 3);
 }
 
-
-
 .ControlesCarrossel {
   display: flex;
   gap: 10px;
@@ -276,8 +267,7 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
-.Categoria[aria-pressed="true"],
-.Botao1[aria-pressed="true"] {
+.Categoria[aria-pressed="true"], .Botao1[aria-pressed="true"] {
   border-color: var(--sos-vermelho) !important;
   box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.13);
 }
@@ -348,10 +338,7 @@ button:not(:disabled) {
 }
 
 @media (max-width: 1000px) {
-  body[data-page="home"] .GradeInicio,
-  body[data-page="home"] .DestaquesInicio,
-  body[data-page="home"] .GradeServicos,
-  body[data-page="home"] .GradeHistorias {
+  body[data-page="home"] .GradeInicio, body[data-page="home"] .DestaquesInicio, body[data-page="home"] .GradeServicos, body[data-page="home"] .GradeHistorias {
     gap: 24px;
   }
 
@@ -369,12 +356,9 @@ button:not(:disabled) {
     height: 100%;
   }
 
-  body[data-page="home"] .DestaquesInicio,
-  body[data-page="home"] .GradeServicos,
-  body[data-page="home"] .GradeHistorias {
+  body[data-page="home"] .DestaquesInicio, body[data-page="home"] .GradeServicos, body[data-page="home"] .GradeHistorias {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
 
   body[data-page="home"] .ChamadaFinal {
     grid-template-columns: 1fr;
@@ -384,11 +368,7 @@ button:not(:disabled) {
 }
 
 @media (max-width: 680px) {
-  body[data-page="home"] .Inicio,
-  body[data-page="home"] .ComeceRapido,
-  body[data-page="home"] .ComoFunciona,
-  body[data-page="home"] .Comunidade,
-  body[data-page="home"] .Depoimentos {
+  body[data-page="home"] .Inicio, body[data-page="home"] .ComeceRapido, body[data-page="home"] .ComoFunciona, body[data-page="home"] .Comunidade, body[data-page="home"] .Depoimentos {
     padding-top: 42px;
     padding-bottom: 42px;
   }
@@ -405,15 +385,11 @@ button:not(:disabled) {
     font-size: 17px;
   }
 
-  body[data-page="home"] .AcoesInicio,
-  body[data-page="home"] .ListaValores,
-  body[data-page="home"] .BotoesAnimais {
+  body[data-page="home"] .AcoesInicio, body[data-page="home"] .ListaValores, body[data-page="home"] .BotoesAnimais {
     flex-wrap: wrap;
   }
 
-  body[data-page="home"] .DestaquesInicio,
-  body[data-page="home"] .GradeServicos,
-  body[data-page="home"] .GradeHistorias {
+  body[data-page="home"] .DestaquesInicio, body[data-page="home"] .GradeServicos, body[data-page="home"] .GradeHistorias {
     grid-template-columns: 1fr;
   }
 
@@ -427,13 +403,11 @@ button:not(:disabled) {
     height: 100px;
   }
 
-  body[data-page="home"] .AreaEtapas,
-  body[data-page="home"] .ListaEtapas {
+  body[data-page="home"] .AreaEtapas, body[data-page="home"] .ListaEtapas {
     display: block;
   }
 
-  body[data-page="home"] .LinhaEtapas,
-  body[data-page="home"] .MarcadorLinhaTempo {
+  body[data-page="home"] .LinhaEtapas, body[data-page="home"] .MarcadorLinhaTempo {
     display: none;
   }
 
@@ -446,15 +420,13 @@ button:not(:disabled) {
   body[data-page="home"] .CartaoEtapa {
     width: 100%;
   }
-
 }
 
 body:not(.AutenticacaoPronta) [data-auth="usuario"] {
   display: none;
 }
 
-.GradeDepoimentos,
-.CartaoDepoimento {
+.GradeDepoimentos, .CartaoDepoimento {
   min-width: 0;
 }
 
@@ -470,11 +442,9 @@ body:not(.AutenticacaoPronta) [data-auth="usuario"] {
   }
 }
 
-body[data-page="home"].AnimacoesHomeProntas .Etapa .CartaoEtapa,
-body[data-page="home"].AnimacoesHomeProntas .Etapa .MarcadorLinhaTempo {
+body[data-page="home"].AnimacoesHomeProntas .Etapa .CartaoEtapa, body[data-page="home"].AnimacoesHomeProntas .Etapa .MarcadorLinhaTempo {
   opacity: 0;
-  transition:
-    opacity 650ms ease,
+  transition: opacity 650ms ease,
     transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -491,8 +461,7 @@ body[data-page="home"].AnimacoesHomeProntas .Etapa .MarcadorLinhaTempo {
   transition-delay: 160ms;
 }
 
-body[data-page="home"].AnimacoesHomeProntas .Etapa.EtapaVisivel .CartaoEtapa,
-body[data-page="home"].AnimacoesHomeProntas .Etapa.EtapaVisivel .MarcadorLinhaTempo {
+body[data-page="home"].AnimacoesHomeProntas .Etapa.EtapaVisivel .CartaoEtapa, body[data-page="home"].AnimacoesHomeProntas .Etapa.EtapaVisivel .MarcadorLinhaTempo {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
 }
@@ -503,15 +472,11 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   will-change: transform;
 }
 
-
-
-
 .ControlesCarrossel button:not(:disabled):hover {
   border-color: var(--sos-vermelho);
   color: var(--sos-vermelho);
   transform: translateY(-2px);
 }
-
 
 .ControlesCarrossel button:disabled {
   opacity: 0.45;
@@ -524,8 +489,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
 }
 
 @media (max-width: 680px) {
-  body[data-page="home"].AnimacoesHomeProntas .EtapaEsquerda .CartaoEtapa,
-  body[data-page="home"].AnimacoesHomeProntas .EtapaDireita .CartaoEtapa {
+  body[data-page="home"].AnimacoesHomeProntas .EtapaEsquerda .CartaoEtapa, body[data-page="home"].AnimacoesHomeProntas .EtapaDireita .CartaoEtapa {
     transform: translate3d(0, 34px, 0) scale(0.98);
   }
 
@@ -539,10 +503,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body[data-page="home"].AnimacoesHomeProntas .Etapa .CartaoEtapa,
-  body[data-page="home"].AnimacoesHomeProntas .Etapa .MarcadorLinhaTempo,
-  .GradeDepoimentos.CarrosselAtivo,
-  .ControlesCarrossel button {
+  body[data-page="home"].AnimacoesHomeProntas .Etapa .CartaoEtapa, body[data-page="home"].AnimacoesHomeProntas .Etapa .MarcadorLinhaTempo, .GradeDepoimentos.CarrosselAtivo, .ControlesCarrossel button {
     transition: none;
   }
 }
@@ -590,19 +551,14 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   border: 1px dashed #cfc4b0;
 }
 
-.RemoverImagem,
-.BotaoSecundario,
-.BotaoPerigo,
-.ExcluirComentario {
+.RemoverImagem, .BotaoSecundario, .BotaoPerigo, .ExcluirComentario {
   min-height: 38px;
   padding: 0 14px;
   border-radius: 8px;
   font-weight: 700;
 }
 
-.RemoverImagem,
-.BotaoSecundario,
-.ExcluirComentario {
+.RemoverImagem, .BotaoSecundario, .ExcluirComentario {
   border: 1px solid #cbbfae;
   background: #fff;
   color: #61442b;
@@ -633,17 +589,13 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   gap: 8px;
 }
 
-.ListaComentarios,
-.ListaAtividades,
-.ListaPetsModal {
+.ListaComentarios, .ListaAtividades, .ListaPetsModal {
   display: grid;
   gap: 12px;
   margin-bottom: 18px;
 }
 
-.Comentario,
-.ListaAtividades article,
-.ListaPetsModal article {
+.Comentario, .ListaAtividades article, .ListaPetsModal article {
   padding: 13px;
   border: 1px solid #eadfca;
   border-radius: 10px;
@@ -657,13 +609,11 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   justify-content: space-between;
 }
 
-.Comentario small,
-.ListaAtividades small {
+.Comentario small, .ListaAtividades small {
   color: #756c64;
 }
 
-.Comentario p,
-.ListaAtividades p {
+.Comentario p, .ListaAtividades p {
   margin: 7px 0 0;
 }
 
@@ -688,9 +638,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   border-radius: 10px;
 }
 
-.EstadoVazioFeed,
-.EstadoVazioPedidos,
-.SemComentarios {
+.EstadoVazioFeed, .EstadoVazioPedidos, .SemComentarios {
   padding: 20px;
   color: #6f675f;
   text-align: center;
@@ -745,9 +693,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   flex: 1 1 150px;
 }
 
-.AvisoAcao,
-.AjudaFormulario,
-.AvisoLoginPendente {
+.AvisoAcao, .AjudaFormulario, .AvisoLoginPendente {
   padding: 12px 14px;
   border: 1px solid #ead7a0;
   border-radius: 10px;
@@ -763,8 +709,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   text-align: center;
 }
 
-.BarraResultadoFeed,
-.BarraResultadoPedidos {
+.BarraResultadoFeed, .BarraResultadoPedidos {
   display: flex;
   gap: 14px;
   margin: -26px 0 28px;
@@ -774,13 +719,11 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   font-size: 12px;
 }
 
-.BarraResultadoFeed p,
-.BarraResultadoPedidos p {
+.BarraResultadoFeed p, .BarraResultadoPedidos p {
   margin: 0;
 }
 
-.LimparFiltroFeed,
-.LimparFiltroPedidos {
+.LimparFiltroFeed, .LimparFiltroPedidos {
   min-height: 34px;
   padding: 0 12px;
   border: 1px solid #d8cdb2;
@@ -792,8 +735,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   white-space: nowrap;
 }
 
-.SelosPublicacao,
-.SelosPedido {
+.SelosPublicacao, .SelosPedido {
   display: flex;
   gap: 7px;
   margin-left: auto;
@@ -802,8 +744,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   justify-content: flex-end;
 }
 
-.StatusPublicacao,
-.StatusPedidoCard {
+.StatusPublicacao, .StatusPedidoCard {
   padding: 6px 9px;
   border: 1px solid #e3d8c7;
   border-radius: 999px;
@@ -814,8 +755,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   white-space: nowrap;
 }
 
-.MenuPublicacao,
-.MenuPedido {
+.MenuPublicacao, .MenuPedido {
   display: inline-grid;
   width: 38px;
   height: 38px;
@@ -828,27 +768,22 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   line-height: 1;
 }
 
-.MenuPublicacao:hover,
-.MenuPedido:hover {
+.MenuPublicacao:hover, .MenuPedido:hover {
   border-color: var(--sos-vermelho);
   color: var(--sos-vermelho);
 }
 
-.post-title[data-action="detalhes"],
-.post-image[data-action="detalhes"],
-.card-pedido h3[data-action="detalhes"] {
+.post-title[data-action="detalhes"], .post-image[data-action="detalhes"], .card-pedido h3[data-action="detalhes"] {
   cursor: pointer;
 }
 
-.post-title[data-action="detalhes"]:hover,
-.card-pedido h3[data-action="detalhes"]:hover {
+.post-title[data-action="detalhes"]:hover, .card-pedido h3[data-action="detalhes"]:hover {
   color: var(--sos-vermelho);
 }
 
 .post-actions .action {
   border-radius: 8px;
-  transition:
-    background 150ms ease,
+  transition: background 150ms ease,
     transform 150ms ease,
     color 150ms ease;
 }
@@ -866,8 +801,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   gap: 16px;
 }
 
-.AreaPreviaPublicacao,
-.AreaPreviaPedido {
+.AreaPreviaPublicacao, .AreaPreviaPedido {
   padding-top: 4px;
   border-top: 1px solid #eee5d3;
 }
@@ -904,8 +838,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   font-weight: 800;
 }
 
-.CartaoPrevia small,
-.CartaoPrevia em {
+.CartaoPrevia small, .CartaoPrevia em {
   color: #756c64;
   font-size: 11px;
   font-style: normal;
@@ -924,18 +857,12 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   border-radius: 9px;
 }
 
-.EstadoVazioFeed,
-.EstadoVazioPedidos,
-.EstadoVazioPerfil,
-.EstadoVazioModal,
-.SemComentarios {
+.EstadoVazioFeed, .EstadoVazioPedidos, .EstadoVazioPerfil, .EstadoVazioModal, .SemComentarios {
   display: grid;
   gap: 5px;
 }
 
-.EstadoVazioFeed span,
-.EstadoVazioPedidos span,
-.SemComentarios span {
+.EstadoVazioFeed span, .EstadoVazioPedidos span, .SemComentarios span {
   color: #756c64;
   font-size: 12px;
 }
@@ -1022,8 +949,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
 
 .card-estatisticas > div[role="button"] {
   cursor: pointer;
-  transition:
-    transform 160ms ease,
+  transition: transform 160ms ease,
     box-shadow 160ms ease;
 }
 
@@ -1055,22 +981,18 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   position: relative;
 }
 
-.Cartao input[type="password"],
-.Cartao input[type="text"]#Password,
-.Cartao input[type="text"]#ConfirmarSenha {
+.Cartao input[type="password"], .Cartao input[type="text"]#Password, .Cartao input[type="text"]#ConfirmarSenha {
   padding-right: 45px;
 }
 
 @media (max-width: 800px) {
-  .SelosPublicacao,
-  .SelosPedido {
+  .SelosPublicacao, .SelosPedido {
     width: 100%;
     margin-left: 0;
     justify-content: flex-start;
   }
 
-  .post-header,
-  .cabecalho-card {
+  .post-header, .cabecalho-card {
     flex-wrap: wrap;
   }
 
@@ -1080,41 +1002,26 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
 }
 
 @media (max-width: 680px) {
-  button,
-  a,
-  [role="button"] {
+  button, a, [role="button"] {
     touch-action: manipulation;
   }
 
-  .filters,
-  .filtros,
-  .ChipsHero,
-  .AbasPerfil {
+  .filters, .filtros, .ChipsHero, .AbasPerfil {
     max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  .filter-tab,
-  .filtro,
-  .Botao1,
-  .Categoria,
-  .action,
-  .btn-ajudar,
-  .btn-compartilhar,
-  .btn-detalhes,
-  .seta-btn {
+  .filter-tab, .filtro, .Botao1, .Categoria, .action, .btn-ajudar, .btn-compartilhar, .btn-detalhes, .seta-btn {
     min-height: 44px;
   }
 
-  .BarraResultadoFeed,
-  .BarraResultadoPedidos {
+  .BarraResultadoFeed, .BarraResultadoPedidos {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .post-actions,
-  .actions-left {
+  .post-actions, .actions-left {
     gap: 8px;
     flex-wrap: wrap;
   }

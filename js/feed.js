@@ -26,7 +26,6 @@ function iniciarFeed() {
     var menu = dono
       ? '<button class="MenuPublicacao" data-action="gerenciar" type="button" aria-label="Gerenciar publicação">⋮</button>'
       : "";
-    var curtida = post.curtido ? "♥" : "♡";
     var textoCurtida = post.curtido ? "Curtido" : "Curtir";
     var textoApoio = post.apoiado ? "Apoiado" : "Apoiar";
 
@@ -57,27 +56,25 @@ function iniciarFeed() {
       escapar(post.titulo) +
       '</h2><p class="post-text">' +
       escapar(post.texto) +
-      '</p><p class="post-location"><span class="pin">📍</span> ' +
+      '</p><p class="post-location TextoComIconeInline"><span class="IconeSite IconeLocal" aria-hidden="true"></span>' +
       escapar(post.local) +
       "</p>" +
       imagem +
       '<footer class="post-actions"><div class="actions-left"><button class="action" data-action="curtir" type="button" aria-pressed="' +
       Boolean(post.curtido) +
-      '"><span>' +
-      curtida +
-      "</span><span>" +
+      '"><span class="IconeSite IconeCoracao" aria-hidden="true"></span><span>' +
       textoCurtida +
       "</span><strong>" +
       Number(post.curtidas || 0) +
-      '</strong></button><button class="action" data-action="comentar" type="button"><span>💬</span><span>Comentar</span><strong>' +
+      '</strong></button><button class="action" data-action="comentar" type="button"><span class="IconeSite IconeComentario" aria-hidden="true"></span><span>Comentar</span><strong>' +
       comentarios +
       '</strong></button><button class="action" data-action="apoiar" type="button" aria-pressed="' +
       Boolean(post.apoiado) +
-      '"><span>🤝</span><span>' +
+      '"><span class="IconeSite IconeApoioFeed" aria-hidden="true"></span><span>' +
       textoApoio +
       "</span><strong>" +
       Number(post.apoios || 0) +
-      '</strong></button></div><button class="action share" data-action="compartilhar" type="button"><span>↗</span><span>Compartilhar</span></button></footer></article>'
+      '</strong></button></div><button class="action share" data-action="compartilhar" type="button"><span class="IconeSite IconeCompartilhar" aria-hidden="true"></span><span>Compartilhar</span></button></footer></article>'
     );
   }
 
@@ -106,9 +103,9 @@ function iniciarFeed() {
     pegar("button", barra).hidden = filtro === "todos";
   }
 
-  function salvarPost(post) {
+  function salvarPost(post, redesenhar) {
     if (!salvarItem("sosPetPosts", post)) return false;
-    mostrar();
+    if (redesenhar !== false) mostrar();
 
     return true;
   }
@@ -171,7 +168,7 @@ function iniciarFeed() {
           statusTexto(campo(form, "status").value) +
           "</small><p>" +
           escapar(texto) +
-          "</p><em>📍 " +
+          "</p><em class=\"DetalhesPreviewLocal TextoComIconeInline\"><span class=\"IconeSite IconeLocal\" aria-hidden=\"true\"></span>" +
           escapar(local) +
           "</em>" +
           (imagem ? '<img src="' + escapar(urlImagem(imagem)) + '" alt="Prévia">' : "") +
@@ -246,7 +243,7 @@ function iniciarFeed() {
       : "";
     var botao = ehDono(post)
       ? '<button class="BotaoModal" data-modal="gerenciar" type="button">Gerenciar publicação</button>'
-      : '<button class="BotaoModal" data-modal="apoiar" type="button">🤝 Apoiar</button>';
+      : '<button class="BotaoModal TextoComIconeInline" data-modal="apoiar" type="button"><span class="IconeSite IconeApoioFeed" aria-hidden="true"></span><span>Apoiar</span></button>';
     var html =
       imagem +
       '<div class="DetalhesPedido"><p>' +
@@ -257,13 +254,14 @@ function iniciarFeed() {
       escapar(post.local) +
       "</p><p><strong>Status:</strong> " +
       statusTexto(post.status) +
-      '</p></div><div class="AcoesDetalhePublicacao"><button class="BotaoSecundario" data-modal="comentar" type="button">💬 Ver comentários</button><button class="BotaoSecundario" data-modal="compartilhar" type="button">↗ Compartilhar</button>' +
+      '</p></div><div class="AcoesDetalhePublicacao"><button class="BotaoSecundario TextoComIconeInline" data-modal="comentar" type="button"><span class="IconeSite IconeComentario" aria-hidden="true"></span><span>Ver comentários</span></button><button class="BotaoSecundario TextoComIconeInline" data-modal="compartilhar" type="button"><span class="IconeSite IconeCompartilhar" aria-hidden="true"></span><span>Compartilhar</span></button>' +
       botao +
       "</div>";
 
     dialogo(post.titulo, html, function (janela, fechar) {
       janela.onclick = function (evento) {
-        var acao = evento.target.getAttribute("data-modal");
+        var alvo = evento.target.closest("[data-modal]");
+        var acao = alvo ? alvo.getAttribute("data-modal") : "";
 
         if (!acao) return;
 
@@ -407,7 +405,41 @@ function iniciarFeed() {
     });
   }
 
-  function alternar(post, campo) {
+  function animarReacao(botao) {
+    if (!botao) return;
+
+    botao.classList.remove("AnimacaoReacao");
+    void botao.offsetWidth;
+    botao.classList.add("AnimacaoReacao");
+
+    setTimeout(function () {
+      botao.classList.remove("AnimacaoReacao");
+    }, 520);
+  }
+
+  function atualizarBotaoReacao(botao, post, campo) {
+    if (!botao) return;
+    var contador = pegar("strong", botao);
+    var texto = pegar("span:nth-of-type(2)", botao);
+    var numero = campo === "curtido" ? "curtidas" : "apoios";
+
+    botao.setAttribute("aria-pressed", String(Boolean(post[campo])));
+    botao.classList.toggle("ReacaoAtiva", Boolean(post[campo]));
+
+    if (texto)
+      texto.textContent = campo === "curtido"
+        ? post[campo]
+          ? "Curtido"
+          : "Curtir"
+        : post[campo]
+          ? "Apoiado"
+          : "Apoiar";
+
+    if (contador) contador.textContent = Number(post[numero] || 0);
+    animarReacao(botao);
+  }
+
+  function alternar(post, campo, botao) {
     var acao = campo === "curtido" ? "curtir:" : "apoiar:";
 
     if (!exigirLogin(acao + post.id)) return;
@@ -415,7 +447,18 @@ function iniciarFeed() {
     var numero = campo === "curtido" ? "curtidas" : "apoios";
 
     post[numero] = Math.max(0, Number(post[numero] || 0) + (post[campo] ? 1 : -1));
-    salvarPost(post);
+
+    if (!salvarPost(post, false)) {
+      toast("Não foi possível salvar a reação.");
+      return;
+    }
+
+    if (!botao) {
+      var artigo = pegar('[data-id="' + post.id + '"]', lista);
+      botao = artigo ? pegar('[data-action="' + (campo === "curtido" ? "curtir" : "apoiar") + '"]', artigo) : null;
+    }
+
+    atualizarBotaoReacao(botao, post, campo);
 
     if (campo === "apoiado")
       registrarAtividade(
@@ -458,7 +501,7 @@ function iniciarFeed() {
 
     if (acao === "comentar") abrirComentarios(post);
 
-    if (acao === "curtir") alternar(post, "curtido");
+    if (acao === "curtir") alternar(post, "curtido", botao);
 
     if (acao === "apoiar") alternar(post, "apoiado");
 
