@@ -149,7 +149,7 @@ function iniciarAnimais() {
         escapar(selo ? selo.textContent : "") +
         "</p><p>" +
         escapar(texto) +
-        '</p><button class="BotaoModal QueroAjudarAnimal" type="button">🤝 Quero ajudar</button>',
+        '</p><button class="BotaoModal QueroAjudarAnimal TextoComIconeInline" type="button"><span class="IconeSite IconeApoio" aria-hidden="true"></span><span>Quero ajudar</span></button>',
       function (janela, fechar) {
         pegar(".QueroAjudarAnimal", janela).onclick = function () {
           fechar();

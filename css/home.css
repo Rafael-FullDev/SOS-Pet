@@ -4,10 +4,8 @@
 
 .GradeInicio {
   display: grid;
-  min-height: 360px;
   grid-template-columns: 1fr 1fr;
   gap: 72px;
-  align-items: center;
 }
 
 .TextoInicio h1 {
@@ -53,24 +51,6 @@
   background: var(--Preto);
   font-size: 12px;
   font-weight: 700;
-}
-
-.VisualInicio {
-  position: relative;
-  height: 350px;
-}
-
-.CachorroInicio {
-  width: 92%;
-  height: 130%;
-  background-image: url(../assets/images/home/CachorroHome.png);
-}
-
-.DestaquesInicio {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-top: 6px;
 }
 
 .CartaoDestaque {
@@ -129,7 +109,7 @@
 .FundoComPadrao {
   position: relative;
   background-color: #fff4c9;
-  background-image: url(../assets/images/home/FundoPatinhas.png);
+  background-image: none;
 }
 
 .ComeceRapido {
@@ -528,4 +508,85 @@
 
 .BotaoLargo {
   min-width: 190px;
+}
+
+@media (max-width: 900px) {
+  .CachorroInicio {
+    bottom: -104px;
+  }
+
+}
+
+@media (max-width: 760px) {
+
+  .CachorroInicio {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .DestaquesInicio {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .VisualInicio {
+    height: 350px !important;
+  }
+
+  .CachorroInicio {
+    width: 92% !important;
+    height: 130% !important;
+  }
+
+  .DestaquesInicio {
+    margin-top: 6px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .VisualInicio {
+    height: 380px !important;
+  }
+
+  .CachorroInicio {
+    width: 92% !important;
+    height: 130% !important;
+  }
+}
+
+.VisualInicio {
+  position: relative !important;
+  height: 350px !important;
+  overflow: visible !important;
+}
+
+.CachorroInicio {
+  position: relative !important;
+  bottom: auto !important;
+  width: 92% !important;
+  height: 150.5% !important;
+  background-image: url(../assets/images/home/CachorroHome.png) !important;
+  background-position: center !important;
+}
+
+.DestaquesInicio {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 60px !important;
+  margin-top: 6px !important;
+  position: static !important;
+  z-index: auto !important;
+}
+
+.Inicio {
+  padding-top: 42px !important;
+}
+
+.GradeInicio {
+  min-height: 330px !important;
+  align-items: start !important;
 }

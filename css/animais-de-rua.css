@@ -8,10 +8,7 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-h1,
-h2,
-h3,
-.Botao {
+h1, h2, h3, .Botao {
   font-family: "Poppins", sans-serif;
 }
 
@@ -93,8 +90,7 @@ h3,
   padding: 64px 0;
 }
 
-.Sessao2 h2,
-.Sessao4 h2 {
+.Sessao2 h2, .Sessao4 h2 {
   text-align: center;
   font-size: 34px;
   font-weight: 800;
@@ -341,13 +337,8 @@ h3,
   color: var(--Cinza);
 }
 
-
-
-
 @media (max-width: 900px) {
-  .ConteudoHero,
-  .ConteudoAnimais,
-  .GradePrioridades {
+  .ConteudoHero, .ConteudoAnimais, .GradePrioridades {
     grid-template-columns: 1fr;
   }
 
@@ -370,9 +361,7 @@ h3,
     grid-template-columns: 1fr;
   }
 
-  .Sessao2 h2,
-  .Sessao4 h2,
-  .TextoAnimais h2 {
+  .Sessao2 h2, .Sessao4 h2, .TextoAnimais h2 {
     font-size: 26px;
   }
 }

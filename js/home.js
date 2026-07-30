@@ -152,7 +152,7 @@ function configurarCurtida(botao, indice) {
     var lista = ler("sosPetCurtidasHistorias", []);
     var curtido = lista.indexOf(indice) !== -1;
 
-    botao.textContent = curtido ? "♥" : "♡";
+    botao.innerHTML = "<span aria-hidden=\"true\" class=\"IconeSite IconeCurtida\"></span>";
     botao.classList.toggle("Curtido", curtido);
   }
   botao.onclick = function () {

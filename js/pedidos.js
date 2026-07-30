@@ -64,13 +64,13 @@ function iniciarPedidos() {
       escapar(pedido.titulo) +
       "</h3><p>" +
       escapar(pedido.descricao) +
-      '</p><address class="localizacao">' +
+      '</p><address class="localizacao TextoComIconeInline"><span class="IconeSite IconeLocal" aria-hidden="true"></span>' +
       escapar(pedido.local) +
       '</address><div class="midia-card">' +
       imagem +
-      '<div class="acoes-card"><button class="btn-ajudar" data-action="ajudar" type="button"><span>🤝</span> ' +
-      (ajuda ? "Ver ajuda enviada" : "Quero ajudar") +
-      '</button><button class="btn-compartilhar" data-action="compartilhar" type="button"><span>↗</span> Compartilhar</button><button class="btn-detalhes" data-action="detalhes" type="button">Ver detalhes</button></div></div></article>'
+      '<div class="acoes-card"><button class="btn-ajudar" data-action="ajudar" type="button">' +
+      (ajuda ? "Ver ajuda enviada" : "Quero Ajudar!") +
+      '</button><button class="btn-compartilhar TextoComIconeInline" data-action="compartilhar" type="button"><span class="IconeSite IconeCompartilhar" aria-hidden="true"></span><span>Compartilhar</span></button><button class="btn-detalhes" data-action="detalhes" type="button">Ver detalhes</button></div></div></article>'
     );
   }
 
@@ -199,7 +199,7 @@ function iniciarPedidos() {
           statusTexto(campo(form, "status").value) +
           "</small><p>" +
           escapar(descricao) +
-          "</p><em>📍 " +
+          "</p><em class=\"DetalhesPreviewLocal TextoComIconeInline\"><span class=\"IconeSite IconeLocal\" aria-hidden=\"true\"></span>" +
           escapar(local) +
           "</em>" +
           (imagem ? '<img src="' + escapar(urlImagem(imagem)) + '" alt="Prévia">' : "") +
@@ -357,8 +357,8 @@ function iniciarPedidos() {
       : "";
     var acoes = ehDono(pedido)
       ? '<button class="BotaoModal" data-detalhe="gerenciar" type="button">Gerenciar pedido</button>'
-      : '<button class="BotaoModal" data-detalhe="ajudar" type="button">🤝 ' +
-        (ajudaDoUsuario(pedido) ? "Ver ajuda enviada" : "Quero ajudar") +
+      : '<button class="BotaoModal" data-detalhe="ajudar" type="button">' +
+        (ajudaDoUsuario(pedido) ? "Ver ajuda enviada" : "Quero Ajudar!") +
         "</button>";
     var html =
       imagem +

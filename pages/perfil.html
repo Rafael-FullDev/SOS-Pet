@@ -16,6 +16,7 @@
     <link href="../css/interacoes.css" rel="stylesheet" />
     <link href="../css/animacoes.css" rel="stylesheet" />
     <link href="../css/profissional.css" rel="stylesheet" />
+    <link href="../css/icones.css" rel="stylesheet" />
   </head>
   <body data-page="perfil" data-root="../">
     <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -74,12 +75,21 @@
             class="avatar-large"
             src="../assets/images/perfil/avatar-mulher.png"
           />
+          <input
+            accept="image/png,image/jpeg,image/webp"
+            hidden
+            id="ArquivoFotoPerfil"
+            type="file"
+          />
+          <button class="btn-change-photo" data-action="trocar-foto" type="button">
+            Trocar foto
+          </button>
         </div>
         <div class="profile-info">
           <h2 data-profile="nome">Juliana Silva</h2>
           <h3 data-profile="email">juliana.silva@email.com</h3>
-          <p class="profile-phone" data-profile="telefone">📞 (11) 99999-9999</p>
-          <p class="profile-location" data-profile="cidade">📍 São Paulo (SP)</p>
+          <p class="profile-phone TextoComIcone" data-profile="telefone"><span aria-hidden="true" class="IconeSite IconeTelefone"></span><span>(11) 99999-9999</span></p>
+          <p class="profile-location TextoComIcone" data-profile="cidade"><span aria-hidden="true" class="IconeSite IconeLocal"></span><span>São Paulo (SP)</span></p>
           <button class="btn-edit-profile" data-action="editar-perfil" type="button">
             Editar perfil
           </button>
@@ -91,7 +101,7 @@
         ><button data-atalho="pedido" type="button">
           <span>＋</span><strong>Criar pedido</strong></button
         ><button data-atalho="atividades" type="button">
-          <span>☰</span><strong>Minhas atividades</strong>
+          <span aria-hidden="true" class="IconeMenuLinhas"><span></span></span><strong>Minhas atividades</strong>
         </button>
       </section>
       <nav class="AbasPerfil">
@@ -128,7 +138,7 @@
               <img
                 alt="Foto do Slinky"
                 class="pet-img"
-                src="../assets/images/perfil/coelho-slinky.jpg"
+                src="../assets/images/perfil/coelho-slinky-novo.jpg"
               />
             </div>
             <div class="pet-card-info">

@@ -24,8 +24,7 @@ body {
 
 .HeroAdocao {
   padding: 74px 0 58px;
-  background:
-    radial-gradient(circle at 85% 30%, rgba(230, 57, 70, 0.11), transparent 24%),
+  background: radial-gradient(circle at 85% 30%, rgba(230, 57, 70, 0.11), transparent 24%),
     radial-gradient(circle at 15% 85%, rgba(97, 68, 43, 0.1), transparent 23%),
     var(--FundoAdocao);
 }
@@ -94,9 +93,7 @@ body {
   font-size: 16px;
 }
 
-.BarraPesquisaAdocao button,
-.VerPerfilAdocao,
-.BotaoDicasAdocao {
+.BarraPesquisaAdocao button, .VerPerfilAdocao, .BotaoDicasAdocao {
   border: 0;
   border-radius: 10px;
   color: #fff;
@@ -110,9 +107,7 @@ body {
   padding: 0 24px;
 }
 
-.BarraPesquisaAdocao button:hover,
-.VerPerfilAdocao:hover,
-.BotaoDicasAdocao:hover {
+.BarraPesquisaAdocao button:hover, .VerPerfilAdocao:hover, .BotaoDicasAdocao:hover {
   background: #cf2f3c;
   transform: translateY(-2px);
 }
@@ -126,15 +121,11 @@ body {
 }
 
 .CategoriasAdocao {
-  display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.CategoriasAdocao button,
-.BotaoAbrirFiltros,
-.LimparFiltrosAdocao,
-.PaginacaoAdocao button {
+.CategoriasAdocao button, .BotaoAbrirFiltros, .LimparFiltrosAdocao, .PaginacaoAdocao button {
   border: 1px solid #e9ddc5;
   border-radius: 10px;
   color: #302b27;
@@ -148,22 +139,18 @@ body {
   padding: 0 24px;
 }
 
-.CategoriasAdocao button:hover,
-.CategoriasAdocao button.Ativo {
+.CategoriasAdocao button:hover, .CategoriasAdocao button.Ativo {
   border-color: var(--MarromAdocao);
-  color: #fff;
   background: var(--MarromAdocao);
 }
 
 .BotaoAbrirFiltros {
   min-height: 44px;
   padding: 0 20px;
-  background: #f7d46a;
   border-color: #f1ca4c;
 }
 
-.BotaoAbrirFiltros:hover,
-.BotaoAbrirFiltros[aria-expanded="true"] {
+.BotaoAbrirFiltros:hover, .BotaoAbrirFiltros[aria-expanded="true"] {
   background: #efc447;
 }
 
@@ -280,7 +267,7 @@ body {
   font-size: 27px;
 }
 
-.TituloPetAdocao span {
+.TituloPetAdocao > span {
   display: grid;
   width: 32px;
   height: 32px;
@@ -348,8 +335,7 @@ body {
   height: 42px;
 }
 
-.PaginacaoAdocao button:hover,
-.PaginacaoAdocao button.Ativo {
+.PaginacaoAdocao button:hover, .PaginacaoAdocao button.Ativo {
   border-color: var(--MarromAdocao);
   color: #fff;
   background: var(--MarromAdocao);
@@ -467,8 +453,7 @@ body {
     width: 100%;
   }
 
-  .LinhaFiltrosAdocao,
-  .CabecalhoListaAdocao {
+  .LinhaFiltrosAdocao, .CabecalhoListaAdocao {
     align-items: stretch;
     flex-direction: column;
   }
@@ -500,5 +485,56 @@ body {
 
   .CoracaoBannerAdocao {
     margin: 0 auto;
+  }
+}
+
+.LinhaFiltrosAdocao {
+  margin-top: 30px;
+  gap: 24px;
+}
+
+.CategoriasAdocao {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.CategoriasAdocao button {
+  width: 134px;
+  min-width: 134px;
+  min-height: 56px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.CategoriasAdocao button:hover, .CategoriasAdocao button.Ativo {
+  color: #fff;
+  background: #6b4a34;
+}
+
+.BotaoAbrirFiltros {
+  width: 132px;
+  min-width: 132px;
+  min-height: 56px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #f7d46a;
+  font-size: 16px;
+}
+
+@media (max-width: 720px) {
+  .LinhaFiltrosAdocao {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .BotaoAbrirFiltros {
+    width: 100%;
   }
 }

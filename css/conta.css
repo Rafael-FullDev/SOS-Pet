@@ -1,18 +1,15 @@
-/* Login e cadastro */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body[data-page="login"],
-body[data-page="cadastro"] {
+body[data-page="login"], body[data-page="cadastro"] {
   min-height: 100vh;
   background: var(--CorFundo);
 }
 
-.PrincipalLogin,
-.PrincipalCadastre-se {
+.PrincipalLogin, .PrincipalCadastre-se {
   display: flex;
   padding: 30px 16px 38px;
   align-items: center;
@@ -38,15 +35,12 @@ body[data-page="login"] .Container {
   box-shadow: 13px 7px 31px var(--SombraVermelha);
 }
 
-.Topo,
-.Titulo,
-.Subtitulo {
+.Topo, .Titulo, .Subtitulo {
   color: var(--Marrom);
   text-align: center;
 }
 
-.Topo h1,
-.Titulo {
+.Topo h1, .Titulo {
   color: var(--Vermelho);
 }
 
@@ -54,17 +48,12 @@ body[data-page="login"] .Container {
   margin-top: 6px;
 }
 
-.Formulario,
-.GrupoCartao,
-.Cartao,
-.Conta,
-.RedesSociais {
+.Formulario, .GrupoCartao, .Cartao, .Conta, .RedesSociais {
   display: flex;
   flex-direction: column;
 }
 
-.Formulario,
-.GrupoCartao {
+.Formulario, .GrupoCartao {
   gap: 18px;
 }
 
@@ -153,8 +142,7 @@ body[data-page="cadastro"] .GrupoCartao {
   font-size: 13px;
 }
 
-.BotaoLogin,
-.BotaoCadastro {
+.BotaoLogin, .BotaoCadastro {
   min-height: 46px;
   padding: 0 28px;
   margin: 4px auto 0;
@@ -167,8 +155,7 @@ body[data-page="cadastro"] .GrupoCartao {
   transition: transform 160ms ease;
 }
 
-.BotaoLogin:hover,
-.BotaoCadastro:hover {
+.BotaoLogin:hover, .BotaoCadastro:hover {
   transform: translateY(-2px);
 }
 
@@ -196,20 +183,17 @@ body[data-page="cadastro"] .GrupoCartao {
 }
 
 @media (max-width: 560px) {
-  .PrincipalLogin,
-  .PrincipalCadastre-se {
+  .PrincipalLogin, .PrincipalCadastre-se {
     padding-inline: 12px;
   }
 
-  .Container,
-  body[data-page="login"] .Container {
+  .Container, body[data-page="login"] .Container {
     width: 100%;
     padding: 28px 22px 38px;
     border-radius: 16px;
   }
 
-  .BotaoLogin,
-  .BotaoCadastro {
+  .BotaoLogin, .BotaoCadastro {
     width: 100%;
   }
 }

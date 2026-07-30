@@ -20,11 +20,7 @@ html {
   scroll-behavior: smooth;
 }
 
-body,
-button,
-input,
-select,
-textarea {
+body, button, input, select, textarea {
   font-family: "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -53,9 +49,7 @@ img {
   width: min(calc(100% - 48px), var(--LarguraConteudo));
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   color: #241f1c;
   letter-spacing: -0.025em;
 }
@@ -64,44 +58,15 @@ p {
   color: var(--Cinza);
 }
 
-.Botao,
-button,
-input,
-select,
-textarea,
-.Cartao,
-.CardAdocao,
-.CartaoAnimal,
-.CartaoServico,
-.CartaoDestaque,
-.CartaoHistoria,
-.CartaoDepoimento,
-.post,
-.card-pedido,
-.pet-card,
-.horizontal-card,
-.profile-card,
-.card-estatisticas {
-  transition:
-    transform 180ms ease,
+.Botao, button, input, select, textarea, .Cartao, .CardAdocao, .CartaoAnimal, .CartaoServico, .CartaoDestaque, .CartaoHistoria, .CartaoDepoimento, .post, .card-pedido, .pet-card, .horizontal-card, .profile-card, .card-estatisticas {
+  transition: transform 180ms ease,
     box-shadow 180ms ease,
     border-color 180ms ease,
     background-color 180ms ease,
     color 180ms ease;
 }
 
-.Botao,
-.BotaoModal,
-.BotaoDicasAdocao,
-.VerPerfilAdocao,
-.btn-primary,
-.btn-criar-pedido,
-.btn-ajudar,
-.btn-ver-detalhes,
-.EnviarDenuncia,
-.BotaoLogin,
-.BotaoCadastro,
-.ReportarPet {
+.Botao, .BotaoModal, .BotaoDicasAdocao, .VerPerfilAdocao, .btn-primary, .btn-criar-pedido, .btn-ajudar, .btn-ver-detalhes, .EnviarDenuncia, .BotaoLogin, .BotaoCadastro, .ReportarPet {
   border: 0;
   border-radius: 10px;
   background: linear-gradient(135deg, #e43b49, #cf2637);
@@ -110,30 +75,13 @@ textarea,
   font-weight: 750;
 }
 
-.Botao:hover,
-.BotaoModal:hover,
-.BotaoDicasAdocao:hover,
-.VerPerfilAdocao:hover,
-.btn-primary:hover,
-.btn-criar-pedido:hover,
-.btn-ajudar:hover,
-.btn-ver-detalhes:hover,
-.EnviarDenuncia:hover,
-.BotaoLogin:hover,
-.BotaoCadastro:hover,
-.ReportarPet:hover {
+.Botao:hover, .BotaoModal:hover, .BotaoDicasAdocao:hover, .VerPerfilAdocao:hover, .btn-primary:hover, .btn-criar-pedido:hover, .btn-ajudar:hover, .btn-ver-detalhes:hover, .EnviarDenuncia:hover, .BotaoLogin:hover, .BotaoCadastro:hover, .ReportarPet:hover {
   background: linear-gradient(135deg, #d82d3c, #b91f2e);
   box-shadow: 0 12px 26px rgba(223, 51, 66, 0.26);
   transform: translateY(-2px);
 }
 
-.BotaoContorno,
-.BotaoSecundario,
-.btn-compartilhar,
-.btn-detalhes,
-.BotaoAbrirFiltros,
-.LimparFiltrosAdocao,
-.RedefinirFiltrosPerdidos {
+.BotaoContorno, .BotaoSecundario, .btn-compartilhar, .btn-detalhes, .BotaoAbrirFiltros, .LimparFiltrosAdocao, .RedefinirFiltrosPerdidos {
   border: 1px solid var(--BordaForte);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.86);
@@ -141,19 +89,12 @@ textarea,
   color: var(--Marrom);
 }
 
-.BotaoContorno:hover,
-.BotaoSecundario:hover,
-.btn-compartilhar:hover,
-.btn-detalhes:hover,
-.BotaoAbrirFiltros:hover,
-.LimparFiltrosAdocao:hover,
-.RedefinirFiltrosPerdidos:hover {
+.BotaoContorno:hover, .BotaoSecundario:hover, .btn-compartilhar:hover, .btn-detalhes:hover, .BotaoAbrirFiltros:hover, .LimparFiltrosAdocao:hover, .RedefinirFiltrosPerdidos:hover {
   border-color: var(--Marrom);
   background: var(--Marrom);
   color: #fff;
 }
 
-/* Navegação */
 .Cabecalho {
   min-height: 72px;
   border-bottom: 1px solid rgba(215, 198, 173, 0.72);
@@ -220,22 +161,17 @@ textarea,
   transition: 180ms ease;
 }
 
-.MenuPrincipal a:hover,
-.MenuPrincipal a.Ativo,
-.MenuPrincipal a[aria-current="page"] {
+.MenuPrincipal a:hover, .MenuPrincipal a.Ativo, .MenuPrincipal a[aria-current="page"] {
   color: var(--VermelhoEscuro);
   background: none;
 }
 
-.MenuPrincipal a:hover::after,
-.MenuPrincipal a.Ativo::after,
-.MenuPrincipal a[aria-current="page"]::after {
+.MenuPrincipal a:hover::after, .MenuPrincipal a.Ativo::after, .MenuPrincipal a[aria-current="page"]::after {
   right: 0;
   left: 0;
 }
 
-.LinkEntrar,
-.AcoesCabecalho .BotaoPequeno {
+.LinkEntrar, .AcoesCabecalho .BotaoPequeno {
   min-height: 38px;
   padding-inline: 17px;
   border-radius: 10px;
@@ -267,7 +203,6 @@ textarea,
   cursor: pointer;
 }
 
-/* Página inicial */
 .Inicio {
   padding: 88px 0 48px;
 }
@@ -324,16 +259,20 @@ textarea,
 
 .VisualInicio {
   height: 430px;
+  z-index: 2;
 }
 
 .CachorroInicio {
-  width: 100%;
-  height: 112%;
+  width: 108%;
+  height: 124%;
   background-position: center bottom;
   filter: drop-shadow(0 24px 22px rgba(72, 50, 33, 0.12));
+  transform: translateY(34px);
 }
 
 .DestaquesInicio {
+  position: relative;
+  z-index: 1;
   gap: 24px;
   margin-top: 30px;
 }
@@ -414,18 +353,14 @@ textarea,
   gap: 24px;
 }
 
-.CartaoServico,
-.CartaoHistoria,
-.CartaoDepoimento {
+.CartaoServico, .CartaoHistoria, .CartaoDepoimento {
   overflow: hidden;
   border: 1px solid var(--Borda);
   border-radius: var(--Raio);
   box-shadow: var(--Sombra);
 }
 
-.CartaoServico:hover,
-.CartaoHistoria:hover,
-.CartaoDepoimento:hover {
+.CartaoServico:hover, .CartaoHistoria:hover, .CartaoDepoimento:hover {
   border-color: #ddc9ab;
   box-shadow: var(--SombraForte);
   transform: translateY(-5px);
@@ -459,9 +394,7 @@ textarea,
   line-height: 1.5;
 }
 
-.CartaoEtapa,
-.CartaoHistoria,
-.CartaoDepoimento {
+.CartaoEtapa, .CartaoHistoria, .CartaoDepoimento {
   background: rgba(255, 255, 255, 0.9);
 }
 
@@ -484,134 +417,83 @@ textarea,
   box-shadow: var(--Sombra);
 }
 
-/* Páginas internas */
-.HeroAdocao,
-.HeroPerdidos,
-.Sessao1,
-.PaginaDenuncia,
-.titulo-pagina,
-.feed-header {
+.HeroAdocao, .HeroPerdidos, .Sessao1, .PaginaDenuncia, .titulo-pagina, .feed-header {
   position: relative;
 }
 
-.HeroAdocao h1,
-.TextoHeroPerdidos h1,
-.TextoHero h1,
-.ConteudoDenuncia h1,
-.feed-title,
-.titulo-pagina h1 {
+.HeroAdocao h1, .TextoHeroPerdidos h1, .TextoHero h1, .ConteudoDenuncia h1, .feed-title, .titulo-pagina h1 {
   font-size: clamp(40px, 4.6vw, 62px);
   line-height: 1.04;
 }
 
-.BarraPesquisaAdocao,
-.BuscaPrincipalPerdidos,
-.BuscaHero,
-.FormularioDenuncia,
-.Container,
-.profile-card,
-.post,
-.card-pedido,
-.CardAdocao,
-.CartaoAnimal,
-.pet-card,
-.horizontal-card {
+.BarraPesquisaAdocao, .BuscaPrincipalPerdidos, .BuscaHero, .FormularioDenuncia, .Container, .profile-card, .post, .card-pedido, .CardAdocao, .CartaoAnimal, .pet-card, .horizontal-card {
   border-color: var(--Borda);
   border-radius: var(--Raio);
   box-shadow: var(--Sombra);
 }
 
-.CardAdocao,
-.CartaoAnimal,
-.post,
-.card-pedido,
-.pet-card,
-.horizontal-card {
+.CardAdocao, .CartaoAnimal, .post, .card-pedido, .pet-card, .horizontal-card {
   background: rgba(255, 255, 255, 0.94);
 }
 
-.CardAdocao:hover,
-.CartaoAnimal:hover,
-.post:hover,
-.card-pedido:hover,
-.pet-card:hover,
-.horizontal-card:hover {
+.CardAdocao:hover, .CartaoAnimal:hover, .post:hover, .card-pedido:hover, .pet-card:hover, .horizontal-card:hover {
   border-color: #dcc5a4;
   box-shadow: var(--SombraForte);
   transform: translateY(-4px);
 }
 
-.CardAdocao img,
-.CartaoAnimal img,
-.post-image img,
-.imagem-pet,
-.pet-img,
-.card-img {
+.CardAdocao img, .CartaoAnimal img, .post-image img, .imagem-pet, .pet-img, .card-img {
   object-fit: cover;
 }
 
-input,
-select,
-textarea {
+input, select, textarea {
   border: 1px solid #dfd3c2;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.9);
   color: #342e2a;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+input:focus, select:focus, textarea:focus {
   border-color: rgba(223, 51, 66, 0.75);
   outline: none;
   box-shadow: 0 0 0 4px rgba(223, 51, 66, 0.1);
 }
 
-.CategoriasAdocao button,
-.filter-tab,
-.filtro,
-.FiltrosRapidosPerdidos button,
-.ChipsHero button,
-.Botao1 {
+.CategoriasAdocao button, .filter-tab, .filtro, .FiltrosRapidosPerdidos button, .ChipsHero button, .Botao1 {
   border-radius: 999px;
 }
 
-.CategoriasAdocao button.Ativo,
-.filter-tab.is-active,
-.filtro.ativo {
+.CategoriasAdocao button.Ativo, .filter-tab.is-active, .filtro.ativo {
   background: var(--Marrom);
   color: #fff;
   box-shadow: 0 6px 16px rgba(91, 61, 42, 0.17);
 }
 
-.BannerDicasAdocao,
-.BannerDenuncia,
-.novo-pedido {
+.BannerDicasAdocao, .BannerDenuncia, .novo-pedido {
   border: 1px solid #ead7b8;
   border-radius: 20px;
   box-shadow: var(--Sombra);
 }
 
-/* Login e cadastro */
-.PrincipalLogin,
-.PrincipalCadastre-se {
+.BannerDenuncia, .BannerDenuncia h2, .BannerDenuncia p {
+  color: #fff;
+}
+
+.PrincipalLogin, .PrincipalCadastre-se {
   padding-block: 64px;
 }
 
-.PrincipalLogin .Container,
-.PrincipalCadastre-se .Container {
+.PrincipalLogin .Container, .PrincipalCadastre-se .Container {
   border: 1px solid var(--Borda);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 24px 60px rgba(72, 50, 33, 0.14);
 }
 
-.PrincipalLogin .Titulo,
-.PrincipalCadastre-se .Titulo {
+.PrincipalLogin .Titulo, .PrincipalCadastre-se .Titulo {
   font-size: 36px;
 }
 
-/* Rodapé original */
 body > .FooterPadrao {
   display: flex;
   width: 100%;
@@ -629,8 +511,7 @@ body > .FooterPadrao img {
   opacity: 1;
 }
 
-body > .FooterPadrao p,
-body > .FooterPadrao p:first-of-type {
+body > .FooterPadrao p, body > .FooterPadrao p:first-of-type {
   margin: 0;
   color: #6f6f6f;
   font-size: 12px;
@@ -657,9 +538,7 @@ body > .FooterPadrao p:first-of-type {
     display: none;
   }
 
-  .MenuPrincipal a:hover,
-  .MenuPrincipal a.Ativo,
-  .MenuPrincipal a[aria-current="page"] {
+  .MenuPrincipal a:hover, .MenuPrincipal a.Ativo, .MenuPrincipal a[aria-current="page"] {
     background: #fff0c7;
   }
 
@@ -677,9 +556,7 @@ body > .FooterPadrao p:first-of-type {
     padding-top: 58px;
   }
 
-  .GradeInicio,
-  .DestaquesInicio,
-  .GradeServicos {
+  .GradeInicio, .DestaquesInicio, .GradeServicos {
     grid-template-columns: 1fr;
   }
 
@@ -695,8 +572,7 @@ body > .FooterPadrao p:first-of-type {
     margin-inline: auto;
   }
 
-  .AcoesInicio,
-  .ListaValores {
+  .AcoesInicio, .ListaValores {
     justify-content: center;
   }
 
@@ -705,8 +581,10 @@ body > .FooterPadrao p:first-of-type {
   }
 
   .CachorroInicio {
+    width: 100%;
     height: 100%;
     background-size: contain;
+    transform: none;
   }
 
   .DestaquesInicio {
@@ -812,14 +690,11 @@ body > .FooterPadrao p:first-of-type {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     scroll-behavior: auto !important;
   }
 }
 
-/* Ajustes do feed */
 body[data-page="feed"] .filters {
   display: flex;
   width: 100%;
@@ -830,11 +705,7 @@ body[data-page="feed"] .filters {
   scrollbar-width: thin;
 }
 
-body[data-page="feed"] .filter-tab,
-body[data-page="feed"] .filter-tab:first-child,
-body[data-page="feed"] .filter-tab:last-child,
-body[data-page="feed"] .filter-tab:nth-child(2),
-body[data-page="feed"] .filter-tab:nth-child(3) {
+body[data-page="feed"] .filter-tab, body[data-page="feed"] .filter-tab:first-child, body[data-page="feed"] .filter-tab:last-child, body[data-page="feed"] .filter-tab:nth-child(2), body[data-page="feed"] .filter-tab:nth-child(3) {
   min-height: 44px;
   padding: 0 20px;
   border: 1px solid var(--BordaForte);
@@ -852,8 +723,7 @@ body[data-page="feed"] .filter-tab:hover {
   transform: translateY(-1px);
 }
 
-body[data-page="feed"] .filter-tab.is-active,
-body[data-page="feed"] .filter-tab[aria-pressed="true"] {
+body[data-page="feed"] .filter-tab.is-active, body[data-page="feed"] .filter-tab[aria-pressed="true"] {
   border-color: var(--Marrom);
   background: var(--Marrom);
   color: #fff;
@@ -956,11 +826,7 @@ body[data-page="feed"] .MenuPublicacao {
     overflow-x: auto;
   }
 
-  body[data-page="feed"] .filter-tab,
-  body[data-page="feed"] .filter-tab:first-child,
-  body[data-page="feed"] .filter-tab:last-child,
-  body[data-page="feed"] .filter-tab:nth-child(2),
-  body[data-page="feed"] .filter-tab:nth-child(3) {
+  body[data-page="feed"] .filter-tab, body[data-page="feed"] .filter-tab:first-child, body[data-page="feed"] .filter-tab:last-child, body[data-page="feed"] .filter-tab:nth-child(2), body[data-page="feed"] .filter-tab:nth-child(3) {
     width: auto;
     min-width: max-content;
     padding-inline: 17px;
@@ -977,15 +843,13 @@ body[data-page="feed"] .MenuPublicacao {
     display: contents;
   }
 
-  body[data-page="feed"] .post-actions .action,
-  body[data-page="feed"] .post-actions .action.share {
+  body[data-page="feed"] .post-actions .action, body[data-page="feed"] .post-actions .action.share {
     width: 100%;
     min-width: 0;
     padding-inline: 9px;
   }
 
-  body[data-page="feed"] .post-actions .action > span:nth-child(2),
-  body[data-page="feed"] .post-actions .action.share > span:nth-child(2) {
+  body[data-page="feed"] .post-actions .action > span:nth-child(2), body[data-page="feed"] .post-actions .action.share > span:nth-child(2) {
     display: inline;
   }
 }
@@ -998,5 +862,111 @@ body[data-page="feed"] .MenuPublicacao {
   body[data-page="feed"] .post-actions .action strong {
     min-width: 20px;
     padding-inline: 5px;
+  }
+}
+
+body[data-page="feed"] .post-actions .action {
+  overflow: visible;
+}
+
+body[data-page="feed"] .post-actions .action.AnimacaoReacao {
+  animation: reagirClique 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body[data-page="feed"] .post-actions .action.AnimacaoReacao .IconeSite {
+  animation: reagirIcone 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body[data-page="feed"] .post-actions .action.AnimacaoReacao strong {
+  animation: reagirNumero 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes reagirClique {
+  0% {
+    transform: scale(1);
+  }
+
+  35% {
+    transform: scale(0.9);
+  }
+
+  68% {
+    transform: scale(1.09);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes reagirIcone {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+
+  45% {
+    transform: scale(1.38) rotate(-8deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes reagirNumero {
+  0% {
+    transform: translateY(0);
+  }
+
+  45% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 901px) {
+  .Inicio {
+    overflow: visible;
+  }
+
+  .GradeInicio {
+    position: relative;
+    min-height: 430px;
+  }
+
+  .VisualInicio {
+    position: relative;
+    height: 430px;
+    overflow: visible;
+    z-index: 4;
+  }
+
+  .CachorroInicio {
+    position: absolute;
+    right: -28px;
+    bottom: -34px;
+    width: 112%;
+    height: 520px;
+    background-position: center bottom;
+    background-size: contain;
+    transform: none;
+  }
+
+  .DestaquesInicio {
+    margin-top: 0;
+  }
+
+  .DestaquesInicio .CartaoDestaque:nth-child(2) {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="feed"] .post-actions .action.AnimacaoReacao, body[data-page="feed"] .post-actions .action.AnimacaoReacao .IconeSite, body[data-page="feed"] .post-actions .action.AnimacaoReacao strong {
+    animation: none;
   }
 }

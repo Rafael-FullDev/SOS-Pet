@@ -29,64 +29,17 @@ body {
   transform: scale(0.98);
 }
 
-:where(
-    .CartaoDestaque,
-    .CartaoServico,
-    .Cartao,
-    .CartaoAnimal,
-    .CartaoDepoimento,
-    .CartaoEtapa,
-    .CartaoHistoria,
-    .CartaoPrioridade,
-    .CardAdocao,
-    .card-adocao,
-    .card-animais,
-    .card-pedido,
-    .pet-card,
-    .horizontal-card,
-    .post,
-    .profile-card,
-    .ResultadoBusca
-  ) {
+:where( .CartaoDestaque, .CartaoServico, .Cartao, .CartaoAnimal, .CartaoDepoimento, .CartaoEtapa, .CartaoHistoria, .CartaoPrioridade, .CardAdocao, .card-adocao, .card-animais, .card-pedido, .pet-card, .horizontal-card, .post, .profile-card, .ResultadoBusca ) {
   transition: transform 260ms var(--movimento-suave), box-shadow 260ms ease,
     border-color 260ms ease;
 }
 
 @media (hover: hover) {
-  :where(
-      .CartaoDestaque,
-      .CartaoServico,
-      .Cartao,
-      .CartaoAnimal,
-      .CartaoDepoimento,
-      .CartaoEtapa,
-      .CartaoHistoria,
-      .CartaoPrioridade,
-      .CardAdocao,
-      .card-adocao,
-      .card-animais,
-      .card-pedido,
-      .pet-card,
-      .horizontal-card,
-      .post,
-      .profile-card,
-      .ResultadoBusca
-    ):hover {
+  :where( .CartaoDestaque, .CartaoServico, .Cartao, .CartaoAnimal, .CartaoDepoimento, .CartaoEtapa, .CartaoHistoria, .CartaoPrioridade, .CardAdocao, .card-adocao, .card-animais, .card-pedido, .pet-card, .horizontal-card, .post, .profile-card, .ResultadoBusca ):hover {
     transform: translateY(-4px);
   }
 
-  :where(
-      .CartaoDestaque,
-      .CartaoServico,
-      .CartaoAnimal,
-      .CardAdocao,
-      .card-adocao,
-      .card-animais,
-      .card-pedido,
-      .pet-card,
-      .horizontal-card,
-      .post
-    ):hover :where(img, .Midia) {
+  :where( .CartaoDestaque, .CartaoServico, .CartaoAnimal, .CardAdocao, .card-adocao, .card-animais, .card-pedido, .pet-card, .horizontal-card, .post ):hover :where(img, .Midia) {
     transform: scale(1.015);
   }
 }
@@ -157,6 +110,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -167,6 +121,7 @@ body {
     opacity: 0;
     translate: 0 12px;
   }
+
   to {
     opacity: 1;
     translate: 0 0;
@@ -178,6 +133,7 @@ body {
     opacity: 0;
     transform: translate(-50%, calc(-50% + 18px)) scale(0.97);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
@@ -188,6 +144,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -198,6 +155,7 @@ body {
     opacity: 0;
     transform: translateY(16px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -209,9 +167,7 @@ body {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     scroll-behavior: auto !important;
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;

@@ -24,10 +24,10 @@ function iniciarPerfil() {
 
     pegar('[data-profile="nome"]').textContent = usuario.nome || "Usuário SOS Pet";
     pegar('[data-profile="email"]').textContent = usuario.email || "";
-    pegar('[data-profile="telefone"]').textContent =
-      "📞 " + (usuario.telefone || "Telefone não informado");
-    pegar('[data-profile="cidade"]').textContent =
-      "📍 " + (usuario.cidade || "Cidade não informada");
+    pegar('[data-profile="telefone"]').innerHTML =
+      "<span aria-hidden=\"true\" class=\"IconeSite IconeTelefone\"></span><span>" + escapar(usuario.telefone || "Telefone não informado") + "</span>";
+    pegar('[data-profile="cidade"]').innerHTML =
+      "<span aria-hidden=\"true\" class=\"IconeSite IconeLocal\"></span><span>" + escapar(usuario.cidade || "Cidade não informada") + "</span>";
     pegar(".avatar-large").src = urlImagem(usuario.foto);
     var dados = dadosUsuario();
     var ajudas = 0;
@@ -183,6 +183,52 @@ function iniciarPerfil() {
     lista.innerHTML = html;
   }
 
+  function atualizarFotoPerfil() {
+    var input = pegar("#ArquivoFotoPerfil");
+    var botao = pegar('[data-action="trocar-foto"]');
+
+    if (!input || !botao) return;
+
+    botao.onclick = function () {
+      input.click();
+    };
+
+    input.onchange = function () {
+      var arquivo = input.files[0];
+
+      if (!arquivo) return;
+
+      if (arquivo.type.indexOf("image/") !== 0 || arquivo.size > 1572864) {
+        input.value = "";
+        toast("Escolha uma imagem JPG, PNG ou WebP de até 1,5 MB.", true);
+
+        return;
+      }
+
+      var leitor = new FileReader();
+
+      leitor.onload = function () {
+        var usuario = usuarioAtual();
+
+        usuario.foto = leitor.result;
+        salvarConta(usuario);
+        registrarAtividade(
+          "edicao",
+          "perfil",
+          "foto",
+          "Foto de perfil atualizada",
+          "A foto de perfil foi alterada."
+        );
+        preencher();
+        configurarNavbar();
+        input.value = "";
+        toast("Foto de perfil atualizada.");
+      };
+
+      leitor.readAsDataURL(arquivo);
+    };
+  }
+
   function editarPerfil() {
     var usuario = usuarioAtual();
     var html =
@@ -297,6 +343,7 @@ function iniciarPerfil() {
       }
     );
   }
+  atualizarFotoPerfil();
   pegar('[data-action="editar-perfil"]').onclick = editarPerfil;
   var detalhesPets = pegarTodos(".btn-ver-detalhes");
 
