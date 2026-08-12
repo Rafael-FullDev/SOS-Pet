@@ -71,12 +71,7 @@
   border-radius: 999px;
   background: var(--AmareloNavbar);
   color: #746c61;
-  font-size: 12px;
-}
-
-.CampoBusca:focus-within {
-  border-color: var(--Vermelho);
-  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.14);
+  font-size: 0.9375rem;
 }
 
 .CampoBusca input {
@@ -106,7 +101,7 @@
   background-repeat: no-repeat;
   background-size: 0 2px;
   color: var(--Preto);
-  font-size: 11px;
+  font-size: 0.875rem;
   font-weight: 700;
   white-space: nowrap;
   transition: background-size 220ms ease,
@@ -134,7 +129,7 @@
   justify-content: center;
   border: 2px solid var(--Vermelho);
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 0.875rem;
   font-weight: 700;
   transition: 160ms ease;
 }
@@ -218,7 +213,7 @@
   border-radius: 999px;
   background: #fff;
   color: #61442b;
-  font-size: 11px;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 
@@ -259,7 +254,7 @@
     padding: 12px 14px;
     border-radius: 8px;
     background-position: left 14px bottom 7px;
-    font-size: 13px;
+    font-size: 0.875rem;
   }
 
   .MenuPrincipal a:hover, .MenuPrincipal a.Ativo, .MenuPrincipal a[aria-current="page"] {
@@ -347,7 +342,7 @@ body > .FooterPadrao img {
 body > .FooterPadrao p {
   margin: 0;
   color: #6f6f6f;
-  font-size: 12px;
+  font-size: 0.875rem;
   line-height: 1.5;
   text-align: center;
 }

@@ -1,0 +1,274 @@
+/* Experiência interativa global */
+.ProgressoPagina {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 13000;
+  width: 100%;
+  height: 3px;
+  border-radius: 0 999px 999px 0;
+  background: linear-gradient(90deg, var(--Vermelho), #f4d56b);
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.HeroImersivo {
+  position: relative;
+  isolation: isolate;
+}
+
+.HeroImersivo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at var(--hero-x, 68%) var(--hero-y, 28%),
+    rgba(244, 213, 107, 0.2),
+    transparent min(36vw, 420px)
+  );
+  opacity: 0.72;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.HeroImersivo > * {
+  position: relative;
+  z-index: 1;
+}
+
+.RevelacaoDetalhada {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.992);
+  transition:
+    opacity 560ms ease var(--atraso-revelacao, 0ms),
+    transform 620ms var(--movimento-suave) var(--atraso-revelacao, 0ms);
+}
+
+.RevelacaoDetalhada.RevelacaoVisivel {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.CartaoInterativo {
+  position: relative;
+  isolation: isolate;
+  --card-x: 50%;
+  --card-y: 50%;
+}
+
+
+.BrilhoCardInterativo {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  background: radial-gradient(
+    240px circle at var(--card-x) var(--card-y),
+    rgba(255, 255, 255, 0.28),
+    transparent 58%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.CartaoInterativo:hover > .BrilhoCardInterativo,
+.CartaoInterativo:focus-visible > .BrilhoCardInterativo,
+.CartaoInterativo:focus-within > .BrilhoCardInterativo {
+  opacity: 1;
+}
+
+.CartaoAcionavel {
+  cursor: pointer;
+}
+
+.CartaoInterativo :where(
+  .ImagemDestaque,
+  .ImagemServico,
+  .IconeEtapa,
+  .ImagemHistoria,
+  .CardAdocao > img,
+  .CartaoAnimal > img,
+  .post-image img,
+  .imagem-pet,
+  .pet-image-wrapper img,
+  .card-img,
+  .CartaoPetPerdido img,
+  .acao-icon
+) {
+  transition: transform 320ms var(--movimento-suave), filter 260ms ease;
+}
+
+@media (hover: hover) {
+  .CartaoInterativo:hover :where(
+    .ImagemDestaque,
+    .ImagemServico,
+    .IconeEtapa,
+    .ImagemHistoria,
+    .CardAdocao > img,
+    .CartaoAnimal > img,
+    .post-image img,
+    .imagem-pet,
+    .pet-image-wrapper img,
+    .card-img,
+    .CartaoPetPerdido img,
+    .acao-icon
+  ) {
+    transform: scale(1.025);
+  }
+
+  .CartaoAcionavel:hover {
+    box-shadow: 0 16px 34px rgba(37, 31, 28, 0.12);
+  }
+
+  :where(.VerPerfilAdocao, .BotaoDetalhesAnimal, .btn-detalhes, .btn-ver-detalhes, .seta-btn) {
+    transition: transform 180ms ease, color 180ms ease, background-color 180ms ease;
+  }
+
+  .CartaoInterativo:hover :where(.VerPerfilAdocao, .BotaoDetalhesAnimal, .btn-detalhes, .btn-ver-detalhes, .seta-btn) {
+    transform: translateX(3px);
+  }
+}
+
+.PulsoInteracao {
+  position: absolute !important;
+  z-index: 5 !important;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(223, 51, 66, 0.2);
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  animation: pulsoInteracao 460ms ease-out forwards;
+}
+
+:where(.filter-tab, .filtro, .CategoriasAdocao button, [data-chip], [data-categoria]) {
+  position: relative;
+  overflow: hidden;
+}
+
+:where(.filter-tab, .filtro, .CategoriasAdocao button, [data-chip], [data-categoria])::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0;
+  transform: translate(-50%, 5px) scale(0.4);
+  transition: opacity 180ms ease, transform 220ms var(--movimento-suave);
+}
+
+:where(
+  .filter-tab.is-active,
+  .filter-tab[aria-pressed="true"],
+  .filtro.ativo,
+  .filtro[aria-pressed="true"],
+  .CategoriasAdocao button.Ativo,
+  .CategoriasAdocao button[aria-pressed="true"],
+  [data-chip][aria-pressed="true"],
+  [data-categoria][aria-pressed="true"]
+)::after {
+  opacity: 0.75;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.CabecalhoSecao.TextoCentralizado {
+  position: relative;
+}
+
+.CabecalhoSecao.TextoCentralizado h2::after {
+  content: "";
+  display: block;
+  width: min(88px, 18vw);
+  height: 3px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--Vermelho), #f4d56b);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 640ms var(--movimento-suave) 110ms;
+}
+
+.CabecalhoSecao.TextoCentralizado.RevelacaoVisivel h2::after {
+  transform: scaleX(1);
+}
+
+@keyframes pulsoInteracao {
+  0% {
+    opacity: 0.75;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(18);
+  }
+}
+
+@media (max-width: 900px), (hover: none) {
+  .HeroImersivo::before {
+    background: radial-gradient(
+      circle at 72% 24%,
+      rgba(244, 213, 107, 0.14),
+      transparent 260px
+    );
+  }
+
+  .BrilhoCardInterativo {
+    display: none;
+  }
+
+  .CartaoInterativo :where(
+    .ImagemDestaque,
+    .ImagemServico,
+    .IconeEtapa,
+    .ImagemHistoria,
+    .CardAdocao > img,
+    .CartaoAnimal > img,
+    .post-image img,
+    .imagem-pet,
+    .pet-image-wrapper img,
+    .card-img,
+    .CartaoPetPerdido img,
+    .acao-icon
+  ) {
+    transform: none !important;
+  }
+
+  .RevelacaoDetalhada {
+    transform: translate3d(0, 12px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ProgressoPagina {
+    display: none;
+  }
+
+  .HeroImersivo::before,
+  .BrilhoCardInterativo,
+  .PulsoInteracao {
+    display: none !important;
+  }
+
+  .RevelacaoDetalhada,
+  .RevelacaoDetalhada.RevelacaoVisivel {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .CabecalhoSecao.TextoCentralizado h2::after {
+    transform: scaleX(1) !important;
+  }
+}
+
+.ComPulsoInteracao {
+  position: relative;
+  isolation: isolate;
+}

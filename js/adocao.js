@@ -175,7 +175,7 @@
         if (!estaLogado()) {
           salvarTexto("sosPetDestinoLogin", location.href);
           salvarTexto("sosPetAcaoPendente", "Interesse na adoção de " + nome);
-          location.href = "login.html";
+          window.navegarComLoading("login.html");
           return;
         }
         registrarAtividade(

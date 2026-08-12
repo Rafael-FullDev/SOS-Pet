@@ -25,14 +25,14 @@ body[data-page="login"], body[data-page="cadastro"] {
   border: 1px solid rgba(30, 30, 36, 0.6);
   border-radius: 20px;
   background: #fff;
-  box-shadow: 10px 8px 28px rgba(230, 57, 70, 0.2);
+  box-shadow: 0 2px 12px rgba(223, 51, 66, 0.10);
 }
 
 body[data-page="login"] .Container {
   width: min(100%, 450px);
   padding-bottom: 72px;
   border-color: #000;
-  box-shadow: 13px 7px 31px var(--SombraVermelha);
+  box-shadow: 0 2px 12px rgba(223, 51, 66, 0.10);
 }
 
 .Topo, .Titulo, .Subtitulo {
@@ -64,7 +64,7 @@ body[data-page="cadastro"] .GrupoCartao {
 .Cartao {
   position: relative;
   color: var(--Marrom);
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -76,7 +76,7 @@ body[data-page="cadastro"] .GrupoCartao {
   margin-top: 4px;
   color: var(--Marrom);
   font-family: "Inter", Arial, sans-serif;
-  font-size: 11px;
+  font-size: 0.9375rem;
   font-weight: 400;
 }
 
@@ -84,7 +84,7 @@ body[data-page="cadastro"] .GrupoCartao {
   gap: 8px;
   color: var(--Marrom);
   font-family: "Inter", Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1rem;
   font-weight: 400;
   text-align: center;
 }
@@ -96,7 +96,7 @@ body[data-page="cadastro"] .GrupoCartao {
 
 .RedesSociaisTitulo {
   color: var(--Marrom);
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -139,7 +139,7 @@ body[data-page="cadastro"] .GrupoCartao {
 
 .LembrarDeMim label {
   color: #333;
-  font-size: 13px;
+  font-size: 1rem;
 }
 
 .BotaoLogin, .BotaoCadastro {
@@ -170,16 +170,41 @@ body[data-page="cadastro"] .GrupoCartao {
   border-top: 1px solid var(--Preto);
 }
 
+
 .MostrarSenha {
   position: absolute;
-  right: 8px;
-  bottom: 25px;
-  padding: 4px 7px;
+  top: 28px;
+  right: 10px;
+  bottom: auto;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  place-items: center;
   border: 0;
+  border-radius: 50%;
   background: transparent;
   color: var(--Marrom);
-  font-size: 11px;
-  font-weight: 700;
+  transition: background-color 160ms ease;
+}
+
+.MostrarSenha::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2361442b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='m4 4 16 16'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.MostrarSenha.Aberto::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2361442b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+}
+
+.MostrarSenha:hover,
+.MostrarSenha:focus-visible {
+  background-color: rgba(107, 74, 52, 0.08);
 }
 
 @media (max-width: 560px) {
@@ -196,4 +221,32 @@ body[data-page="cadastro"] .GrupoCartao {
   .BotaoLogin, .BotaoCadastro {
     width: 100%;
   }
+}
+
+
+.BotaoRedeSocial {
+  overflow: hidden;
+}
+
+.IconeRedeSocial {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.IconeFacebook {
+  background-image: url(../assets/images/shared/icons/social-facebook.png);
+}
+
+.IconeGoogle {
+  background-image: url(../assets/images/shared/icons/social-google.png);
+}
+
+.IconeMicrosoft {
+  width: 22px;
+  height: 22px;
+  background-image: url(../assets/images/shared/icons/social-microsoft.png);
 }

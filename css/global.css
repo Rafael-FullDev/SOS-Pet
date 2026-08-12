@@ -5,7 +5,6 @@
   --Vermelho: #e63946;
   --Marrom: #61442b;
   --VermelhoEscuro: #d83048;
-  --SombraVermelha: rgba(247, 43, 20, 0.581);
   --CorCreme: #fffaf0;
   --Amarelo: #faeecb;
   --CorFundo: linear-gradient(180deg, #fffefa 0%, #fff9ea 60%, #fff0c2 100%);
@@ -85,5 +84,5 @@ h1, h2, h3 {
   min-height: 23px;
   padding: 0 25px;
   border-radius: 100px;
-  font-size: 11px;
+  font-size: 0.875rem;
 }

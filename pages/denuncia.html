@@ -18,6 +18,9 @@
     <link href="../css/animacoes.css" rel="stylesheet" />
     <link href="../css/profissional.css" rel="stylesheet" />
     <link href="../css/icones.css" rel="stylesheet" />
+    <link href="../css/responsividade.css" rel="stylesheet" />
+    <link href="../css/experiencia.css" rel="stylesheet" />
+    <link href="../css/footer.css" rel="stylesheet" />
   </head>
   <body data-page="denuncia" data-root="../">
     <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -186,8 +189,11 @@
                 <span
                   >Selecione imagens que possam ajudar na identificação do local ou do animal.</span
                 >
+                <span class="NomeArquivoDenuncia" aria-live="polite">Nenhum arquivo escolhido</span>
+                <span class="BotaoArquivoDenuncia" aria-hidden="true">Escolher arquivos</span>
                 <input
                   accept="image/png,image/jpeg,image/webp"
+                  class="InputArquivoDenuncia"
                   multiple
                   name="arquivos"
                   type="file"
@@ -201,12 +207,126 @@
           </form>
         </div>
       </section>
+
+      <section class="SecaoFaq" aria-labelledby="TituloFaqDenuncia">
+        <div class="LimiteConteudo">
+          <header class="CabecalhoFaq">
+            <h2 id="TituloFaqDenuncia">Perguntas frequentes</h2>
+            <p>Dúvidas comuns antes de registrar uma situação de maus-tratos ou abandono.</p>
+          </header>
+          <div class="ListaFaq">
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-denuncia-pergunta-1" aria-expanded="false" aria-controls="faq-denuncia-resposta-1">
+                  <span>Que situações podem ser denunciadas?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-denuncia-resposta-1" role="region" aria-labelledby="faq-denuncia-pergunta-1" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Casos de maus-tratos, abandono, agressão, falta grave de cuidados ou outras situações em que um animal esteja em risco podem ser registrados.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-denuncia-pergunta-2" aria-expanded="false" aria-controls="faq-denuncia-resposta-2">
+                  <span>Quais informações devo fornecer?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-denuncia-resposta-2" role="region" aria-labelledby="faq-denuncia-pergunta-2" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Informe local, descrição do ocorrido, data aproximada e qualquer detalhe que ajude a identificar a situação com clareza.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-denuncia-pergunta-3" aria-expanded="false" aria-controls="faq-denuncia-resposta-3">
+                  <span>Posso enviar imagens?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-denuncia-resposta-3" role="region" aria-labelledby="faq-denuncia-pergunta-3" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Sim. O formulário permite anexar imagens em formatos compatíveis para complementar as informações da denúncia.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-denuncia-pergunta-4" aria-expanded="false" aria-controls="faq-denuncia-resposta-4">
+                  <span>O que fazer em situações urgentes?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-denuncia-resposta-4" role="region" aria-labelledby="faq-denuncia-pergunta-4" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Se houver risco imediato à vida do animal, procure também os serviços públicos ou de emergência disponíveis na sua região.</p></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="FooterPadrao">
-      <img alt="Logo SOS Pet" src="../assets/images/pedidos-de-ajuda/Logo.png" />
-      <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
-      <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
+    <footer class="FooterPadrao FooterCompleto" aria-label="Rodapé do SOS Pet">
+      <div class="FooterContainer">
+        <div class="FooterGrade">
+          <section class="FooterMarca" aria-label="Sobre o SOS Pet">
+            <a class="FooterLogoLink" href="../index.html" aria-label="SOS Pet — página inicial">
+              <img class="FooterLogoImagem" alt="Logo SOS Pet" src="../assets/images/home/LogoSOSPet.png" />
+            </a>
+            <p class="FooterDescricao">Uma comunidade criada para ajudar animais perdidos, em situação de rua e em busca de um novo lar.</p>
+            <span class="FooterSelo">Proteção animal colaborativa</span>
+          </section>
+
+          <nav class="FooterColuna" aria-label="Navegação do rodapé">
+            <h2 class="FooterTitulo">Navegação</h2>
+            <ul class="FooterLinks">
+              <li><a href="../index.html#Inicio">Início</a></li>
+              <li><a href="pets-perdidos.html">Animais Perdidos</a></li>
+              <li><a href="adocao.html">Adoção</a></li>
+              <li><a href="animais-de-rua.html">Animais de Rua</a></li>
+              <li><a href="pedidos-de-ajuda.html">Pedidos de Ajuda</a></li>
+              <li><a href="feed.html">Feed</a></li>
+              <li><a href="denuncia.html">Denúncias</a></li>
+            </ul>
+          </nav>
+
+          <nav class="FooterColuna" aria-label="Links de ajuda">
+            <h2 class="FooterTitulo">Ajuda</h2>
+            <ul class="FooterLinks">
+              <li><a href="adocao.html">Quero adotar</a></li>
+              <li><a href="pedidos-de-ajuda.html">Criar pedido de ajuda</a></li>
+              <li><a href="denuncia.html">Fazer uma denúncia</a></li>
+              <li><a href="adocao.html#TituloFaqAdocao">Dúvidas sobre adoção</a></li>
+              <li><a href="animais-de-rua.html#TituloFaqAnimais">Como ajudar animais de rua</a></li>
+            </ul>
+          </nav>
+
+          <section class="FooterColuna FooterComunidade" aria-labelledby="FooterComunidadeTitulo">
+            <h2 class="FooterTitulo" id="FooterComunidadeTitulo">Comunidade</h2>
+            <p class="FooterTextoComunidade">Acompanhe histórias da comunidade ou fale com o suporte do SOS Pet.</p>
+            <ul class="FooterContatoLista">
+              <li>
+                <a href="mailto:suporte@sospet.org">
+                  <span class="FooterIcone" aria-hidden="true">@</span>
+                  <span class="FooterContatoTexto">suporte@sospet.org</span>
+                </a>
+              </li>
+              <li>
+                <a href="feed.html">
+                  <span class="FooterIcone" aria-hidden="true">♥</span>
+                  <span class="FooterContatoTexto">Feed da comunidade</span>
+                </a>
+              </li>
+              <li>
+                <a href="cadastro.html">
+                  <span class="FooterIcone" aria-hidden="true">+</span>
+                  <span class="FooterContatoTexto">Criar uma conta</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="FooterBase">
+        <div class="FooterBaseConteudo">
+          <p>© 2026 SOS Pet. Todos os direitos reservados.</p>
+          <p>Juntos, podemos dar mais voz a quem não consegue pedir ajuda.</p>
+        </div>
+      </div>
     </footer>
 
     <script defer src="../js/dados.js"></script>

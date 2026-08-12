@@ -26,7 +26,7 @@
 }
 
 .IconeCoracao {
-  background-image: url(../assets/images/shared/icons/heart.png);
+  background-image: url(../assets/images/shared/icons/heart-outline-red.png);
 }
 
 .IconeComentario {
@@ -82,7 +82,7 @@
 }
 
 .IconeCurtida {
-  background-image: url(../assets/images/shared/icons/likes.svg);
+  background-image: url(../assets/images/shared/icons/heart-outline-red.png);
 }
 
 .IconeMenuLinhas {
@@ -140,7 +140,7 @@
   flex-basis: 28px;
 }
 
-.TituloPetAdocao .SexoPetAdocao, .TituloPetAdocao .SexoPetAdocao {
+.TituloPetAdocao .SexoPetAdocao {
   display: grid;
   width: 32px;
   height: 32px;
@@ -158,7 +158,7 @@
   display: block;
 }
 
-.BotaoAbrirFiltros, .IconeBannerDenuncia, .CoracaoBannerAdocao, .TituloIcone {
+.BotaoAbrirFiltros, .CoracaoBannerAdocao, .TituloIcone {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -185,11 +185,6 @@
   flex-basis: 26px;
 }
 
-.IconeBannerDenuncia {
-  display: grid;
-  place-items: center;
-}
-
 .btn-ajudar, .BotaoModal.TextoComIconeInline, .QueroAjudarAnimal {
   display: inline-flex;
   justify-content: center;
@@ -207,27 +202,23 @@
   flex-basis: 22px;
 }
 
-.IconeBannerDenuncia {
-  width: 112px !important;
-  height: 112px !important;
-}
-
 .IconeBannerDenuncia .IconeCoracaoBanner {
-  width: 96px !important;
-  height: 96px !important;
-  flex-basis: 96px !important;
-  background-size: contain !important;
+  width: 96px;
+  height: 96px;
+  flex-basis: 96px;
+  background-image: url(../assets/images/shared/icons/heart-paw-white.png);
+  background-size: contain;
 }
 
 @media (max-width: 640px) {
   .IconeBannerDenuncia {
-    width: 96px !important;
-    height: 96px !important;
+    width: 96px;
+    height: 96px;
   }
 
   .IconeBannerDenuncia .IconeCoracaoBanner {
-    width: 84px !important;
-    height: 84px !important;
-    flex-basis: 84px !important;
+    width: 84px;
+    height: 84px;
+    flex-basis: 84px;
   }
 }

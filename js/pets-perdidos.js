@@ -28,7 +28,7 @@ function iniciarPetsPerdidos() {
       local: "Copacabana",
       periodo: "7d",
       status: "desaparecido",
-      imagem: "assets/images/pets-perdidos/rex.jpg",
+      imagem: "assets/images/pets-perdidos/rex-novo.jpg",
       urgente: false,
       recente: true,
       verificado: true,
@@ -168,8 +168,11 @@ function iniciarPetsPerdidos() {
   var resumo = pegar(".ResumoPetsPerdidos");
   var vazio = pegar(".SemPetsPerdidos");
   var filtrosAtivos = pegar(".FiltrosAtivosPerdidos");
+  var paginacao = pegar(".PaginacaoPerdidos");
   var rapidos = [];
   var resultado = [];
+  var pagina = 1;
+  var porPagina = 4;
 
   function classeStatus(status) {
     if (status === "avistado") return "Avistado";
@@ -268,21 +271,47 @@ function iniciarPetsPerdidos() {
     return true;
   }
 
+  function desenharPaginacao(total) {
+    var totalPaginas = Math.ceil(total / porPagina);
+
+    paginacao.innerHTML = "";
+    paginacao.hidden = totalPaginas <= 1;
+
+    for (var numero = 1; numero <= totalPaginas; numero++) {
+      var botao = document.createElement("button");
+
+      botao.type = "button";
+      botao.textContent = numero;
+      botao.className = numero === pagina ? "Ativo" : "";
+      botao.setAttribute("aria-label", "Ir para a página " + numero);
+      if (numero === pagina) botao.setAttribute("aria-current", "page");
+      botao.setAttribute("data-page", numero);
+      paginacao.appendChild(botao);
+    }
+  }
+
   function mostrar() {
     lista = ler("sosPetPetsPerdidos", iniciais);
     resultado = [];
 
     for (var i = 0; i < lista.length; i++) if (combinar(lista[i])) resultado.push(lista[i]);
 
+    var totalPaginas = Math.max(1, Math.ceil(resultado.length / porPagina));
+
+    pagina = Math.max(1, Math.min(pagina, totalPaginas));
+    var inicio = (pagina - 1) * porPagina;
     var html = "";
 
-    for (var j = 0; j < resultado.length; j++) html += card(resultado[j], false);
+    for (var j = inicio; j < Math.min(inicio + porPagina, resultado.length); j++)
+      html += card(resultado[j], false);
 
     grade.innerHTML = html;
     resumo.textContent =
       resultado.length +
-      (resultado.length === 1 ? " pet compatível encontrado" : " pets compatíveis encontrados");
+      (resultado.length === 1 ? " pet compatível encontrado" : " pets compatíveis encontrados") +
+      (totalPaginas > 1 ? " · página " + pagina + " de " + totalPaginas : "");
     vazio.hidden = resultado.length > 0;
+    desenharPaginacao(resultado.length);
     destaques.innerHTML = "";
 
     for (var x = 0; x < lista.length; x++) {
@@ -427,6 +456,7 @@ function iniciarPetsPerdidos() {
           novo.nome,
           "Aviso de pet perdido criado."
         );
+        pagina = 1;
         fechar();
         mostrar();
         toast("Aviso publicado.");
@@ -437,6 +467,7 @@ function iniciarPetsPerdidos() {
 
   formulario.onsubmit = function (evento) {
     evento.preventDefault();
+    pagina = 1;
     mostrar();
     pegar("#ListaPetsPerdidos").scrollIntoView({ behavior: "smooth" });
   };
@@ -445,6 +476,7 @@ function iniciarPetsPerdidos() {
     setTimeout(function () {
       busca.value = "";
       rapidos = [];
+      pagina = 1;
       var botoes = pegarTodos("[data-rapido]");
 
       for (var i = 0; i < botoes.length; i++) botoes[i].setAttribute("aria-pressed", "false");
@@ -472,7 +504,17 @@ function iniciarPetsPerdidos() {
     else rapidos.splice(posicao, 1);
 
     botao.setAttribute("aria-pressed", posicao === -1 ? "true" : "false");
+    pagina = 1;
     mostrar();
+  };
+
+  paginacao.onclick = function (evento) {
+    var botao = evento.target.closest("[data-page]");
+
+    if (!botao) return;
+    pagina = Number(botao.getAttribute("data-page"));
+    mostrar();
+    pegar("#ListaPetsPerdidos").scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   document.addEventListener("click", function (evento) {
@@ -488,6 +530,7 @@ function iniciarPetsPerdidos() {
   busca.onkeydown = function (evento) {
     if (evento.key === "Enter") {
       evento.preventDefault();
+      pagina = 1;
       mostrar();
       pegar("#ListaPetsPerdidos").scrollIntoView({ behavior: "smooth" });
     }

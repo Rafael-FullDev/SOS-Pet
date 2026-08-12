@@ -1,40 +1,4 @@
 function iniciarHome() {
-  var area = pegar(".AreaEtapas");
-  var linha = pegar(".LinhaEtapas");
-  var etapas = pegarTodos(".Etapa");
-
-  if (area && etapas.length) {
-    document.body.classList.add("AnimacoesHomeProntas");
-
-    if (
-      "IntersectionObserver" in window &&
-      !matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      var observador = new IntersectionObserver(
-        function (entradas) {
-          for (var i = 0; i < entradas.length; i++)
-            if (entradas[i].isIntersecting) entradas[i].target.classList.add("EtapaVisivel");
-        },
-        { threshold: 0.2 }
-      );
-
-      for (var e = 0; e < etapas.length; e++) observador.observe(etapas[e]);
-    } else {
-      for (var x = 0; x < etapas.length; x++) etapas[x].classList.add("EtapaVisivel");
-    }
-
-    function atualizarLinha() {
-      if (!linha) return;
-      var caixa = area.getBoundingClientRect();
-      var progresso =
-        (innerHeight * 0.72 - caixa.top) / Math.max(1, caixa.height - innerHeight * 0.34);
-
-      linha.style.setProperty("--ProgressoLinha", Math.max(0, Math.min(1, progresso)));
-    }
-    addEventListener("scroll", atualizarLinha);
-    addEventListener("resize", atualizarLinha);
-    atualizarLinha();
-  }
   var grade = pegar(".GradeDepoimentos");
 
   if (grade) criarCarrossel(grade);
@@ -45,9 +9,9 @@ function iniciarHome() {
       if (evento.target.closest("a")) return;
       var acao = this.getAttribute("data-service");
 
-      if (acao === "pedidos") location.href = "pages/pedidos-de-ajuda.html";
-      else if (acao === "feed") location.href = "pages/feed.html";
-      else location.href = "pages/pets-perdidos.html";
+      if (acao === "pedidos") window.navegarComLoading("pages/pedidos-de-ajuda.html");
+      else if (acao === "feed") window.navegarComLoading("pages/feed.html");
+      else window.navegarComLoading("pages/pets-perdidos.html");
     };
   }
   var curtidas = pegarTodos(".BotaoCurtirHistoria");

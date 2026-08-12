@@ -1,0 +1,711 @@
+/* Responsividade */
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .LimiteConteudo {
+    width: min(calc(100% - 32px), var(--LarguraConteudo, 1140px));
+  }
+
+  /* Home */
+  body[data-page="home"] .GradeInicio {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  body[data-page="home"] .TextoInicio {
+    text-align: center;
+  }
+
+  body[data-page="home"] .DescricaoInicio {
+    margin-inline: auto;
+  }
+
+  body[data-page="home"] .AcoesInicio,
+  body[data-page="home"] .ListaValores {
+    justify-content: center;
+  }
+
+  body[data-page="home"] .VisualInicio {
+    width: min(100%, 620px);
+    height: 340px;
+    margin-inline: auto;
+    order: -1;
+  }
+
+  body[data-page="home"] .CachorroInicio {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 92%;
+    height: 150.5%;
+    margin: 0 auto;
+    background-position: center;
+  }
+
+  body[data-page="home"] .DestaquesInicio {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  body[data-page="home"] .GradeServicos,
+  body[data-page="home"] .GradeHistorias {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  body[data-page="home"] .ComoFunciona {
+    min-height: 0;
+  }
+
+  body[data-page="home"] .AreaEtapas {
+    max-width: 720px;
+    padding-top: 38px;
+  }
+
+  body[data-page="home"] .ListaEtapas {
+    display: grid;
+    min-height: 0;
+    gap: 20px;
+    grid-template-rows: none;
+  }
+
+  body[data-page="home"] .LinhaEtapas,
+  body[data-page="home"] .MarcadorLinhaTempo {
+    display: none;
+  }
+
+  body[data-page="home"] .Etapa,
+  body[data-page="home"] .Etapa:nth-child(n) {
+    display: block;
+    grid-row: auto;
+  }
+
+  body[data-page="home"] .Etapa .CartaoEtapa {
+    width: 100%;
+    min-height: 0;
+    grid-template-columns: 92px minmax(0, 1fr);
+    justify-self: stretch;
+  }
+
+  body[data-page="home"] .GradeDepoimentos:not(.CarrosselAtivo) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Perfil */
+  body[data-page="perfil"] .pets-cards-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-page="perfil"] .grid-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .LimiteConteudo,
+  .container,
+  .content-wrapper {
+    width: calc(100% - 24px);
+  }
+
+  body > .FooterPadrao {
+    padding-inline: 12px;
+  }
+
+  /* Home */
+  body[data-page="home"] .Inicio,
+  body[data-page="home"] .ComeceRapido,
+  body[data-page="home"] .ComoFunciona,
+  body[data-page="home"] .Comunidade,
+  body[data-page="home"] .Depoimentos {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  body[data-page="home"] .VisualInicio {
+    height: 290px;
+  }
+
+  body[data-page="home"] .CachorroInicio {
+    width: 92%;
+    height: 140%;
+  }
+
+  body[data-page="home"] .DestaquesInicio,
+  body[data-page="home"] .GradeServicos,
+  body[data-page="home"] .GradeHistorias {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="home"] .CabecalhoComeceRapido {
+    width: 100%;
+    gap: 18px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  body[data-page="home"] .CartaoEtapa {
+    padding: 22px;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 14px;
+    border-radius: 20px;
+  }
+
+  body[data-page="home"] .NumeroEtapa {
+    font-size: 50px;
+  }
+
+  body[data-page="home"] .ChamadaFinal {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: center;
+  }
+
+  body[data-page="home"] .BotaoLargo {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Filtros do feed e dos pedidos: rolagem horizontal evita texto minúsculo no mobile. */
+  body[data-page="feed"] .filters,
+  body[data-page="pedidos"] .filtros {
+    display: flex;
+    width: 100%;
+    gap: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  body[data-page="feed"] .filter-tab,
+  body[data-page="pedidos"] .filtro,
+  body[data-page="feed"] .filter-tab:nth-child(n),
+  body[data-page="pedidos"] .filtro:nth-child(n) {
+    width: auto;
+    min-width: max-content;
+    height: 48px;
+    min-height: 48px;
+    padding: 0 16px;
+    flex: 0 0 auto;
+    border-radius: 0;
+    font-size: 0.9375rem;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  body[data-page="feed"] .filter-tab:first-child,
+  body[data-page="pedidos"] .filtro:first-child {
+    border-radius: 11px 0 0 11px;
+  }
+
+  body[data-page="feed"] .filter-tab:last-child,
+  body[data-page="pedidos"] .filtro:last-child {
+    border-right: 0;
+    border-radius: 0 11px 11px 0;
+  }
+
+  /* Feed */
+  body[data-page="feed"] .main-content {
+    padding-top: 38px;
+  }
+
+  body[data-page="feed"] .feed-header {
+    gap: 18px;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body[data-page="feed"] .btn-primary {
+    width: 100%;
+    min-width: 0;
+  }
+
+  body[data-page="feed"] .post {
+    padding: 20px 16px 18px;
+  }
+
+  body[data-page="feed"] .post-image {
+    height: clamp(180px, 52vw, 290px);
+  }
+
+  body[data-page="feed"] .post-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  body[data-page="feed"] .actions-left {
+    display: contents;
+  }
+
+  body[data-page="feed"] .post-actions .action,
+  body[data-page="feed"] .post-actions .action.share {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  /* Pedidos de ajuda */
+  body[data-page="pedidos"] main {
+    width: calc(100% - 24px);
+  }
+
+  body[data-page="pedidos"] .titulo-pagina {
+    gap: 18px;
+    margin-top: 38px;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body[data-page="pedidos"] .titulo-pagina > button {
+    width: 100%;
+  }
+
+  body[data-page="pedidos"] .card-pedido {
+    padding: 22px 18px;
+  }
+
+  body[data-page="pedidos"] .midia-card {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="pedidos"] .acoes-card {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body[data-page="pedidos"] .novo-pedido {
+    grid-template-columns: auto 1fr;
+  }
+
+  body[data-page="pedidos"] .btn-criar-pedido {
+    width: 100%;
+    grid-column: 1 / -1;
+  }
+
+  /* Adoção */
+  body[data-page="adocao"] .CategoriasAdocao {
+    display: grid;
+    width: 100%;
+    gap: 8px;
+    overflow: visible;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-page="adocao"] .CategoriasAdocao button {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 0 10px;
+    font-size: 0.9375rem;
+  }
+
+  body[data-page="adocao"] .LinhaFiltrosAdocao,
+  body[data-page="adocao"] .CabecalhoListaAdocao {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body[data-page="adocao"] .BotaoAbrirFiltros,
+  body[data-page="adocao"] .BotaoDicasAdocao {
+    width: 100%;
+  }
+
+  /* Animais de rua */
+  body[data-page="animais"] .Sessao1,
+  body[data-page="animais"] .Sessao2,
+  body[data-page="animais"] .Sessao3,
+  body[data-page="animais"] .Sessao4 {
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
+
+  body[data-page="animais"] .BotoesAnimais,
+  body[data-page="animais"] .AcoesFiltros {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body[data-page="animais"] .BotoesAnimais .Botao,
+  body[data-page="animais"] .AcoesFiltros .Botao,
+  body[data-page="animais"] .BotaoDenuncia {
+    width: 100%;
+  }
+
+  /* Pets perdidos */
+  body[data-page="perdidos"] .GradeFiltrosRapidos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Denúncia */
+  body[data-page="denuncia"] .ConteudoDenuncia > h1 {
+    font-size: clamp(34px, 10vw, 44px);
+  }
+
+  body[data-page="denuncia"] .BannerDenuncia {
+    padding: 24px 18px;
+  }
+
+  body[data-page="denuncia"] .FormularioDenuncia {
+    padding: 22px 16px;
+  }
+
+  body[data-page="denuncia"] .LinhaFormularioDenuncia,
+  body[data-page="denuncia"] .PreviaDenuncia {
+    grid-template-columns: 1fr;
+  }
+
+  /* Perfil */
+  body[data-page="perfil"] .content-wrapper {
+    padding-top: 34px;
+  }
+
+  body[data-page="perfil"] .profile-card {
+    padding: 24px 18px;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  body[data-page="perfil"] .profile-info {
+    align-items: center;
+  }
+
+  body[data-page="perfil"] .card-estatisticas,
+  body[data-page="perfil"] .pets-cards-container,
+  body[data-page="perfil"] .grid-actions {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="perfil"] .horizontal-card {
+    grid-template-columns: 70px minmax(0, 1fr);
+  }
+
+  body[data-page="perfil"] .card-status-container {
+    width: 100%;
+    grid-column: 1 / -1;
+    justify-content: space-between;
+  }
+
+  body[data-page="perfil"] .promo-banner {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body[data-page="perfil"] .btn-quero-doar {
+    width: 100%;
+  }
+
+  /* Login e cadastro */
+  body[data-page="login"] .PrincipalLogin,
+  body[data-page="cadastro"] .PrincipalCadastre-se {
+    padding: 28px 12px 40px;
+  }
+
+  body[data-page="login"] .Container,
+  body[data-page="cadastro"] .Container {
+    width: min(100%, 450px);
+  }
+}
+
+@media (max-width: 520px) {
+  .LimiteConteudo,
+  .container,
+  .content-wrapper {
+    width: calc(100% - 20px);
+  }
+
+  /* Navbar */
+  .ConteudoCabecalho {
+    gap: 6px;
+  }
+
+  .Logotipo {
+    width: 88px;
+  }
+
+  .AcoesCabecalho {
+    gap: 4px;
+  }
+
+  .LinkEntrar,
+  .AcoesCabecalho .BotaoPequeno {
+    min-height: 34px;
+    padding-inline: 8px;
+    font-size: 0.8125rem;
+  }
+
+  /* Home */
+  body[data-page="home"] .TextoInicio h1 {
+    font-size: clamp(48px, 17vw, 62px);
+  }
+
+  body[data-page="home"] .ChamadaInicio {
+    font-size: 23px;
+  }
+
+  body[data-page="home"] .DescricaoInicio {
+    font-size: 16px;
+  }
+
+  body[data-page="home"] .AcoesInicio {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body[data-page="home"] .AcoesInicio .Botao {
+    width: 100%;
+  }
+
+  body[data-page="home"] .VisualInicio {
+    height: 250px;
+  }
+
+  body[data-page="home"] .CachorroInicio {
+    width: 92%;
+    height: 130%;
+  }
+
+  body[data-page="home"] .CartaoDestaque {
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 12px;
+    padding: 14px;
+  }
+
+  body[data-page="home"] .ImagemDestaque {
+    width: 82px;
+    height: 88px;
+  }
+
+  body[data-page="home"] .CartaoEtapa {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  body[data-page="home"] .NumeroEtapa,
+  body[data-page="home"] .IconeEtapa {
+    margin-inline: auto;
+  }
+
+  body[data-page="home"] .CabecalhoDepoimentos {
+    margin-left: 0;
+    margin-bottom: 34px;
+    text-align: center;
+  }
+
+  /* Feed */
+  body[data-page="feed"] .feed-title {
+    font-size: 34px;
+  }
+
+  body[data-page="feed"] .post-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  body[data-page="feed"] .avatar {
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
+  }
+
+  body[data-page="feed"] .badge,
+  body[data-page="feed"] .SelosPublicacao {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  body[data-page="feed"] .post-actions {
+    grid-template-columns: 1fr;
+  }
+
+  /* Pedidos */
+  body[data-page="pedidos"] .cabecalho-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  body[data-page="pedidos"] .SelosPedido,
+  body[data-page="pedidos"] .status-urgente {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  body[data-page="pedidos"] .imagem-pet {
+    height: 190px;
+  }
+
+  body[data-page="pedidos"] .acoes-card {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="pedidos"] .novo-pedido {
+    grid-template-columns: 1fr;
+    padding: 22px 16px;
+    text-align: center;
+  }
+
+  body[data-page="pedidos"] .novo-pedido .icone {
+    margin-inline: auto;
+  }
+
+  /* Animais de rua */
+  body[data-page="animais"] .GradeCategorias {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 12px;
+  }
+
+  body[data-page="animais"] .CartaoPrioridade {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body[data-page="animais"] .CartaoPrioridade img {
+    width: 100%;
+    height: 150px;
+  }
+
+  /* Pets perdidos */
+  body[data-page="perdidos"] .GradeFiltrosRapidos {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="perdidos"] .ImagemHeroPerdidos {
+    height: 210px;
+  }
+
+  /* Adoção */
+  body[data-page="adocao"] .CardAdocao > img {
+    height: 210px;
+  }
+
+  body[data-page="adocao"] .InformacoesAdocao,
+  body[data-page="adocao"] .RodapeCardAdocao {
+    padding-inline: 16px;
+  }
+
+  /* Denúncia */
+  body[data-page="denuncia"] .OpcoesUrgencia {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="denuncia"] .OpcaoAnonima {
+    align-items: flex-start;
+  }
+
+  /* Perfil */
+  body[data-page="perfil"] .section-header {
+    align-items: flex-start;
+  }
+
+  body[data-page="perfil"] .horizontal-card {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 12px;
+    padding: 13px;
+  }
+
+  body[data-page="perfil"] .card-img {
+    width: 58px;
+    height: 58px;
+  }
+
+  body[data-page="perfil"] .banner-left {
+    align-items: flex-start;
+  }
+
+  /* Login e cadastro */
+  body[data-page="login"] .Container,
+  body[data-page="cadastro"] .Container {
+    padding: 26px 18px 36px;
+    border-radius: 16px;
+  }
+
+  body[data-page="login"] .BotaoLogin,
+  body[data-page="cadastro"] .BotaoCadastro {
+    width: 100%;
+    padding-inline: 20px;
+  }
+
+  /* Modais */
+  .DialogoSOS {
+    width: calc(100% - 12px);
+    max-height: 94vh;
+  }
+
+  .DialogoConteudo {
+    max-height: calc(94vh - 70px);
+    padding: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .LinkEntrar {
+    display: none;
+  }
+
+  body[data-page="home"] .CartaoDestaque {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  body[data-page="home"] .ImagemDestaque {
+    margin-inline: auto;
+  }
+
+}
+
+
+/* Linha do tempo visível em notebooks e tablets na horizontal */
+@media (min-width: 721px) and (max-width: 1024px) {
+  body[data-page="home"] .ComoFunciona {
+    padding-bottom: 76px;
+  }
+
+  body[data-page="home"] .AreaEtapas {
+    max-width: 760px;
+    padding: 48px 0 24px;
+  }
+
+  body[data-page="home"] .ListaEtapas {
+    gap: 28px;
+  }
+
+  body[data-page="home"] .Etapa,
+  body[data-page="home"] .Etapa:nth-child(n) {
+    position: relative;
+    display: block;
+    min-height: 230px;
+  }
+
+  body[data-page="home"] .Etapa .CartaoEtapa {
+    width: calc(100% - 72px);
+    margin-left: 72px;
+  }
+
+  body[data-page="home"] .LinhaEtapas {
+    left: 28px;
+    display: block !important;
+    width: 3px;
+    transform: none !important;
+  }
+
+  body[data-page="home"] .MarcadorLinhaTempo {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    display: block !important;
+    transform: translateY(-50%);
+  }
+
+}

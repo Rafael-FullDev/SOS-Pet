@@ -17,6 +17,9 @@
     <link href="../css/animacoes.css" rel="stylesheet" />
     <link href="../css/profissional.css" rel="stylesheet" />
     <link href="../css/icones.css" rel="stylesheet" />
+    <link href="../css/responsividade.css" rel="stylesheet" />
+    <link href="../css/experiencia.css" rel="stylesheet" />
+    <link href="../css/footer.css" rel="stylesheet" />
   </head>
   <body data-page="pedidos" data-root="../">
     <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -106,7 +109,7 @@
         <strong>Nenhum pedido encontrado.</strong
         ><span>Tente outra categoria ou crie um pedido.</span>
       </div>
-      <nav aria-label="paginação"></nav>
+      <nav aria-label="paginação" class="PaginacaoPadrao"></nav>
       <section class="novo-pedido">
         <img alt="icone-sino" class="icone" src="../assets/images/pedidos-de-ajuda/Bell.svg" />
         <div class="texto-novo-pedido">
@@ -117,12 +120,126 @@
           Criar pedido
         </button>
       </section>
+
+      <section class="SecaoFaq" aria-labelledby="TituloFaqPedidos">
+        <div class="LimiteConteudo">
+          <header class="CabecalhoFaq">
+            <h2 id="TituloFaqPedidos">Perguntas frequentes</h2>
+            <p>Entenda como criar, apoiar e acompanhar pedidos da comunidade.</p>
+          </header>
+          <div class="ListaFaq">
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-pedidos-pergunta-1" aria-expanded="false" aria-controls="faq-pedidos-resposta-1">
+                  <span>Quem pode criar um pedido de ajuda?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-pedidos-resposta-1" role="region" aria-labelledby="faq-pedidos-pergunta-1" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Usuários da comunidade podem criar pedidos quando precisam de apoio relacionado a resgate, adoção, animal perdido, transporte ou outros cuidados.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-pedidos-pergunta-2" aria-expanded="false" aria-controls="faq-pedidos-resposta-2">
+                  <span>Como apoiar um pedido?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-pedidos-resposta-2" role="region" aria-labelledby="faq-pedidos-pergunta-2" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Abra o pedido e use a opção de ajudar para informar de que forma você pode contribuir e como entrar em contato.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-pedidos-pergunta-3" aria-expanded="false" aria-controls="faq-pedidos-resposta-3">
+                  <span>Como atualizar a situação?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-pedidos-resposta-3" role="region" aria-labelledby="faq-pedidos-pergunta-3" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Se o pedido for seu, use as opções de gerenciamento para alterar o status conforme o caso evoluir.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-pedidos-pergunta-4" aria-expanded="false" aria-controls="faq-pedidos-resposta-4">
+                  <span>Como encerrar um pedido resolvido?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-pedidos-resposta-4" role="region" aria-labelledby="faq-pedidos-pergunta-4" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Atualize o status para concluído quando a necessidade tiver sido atendida. Assim a comunidade entende que o caso não precisa mais de apoio.</p></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
     <button class="BotaoFlutuanteMobile" type="button" aria-label="Criar novo pedido">+</button>
-    <footer class="FooterPadrao">
-      <img alt="Logo SOS Pet" src="../assets/images/pedidos-de-ajuda/Logo.png" />
-      <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
-      <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
+    <footer class="FooterPadrao FooterCompleto" aria-label="Rodapé do SOS Pet">
+      <div class="FooterContainer">
+        <div class="FooterGrade">
+          <section class="FooterMarca" aria-label="Sobre o SOS Pet">
+            <a class="FooterLogoLink" href="../index.html" aria-label="SOS Pet — página inicial">
+              <img class="FooterLogoImagem" alt="Logo SOS Pet" src="../assets/images/home/LogoSOSPet.png" />
+            </a>
+            <p class="FooterDescricao">Uma comunidade criada para ajudar animais perdidos, em situação de rua e em busca de um novo lar.</p>
+            <span class="FooterSelo">Proteção animal colaborativa</span>
+          </section>
+
+          <nav class="FooterColuna" aria-label="Navegação do rodapé">
+            <h2 class="FooterTitulo">Navegação</h2>
+            <ul class="FooterLinks">
+              <li><a href="../index.html#Inicio">Início</a></li>
+              <li><a href="pets-perdidos.html">Animais Perdidos</a></li>
+              <li><a href="adocao.html">Adoção</a></li>
+              <li><a href="animais-de-rua.html">Animais de Rua</a></li>
+              <li><a href="pedidos-de-ajuda.html">Pedidos de Ajuda</a></li>
+              <li><a href="feed.html">Feed</a></li>
+              <li><a href="denuncia.html">Denúncias</a></li>
+            </ul>
+          </nav>
+
+          <nav class="FooterColuna" aria-label="Links de ajuda">
+            <h2 class="FooterTitulo">Ajuda</h2>
+            <ul class="FooterLinks">
+              <li><a href="adocao.html">Quero adotar</a></li>
+              <li><a href="pedidos-de-ajuda.html">Criar pedido de ajuda</a></li>
+              <li><a href="denuncia.html">Fazer uma denúncia</a></li>
+              <li><a href="adocao.html#TituloFaqAdocao">Dúvidas sobre adoção</a></li>
+              <li><a href="animais-de-rua.html#TituloFaqAnimais">Como ajudar animais de rua</a></li>
+            </ul>
+          </nav>
+
+          <section class="FooterColuna FooterComunidade" aria-labelledby="FooterComunidadeTitulo">
+            <h2 class="FooterTitulo" id="FooterComunidadeTitulo">Comunidade</h2>
+            <p class="FooterTextoComunidade">Acompanhe histórias da comunidade ou fale com o suporte do SOS Pet.</p>
+            <ul class="FooterContatoLista">
+              <li>
+                <a href="mailto:suporte@sospet.org">
+                  <span class="FooterIcone" aria-hidden="true">@</span>
+                  <span class="FooterContatoTexto">suporte@sospet.org</span>
+                </a>
+              </li>
+              <li>
+                <a href="feed.html">
+                  <span class="FooterIcone" aria-hidden="true">♥</span>
+                  <span class="FooterContatoTexto">Feed da comunidade</span>
+                </a>
+              </li>
+              <li>
+                <a href="cadastro.html">
+                  <span class="FooterIcone" aria-hidden="true">+</span>
+                  <span class="FooterContatoTexto">Criar uma conta</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="FooterBase">
+        <div class="FooterBaseConteudo">
+          <p>© 2026 SOS Pet. Todos os direitos reservados.</p>
+          <p>Juntos, podemos dar mais voz a quem não consegue pedir ajuda.</p>
+        </div>
+      </div>
     </footer>
     <script defer src="../js/dados.js"></script>
     <script defer src="../js/geral.js"></script>

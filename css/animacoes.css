@@ -1,14 +1,36 @@
 :root {
   --tempo-rapido: 160ms;
-  --tempo-suave: 420ms;
+  --tempo-medio: 520ms;
+  --tempo-longo: 720ms;
   --movimento-suave: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-body {
-  animation: entradaPagina 460ms var(--movimento-suave) both;
+html {
+  scroll-behavior: smooth;
 }
 
-:where(a, button, input, select, textarea, .Botao, .Midia) {
+body {
+  overflow-x: hidden;
+  animation: entradaPagina 260ms ease both;
+}
+
+body.IntroducaoAtiva {
+  overflow: hidden;
+}
+
+.TextoLeitorTela {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+:where(a, button, input, select, textarea, .Botao) {
   transition-duration: var(--tempo-rapido);
   transition-timing-function: ease;
 }
@@ -21,44 +43,243 @@ body {
   transition-property: border-color, box-shadow, background-color;
 }
 
-:where(.Midia, img) {
-  transition: transform 260ms var(--movimento-suave), filter 260ms ease;
-}
-
 :where(button:not(:disabled), a.Botao, a.LinkComoBotao):active {
   transform: scale(0.98);
 }
 
-:where( .CartaoDestaque, .CartaoServico, .Cartao, .CartaoAnimal, .CartaoDepoimento, .CartaoEtapa, .CartaoHistoria, .CartaoPrioridade, .CardAdocao, .card-adocao, .card-animais, .card-pedido, .pet-card, .horizontal-card, .post, .profile-card, .ResultadoBusca ) {
-  transition: transform 260ms var(--movimento-suave), box-shadow 260ms ease,
-    border-color 260ms ease;
+:where(
+    .CartaoDestaque,
+    .CartaoServico,
+    .CartaoAnimal,
+    .CartaoHistoria,
+    .CartaoPrioridade,
+    .CardAdocao,
+    .card-adocao,
+    .card-animais,
+    .card-pedido,
+    .pet-card,
+    .horizontal-card,
+    .post,
+    .profile-card
+  ) {
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 200ms ease;
 }
 
 @media (hover: hover) {
-  :where( .CartaoDestaque, .CartaoServico, .Cartao, .CartaoAnimal, .CartaoDepoimento, .CartaoEtapa, .CartaoHistoria, .CartaoPrioridade, .CardAdocao, .card-adocao, .card-animais, .card-pedido, .pet-card, .horizontal-card, .post, .profile-card, .ResultadoBusca ):hover {
-    transform: translateY(-4px);
-  }
-
-  :where( .CartaoDestaque, .CartaoServico, .CartaoAnimal, .CardAdocao, .card-adocao, .card-animais, .card-pedido, .pet-card, .horizontal-card, .post ):hover :where(img, .Midia) {
-    transform: scale(1.015);
+  :where(
+      .CartaoDestaque,
+      .CartaoServico,
+      .CartaoAnimal,
+      .CartaoHistoria,
+      .CartaoPrioridade,
+      .CardAdocao,
+      .card-adocao,
+      .card-animais,
+      .card-pedido,
+      .pet-card,
+      .horizontal-card,
+      .post,
+      .profile-card
+    ):hover {
+    transform: translateY(-3px);
   }
 }
 
-.ComAnimacao .RevelarSuave {
+.ComAnimacao .HeroAnimado {
   opacity: 0;
-  translate: 0 18px;
-  transition: opacity var(--tempo-suave) var(--movimento-suave),
-    translate var(--tempo-suave) var(--movimento-suave);
-  transition-delay: var(--atraso-animacao, 0ms);
+  transform: translateY(18px) scale(0.992);
+  transition: opacity var(--tempo-longo) ease, transform var(--tempo-longo) var(--movimento-suave);
 }
 
-.ComAnimacao .RevelarSuave.Apareceu {
+.ComAnimacao .HeroAnimado.HeroVisivel {
   opacity: 1;
-  translate: 0 0;
+  transform: translateY(0) scale(1);
+}
+
+.ComAnimacao .RevelarRolagem {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--tempo-medio) ease, transform var(--tempo-medio) var(--movimento-suave);
+}
+
+.ComAnimacao .RevelarRolagem.Apareceu {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ParallaxSuave:not(.CachorroInicio) {
+  transform: translate3d(0, var(--parallax-y, 0), 0);
+  will-change: transform;
+}
+
+.IntroducaoSOS {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  background: #fffaf0;
+  pointer-events: none;
+  animation: saidaIntroducao 260ms ease 760ms forwards;
+}
+
+.MarcaIntroducao {
+  display: grid;
+  width: min(68vw, 290px);
+  justify-items: center;
+  opacity: 0;
+  transform: translateY(8px) scale(0.985);
+  animation: entradaMarcaIntroducao 460ms var(--movimento-suave) 70ms forwards;
+}
+
+.LogoIntroducao,
+.LogoTransicaoPagina {
+  display: block;
+  width: 100%;
+  aspect-ratio: 490 / 126;
+  background: url(../assets/images/home/LogoSOSPet.png) center / contain no-repeat;
+}
+
+.DetalheIntroducao {
+  display: block;
+  width: 54px;
+  height: 3px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--Vermelho);
+  transform: scaleX(0);
+  animation: detalheIntroducao 300ms var(--movimento-suave) 340ms forwards;
+}
+
+.TransicaoPagina {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  background: rgba(255, 250, 240, 0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms ease, visibility 140ms ease;
+}
+
+body.TransicaoPaginaAtiva {
+  cursor: wait;
+}
+
+body.TransicaoPaginaAtiva .TransicaoPagina {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.MarcaTransicaoPagina {
+  display: grid;
+  width: min(48vw, 176px);
+  justify-items: center;
+  gap: 10px;
+}
+
+.LinhaTransicaoPagina {
+  position: relative;
+  display: block;
+  width: 68px;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(223, 51, 66, 0.16);
+}
+
+.LinhaTransicaoPagina::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--Vermelho);
+  transform: translateX(-105%);
+  animation: carregarTransicao 720ms var(--movimento-suave) infinite;
+}
+
+button.Carregando,
+input[type="submit"].Carregando {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+  cursor: wait;
+}
+
+button.Carregando > *,
+input[type="submit"].Carregando > * {
+  visibility: hidden;
+}
+
+button.Carregando::after,
+input[type="submit"].Carregando::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 17px;
+  height: 17px;
+  margin: -8.5px 0 0 -8.5px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: girarLoading 650ms linear infinite;
+}
+
+.BotaoRedeSocial.Carregando::after {
+  border-color: rgba(107, 74, 52, 0.22);
+  border-top-color: var(--Marrom);
+}
+
+body[data-page="home"] .AreaEtapas > .LinhaEtapas.LinhaAnimada {
+  bottom: auto;
+  display: block;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(223, 51, 66, 0.2);
+  opacity: 1;
+  visibility: visible;
+  transform-origin: top center;
+}
+
+body[data-page="home"] .AreaEtapas > .LinhaEtapas.LinhaAnimada::after {
+  content: none;
+}
+
+body[data-page="home"] .PreenchimentoLinhaEtapas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border-radius: inherit;
+  background: var(--Vermelho);
+  transform: scaleY(0);
+  transform-origin: top center;
+  will-change: transform;
+}
+
+body[data-page="home"] .MarcadorLinhaTempo {
+  transition: background-color 220ms ease, box-shadow 220ms ease;
+}
+
+body[data-page="home"] .MarcadorLinhaTempo.MarcadorAtivo {
+  background: var(--Vermelho);
+  box-shadow: 0 4px 12px rgba(72, 50, 33, 0.16);
+}
+
+.Cabecalho {
+  transition: box-shadow 220ms ease, background-color 220ms ease;
+}
+
+.Cabecalho.NavCompacto {
+  box-shadow: 0 8px 22px rgba(30, 30, 36, 0.09);
 }
 
 .AnimacaoNova {
-  animation: entradaItem 360ms var(--movimento-suave) both;
+  animation: entradaItem 380ms var(--movimento-suave) both;
 }
 
 .DialogoSOS[open] {
@@ -66,11 +287,11 @@ body {
 }
 
 .DialogoSOS[open]::backdrop {
-  animation: mostrarFundo 220ms ease both;
+  animation: mostrarFundo 180ms ease both;
 }
 
 .ToastSOS.Mostrar {
-  animation: mostrarAviso 300ms var(--movimento-suave) both;
+  animation: mostrarAviso 280ms var(--movimento-suave) both;
 }
 
 @media (max-width: 1180px) {
@@ -79,16 +300,21 @@ body {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-8px) scale(0.98);
+    transform: translateY(-8px);
     transform-origin: top right;
-    transition: opacity 200ms ease, transform 240ms var(--movimento-suave), visibility 200ms;
+    transition: opacity 180ms ease, transform 220ms var(--movimento-suave), visibility 180ms;
   }
 
   .MenuPrincipal.MenuAberto {
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
+  }
+
+  .MenuPrincipal.MenuAberto a {
+    animation: entradaLinkMenu 260ms var(--movimento-suave) both;
+    animation-delay: calc(var(--indice-menu, 0) * 28ms);
   }
 
   .FundoMenuMobile {
@@ -96,7 +322,7 @@ body {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 200ms ease, visibility 200ms;
+    transition: opacity 180ms ease, visibility 180ms;
   }
 
   .FundoMenuMobile.Mostrar {
@@ -106,34 +332,136 @@ body {
   }
 }
 
-@keyframes entradaPagina {
-  from {
-    opacity: 0;
+main.ComTrilhaAmarela {
+  position: relative;
+  isolation: isolate;
+}
+
+.TrilhaAmarelaScroll {
+  position: absolute;
+  z-index: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.TrilhaAmarelaScroll svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.FaixaAmarela {
+  fill: none;
+  stroke: #f4d56b;
+  stroke-width: clamp(38px, 5vw, 68px);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.25;
+  vector-effect: non-scaling-stroke;
+  will-change: stroke-dashoffset;
+}
+
+main.ComTrilhaAmarela > :not(.TrilhaAmarelaScroll) {
+  position: relative;
+  z-index: 1;
+}
+
+.SecaoOrganica {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  border-color: transparent;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.FundoOndaSecao {
+  position: absolute;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.FormaOndaSecao {
+  fill: var(--fundo-organico, #fff4c9);
+}
+
+.SecaoOrganica > :not(.FundoOndaSecao) {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px), (hover: none) {
+  .ComAnimacao .HeroAnimado,
+  .ComAnimacao .RevelarRolagem {
+    transform: translateY(12px);
   }
 
+  .ParallaxSuave {
+    transform: none;
+  }
+
+  .TrilhaAmarelaScroll {
+    display: none;
+  }
+}
+
+@keyframes entradaPagina {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes entradaMarcaIntroducao {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
   to {
     opacity: 1;
+    transform: translateY(0) scale(1);
   }
+}
+
+@keyframes detalheIntroducao {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes saidaIntroducao {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes carregarTransicao {
+  0% { transform: translateX(-105%); }
+  55%,
+  100% { transform: translateX(105%); }
+}
+
+@keyframes girarLoading {
+  to { transform: rotate(360deg); }
 }
 
 @keyframes entradaItem {
   from {
     opacity: 0;
-    translate: 0 12px;
+    transform: translateY(12px) scale(0.99);
   }
-
   to {
     opacity: 1;
-    translate: 0 0;
+    transform: translateY(0) scale(1);
   }
 }
 
 @keyframes abrirDialogo {
   from {
     opacity: 0;
-    transform: translate(-50%, calc(-50% + 18px)) scale(0.97);
+    transform: translate(-50%, calc(-50% + 12px)) scale(0.98);
   }
-
   to {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
@@ -141,24 +469,29 @@ body {
 }
 
 @keyframes mostrarFundo {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes mostrarAviso {
   from {
     opacity: 0;
-    transform: translateY(16px) scale(0.98);
+    transform: translateY(12px);
   }
-
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
+  }
+}
+
+@keyframes entradaLinkMenu {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -167,7 +500,9 @@ body {
     scroll-behavior: auto;
   }
 
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     scroll-behavior: auto !important;
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
@@ -175,8 +510,34 @@ body {
     transition-delay: 0ms !important;
   }
 
-  .ComAnimacao .RevelarSuave {
+  .ComAnimacao .HeroAnimado,
+  .ComAnimacao .RevelarRolagem {
     opacity: 1;
-    translate: none;
+    transform: none;
+  }
+
+  .IntroducaoSOS,
+  .TrilhaAmarelaScroll,
+  .FundoOndaSecao {
+    display: none;
+  }
+
+  .SecaoOrganica {
+    background-color: var(--fundo-organico, #fff4c9) !important;
+  }
+
+  .ParallaxSuave {
+    transform: none;
+  }
+
+  body[data-page="home"] .PreenchimentoLinhaEtapas {
+    transform: scaleY(1) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  body[data-page="home"] .AreaEtapas > .LinhaEtapas.LinhaAnimada,
+  body[data-page="home"] .MarcadorLinhaTempo {
+    display: none !important;
   }
 }

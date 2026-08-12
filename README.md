@@ -21,7 +21,8 @@ Site feito com HTML, CSS e JavaScript puro.
 
 Os dados ficam no `localStorage` do navegador. Em um site publicado, login, imagens, publicações e contatos precisam de back-end e banco de dados.
 
-## Créditos das imagens
+
+## Créditos de imagens
 
 - Foto do coelho Slinky: Vanillakirsty, Wikimedia Commons, licença CC BY-SA 4.0.
 
@@ -29,4 +30,3 @@ Os dados ficam no `localStorage` do navegador. Em um site publicado, login, imag
 - Porquinho-da-Índia de Lola: Plath81, via Wikimedia Commons, CC BY-SA 3.0/GFDL.
 - Jabuti-tinga de Donatelo: Ltshears, via Wikimedia Commons, domínio público.
 - Gato branco de Snow/Flocos: freestocks.org, via Wikimedia Commons, CC0.
-

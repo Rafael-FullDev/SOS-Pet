@@ -40,7 +40,7 @@ body {
   border-radius: 999px;
   color: var(--MarromAdocao);
   background: rgba(255, 255, 255, 0.72);
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -75,7 +75,7 @@ body {
   border: 1px solid #eadfc8;
   border-radius: 16px;
   background: #fff;
-  box-shadow: 0 16px 38px rgba(71, 55, 32, 0.12);
+  box-shadow: var(--SombraFiltro);
 }
 
 .IconeBuscaAdocao {
@@ -114,15 +114,17 @@ body {
 
 .LinhaFiltrosAdocao {
   display: flex;
-  margin-top: 22px;
+  margin-top: 30px;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 24px;
 }
 
 .CategoriasAdocao {
-  flex-wrap: wrap;
-  gap: 10px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .CategoriasAdocao button, .BotaoAbrirFiltros, .LimparFiltrosAdocao, .PaginacaoAdocao button {
@@ -135,19 +137,35 @@ body {
 }
 
 .CategoriasAdocao button {
-  min-height: 44px;
-  padding: 0 24px;
+  width: 134px;
+  min-width: 134px;
+  min-height: 56px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: var(--SombraBotao);
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .CategoriasAdocao button:hover, .CategoriasAdocao button.Ativo {
   border-color: var(--MarromAdocao);
-  background: var(--MarromAdocao);
+  color: #fff;
+  background: #6b4a34;
 }
 
 .BotaoAbrirFiltros {
-  min-height: 44px;
-  padding: 0 20px;
+  width: 132px;
+  min-width: 132px;
+  min-height: 56px;
+  padding: 0 18px;
+  border: 0;
   border-color: #f1ca4c;
+  border-radius: 10px;
+  background: #f7d46a;
+  box-shadow: var(--SombraBotao);
+  font-size: 1rem;
 }
 
 .BotaoAbrirFiltros:hover, .BotaoAbrirFiltros[aria-expanded="true"] {
@@ -170,7 +188,7 @@ body {
   display: grid;
   gap: 7px;
   color: var(--MarromAdocao);
-  font-size: 13px;
+  font-size: 1rem;
   font-weight: 800;
 }
 
@@ -213,7 +231,7 @@ body {
 
 .ResumoAdocao {
   flex: 0 0 auto;
-  font-size: 13px;
+  font-size: 0.9375rem;
   font-weight: 700;
 }
 
@@ -281,7 +299,7 @@ body {
 .InformacoesAdocao p {
   margin: 12px 0 0;
   color: var(--TextoSuaveAdocao);
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.55;
 }
 
@@ -292,7 +310,7 @@ body {
   border-radius: 999px;
   color: #217a42;
   background: #def5e4;
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 800;
 }
 
@@ -486,46 +504,6 @@ body {
   .CoracaoBannerAdocao {
     margin: 0 auto;
   }
-}
-
-.LinhaFiltrosAdocao {
-  margin-top: 30px;
-  gap: 24px;
-}
-
-.CategoriasAdocao {
-  display: flex;
-  gap: 20px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-}
-
-.CategoriasAdocao button {
-  width: 134px;
-  min-width: 134px;
-  min-height: 56px;
-  padding: 0 16px;
-  border: 0;
-  border-radius: 10px;
-  background: #fff;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.CategoriasAdocao button:hover, .CategoriasAdocao button.Ativo {
-  color: #fff;
-  background: #6b4a34;
-}
-
-.BotaoAbrirFiltros {
-  width: 132px;
-  min-width: 132px;
-  min-height: 56px;
-  padding: 0 18px;
-  border: 0;
-  border-radius: 10px;
-  background: #f7d46a;
-  font-size: 16px;
 }
 
 @media (max-width: 720px) {

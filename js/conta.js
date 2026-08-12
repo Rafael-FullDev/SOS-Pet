@@ -98,7 +98,7 @@ function entrar(conta) {
   salvarConta(conta);
   salvarTexto("sosPetLogado", "true");
   setTimeout(function () {
-    location.href = destinoDepoisLogin();
+    window.navegarComLoading(destinoDepoisLogin());
   }, 200);
 }
 
@@ -107,11 +107,14 @@ function criarBotaoSenha(campo) {
 
   botao.type = "button";
   botao.className = "MostrarSenha";
-  botao.textContent = "Mostrar";
+  botao.setAttribute("aria-label", "Mostrar senha");
   campo.parentElement.appendChild(botao);
   botao.onclick = function () {
-    campo.type = campo.type === "password" ? "text" : "password";
-    botao.textContent = campo.type === "password" ? "Mostrar" : "Ocultar";
+    var senhaVisivel = campo.type === "password";
+
+    campo.type = senhaVisivel ? "text" : "password";
+    botao.classList.toggle("Aberto", senhaVisivel);
+    botao.setAttribute("aria-label", senhaVisivel ? "Ocultar senha" : "Mostrar senha");
   };
 }
 
@@ -135,7 +138,7 @@ function recuperarSenha(evento) {
         fechar();
         dialogo(
           "Senha cadastrada",
-          "<p>Esta versão funciona apenas no navegador.</p><p><strong>Senha:</strong> " +
+          "<p><strong>Senha:</strong> " +
             escapar(conta.senha) +
             "</p>"
         );

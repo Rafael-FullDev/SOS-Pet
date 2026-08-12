@@ -272,7 +272,7 @@ function exigirLogin(acao) {
   salvarTexto("sosPetDestinoLogin", location.href);
 
   if (acao) salvarTexto("sosPetAcaoPendente", acao);
-  location.href = raiz + "pages/login.html";
+  window.navegarComLoading(raiz + "pages/login.html");
 
   return false;
 }
@@ -559,7 +559,7 @@ function configurarNavbar() {
       sair.onclick = function () {
         if (confirm("Deseja sair da sua conta?")) {
           apagar("sosPetLogado");
-          location.href = raiz + "index.html";
+          window.navegarComLoading(raiz + "index.html");
         }
       };
       acoes.appendChild(sair);
@@ -605,6 +605,23 @@ function configurarMenu() {
   addEventListener("resize", function () {
     if (innerWidth > 1180) fechar();
   });
+}
+
+
+function configurarFaq() {
+  var perguntas = pegarTodos(".PerguntaFaq");
+
+  for (var i = 0; i < perguntas.length; i++) {
+    perguntas[i].onclick = function () {
+      var aberto = this.getAttribute("aria-expanded") === "true";
+      var resposta = document.getElementById(this.getAttribute("aria-controls"));
+
+      if (!resposta) return;
+      this.setAttribute("aria-expanded", String(!aberto));
+      resposta.setAttribute("aria-hidden", String(aberto));
+      resposta.classList.toggle("Aberta", !aberto);
+    };
+  }
 }
 
 function configurarBusca() {
@@ -686,4 +703,5 @@ function configurarBusca() {
 iniciarDados();
 configurarMenu();
 configurarBusca();
+configurarFaq();
 configurarNavbar();

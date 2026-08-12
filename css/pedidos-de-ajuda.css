@@ -39,7 +39,7 @@ main {
 }
 
 .texto-titulo p {
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .titulo-pagina > button, .btn-criar-pedido {
@@ -57,28 +57,94 @@ main {
 }
 
 .filtros {
-  width: fit-content;
-  margin-bottom: 36px;
+  display: flex;
+  width: min(620px, 100%);
+  max-width: 100%;
+  margin: 0 0 34px;
   overflow-x: auto;
+  overflow-y: hidden;
+  grid-template-columns: none;
+  border: 1px solid #d6cab7;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--SombraFiltro);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.filtros::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .filtro {
+  min-width: 0;
+  width: auto;
+  height: 54px;
   min-height: 44px;
   padding: 0 18px;
   flex: 0 0 auto;
-  border: 1px solid #d9d9d9;
-  border-right: 0;
+  border: 0;
+  border-right: 1px solid #b9b9b9;
+  border-radius: 0;
+  color: #222;
   background: #fff;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.filtro:nth-child(1) {
+  width: 116px;
+}
+
+.filtro:nth-child(2) {
+  width: 174px;
+}
+
+.filtro:nth-child(3) {
+  width: 124px;
+}
+
+.filtro:nth-child(4) {
+  width: 206px;
 }
 
 .filtro:last-child {
   border-right: 1px solid #d9d9d9;
 }
 
+.filtro-esquerda {
+  border-radius: 9px 0 0 9px;
+}
+
+.filtro-direita {
+  border-right: 0;
+  border-radius: 0 9px 9px 0;
+}
+
 .filtro.ativo, .filtro[aria-pressed="true"] {
-  background: #6b4a2e;
+  color: #fff;
+  background: #6b4a34;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+body[data-page="pedidos"] .BarraResultadoPedidos {
+  margin: 0 0 32px;
+}
+
+body[data-page="pedidos"] .cards-pedidos {
+  margin-bottom: 40px;
+}
+
+body[data-page="pedidos"] .PaginacaoPadrao:not(:empty) {
+  margin: 0 0 48px;
+}
+
+body[data-page="pedidos"] .EstadoVazioPedidos:not([hidden]) {
+  margin: 0 0 40px;
 }
 
 .cards-pedidos {
@@ -89,10 +155,17 @@ main {
 .card-pedido {
   width: 100%;
   padding: clamp(24px, 4vw, 42px);
-  border: 1px solid #e5e5e5;
-  border-radius: 15px;
+  border: 1px solid var(--BordaCardInterno);
+  border-radius: 18px;
   background: #fff;
-  box-shadow: 0 8px 24px rgba(97, 68, 43, 0.07);
+  box-shadow: var(--SombraCardInterno);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.card-pedido:hover {
+  border-color: #dcc5a4;
+  box-shadow: var(--SombraCardInternoHover);
+  transform: translateY(-4px);
 }
 
 .cabecalho-card {
@@ -121,7 +194,7 @@ main {
 }
 
 .informacoes-usuario p {
-  font-size: 13px;
+  font-size: 0.9375rem;
 }
 
 .status-urgente {
@@ -129,7 +202,7 @@ main {
   border-radius: 10px;
   color: #d00018;
   background: #ffd9d9;
-  font-size: 13px;
+  font-size: 0.9375rem;
   font-weight: 600;
 }
 
@@ -141,14 +214,14 @@ main {
 .card-pedido > p {
   margin-bottom: 14px;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.55;
 }
 
 .localizacao {
   display: block;
   margin-bottom: 18px;
-  font-size: 13px;
+  font-size: 0.9375rem;
   font-style: normal;
 }
 
@@ -181,7 +254,7 @@ main {
   align-items: center;
   justify-content: center;
   border-radius: 11px;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 700;
   text-align: center;
   transition: 160ms ease;
@@ -229,7 +302,7 @@ nav[aria-label="paginação"] {
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 22px;
-  margin: 0 0 50px;
+  margin: 8px 0 56px;
   padding: 25px 30px;
   align-items: center;
   border-radius: 10px;
@@ -248,7 +321,7 @@ nav[aria-label="paginação"] {
 
 .texto-novo-pedido p {
   font-family: "Inter", Arial, sans-serif;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 body > footer {
@@ -266,7 +339,7 @@ body > footer img {
 
 body > footer p {
   color: #6f6f6f;
-  font-size: 12px;
+  font-size: 0.875rem;
   text-align: center;
 }
 
@@ -277,10 +350,6 @@ body > footer p {
   }
 
   .titulo-pagina > button {
-    width: 100%;
-  }
-
-  .filtros {
     width: 100%;
   }
 
@@ -331,122 +400,21 @@ body > footer p {
   }
 }
 
-@media (max-width: 560px) {
-  .filtros {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    overflow: visible;
-  }
-
-  .filtro, .filtro-esquerda, .filtro-direita {
-    width: 100%;
-    min-width: 0;
-    padding: 0 8px;
-    border: 1px solid #d9d9d9;
-    border-radius: 0;
-  }
-
-  .filtro:nth-child(1) {
-    border-radius: 10px 0 0 0;
-  }
-
-  .filtro:nth-child(2) {
-    border-radius: 0 10px 0 0;
-  }
-
-  .filtro:nth-child(3) {
-    border-radius: 0 0 0 10px;
-  }
-
-  .filtro:nth-child(4) {
-    border-radius: 0 0 10px 0;
-  }
-}
-
-.filtros {
-  display: flex !important;
-  width: min(620px, 100%);
-  max-width: 100%;
-  margin: 0 0 34px;
-  overflow: hidden !important;
-  grid-template-columns: none !important;
-  border: 1px solid #b9b9b9;
-  border-radius: 10px;
-  background: #fff;
-}
-
-.filtro, .filtro-esquerda, .filtro-direita {
-  min-width: 0;
-  width: auto;
-  height: 54px;
-  padding: 0 18px;
-  flex: 0 0 auto;
-  border: 0 !important;
-  border-right: 1px solid #b9b9b9 !important;
-  border-radius: 0 !important;
-  color: #222;
-  background: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.filtro:nth-child(1) {
-  width: 116px;
-}
-
-.filtro:nth-child(2) {
-  width: 174px;
-}
-
-.filtro:nth-child(3) {
-  width: 124px;
-}
-
-.filtro:nth-child(4) {
-  width: 206px;
-}
-
-.filtro-esquerda {
-  border-radius: 9px 0 0 9px !important;
-}
-
-.filtro-direita {
-  border-right: 0 !important;
-  border-radius: 0 9px 9px 0 !important;
-}
-
-.filtro.ativo, .filtro[aria-pressed="true"] {
-  color: #fff;
-  background: #6b4a34;
-  font-weight: 600;
-}
-
 @media (max-width: 720px) {
   .filtros {
     width: 100%;
   }
 
-  .filtro, .filtro-esquerda, .filtro-direita {
-    min-height: 46px;
-    height: 46px;
-    padding: 0 10px;
-    font-size: 12px;
+  .filtro {
+    width: auto;
+    min-width: max-content;
+    min-height: 48px;
+    height: 48px;
+    padding: 0 16px;
+    flex: 0 0 auto;
+    font-size: 0.9375rem;
+    white-space: nowrap;
   }
 
-  .filtro:nth-child(1) {
-    width: 17%;
-  }
-
-  .filtro:nth-child(2) {
-    width: 28%;
-  }
-
-  .filtro:nth-child(3) {
-    width: 20%;
-  }
-
-  .filtro:nth-child(4) {
-    width: 35%;
-  }
 }
+
