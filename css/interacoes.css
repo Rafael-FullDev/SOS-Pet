@@ -26,11 +26,6 @@ button:not(:disabled) {
   display: none !important;
 }
 
-:focus-visible {
-  outline: 3px solid var(--sos-vermelho);
-  outline-offset: 3px;
-}
-
 .PularConteudo {
   position: fixed;
   z-index: 5000;
@@ -52,7 +47,7 @@ button:not(:disabled) {
   min-height: 22px;
   margin: 0;
   color: #b4232d;
-  font-size: 13px;
+  font-size: 0.9375rem;
   font-weight: 600;
   text-align: center;
 }
@@ -64,7 +59,7 @@ button:not(:disabled) {
 .LinkAlternativo {
   margin-top: 14px;
   color: #61442b;
-  font-size: 13px;
+  font-size: 0.9375rem;
   text-align: center;
 }
 
@@ -132,7 +127,7 @@ button:not(:disabled) {
   display: grid;
   gap: 6px;
   color: var(--sos-marrom);
-  font-size: 13px;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -181,7 +176,7 @@ button:not(:disabled) {
 .ResultadoBusca span {
   margin-top: 3px;
   color: #6f675f;
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 
 .ToastSOS {
@@ -195,7 +190,7 @@ button:not(:disabled) {
   color: #fff;
   background: #1e1e24;
   box-shadow: 0 12px 32px rgba(30, 30, 36, 0.24);
-  font-size: 13px;
+  font-size: 0.9375rem;
   opacity: 0;
   transform: translateY(14px);
   transition: 180ms ease;
@@ -268,24 +263,26 @@ button:not(:disabled) {
 }
 
 .Categoria[aria-pressed="true"], .Botao1[aria-pressed="true"] {
-  border-color: var(--sos-vermelho) !important;
-  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.13);
+  border-color: var(--sos-vermelho);
+  box-shadow: var(--SombraBotao);
 }
 
 .AcoesCartaoAnimal {
   display: flex;
   gap: 8px;
-  padding: 0 14px 14px;
+  padding: 0;
+  flex-wrap: wrap;
 }
 
 .AcoesCartaoAnimal button {
-  min-height: 34px;
-  padding: 0 10px;
+  min-height: 44px;
+  padding: 0 12px;
+  flex: 1 1 130px;
   border: 1px solid var(--sos-vermelho);
   border-radius: 8px;
   background: #fff;
   color: var(--sos-vermelho);
-  font-size: 10px;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -442,36 +439,6 @@ body:not(.AutenticacaoPronta) [data-auth="usuario"] {
   }
 }
 
-body[data-page="home"].AnimacoesHomeProntas .Etapa .CartaoEtapa, body[data-page="home"].AnimacoesHomeProntas .Etapa .MarcadorLinhaTempo {
-  opacity: 0;
-  transition: opacity 650ms ease,
-    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-body[data-page="home"].AnimacoesHomeProntas .EtapaEsquerda .CartaoEtapa {
-  transform: translate3d(-58px, 20px, 0) scale(0.97);
-}
-
-body[data-page="home"].AnimacoesHomeProntas .EtapaDireita .CartaoEtapa {
-  transform: translate3d(58px, 20px, 0) scale(0.97);
-}
-
-body[data-page="home"].AnimacoesHomeProntas .Etapa .MarcadorLinhaTempo {
-  transform: scale(0.25);
-  transition-delay: 160ms;
-}
-
-body[data-page="home"].AnimacoesHomeProntas .Etapa.EtapaVisivel .CartaoEtapa, body[data-page="home"].AnimacoesHomeProntas .Etapa.EtapaVisivel .MarcadorLinhaTempo {
-  opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
-}
-
-body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
-  transform: translateX(-50%) scaleY(var(--ProgressoLinha, 0));
-  transform-origin: center top;
-  will-change: transform;
-}
-
 .ControlesCarrossel button:not(:disabled):hover {
   border-color: var(--sos-vermelho);
   color: var(--sos-vermelho);
@@ -489,21 +456,14 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
 }
 
 @media (max-width: 680px) {
-  body[data-page="home"].AnimacoesHomeProntas .EtapaEsquerda .CartaoEtapa, body[data-page="home"].AnimacoesHomeProntas .EtapaDireita .CartaoEtapa {
-    transform: translate3d(0, 34px, 0) scale(0.98);
-  }
-
-  body[data-page="home"].AnimacoesHomeProntas .Etapa.EtapaVisivel .CartaoEtapa {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-
   .GradeDepoimentos.CarrosselAtivo .CartaoDepoimento {
     min-width: 100%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body[data-page="home"].AnimacoesHomeProntas .Etapa .CartaoEtapa, body[data-page="home"].AnimacoesHomeProntas .Etapa .MarcadorLinhaTempo, .GradeDepoimentos.CarrosselAtivo, .ControlesCarrossel button {
+  .GradeDepoimentos.CarrosselAtivo,
+  .ControlesCarrossel button {
     transition: none;
   }
 }
@@ -512,7 +472,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   min-height: 18px;
   margin: 0;
   color: #b4232f;
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 
@@ -621,7 +581,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   min-height: 30px;
   margin-top: 8px;
   padding: 0 10px;
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 
 .ListaPetsModal article {
@@ -699,7 +659,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   border-radius: 10px;
   color: #61442b;
   background: #fff8df;
-  font-size: 12px;
+  font-size: 0.875rem;
   line-height: 1.55;
 }
 
@@ -716,7 +676,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   align-items: center;
   justify-content: space-between;
   color: #665d54;
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 
 .BarraResultadoFeed p, .BarraResultadoPedidos p {
@@ -730,7 +690,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   border-radius: 999px;
   background: #fff;
   color: #61442b;
-  font-size: 11px;
+  font-size: 0.875rem;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -750,7 +710,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   border-radius: 999px;
   color: #61442b;
   background: #fffdf7;
-  font-size: 10px;
+  font-size: 0.875rem;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -794,7 +754,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
 }
 
 .post-actions .action strong {
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 
 .FormularioComPrevia {
@@ -809,7 +769,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
 .TituloPrevia {
   margin: 0 0 8px;
   color: #61442b;
-  font-size: 13px;
+  font-size: 0.9375rem;
   font-weight: 800;
 }
 
@@ -834,20 +794,20 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   border-radius: 999px;
   color: #b4232f;
   background: #ffd8dc;
-  font-size: 10px;
+  font-size: 0.875rem;
   font-weight: 800;
 }
 
 .CartaoPrevia small, .CartaoPrevia em {
   color: #756c64;
-  font-size: 11px;
+  font-size: 0.875rem;
   font-style: normal;
 }
 
 .CartaoPrevia p {
   margin: 0;
   color: #2d2925;
-  font-size: 12px;
+  font-size: 0.9375rem;
 }
 
 .CartaoPrevia img {
@@ -864,7 +824,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
 
 .EstadoVazioFeed span, .EstadoVazioPedidos span, .SemComentarios span {
   color: #756c64;
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 
 .LinkComoBotao {
@@ -938,7 +898,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
   border-radius: 999px;
   color: #61442b;
   background: #fff;
-  font-size: 12px;
+  font-size: 0.9375rem;
   font-weight: 700;
 }
 
@@ -974,7 +934,7 @@ body[data-page="home"].AnimacoesHomeProntas .LinhaEtapas {
 .EstadoVazioPerfil p {
   margin: 4px 0 0;
   color: #756c64;
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 
 .Cartao {

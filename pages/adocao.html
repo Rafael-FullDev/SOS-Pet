@@ -17,6 +17,9 @@
     <link href="../css/animacoes.css" rel="stylesheet" />
     <link href="../css/profissional.css" rel="stylesheet" />
     <link href="../css/icones.css" rel="stylesheet" />
+    <link href="../css/responsividade.css" rel="stylesheet" />
+    <link href="../css/experiencia.css" rel="stylesheet" />
+    <link href="../css/footer.css" rel="stylesheet" />
   </head>
   <body data-page="adocao" data-root="../">
     <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -86,6 +89,7 @@
             <span aria-hidden="true" class="IconeBuscaAdocao">⌕</span>
             <input
               autocomplete="off"
+              class="BuscaAdocaoCampo"
               id="BuscaAdocao"
               placeholder="Buscar por nome, espécie ou raça..."
               type="search"
@@ -278,7 +282,7 @@
             <strong>Nenhum animal encontrado.</strong>
             <span>Tente outro nome ou redefina os filtros.</span>
           </div>
-          <nav aria-label="Paginação dos animais" class="PaginacaoAdocao"></nav>
+          <nav aria-label="Paginação dos animais" class="PaginacaoAdocao PaginacaoPadrao"></nav>
         </div>
       </section>
 
@@ -292,12 +296,136 @@
           <a class="BotaoDicasAdocao" href="feed.html">Saiba mais</a>
         </div>
       </section>
+
+      <section class="SecaoFaq" aria-labelledby="TituloFaqAdocao">
+        <div class="LimiteConteudo">
+          <header class="CabecalhoFaq">
+            <h2 id="TituloFaqAdocao">Perguntas frequentes</h2>
+            <p>Respostas rápidas para tornar a adoção mais consciente e segura.</p>
+          </header>
+          <div class="ListaFaq">
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-adocao-pergunta-1" aria-expanded="false" aria-controls="faq-adocao-resposta-1">
+                  <span>Como funciona o processo de adoção?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-adocao-resposta-1" role="region" aria-labelledby="faq-adocao-pergunta-1" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Escolha um animal, abra o perfil e manifeste interesse. O responsável pelo pet poderá conversar com você antes de combinar os próximos passos.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-adocao-pergunta-2" aria-expanded="false" aria-controls="faq-adocao-resposta-2">
+                  <span>Preciso pagar para adotar?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-adocao-resposta-2" role="region" aria-labelledby="faq-adocao-pergunta-2" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>A adoção publicada no SOS Pet não exige pagamento pela plataforma. O responsável pode informar cuidados ou despesas específicas antes da entrega do animal.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-adocao-pergunta-3" aria-expanded="false" aria-controls="faq-adocao-resposta-3">
+                  <span>Quais documentos podem ser necessários?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-adocao-resposta-3" role="region" aria-labelledby="faq-adocao-pergunta-3" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>O responsável pode pedir um documento de identificação e informações de contato para garantir uma adoção responsável.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-adocao-pergunta-4" aria-expanded="false" aria-controls="faq-adocao-resposta-4">
+                  <span>Posso conversar com o responsável antes de adotar?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-adocao-resposta-4" role="region" aria-labelledby="faq-adocao-pergunta-4" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Sim. Conversar antes da adoção ajuda a entender rotina, saúde, comportamento e necessidades do animal.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-adocao-pergunta-5" aria-expanded="false" aria-controls="faq-adocao-resposta-5">
+                  <span>O que devo considerar antes de adotar?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-adocao-resposta-5" role="region" aria-labelledby="faq-adocao-pergunta-5" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Considere espaço, tempo, custos com alimentação e saúde, além do compromisso de cuidar do animal por toda a vida.</p></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="FooterPadrao">
-      <img alt="Logo SOS Pet" src="../assets/images/pedidos-de-ajuda/Logo.png" />
-      <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
-      <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
+    <footer class="FooterPadrao FooterCompleto" aria-label="Rodapé do SOS Pet">
+      <div class="FooterContainer">
+        <div class="FooterGrade">
+          <section class="FooterMarca" aria-label="Sobre o SOS Pet">
+            <a class="FooterLogoLink" href="../index.html" aria-label="SOS Pet — página inicial">
+              <img class="FooterLogoImagem" alt="Logo SOS Pet" src="../assets/images/home/LogoSOSPet.png" />
+            </a>
+            <p class="FooterDescricao">Uma comunidade criada para ajudar animais perdidos, em situação de rua e em busca de um novo lar.</p>
+            <span class="FooterSelo">Proteção animal colaborativa</span>
+          </section>
+
+          <nav class="FooterColuna" aria-label="Navegação do rodapé">
+            <h2 class="FooterTitulo">Navegação</h2>
+            <ul class="FooterLinks">
+              <li><a href="../index.html#Inicio">Início</a></li>
+              <li><a href="pets-perdidos.html">Animais Perdidos</a></li>
+              <li><a href="adocao.html">Adoção</a></li>
+              <li><a href="animais-de-rua.html">Animais de Rua</a></li>
+              <li><a href="pedidos-de-ajuda.html">Pedidos de Ajuda</a></li>
+              <li><a href="feed.html">Feed</a></li>
+              <li><a href="denuncia.html">Denúncias</a></li>
+            </ul>
+          </nav>
+
+          <nav class="FooterColuna" aria-label="Links de ajuda">
+            <h2 class="FooterTitulo">Ajuda</h2>
+            <ul class="FooterLinks">
+              <li><a href="adocao.html">Quero adotar</a></li>
+              <li><a href="pedidos-de-ajuda.html">Criar pedido de ajuda</a></li>
+              <li><a href="denuncia.html">Fazer uma denúncia</a></li>
+              <li><a href="adocao.html#TituloFaqAdocao">Dúvidas sobre adoção</a></li>
+              <li><a href="animais-de-rua.html#TituloFaqAnimais">Como ajudar animais de rua</a></li>
+            </ul>
+          </nav>
+
+          <section class="FooterColuna FooterComunidade" aria-labelledby="FooterComunidadeTitulo">
+            <h2 class="FooterTitulo" id="FooterComunidadeTitulo">Comunidade</h2>
+            <p class="FooterTextoComunidade">Acompanhe histórias da comunidade ou fale com o suporte do SOS Pet.</p>
+            <ul class="FooterContatoLista">
+              <li>
+                <a href="mailto:suporte@sospet.org">
+                  <span class="FooterIcone" aria-hidden="true">@</span>
+                  <span class="FooterContatoTexto">suporte@sospet.org</span>
+                </a>
+              </li>
+              <li>
+                <a href="feed.html">
+                  <span class="FooterIcone" aria-hidden="true">♥</span>
+                  <span class="FooterContatoTexto">Feed da comunidade</span>
+                </a>
+              </li>
+              <li>
+                <a href="cadastro.html">
+                  <span class="FooterIcone" aria-hidden="true">+</span>
+                  <span class="FooterContatoTexto">Criar uma conta</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="FooterBase">
+        <div class="FooterBaseConteudo">
+          <p>© 2026 SOS Pet. Todos os direitos reservados.</p>
+          <p>Juntos, podemos dar mais voz a quem não consegue pedir ajuda.</p>
+        </div>
+      </div>
     </footer>
 
     <script defer src="../js/dados.js"></script>

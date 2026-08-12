@@ -17,6 +17,9 @@
     <link href="../css/animacoes.css" rel="stylesheet" />
     <link href="../css/profissional.css" rel="stylesheet" />
     <link href="../css/icones.css" rel="stylesheet" />
+    <link href="../css/responsividade.css" rel="stylesheet" />
+    <link href="../css/experiencia.css" rel="stylesheet" />
+    <link href="../css/footer.css" rel="stylesheet" />
   </head>
   <body data-page="feed" data-root="../">
     <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -102,13 +105,77 @@
         <strong>Nenhuma publicação encontrada.</strong
         ><span>Tente outra categoria ou crie uma publicação.</span>
       </div>
+      <nav aria-label="Paginação do feed" class="PaginacaoPadrao PaginacaoFeed"></nav>
     </main>
     <button class="BotaoFlutuanteMobile" type="button" aria-label="Criar nova publicação">+</button>
 
-    <footer class="FooterPadrao">
-      <img alt="Logo SOS Pet" src="../assets/images/pedidos-de-ajuda/Logo.png" />
-      <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
-      <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
+    <footer class="FooterPadrao FooterCompleto" aria-label="Rodapé do SOS Pet">
+      <div class="FooterContainer">
+        <div class="FooterGrade">
+          <section class="FooterMarca" aria-label="Sobre o SOS Pet">
+            <a class="FooterLogoLink" href="../index.html" aria-label="SOS Pet — página inicial">
+              <img class="FooterLogoImagem" alt="Logo SOS Pet" src="../assets/images/home/LogoSOSPet.png" />
+            </a>
+            <p class="FooterDescricao">Uma comunidade criada para ajudar animais perdidos, em situação de rua e em busca de um novo lar.</p>
+            <span class="FooterSelo">Proteção animal colaborativa</span>
+          </section>
+
+          <nav class="FooterColuna" aria-label="Navegação do rodapé">
+            <h2 class="FooterTitulo">Navegação</h2>
+            <ul class="FooterLinks">
+              <li><a href="../index.html#Inicio">Início</a></li>
+              <li><a href="pets-perdidos.html">Animais Perdidos</a></li>
+              <li><a href="adocao.html">Adoção</a></li>
+              <li><a href="animais-de-rua.html">Animais de Rua</a></li>
+              <li><a href="pedidos-de-ajuda.html">Pedidos de Ajuda</a></li>
+              <li><a href="feed.html">Feed</a></li>
+              <li><a href="denuncia.html">Denúncias</a></li>
+            </ul>
+          </nav>
+
+          <nav class="FooterColuna" aria-label="Links de ajuda">
+            <h2 class="FooterTitulo">Ajuda</h2>
+            <ul class="FooterLinks">
+              <li><a href="adocao.html">Quero adotar</a></li>
+              <li><a href="pedidos-de-ajuda.html">Criar pedido de ajuda</a></li>
+              <li><a href="denuncia.html">Fazer uma denúncia</a></li>
+              <li><a href="adocao.html#TituloFaqAdocao">Dúvidas sobre adoção</a></li>
+              <li><a href="animais-de-rua.html#TituloFaqAnimais">Como ajudar animais de rua</a></li>
+            </ul>
+          </nav>
+
+          <section class="FooterColuna FooterComunidade" aria-labelledby="FooterComunidadeTitulo">
+            <h2 class="FooterTitulo" id="FooterComunidadeTitulo">Comunidade</h2>
+            <p class="FooterTextoComunidade">Acompanhe histórias da comunidade ou fale com o suporte do SOS Pet.</p>
+            <ul class="FooterContatoLista">
+              <li>
+                <a href="mailto:suporte@sospet.org">
+                  <span class="FooterIcone" aria-hidden="true">@</span>
+                  <span class="FooterContatoTexto">suporte@sospet.org</span>
+                </a>
+              </li>
+              <li>
+                <a href="feed.html">
+                  <span class="FooterIcone" aria-hidden="true">♥</span>
+                  <span class="FooterContatoTexto">Feed da comunidade</span>
+                </a>
+              </li>
+              <li>
+                <a href="cadastro.html">
+                  <span class="FooterIcone" aria-hidden="true">+</span>
+                  <span class="FooterContatoTexto">Criar uma conta</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="FooterBase">
+        <div class="FooterBaseConteudo">
+          <p>© 2026 SOS Pet. Todos os direitos reservados.</p>
+          <p>Juntos, podemos dar mais voz a quem não consegue pedir ajuda.</p>
+        </div>
+      </div>
     </footer>
     <script defer src="../js/dados.js"></script>
     <script defer src="../js/geral.js"></script>

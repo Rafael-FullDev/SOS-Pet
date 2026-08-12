@@ -8,9 +8,13 @@ function iniciarFeed() {
 
   if (filtros.indexOf(filtro) === -1) filtro = "todos";
   var barra = pegar(".BarraResultadoFeed");
+  var paginacao = pegar(".PaginacaoFeed");
+  var pagina = 1;
+  var porPagina = 3;
 
   pegar("button", barra).onclick = function () {
     filtro = "todos";
+    pagina = 1;
     mostrar();
   };
 
@@ -78,19 +82,44 @@ function iniciarFeed() {
     );
   }
 
+  function desenharPaginacao(total) {
+    var totalPaginas = Math.ceil(total / porPagina);
+
+    paginacao.innerHTML = "";
+    paginacao.hidden = totalPaginas <= 1;
+
+    for (var numero = 1; numero <= totalPaginas; numero++) {
+      var botao = document.createElement("button");
+
+      botao.type = "button";
+      botao.textContent = numero;
+      botao.className = numero === pagina ? "Ativo" : "";
+      botao.setAttribute("aria-label", "Ir para a página " + numero);
+      if (numero === pagina) botao.setAttribute("aria-current", "page");
+      botao.setAttribute("data-page", numero);
+      paginacao.appendChild(botao);
+    }
+  }
+
   function mostrar() {
     var posts = obterPosts();
-    var html = "";
-    var total = 0;
+    var filtrados = [];
 
-    for (var i = 0; i < posts.length; i++) {
-      if (filtro === "todos" || posts[i].categoria === filtro) {
-        html += card(posts[i]);
-        total++;
-      }
-    }
+    for (var i = 0; i < posts.length; i++)
+      if (filtro === "todos" || posts[i].categoria === filtro) filtrados.push(posts[i]);
+
+    var total = filtrados.length;
+    var totalPaginas = Math.max(1, Math.ceil(total / porPagina));
+
+    pagina = Math.max(1, Math.min(pagina, totalPaginas));
+    var inicio = (pagina - 1) * porPagina;
+    var html = "";
+
+    for (var p = inicio; p < Math.min(inicio + porPagina, total); p++) html += card(filtrados[p]);
+
     lista.innerHTML = html;
     pegar(".EstadoVazioFeed").hidden = total > 0;
+    desenharPaginacao(total);
     var botoes = pegarTodos(".filter-tab");
 
     for (var b = 0; b < botoes.length; b++) {
@@ -99,7 +128,10 @@ function iniciarFeed() {
       botoes[b].classList.toggle("is-active", ativo);
       botoes[b].setAttribute("aria-pressed", ativo);
     }
-    pegar("p", barra).textContent = total + (total === 1 ? " publicação" : " publicações");
+    pegar("p", barra).textContent =
+      total +
+      (total === 1 ? " publicação" : " publicações") +
+      (totalPaginas > 1 ? " · página " + pagina + " de " + totalPaginas : "");
     pegar("button", barra).hidden = filtro === "todos";
   }
 
@@ -230,6 +262,7 @@ function iniciarFeed() {
           post ? "Publicação atualizada." : "Publicação criada."
         );
         filtro = "todos";
+        pagina = 1;
         fechar();
         mostrar();
         toast(post ? "Publicação atualizada." : "Publicação criada.");
@@ -483,8 +516,19 @@ function iniciarFeed() {
   for (var i = 0; i < botoesFiltro.length; i++)
     botoesFiltro[i].onclick = function () {
       filtro = this.getAttribute("data-filter");
+      pagina = 1;
       mostrar();
     };
+
+  paginacao.onclick = function (evento) {
+    var botao = evento.target.closest("[data-page]");
+
+    if (!botao) return;
+    pagina = Number(botao.getAttribute("data-page"));
+    mostrar();
+    lista.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   lista.onclick = function (evento) {
     var artigo = evento.target.closest(".post");
     var botao = evento.target.closest("[data-action]");
@@ -521,6 +565,15 @@ function iniciarFeed() {
   pegar(".BotaoFlutuanteMobile").onclick = function () {
     abrirFormulario(null);
   };
+
+  if (postInicial) {
+    var postsIniciaisFeed = obterPosts().filter(function (post) {
+      return filtro === "todos" || post.categoria === filtro;
+    });
+
+    for (var pi = 0; pi < postsIniciaisFeed.length; pi++)
+      if (Number(postsIniciaisFeed[pi].id) === postInicial) pagina = Math.floor(pi / porPagina) + 1;
+  }
   mostrar();
 
   if (postInicial)

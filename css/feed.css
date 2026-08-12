@@ -92,32 +92,73 @@ a {
 }
 
 .filters {
-  width: fit-content;
-  margin-bottom: 42px;
+  display: flex;
+  width: min(620px, 100%);
+  max-width: 100%;
+  margin: 0 0 34px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border: 1px solid #d6cab7;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--SombraFiltro);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .filter-tab {
-  min-height: 50px;
-  padding: 0 24px;
-  border: 1px solid #b9b9b9;
-  border-right: 0;
-  background: var(--branco);
-  font-size: 14px;
-  font-weight: 700;
+  min-width: 0;
+  width: auto;
+  height: 54px;
+  min-height: 54px;
+  padding: 0 18px;
+  flex: 0 0 auto;
+  border: 0;
+  border-right: 1px solid #b9b9b9;
+  border-radius: 0;
+  color: #222;
+  background: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.filter-tab:nth-child(1) {
+  width: 116px;
+}
+
+.filter-tab:nth-child(2) {
+  width: 174px;
+}
+
+.filter-tab:nth-child(3) {
+  width: 124px;
+}
+
+.filter-tab:nth-child(4) {
+  width: 206px;
 }
 
 .filter-tab:first-child {
-  border-radius: 10px 0 0 10px;
+  border-radius: 9px 0 0 9px;
 }
 
 .filter-tab:last-child {
-  border-right: 1px solid #b9b9b9;
-  border-radius: 0 10px 10px 0;
+  border-right: 0;
+  border-radius: 0 9px 9px 0;
 }
 
 .filter-tab.is-active, .filter-tab[aria-pressed="true"] {
-  color: var(--branco);
-  background: var(--marrom);
+  color: #fff;
+  background: #6b4a34;
+  font-weight: 600;
+  box-shadow: none;
 }
 
 .posts {
@@ -130,10 +171,17 @@ a {
 
 .post {
   padding: 28px 32px 22px;
-  border: 1px solid rgba(107, 74, 52, 0.06);
+  border: 1px solid var(--BordaCardInterno);
   border-radius: 18px;
   background: var(--branco);
-  box-shadow: var(--sombra);
+  box-shadow: var(--SombraCardInterno);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.post:hover {
+  border-color: #dcc5a4;
+  box-shadow: var(--SombraCardInternoHover);
+  transform: translateY(-4px);
 }
 
 .post-header {
@@ -165,13 +213,13 @@ a {
 .post-meta {
   margin-top: 2px;
   color: #333;
-  font-size: 13px;
+  font-size: 0.9375rem;
 }
 
 .badge {
   padding: 7px 13px;
   border-radius: 9px;
-  font-size: 11px;
+  font-size: 0.875rem;
   font-weight: 800;
 }
 
@@ -190,7 +238,7 @@ a {
 .post-text {
   margin-bottom: 12px;
   color: #262626;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 .post-location {
@@ -199,7 +247,7 @@ a {
   margin-bottom: 17px;
   align-items: center;
   color: var(--cinza);
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 
 .pin {
@@ -240,7 +288,7 @@ a {
   min-height: 36px;
   align-items: center;
   color: #222;
-  font-size: 13px;
+  font-size: 0.9375rem;
   font-weight: 700;
 }
 
@@ -275,10 +323,30 @@ a {
     width: 100%;
   }
 
-  .filter-tab {
-    min-width: max-content;
-    flex: 1 0 auto;
+  .filters {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
+
+  .filters::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  .filter-tab {
+    width: auto;
+    min-width: max-content;
+    height: 48px;
+    min-height: 48px;
+    padding: 0 16px;
+    flex: 0 0 auto;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+  }
+
 
   .post {
     padding: 22px 18px 18px;
@@ -322,159 +390,3 @@ a {
   }
 }
 
-@media (max-width: 560px) {
-  .filters {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    overflow: visible;
-  }
-
-  .filter-tab, .filter-tab:first-child, .filter-tab:last-child {
-    width: 100%;
-    min-width: 0;
-    padding: 0 8px;
-    border: 1px solid #b9b9b9;
-    border-radius: 0;
-  }
-
-  .filter-tab:first-child {
-    border-radius: 10px 0 0 0;
-  }
-
-  .filter-tab:nth-child(2) {
-    border-radius: 0 10px 0 0;
-  }
-
-  .filter-tab:nth-child(3) {
-    border-radius: 0 0 0 10px;
-  }
-
-  .filter-tab:last-child {
-    border-radius: 0 0 10px 0;
-  }
-}
-
-.filters {
-  width: 678px;
-  margin: 0 0 42px;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-.filter-tab {
-  min-height: 60px;
-  padding: 0 22px;
-  font-size: 16px;
-}
-
-.filter-tab:nth-child(1) {
-  width: 128px;
-}
-
-.filter-tab:nth-child(2) {
-  width: 190px;
-}
-
-.filter-tab:nth-child(3) {
-  width: 136px;
-}
-
-.filter-tab:nth-child(4) {
-  width: 224px;
-}
-
-@media (max-width: 720px) {
-
-  .filter-tab {
-    min-height: 50px;
-    font-size: 14px;
-  }
-}
-
-.filters {
-  display: flex !important;
-  width: min(620px, 100%) !important;
-  max-width: 100% !important;
-  margin: 0 0 34px !important;
-  overflow: hidden !important;
-  border: 1px solid #b9b9b9 !important;
-  border-radius: 10px !important;
-  background: #fff !important;
-}
-
-.filter-tab {
-  min-width: 0 !important;
-  width: auto !important;
-  height: 54px !important;
-  min-height: 54px !important;
-  padding: 0 18px !important;
-  flex: 0 0 auto !important;
-  border: 0 !important;
-  border-right: 1px solid #b9b9b9 !important;
-  border-radius: 0 !important;
-  color: #222 !important;
-  background: #fff !important;
-  font-size: 15px !important;
-  font-weight: 500 !important;
-  white-space: nowrap !important;
-}
-
-.filter-tab:nth-child(1) {
-  width: 116px !important;
-}
-
-.filter-tab:nth-child(2) {
-  width: 174px !important;
-}
-
-.filter-tab:nth-child(3) {
-  width: 124px !important;
-}
-
-.filter-tab:nth-child(4) {
-  width: 206px !important;
-}
-
-.filter-tab:first-child {
-  border-radius: 9px 0 0 9px !important;
-}
-
-.filter-tab:last-child {
-  border-right: 0 !important;
-  border-radius: 0 9px 9px 0 !important;
-}
-
-.filter-tab.is-active, .filter-tab[aria-pressed="true"] {
-  color: #fff !important;
-  background: #6b4a34 !important;
-  font-weight: 600 !important;
-}
-
-@media (max-width: 720px) {
-  .filters {
-    width: 100% !important;
-  }
-
-  .filter-tab {
-    min-height: 46px !important;
-    height: 46px !important;
-    padding: 0 10px !important;
-    font-size: 12px !important;
-  }
-
-  .filter-tab:nth-child(1) {
-    width: 17% !important;
-  }
-
-  .filter-tab:nth-child(2) {
-    width: 28% !important;
-  }
-
-  .filter-tab:nth-child(3) {
-    width: 20% !important;
-  }
-
-  .filter-tab:nth-child(4) {
-    width: 35% !important;
-  }
-}

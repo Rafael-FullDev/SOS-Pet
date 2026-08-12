@@ -18,6 +18,9 @@
     <link href="../css/animacoes.css" rel="stylesheet" />
     <link href="../css/profissional.css" rel="stylesheet" />
     <link href="../css/icones.css" rel="stylesheet" />
+    <link href="../css/responsividade.css" rel="stylesheet" />
+    <link href="../css/experiencia.css" rel="stylesheet" />
+    <link href="../css/footer.css" rel="stylesheet" />
   </head>
   <body data-page="animais" data-root="../">
     <a class="PularConteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -226,23 +229,24 @@
           <div class="TextoAnimais">
             <h2>Animais disponíveis para ajuda</h2>
             <p>
-              Cartões arredondados com condição de saúde, necessidade principal e status atual —
-              toque em “Ver detalhes” para saber como ajudar.
+              Encontre animais de rua que precisam de ajuda da comunidade. Veja a condição, a
+              necessidade principal e o status atual para entender como você pode ajudar.
             </p>
             <div class="BotoesAnimais">
-              <button class="Botao BotaoContorno" type="button">Compartilhar</button>
-              <button class="Botao" type="button">Ver detalhes</button>
+              <button class="Botao BotaoContorno CompartilharListaAnimais" type="button">Compartilhar</button>
+              <button class="Botao VerPrimeiroAnimal" type="button">Ver detalhes</button>
             </div>
             <p aria-live="polite" class="ResumoResultados">6 animais encontrados</p>
             <div class="BarraFiltrosAnimais">
               <p>Mostrando todos os animais</p>
-              <button type="button" hidden>Limpar filtros</button>
+              <button class="LimparFiltrosAnimais" type="button" hidden>Limpar filtros</button>
             </div>
           </div>
           <div class="GradeCartoes">
             <article
               aria-label="Ver detalhes de Bob (filhote)"
               class="CartaoAnimal"
+              tabindex="0"
               data-condicao="ferido"
               data-especie="cao"
               data-necessidade="curativo"
@@ -253,16 +257,22 @@
                 alt="Bob, cachorro filhote deitado"
                 src="../assets/images/animais-de-rua/o-que-fazer-quando-meu-cachorro-esta-triste.webp"
               />
+              <div class="ConteudoCartaoAnimal">
               <h3>Bob (filhote)</h3>
-              <p><strong>Saúde:</strong> ferido • <strong>Necessidade:</strong> curativo</p>
+              <p class="ResumoCartaoAnimal">
+                <span class="DadoCartaoAnimal"><small>Saúde</small><strong>ferido</strong></span>
+                <span class="DadoCartaoAnimal"><small>Necessidade</small><strong>curativo</strong></span>
+              </p>
               <div class="AcoesCartaoAnimal">
                 <button class="BotaoDetalhesAnimal" type="button">Ver detalhes</button
                 ><button class="BotaoCompartilharAnimal" type="button">Compartilhar</button>
+              </div>
               </div>
             </article>
             <article
               aria-label="Ver detalhes de Patrick (gatinho)"
               class="CartaoAnimal"
+              tabindex="0"
               data-condicao="desidratado"
               data-especie="gato"
               data-necessidade="soro"
@@ -273,16 +283,22 @@
                 alt="Patrick, gatinho recebendo soro na clínica"
                 src="../assets/images/animais-de-rua/cat.jpg"
               />
+              <div class="ConteudoCartaoAnimal">
               <h3>Patrick (gatinho)</h3>
-              <p><strong>Saúde:</strong> desidratado • <strong>Necessidade:</strong> soro</p>
+              <p class="ResumoCartaoAnimal">
+                <span class="DadoCartaoAnimal"><small>Saúde</small><strong>desidratado</strong></span>
+                <span class="DadoCartaoAnimal"><small>Necessidade</small><strong>soro</strong></span>
+              </p>
               <div class="AcoesCartaoAnimal">
                 <button class="BotaoDetalhesAnimal" type="button">Ver detalhes</button
                 ><button class="BotaoCompartilharAnimal" type="button">Compartilhar</button>
+              </div>
               </div>
             </article>
             <article
               aria-label="Ver detalhes de Rocky (cão)"
               class="CartaoAnimal"
+              tabindex="0"
               data-condicao="doente"
               data-especie="cao"
               data-necessidade="medicacao"
@@ -293,16 +309,22 @@
                 alt="Rocky, cachorro enrolado em um cobertor"
                 src="../assets/images/animais-de-rua/dog2.jpg"
               />
+              <div class="ConteudoCartaoAnimal">
               <h3>Rocky (cão)</h3>
-              <p><strong>Saúde:</strong> doente • <strong>Necessidade:</strong> medicação</p>
+              <p class="ResumoCartaoAnimal">
+                <span class="DadoCartaoAnimal"><small>Saúde</small><strong>doente</strong></span>
+                <span class="DadoCartaoAnimal"><small>Necessidade</small><strong>medicação</strong></span>
+              </p>
               <div class="AcoesCartaoAnimal">
                 <button class="BotaoDetalhesAnimal" type="button">Ver detalhes</button
                 ><button class="BotaoCompartilharAnimal" type="button">Compartilhar</button>
+              </div>
               </div>
             </article>
             <article
               aria-label="Ver detalhes de Luna (gata)"
               class="CartaoAnimal"
+              tabindex="0"
               data-condicao="feridas-leves"
               data-especie="gato"
               data-necessidade="lar-temporario"
@@ -313,18 +335,22 @@
                 alt="Luna, gata deitada descansando"
                 src="../assets/images/animais-de-rua/cintya-marisa-3ffJg5D3RLo-unsplash.jpg"
               />
+              <div class="ConteudoCartaoAnimal">
               <h3>Luna (gata)</h3>
-              <p>
-                <strong>Saúde:</strong> feridas leves • <strong>Necessidade:</strong> lar temporário
+              <p class="ResumoCartaoAnimal">
+                <span class="DadoCartaoAnimal"><small>Saúde</small><strong>feridas leves</strong></span>
+                <span class="DadoCartaoAnimal"><small>Necessidade</small><strong>lar temporário</strong></span>
               </p>
               <div class="AcoesCartaoAnimal">
                 <button class="BotaoDetalhesAnimal" type="button">Ver detalhes</button
                 ><button class="BotaoCompartilharAnimal" type="button">Compartilhar</button>
               </div>
+              </div>
             </article>
             <article
               aria-label="Ver detalhes de Luffy (filhote)"
               class="CartaoAnimal"
+              tabindex="0"
               data-condicao="ferido"
               data-especie="cao"
               data-necessidade="transporte"
@@ -335,16 +361,22 @@
                 alt="Luffy, filhote de coleira vermelha"
                 src="../assets/images/animais-de-rua/dog.jpg"
               />
+              <div class="ConteudoCartaoAnimal">
               <h3>Luffy (filhote)</h3>
-              <p><strong>Saúde:</strong> ferido • <strong>Necessidade:</strong> transporte</p>
+              <p class="ResumoCartaoAnimal">
+                <span class="DadoCartaoAnimal"><small>Saúde</small><strong>ferido</strong></span>
+                <span class="DadoCartaoAnimal"><small>Necessidade</small><strong>transporte</strong></span>
+              </p>
               <div class="AcoesCartaoAnimal">
                 <button class="BotaoDetalhesAnimal" type="button">Ver detalhes</button
                 ><button class="BotaoCompartilharAnimal" type="button">Compartilhar</button>
+              </div>
               </div>
             </article>
             <article
               aria-label="Ver detalhes de Pimenta (gatinho)"
               class="CartaoAnimal"
+              tabindex="0"
               data-condicao="doente"
               data-especie="gato"
               data-necessidade="comida"
@@ -355,17 +387,23 @@
                 alt="Pimenta, gatinho filhote sentado"
                 src="../assets/images/animais-de-rua/cat2.jpg"
               />
+              <div class="ConteudoCartaoAnimal">
               <h3>Pimenta (gatinho)</h3>
-              <p><strong>Saúde:</strong> doente • <strong>Necessidade:</strong> comida</p>
+              <p class="ResumoCartaoAnimal">
+                <span class="DadoCartaoAnimal"><small>Saúde</small><strong>doente</strong></span>
+                <span class="DadoCartaoAnimal"><small>Necessidade</small><strong>comida</strong></span>
+              </p>
               <div class="AcoesCartaoAnimal">
                 <button class="BotaoDetalhesAnimal" type="button">Ver detalhes</button
                 ><button class="BotaoCompartilharAnimal" type="button">Compartilhar</button>
+              </div>
               </div>
             </article>
           </div>
           <p aria-live="polite" class="SemResultados" hidden="">
             Nenhum animal corresponde aos filtros escolhidos.
           </p>
+          <nav aria-label="Paginação dos animais de rua" class="PaginacaoPadrao PaginacaoAnimais"></nav>
         </div>
       </section>
 
@@ -400,11 +438,135 @@
           </div>
         </div>
       </section>
+
+      <section class="SecaoFaq" aria-labelledby="TituloFaqAnimais">
+        <div class="LimiteConteudo">
+          <header class="CabecalhoFaq">
+            <h2 id="TituloFaqAnimais">Perguntas frequentes</h2>
+            <p>Orientações rápidas para ajudar animais de rua com mais segurança.</p>
+          </header>
+          <div class="ListaFaq">
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-animais-pergunta-1" aria-expanded="false" aria-controls="faq-animais-resposta-1">
+                  <span>O que fazer ao encontrar um animal de rua?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-animais-resposta-1" role="region" aria-labelledby="faq-animais-pergunta-1" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Observe se o local é seguro, evite assustar o animal e registre as informações principais para que outras pessoas possam ajudar.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-animais-pergunta-2" aria-expanded="false" aria-controls="faq-animais-resposta-2">
+                  <span>Posso cadastrar um animal que encontrei?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-animais-resposta-2" role="region" aria-labelledby="faq-animais-pergunta-2" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Sim. Use os recursos da página para registrar o caso com localização, condição de saúde e necessidade principal.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-animais-pergunta-3" aria-expanded="false" aria-controls="faq-animais-resposta-3">
+                  <span>Como pedir ajuda?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-animais-resposta-3" role="region" aria-labelledby="faq-animais-pergunta-3" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Você pode abrir um pedido de ajuda informando o que o animal precisa, como transporte, alimento, atendimento ou lar temporário.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-animais-pergunta-4" aria-expanded="false" aria-controls="faq-animais-resposta-4">
+                  <span>O que fazer se o animal estiver ferido?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-animais-resposta-4" role="region" aria-labelledby="faq-animais-pergunta-4" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Evite movimentos bruscos e procure apoio de uma clínica, ONG ou serviço de resgate da região sempre que houver risco ou ferimentos.</p></div>
+              </div>
+            </article>
+            <article class="ItemFaq">
+              <h3>
+                <button class="PerguntaFaq" type="button" id="faq-animais-pergunta-5" aria-expanded="false" aria-controls="faq-animais-resposta-5">
+                  <span>Como atualizar a situação depois?</span><span class="IconeFaq" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="RespostaFaq" id="faq-animais-resposta-5" role="region" aria-labelledby="faq-animais-pergunta-5" aria-hidden="true">
+                <div class="ConteudoRespostaFaq"><p>Abra o caso relacionado e atualize o status quando houver atendimento, acolhimento ou resolução, para manter a informação correta.</p></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer class="FooterPadrao">
-      <img alt="Logo SOS Pet" src="../assets/images/pedidos-de-ajuda/Logo.png" />
-      <p>SOS Pet © 2026 • Proteção animal colaborativa</p>
-      <p>Contato: suporte@sospet.org • Comunidade global com voluntários locais</p>
+    <footer class="FooterPadrao FooterCompleto" aria-label="Rodapé do SOS Pet">
+      <div class="FooterContainer">
+        <div class="FooterGrade">
+          <section class="FooterMarca" aria-label="Sobre o SOS Pet">
+            <a class="FooterLogoLink" href="../index.html" aria-label="SOS Pet — página inicial">
+              <img class="FooterLogoImagem" alt="Logo SOS Pet" src="../assets/images/home/LogoSOSPet.png" />
+            </a>
+            <p class="FooterDescricao">Uma comunidade criada para ajudar animais perdidos, em situação de rua e em busca de um novo lar.</p>
+            <span class="FooterSelo">Proteção animal colaborativa</span>
+          </section>
+
+          <nav class="FooterColuna" aria-label="Navegação do rodapé">
+            <h2 class="FooterTitulo">Navegação</h2>
+            <ul class="FooterLinks">
+              <li><a href="../index.html#Inicio">Início</a></li>
+              <li><a href="pets-perdidos.html">Animais Perdidos</a></li>
+              <li><a href="adocao.html">Adoção</a></li>
+              <li><a href="animais-de-rua.html">Animais de Rua</a></li>
+              <li><a href="pedidos-de-ajuda.html">Pedidos de Ajuda</a></li>
+              <li><a href="feed.html">Feed</a></li>
+              <li><a href="denuncia.html">Denúncias</a></li>
+            </ul>
+          </nav>
+
+          <nav class="FooterColuna" aria-label="Links de ajuda">
+            <h2 class="FooterTitulo">Ajuda</h2>
+            <ul class="FooterLinks">
+              <li><a href="adocao.html">Quero adotar</a></li>
+              <li><a href="pedidos-de-ajuda.html">Criar pedido de ajuda</a></li>
+              <li><a href="denuncia.html">Fazer uma denúncia</a></li>
+              <li><a href="adocao.html#TituloFaqAdocao">Dúvidas sobre adoção</a></li>
+              <li><a href="animais-de-rua.html#TituloFaqAnimais">Como ajudar animais de rua</a></li>
+            </ul>
+          </nav>
+
+          <section class="FooterColuna FooterComunidade" aria-labelledby="FooterComunidadeTitulo">
+            <h2 class="FooterTitulo" id="FooterComunidadeTitulo">Comunidade</h2>
+            <p class="FooterTextoComunidade">Acompanhe histórias da comunidade ou fale com o suporte do SOS Pet.</p>
+            <ul class="FooterContatoLista">
+              <li>
+                <a href="mailto:suporte@sospet.org">
+                  <span class="FooterIcone" aria-hidden="true">@</span>
+                  <span class="FooterContatoTexto">suporte@sospet.org</span>
+                </a>
+              </li>
+              <li>
+                <a href="feed.html">
+                  <span class="FooterIcone" aria-hidden="true">♥</span>
+                  <span class="FooterContatoTexto">Feed da comunidade</span>
+                </a>
+              </li>
+              <li>
+                <a href="cadastro.html">
+                  <span class="FooterIcone" aria-hidden="true">+</span>
+                  <span class="FooterContatoTexto">Criar uma conta</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="FooterBase">
+        <div class="FooterBaseConteudo">
+          <p>© 2026 SOS Pet. Todos os direitos reservados.</p>
+          <p>Juntos, podemos dar mais voz a quem não consegue pedir ajuda.</p>
+        </div>
+      </div>
     </footer>
     <script defer src="../js/dados.js"></script>
     <script defer src="../js/geral.js"></script>

@@ -7,6 +7,7 @@ function iniciarDenuncia() {
   var dados = pegar(".DadosDenunciante");
   var arquivos = campo(formulario, "arquivos");
   var previa = pegar(".PreviaDenuncia");
+  var nomeArquivo = pegar(".NomeArquivoDenuncia");
 
   function atualizarAnonima() {
     dados.hidden = anonima.checked;
@@ -20,6 +21,12 @@ function iniciarDenuncia() {
 
   arquivos.onchange = function () {
     previa.innerHTML = "";
+
+    if (nomeArquivo) {
+      if (!arquivos.files.length) nomeArquivo.textContent = "Nenhum arquivo escolhido";
+      else if (arquivos.files.length === 1) nomeArquivo.textContent = arquivos.files[0].name;
+      else nomeArquivo.textContent = arquivos.files.length + " arquivos escolhidos";
+    }
 
     for (var i = 0; i < Math.min(3, arquivos.files.length); i++) {
       if (arquivos.files[i].type.indexOf("image/") !== 0) continue;
@@ -68,6 +75,7 @@ function iniciarDenuncia() {
     formulario.reset();
     anonima.checked = true;
     previa.innerHTML = "";
+    if (nomeArquivo) nomeArquivo.textContent = "Nenhum arquivo escolhido";
     atualizarAnonima();
 
     dialogo(

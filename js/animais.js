@@ -8,6 +8,9 @@ function iniciarAnimais() {
   var vazio = pegar(".SemResultados");
   var chip = "todos";
   var categoria = "";
+  var pagina = 1;
+  var porPagina = 4;
+  var paginacao = pegar(".PaginacaoAnimais");
   var statusSalvos = ler("sosPetStatusAnimais", {});
 
   for (var i = 0; i < cards.length; i++) {
@@ -31,11 +34,30 @@ function iniciarAnimais() {
 
   pegar("button", barra).onclick = limpar;
 
+  function desenharPaginacao(total) {
+    var totalPaginas = Math.ceil(total / porPagina);
+
+    paginacao.innerHTML = "";
+    paginacao.hidden = totalPaginas <= 1;
+
+    for (var numero = 1; numero <= totalPaginas; numero++) {
+      var botao = document.createElement("button");
+
+      botao.type = "button";
+      botao.textContent = numero;
+      botao.className = numero === pagina ? "Ativo" : "";
+      botao.setAttribute("aria-label", "Ir para a página " + numero);
+      if (numero === pagina) botao.setAttribute("aria-current", "page");
+      botao.setAttribute("data-page", numero);
+      paginacao.appendChild(botao);
+    }
+  }
+
   function aplicar() {
     var termo = normalizar(busca ? busca.value : "");
     var valores = formulario ? new FormData(formulario) : null;
-    var total = 0;
     var ativos = [];
+    var encontrados = [];
 
     if (termo) ativos.push("Busca: " + busca.value.trim());
 
@@ -52,7 +74,7 @@ function iniciarAnimais() {
 
     for (var i = 0; i < cards.length; i++) {
       var card = cards[i];
-      var mostrar = !termo || normalizar(card.textContent).indexOf(termo) !== -1;
+      var corresponde = !termo || normalizar(card.textContent).indexOf(termo) !== -1;
       var status = card.getAttribute("data-status") || "";
 
       if (valores) {
@@ -62,33 +84,45 @@ function iniciarAnimais() {
           var valor = valores.get(campos[c]);
 
           if (valor) {
-            if (campos[c] === "status") mostrar = mostrar && status.indexOf(valor) !== -1;
-            else mostrar = mostrar && card.getAttribute("data-" + campos[c]) === valor;
+            if (campos[c] === "status") corresponde = corresponde && status.indexOf(valor) !== -1;
+            else corresponde = corresponde && card.getAttribute("data-" + campos[c]) === valor;
           }
         }
       }
 
-      if (chip === "recuperado") mostrar = mostrar && status.indexOf("recuperado") !== -1;
+      if (chip === "recuperado") corresponde = corresponde && status.indexOf("recuperado") !== -1;
 
-      if (chip === "urgente") mostrar = mostrar && status.indexOf("urgente") !== -1;
+      if (chip === "urgente") corresponde = corresponde && status.indexOf("urgente") !== -1;
 
-      if (chip === "precisando") mostrar = mostrar && status.indexOf("recuperado") === -1;
+      if (chip === "precisando") corresponde = corresponde && status.indexOf("recuperado") === -1;
 
       if (categoria)
-        mostrar =
-          mostrar &&
+        corresponde =
+          corresponde &&
           (card.getAttribute("data-especie") === categoria ||
             card.getAttribute("data-condicao") === categoria ||
             card.getAttribute("data-necessidade") === categoria);
-      card.hidden = !mostrar;
 
-      if (mostrar) total++;
+      if (corresponde) encontrados.push(card);
     }
 
+    var total = encontrados.length;
+    var totalPaginas = Math.max(1, Math.ceil(total / porPagina));
+
+    pagina = Math.max(1, Math.min(pagina, totalPaginas));
+    var inicio = (pagina - 1) * porPagina;
+    var visiveis = encontrados.slice(inicio, inicio + porPagina);
+
+    for (var x = 0; x < cards.length; x++) cards[x].hidden = visiveis.indexOf(cards[x]) === -1;
+
     if (resumo)
-      resumo.textContent = total + (total === 1 ? " animal encontrado" : " animais encontrados");
+      resumo.textContent =
+        total +
+        (total === 1 ? " animal encontrado" : " animais encontrados") +
+        (totalPaginas > 1 ? " · página " + pagina + " de " + totalPaginas : "");
 
     if (vazio) vazio.hidden = total > 0;
+    desenharPaginacao(total);
     pegar("p", barra).textContent = ativos.length
       ? "Filtros ativos: " + ativos.join(" · ")
       : "Mostrando todos os animais";
@@ -101,6 +135,7 @@ function iniciarAnimais() {
     if (busca) busca.value = "";
     chip = "todos";
     categoria = "";
+    pagina = 1;
     var botoes = pegarTodos("[data-chip], [data-categoria]");
 
     for (var i = 0; i < botoes.length; i++)
@@ -127,6 +162,7 @@ function iniciarAnimais() {
           if (selo) selo.textContent = "Em atendimento";
           statusSalvos[id] = "em-atendimento";
           salvar("sosPetStatusAnimais", statusSalvos);
+          aplicar();
         }
       },
       "ajudar-animal:" + id
@@ -159,11 +195,16 @@ function iniciarAnimais() {
     );
   }
 
-  if (busca) busca.oninput = aplicar;
+  if (busca)
+    busca.oninput = function () {
+      pagina = 1;
+      aplicar();
+    };
 
   if (formulario) {
     formulario.onsubmit = function (evento) {
       evento.preventDefault();
+      pagina = 1;
       aplicar();
       toast("Filtros aplicados.");
     };
@@ -171,6 +212,7 @@ function iniciarAnimais() {
       setTimeout(function () {
         chip = "todos";
         categoria = "";
+        pagina = 1;
         aplicar();
       }, 10);
     };
@@ -187,6 +229,8 @@ function iniciarAnimais() {
       var ativo = botao.getAttribute("aria-pressed") === "true";
 
       for (var i = 0; i < botoes.length; i++) botoes[i].setAttribute("aria-pressed", "false");
+
+      pagina = 1;
 
       if (grupo === "[data-chip]") {
         chip = valor;
@@ -209,25 +253,45 @@ function iniciarAnimais() {
       compartilhar(pegar("h3", card).textContent, pegar("p", card).textContent);
     else if (!evento.target.closest("button, a")) detalhes(card);
   };
-  var botoesTopo = pegarTodos(".BotoesAnimais button");
+  document.addEventListener("keydown", function (evento) {
+    var card = evento.target.closest && evento.target.closest(".CartaoAnimal");
 
-  if (botoesTopo[0])
-    botoesTopo[0].onclick = function () {
-      for (var i = 0; i < cards.length; i++)
-        if (!cards[i].hidden) {
-          cards[i].scrollIntoView({ behavior: "smooth" });
-          break;
-        }
+    if (!card || evento.target.closest("button, a, input, select, textarea")) return;
+    if (evento.key !== "Enter" && evento.key !== " ") return;
+    evento.preventDefault();
+    detalhes(card);
+  });
+
+  var compartilharLista = pegar(".CompartilharListaAnimais");
+  var verPrimeiro = pegar(".VerPrimeiroAnimal");
+
+  if (compartilharLista)
+    compartilharLista.onclick = function () {
+      compartilhar(
+        "Animais de rua — SOS Pet",
+        "Veja animais que precisam de resgate, tratamento, transporte ou lar temporário."
+      );
     };
 
-  if (botoesTopo[1])
-    botoesTopo[1].onclick = function () {
+  if (verPrimeiro)
+    verPrimeiro.onclick = function () {
       for (var i = 0; i < cards.length; i++)
         if (!cards[i].hidden) {
-          ajudar(cards[i]);
-          break;
+          detalhes(cards[i]);
+          return;
         }
+      toast("Nenhum animal disponível com os filtros atuais.", true);
     };
+
+  paginacao.onclick = function (evento) {
+    var botao = evento.target.closest("[data-page]");
+
+    if (!botao) return;
+    pagina = Number(botao.getAttribute("data-page"));
+    aplicar();
+    pegar(".Sessao3").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   aplicar();
   var acao = consumirAcao();
 

@@ -64,7 +64,7 @@ function iniciarPerfil() {
           "sosPetAcaoPendente",
           acao === "publicacao" ? "nova-publicacao" : "novo-pedido"
         );
-        location.href = acao === "publicacao" ? "feed.html" : "pedidos-de-ajuda.html";
+        window.navegarComLoading(acao === "publicacao" ? "feed.html" : "pedidos-de-ajuda.html");
       }
     };
     pegar(".AbasPerfil").onclick = function (evento) {
@@ -425,11 +425,11 @@ function iniciarPerfil() {
 
     if (nome === "doar") doar();
 
-    if (nome === "encontrar-pet") location.href = "animais-de-rua.html";
+    if (nome === "encontrar-pet") window.navegarComLoading("animais-de-rua.html");
 
-    if (nome === "pedidos") location.href = "pedidos-de-ajuda.html";
+    if (nome === "pedidos") window.navegarComLoading("pedidos-de-ajuda.html");
 
-    if (nome === "lar-temporario") location.href = "pedidos-de-ajuda.html?filtro=adocao";
+    if (nome === "lar-temporario") window.navegarComLoading("pedidos-de-ajuda.html?filtro=adocao");
 
     if (nome === "duvidas")
       dialogo(

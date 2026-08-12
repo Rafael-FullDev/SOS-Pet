@@ -84,9 +84,10 @@ a {
   gap: 28px;
   padding: 28px;
   align-items: center;
-  border-radius: var(--radius-card);
+  border: 1px solid var(--BordaCardInterno);
+  border-radius: 18px;
   background: #fff;
-  box-shadow: var(--sombra-suave);
+  box-shadow: var(--SombraCardInterno);
 }
 
 .profile-avatar-container {
@@ -123,13 +124,13 @@ a {
 .profile-info h3 {
   margin: 4px 0 12px;
   color: var(--texto-cinza);
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 500;
 }
 
 .profile-info p {
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 .btn-edit-profile, .btn-change-photo, .btn-ver-detalhes, .btn-quero-doar, .seta-btn {
@@ -177,10 +178,17 @@ a {
 
 .card-estatisticas > div {
   padding: 22px;
-  border-radius: 16px;
+  border: 1px solid var(--BordaCardInterno);
+  border-radius: 18px;
   background: #fff;
-  box-shadow: var(--sombra-card-horizontal);
+  box-shadow: var(--SombraCardInterno);
   text-align: center;
+}
+
+.card-estatisticas > div:hover {
+  border-color: #dcc5a4;
+  box-shadow: var(--SombraCardInternoHover);
+  transform: translateY(-4px);
 }
 
 .numero {
@@ -193,7 +201,7 @@ a {
 .card-estatisticas p {
   margin-top: 4px;
   color: var(--texto-cinza);
-  font-size: 13px;
+  font-size: 0.9375rem;
 }
 
 .my-pets-secao, .meus-pedidos-de-ajuda, .adocoes-section, .actions-section {
@@ -220,7 +228,7 @@ a {
   font-family: inherit;
   cursor: pointer;
   color: var(--cor-04);
-  font-size: 13px;
+  font-size: 0.9375rem;
   font-weight: 700;
 }
 
@@ -232,9 +240,10 @@ a {
 
 .pet-card {
   overflow: hidden;
+  border: 1px solid var(--BordaCardInterno);
   border-radius: 18px;
   background: #fff;
-  box-shadow: var(--sombra-suave);
+  box-shadow: var(--SombraCardInterno);
 }
 
 .pet-image-wrapper {
@@ -246,6 +255,12 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.pet-card:hover {
+  border-color: #dcc5a4;
+  box-shadow: var(--SombraCardInternoHover);
+  transform: translateY(-4px);
 }
 
 .pet-card-info {
@@ -260,7 +275,7 @@ a {
 .pet-card-info p {
   margin: 4px 0 15px;
   color: var(--texto-cinza);
-  font-size: 13px;
+  font-size: 0.9375rem;
 }
 
 .btn-ver-detalhes {
@@ -281,9 +296,16 @@ a {
   gap: 18px;
   padding: 16px;
   align-items: center;
-  border-radius: 14px;
+  border: 1px solid var(--BordaCardInterno);
+  border-radius: 18px;
   background: #fff;
-  box-shadow: var(--sombra-card-horizontal);
+  box-shadow: var(--SombraCardInterno);
+}
+
+.horizontal-card:hover {
+  border-color: #dcc5a4;
+  box-shadow: var(--SombraCardInternoHover);
+  transform: translateY(-4px);
 }
 
 .card-img {
@@ -301,7 +323,7 @@ a {
 .card-main-info p {
   margin-top: 5px;
   color: var(--texto-cinza);
-  font-size: 12px;
+  font-size: 0.9375rem;
 }
 
 .card-status-container {
@@ -313,7 +335,7 @@ a {
 .status-ativo, .status-em-andamento, .status-concluido {
   padding: 6px 11px;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 0.8125rem;
   font-weight: 700;
 }
 
@@ -375,7 +397,7 @@ a {
 
 .banner-text p {
   margin-top: 3px;
-  font-size: 13px;
+  font-size: 0.9375rem;
 }
 
 .btn-quero-doar {
@@ -400,14 +422,17 @@ a {
   cursor: pointer;
   min-height: 170px;
   padding: 22px;
-  border: 1px solid var(--cor-borda-gradiente);
-  border-radius: 16px;
+  border: 1px solid var(--BordaCardInterno);
+  border-radius: 18px;
   background: linear-gradient(145deg, var(--fundo-gradiente-inicio), var(--fundo-gradiente-fim));
-  transition: 160ms ease;
+  box-shadow: var(--SombraCardInterno);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .acao-card:hover {
-  transform: translateY(-3px);
+  border-color: #dcc5a4;
+  box-shadow: var(--SombraCardInternoHover);
+  transform: translateY(-4px);
 }
 
 .acao-icon {
@@ -444,7 +469,7 @@ a {
 
 .acao-card p {
   margin-top: 6px;
-  font-size: 12px;
+  font-size: 0.9375rem;
 }
 
 @media (max-width: 900px) {
