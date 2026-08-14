@@ -7,7 +7,7 @@
 body {
   color: #1e1e24;
   background: #f9e9b7;
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -213,7 +213,7 @@ body[data-page="pedidos"] .EstadoVazioPedidos:not([hidden]) {
 
 .card-pedido > p {
   margin-bottom: 14px;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   line-height: 1.55;
 }
@@ -274,6 +274,118 @@ body[data-page="pedidos"] .EstadoVazioPedidos:not([hidden]) {
   transform: translateY(-2px);
 }
 
+/* Divulgação ViraDengo */
+.AnuncioViraDengo {
+  display: grid;
+  grid-template-columns: minmax(230px, 300px) minmax(0, 1fr);
+  gap: 28px;
+  margin: 8px 0 30px;
+  padding: 28px 30px;
+  align-items: center;
+  border: 1px solid #ead7bd;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fffaf1 0%, #fff5e8 100%);
+  box-shadow: 0 18px 34px rgba(107, 74, 46, 0.08);
+  overflow: hidden;
+}
+
+.AnuncioViraDengoMarca {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.AnuncioViraDengoSelo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(223, 51, 66, 0.1);
+  color: #b32a37;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.AnuncioViraDengoLogo {
+  display: flex;
+  min-height: 150px;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 24px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #f0ddc5;
+}
+
+.AnuncioViraDengoLogo img {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.AnuncioViraDengoConteudo {
+  min-width: 0;
+}
+
+.AnuncioViraDengoEtiqueta {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #df3342;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.AnuncioViraDengoConteudo h2 {
+  margin-bottom: 10px;
+  color: #2b2623;
+  font-size: 1.85rem;
+  line-height: 1.15;
+}
+
+.AnuncioViraDengoConteudo p {
+  max-width: 680px;
+  margin-bottom: 18px;
+  color: #6b5849;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.BotaoViraDengo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ef4453 0%, #d9293b 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 22px rgba(223, 51, 66, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.BotaoViraDengo:hover,
+.BotaoViraDengo:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(223, 51, 66, 0.22);
+  filter: brightness(1.02);
+}
+
+.BotaoViraDengo:focus-visible {
+  outline: 2px solid rgba(107, 74, 46, 0.5);
+  outline-offset: 3px;
+}
+
 nav[aria-label="paginação"] {
   display: flex;
   gap: 10px;
@@ -320,7 +432,7 @@ nav[aria-label="paginação"] {
 }
 
 .texto-novo-pedido p {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
 }
 
@@ -418,3 +530,56 @@ body > footer p {
 
 }
 
+
+@media (max-width: 760px) {
+  .AnuncioViraDengo {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 22px;
+    text-align: center;
+  }
+
+  .AnuncioViraDengoMarca {
+    gap: 12px;
+    align-items: center;
+  }
+
+  .AnuncioViraDengoLogo {
+    width: min(260px, 100%);
+    min-height: 132px;
+    margin: 0 auto;
+  }
+
+  .AnuncioViraDengoLogo img {
+    max-height: 96px;
+  }
+
+  .AnuncioViraDengoConteudo p {
+    max-width: none;
+  }
+}
+
+@media (max-width: 390px) {
+  .AnuncioViraDengo {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .AnuncioViraDengoSelo,
+  .AnuncioViraDengoEtiqueta {
+    font-size: 0.75rem;
+  }
+
+  .AnuncioViraDengoConteudo h2 {
+    font-size: 1.3rem;
+  }
+
+  .AnuncioViraDengoConteudo p {
+    font-size: 0.95rem;
+  }
+
+  .BotaoViraDengo {
+    width: 100%;
+    min-height: 48px;
+  }
+}

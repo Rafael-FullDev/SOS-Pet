@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root {
   --Preto: #241f1c;
   --Cinza: #6f6862;
@@ -30,8 +32,12 @@ html {
   scroll-behavior: smooth;
 }
 
-body, button, input:not(:where(.BuscaGlobal, .BuscaAdocaoCampo, .BuscaPerdidos, .BuscaHero)), select, textarea {
-  font-family: "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+body, button, input, select, textarea {
+  font-family: "Poppins", sans-serif;
+}
+
+input::placeholder, textarea::placeholder {
+  font-family: inherit;
 }
 
 body {

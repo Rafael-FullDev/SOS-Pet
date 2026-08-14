@@ -4,7 +4,7 @@
 
 body {
   background: #fff;
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .TextoApenasLeitor {
@@ -209,14 +209,12 @@ body {
   border-radius: 10px;
   background: transparent;
   color: #61442b;
-  box-shadow: var(--SombraBotao);
   text-align: center;
   transition: 160ms ease;
 }
 
 .GradeFiltrosRapidos button:hover, .GradeFiltrosRapidos button[aria-pressed="true"] {
   background: rgba(255, 255, 255, 0.72);
-  box-shadow: var(--SombraBotaoHover);
   transform: translateY(-3px);
 }
 
