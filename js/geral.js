@@ -282,7 +282,7 @@ function destinoDepoisLogin() {
 
   apagar("sosPetDestinoLogin");
 
-  return destino || "perfil.html";
+  return destino || "feed.html";
 }
 
 function consumirAcao() {

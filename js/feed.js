@@ -2,8 +2,9 @@ function iniciarFeed() {
   var lista = pegar(".posts");
 
   if (!lista) return;
-  var filtro = new URLSearchParams(location.search).get("filtro") || "todos";
-  var postInicial = Number(new URLSearchParams(location.search).get("post"));
+  var parametros = new URLSearchParams(location.search);
+  var filtro = parametros.get("filtro") || "todos";
+  var postInicial = Number(parametros.get("post"));
   var filtros = ["todos", "perdidos", "adocao", "ajuda"];
 
   if (filtros.indexOf(filtro) === -1) filtro = "todos";

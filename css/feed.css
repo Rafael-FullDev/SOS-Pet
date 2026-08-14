@@ -23,7 +23,7 @@ html, body {
 body {
   color: var(--marrom-escuro);
   background: var(--fundo);
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.5;
   overflow-x: hidden;
 }
