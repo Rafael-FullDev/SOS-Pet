@@ -1162,3 +1162,19 @@ body[data-page="feed"] .post-actions .action.AnimacaoReacao strong {
     text-align: center;
   }
 }
+
+/* Mantém as opções dos selects legíveis nos navegadores e no mobile */
+select {
+  color-scheme: light;
+}
+
+select option {
+  color: #241f1c;
+  background-color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+select option:checked {
+  color: #241f1c;
+  background-color: #fff4d4;
+}
