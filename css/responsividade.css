@@ -709,3 +709,89 @@ button {
   }
 
 }
+
+/* Ajustes finais para telas pequenas */
+@media (max-width: 768px) {
+  body[data-page="home"] .DestaquesInicio {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  body[data-page="home"] .GradeDepoimentos:not(.CarrosselAtivo) {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="feed"] .filters,
+  body[data-page="pedidos"] .filtros {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  body[data-page="feed"] .filter-tab,
+  body[data-page="pedidos"] .filtro,
+  body[data-page="feed"] .filter-tab:nth-child(n),
+  body[data-page="pedidos"] .filtro:nth-child(n) {
+    width: 100%;
+    min-width: 0;
+    border-right: 1px solid #d6cab7;
+    border-radius: 0;
+    white-space: normal;
+    text-align: center;
+  }
+
+  body[data-page="feed"] .filter-tab:nth-child(1),
+  body[data-page="pedidos"] .filtro:nth-child(1) {
+    border-radius: 11px 0 0 0;
+  }
+
+  body[data-page="feed"] .filter-tab:nth-child(2),
+  body[data-page="pedidos"] .filtro:nth-child(2) {
+    border-right: 0;
+    border-radius: 0 11px 0 0;
+  }
+
+  body[data-page="feed"] .filter-tab:nth-child(3),
+  body[data-page="pedidos"] .filtro:nth-child(3) {
+    border-top: 1px solid #d6cab7;
+    border-radius: 0 0 0 11px;
+  }
+
+  body[data-page="feed"] .filter-tab:nth-child(4),
+  body[data-page="pedidos"] .filtro:nth-child(4) {
+    border-top: 1px solid #d6cab7;
+    border-right: 0;
+    border-radius: 0 0 11px 0;
+  }
+
+  body[data-page="perfil"] .AbasPerfil {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
+
+@media (max-width: 1180px) {
+  .MenuPrincipal {
+    z-index: 2;
+    height: auto;
+    max-height: 68vh;
+    max-height: 68dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #fffdf7;
+    color: #1e1e24;
+  }
+
+  .MenuPrincipal a {
+    color: #4c4641;
+  }
+
+  .MenuPrincipal a:hover,
+  .MenuPrincipal a.Ativo,
+  .MenuPrincipal a[aria-current="page"] {
+    color: #c72837;
+    background: #fff0c7;
+  }
+}
